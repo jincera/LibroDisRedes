@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 7 Análisis tecno-económico | Diseño y Arquitectura de Redes</title>
+  <meta name="description" content="Primer intento para hacer las notas en html" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 7 Análisis tecno-económico | Diseño y Arquitectura de Redes" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/figuras/dar.jpg" />
+  <meta property="og:description" content="Primer intento para hacer las notas en html" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 7 Análisis tecno-económico | Diseño y Arquitectura de Redes" />
+  
+  <meta name="twitter:description" content="Primer intento para hacer las notas en html" />
+  <meta name="twitter:image" content="/figuras/dar.jpg" />
+
+<meta name="author" content="José Incera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tecnologías-de-acceso.html"/>
+<link rel="next" href="respuestas-a-problemas-seleccionados.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diseño y Arquitectura de Redes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html"><i class="fa fa-check"></i><b>1</b> Metodología de diseño de redes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#introducción"><i class="fa fa-check"></i><b>1.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#por-qué-una-empresa-desea-una-red"><i class="fa fa-check"></i>¿Por qué una empresa desea una red?</a></li>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#fracasos-en-proyectos-de-tecnología-de-información"><i class="fa fa-check"></i>Fracasos en proyectos de tecnología de información</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#diseño-descendente"><i class="fa fa-check"></i><b>1.2</b> Diseño descendente</a></li>
+<li class="chapter" data-level="1.3" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#microsoft-solutions-framework"><i class="fa fa-check"></i><b>1.3</b> Microsoft Solutions Framework</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#modelo-de-proceso"><i class="fa fa-check"></i><b>1.3.1</b> Modelo de proceso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#análisis-de-riesgos"><i class="fa fa-check"></i><b>1.4</b> Análisis de riesgos</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#manejo-de-riesgos"><i class="fa fa-check"></i><b>1.4.1</b> Manejo de Riesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#problemas"><i class="fa fa-check"></i><b>1.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html"><i class="fa fa-check"></i><b>2</b> Requerimientos técnicos. Compromisos y restricciones</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#escalabilidad"><i class="fa fa-check"></i><b>2.1</b> Escalabilidad</a></li>
+<li class="chapter" data-level="2.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#disponibilidad"><i class="fa fa-check"></i><b>2.2</b> Disponibilidad</a></li>
+<li class="chapter" data-level="2.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#confiabilidad"><i class="fa fa-check"></i><b>2.3</b> Confiabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#desempeño"><i class="fa fa-check"></i><b>2.4</b> Desempeño</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ancho-de-banda"><i class="fa fa-check"></i><b>2.4.1</b> Ancho de banda</a></li>
+<li class="chapter" data-level="2.4.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#utilización"><i class="fa fa-check"></i><b>2.4.2</b> Utilización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#rendimiento"><i class="fa fa-check"></i><b>2.4.3</b> Rendimiento</a></li>
+<li class="chapter" data-level="2.4.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#tasa-de-error"><i class="fa fa-check"></i><b>2.4.4</b> Tasa de error</a></li>
+<li class="chapter" data-level="2.4.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#eficiencia"><i class="fa fa-check"></i><b>2.4.5</b> Eficiencia</a></li>
+<li class="chapter" data-level="2.4.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#retardo-y-variabilidad"><i class="fa fa-check"></i><b>2.4.6</b> Retardo y variabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#seguridad"><i class="fa fa-check"></i><b>2.5</b> Seguridad</a></li>
+<li class="chapter" data-level="2.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#administración"><i class="fa fa-check"></i><b>2.6</b> Administración</a></li>
+<li class="chapter" data-level="2.7" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#facilidad-de-uso"><i class="fa fa-check"></i><b>2.7</b> Facilidad de uso</a></li>
+<li class="chapter" data-level="2.8" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#adaptabilidad"><i class="fa fa-check"></i><b>2.8</b> Adaptabilidad</a></li>
+<li class="chapter" data-level="2.9" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#costo-beneficio"><i class="fa fa-check"></i><b>2.9</b> Costo-beneficio</a></li>
+<li class="chapter" data-level="2.10" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#conflictos-entre-requerimientos"><i class="fa fa-check"></i><b>2.10</b> Conflictos entre requerimientos</a></li>
+<li class="chapter" data-level="2.11" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#otras-métricas-relevantes"><i class="fa fa-check"></i><b>2.11</b> Otras métricas relevantes</a></li>
+<li class="chapter" data-level="2.12" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#problemas-1"><i class="fa fa-check"></i><b>2.12</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><i class="fa fa-check"></i><b>3</b> Caracterización de la red y del tráfico generado por las aplicaciones</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-la-topología"><i class="fa fa-check"></i><b>3.1</b> Caracterización de la topología</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#mapa-de-la-red"><i class="fa fa-check"></i><b>3.1.1</b> Mapa de la red</a></li>
+<li class="chapter" data-level="3.1.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#asignación-de-nombres-y-direcciones"><i class="fa fa-check"></i><b>3.1.2</b> Asignación de nombres y direcciones</a></li>
+<li class="chapter" data-level="3.1.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-los-medios-de-transmisión"><i class="fa fa-check"></i><b>3.1.3</b> Caracterización de los medios de transmisión</a></li>
+<li class="chapter" data-level="3.1.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#restricciones-ambientales-y-arquitectónicas"><i class="fa fa-check"></i><b>3.1.4</b> Restricciones ambientales y arquitectónicas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#desempeño-de-la-red-actual"><i class="fa fa-check"></i><b>3.2</b> Desempeño de la red actual</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#herramientas-de-recolección"><i class="fa fa-check"></i><b>3.2.1</b> Herramientas de recolección</a></li>
+<li class="chapter" data-level="3.2.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#periodo-y-frecuencia-de-recolección"><i class="fa fa-check"></i><b>3.2.2</b> Periodo y frecuencia de recolección</a></li>
+<li class="chapter" data-level="3.2.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#algunas-métricas-de-desempeño"><i class="fa fa-check"></i><b>3.2.3</b> Algunas métricas de desempeño</a></li>
+<li class="chapter" data-level="3.2.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#presentación-de-resultados"><i class="fa fa-check"></i><b>3.2.4</b> Presentación de resultados</a></li>
+<li class="chapter" data-level="3.2.5" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#análisis-estadístico-de-redes"><i class="fa fa-check"></i><b>3.2.5</b> Análisis estadístico de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-flujo"><i class="fa fa-check"></i><b>3.3</b> Caracterización del flujo</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tipos-de-flujo-por-aplicación"><i class="fa fa-check"></i><b>3.3.1</b> Tipos de flujo por aplicación</a></li>
+<li class="chapter" data-level="3.3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-volumen-de-tráfico"><i class="fa fa-check"></i><b>3.3.2</b> Caracterización del volumen de tráfico</a></li>
+<li class="chapter" data-level="3.3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#requerimientos-de-calidad-de-servicio"><i class="fa fa-check"></i><b>3.3.3</b> Requerimientos de calidad de servicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#problemas-2"><i class="fa fa-check"></i><b>3.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html"><i class="fa fa-check"></i><b>4</b> Diseño lógico de la red</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología"><i class="fa fa-check"></i><b>4.1</b> Diseño de la topología</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-plana"><i class="fa fa-check"></i><b>4.1.1</b> Topología plana</a></li>
+<li class="chapter" data-level="4.1.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-jerárquico"><i class="fa fa-check"></i><b>4.1.2</b> Diseño jerárquico</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-capa-de-acceso"><i class="fa fa-check"></i><b>4.2</b> Diseño de la capa de acceso</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problema-de-localización-asignación"><i class="fa fa-check"></i><b>4.2.1</b> Problema de Localización-asignación</a></li>
+<li class="chapter" data-level="4.2.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#asignación-de-nodos-a-concentradores"><i class="fa fa-check"></i><b>4.2.2</b> Asignación de nodos a concentradores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-de-nodos-a-concentrador"><i class="fa fa-check"></i><b>4.2.3</b> Topología de nodos a concentrador</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#capa-de-distribución"><i class="fa fa-check"></i><b>4.3</b> Capa de distribución</a></li>
+<li class="chapter" data-level="4.4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-red-dorsal"><i class="fa fa-check"></i><b>4.4</b> Diseño de la red dorsal</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología-1"><i class="fa fa-check"></i><b>4.4.1</b> Diseño de la topología</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-basado-en-bloques-modulares"><i class="fa fa-check"></i><b>4.5</b> Diseño basado en bloques modulares</a></li>
+<li class="chapter" data-level="4.6" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#s:redundancia"><i class="fa fa-check"></i><b>4.6</b> Topologías con redundancia</a></li>
+<li class="chapter" data-level="4.7" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problemas-3"><i class="fa fa-check"></i><b>4.7</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="administración-de-redes.html"><a href="administración-de-redes.html"><i class="fa fa-check"></i><b>5</b> Administración de redes</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#evolución-de-administración-de-sistemas"><i class="fa fa-check"></i><b>5.1</b> Evolución de administración de sistemas</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-fallas"><i class="fa fa-check"></i><b>5.1.1</b> Gestión de fallas</a></li>
+<li class="chapter" data-level="5.1.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-configuración"><i class="fa fa-check"></i><b>5.1.2</b> Gestión de configuración</a></li>
+<li class="chapter" data-level="5.1.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-seguridad"><i class="fa fa-check"></i><b>5.1.3</b> Gestión de seguridad</a></li>
+<li class="chapter" data-level="5.1.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-rendimiento"><i class="fa fa-check"></i><b>5.1.4</b> Gestión de rendimiento</a></li>
+<li class="chapter" data-level="5.1.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#contabilidad-de-recursos"><i class="fa fa-check"></i><b>5.1.5</b> Contabilidad de recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#protocolos-de-administración"><i class="fa fa-check"></i><b>5.2</b> Protocolos de administración</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-administración-osi"><i class="fa fa-check"></i><b>5.2.1</b> Modelo de administración OSI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-gestión-ietf"><i class="fa fa-check"></i><b>5.2.2</b> Modelo de gestión IETF</a></li>
+<li class="chapter" data-level="5.2.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#simple-network-management-protocol"><i class="fa fa-check"></i><b>5.2.3</b> Simple Network Management Protocol</a></li>
+<li class="chapter" data-level="5.2.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#base-de-datos-de-información-de-administración-mib"><i class="fa fa-check"></i><b>5.2.4</b> Base de datos de información de administración (MIB)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#rmon"><i class="fa fa-check"></i><b>5.3</b> RMON</a></li>
+<li class="chapter" data-level="5.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#administración-de-sistemas-con-snmp"><i class="fa fa-check"></i><b>5.4</b> Administración de sistemas con SNMP</a></li>
+<li class="chapter" data-level="5.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#problemas-4"><i class="fa fa-check"></i><b>5.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html"><i class="fa fa-check"></i><b>6</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#cobertura-de-internet"><i class="fa fa-check"></i><b>6.1</b> Cobertura de Internet</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#red-de-acceso"><i class="fa fa-check"></i><b>6.1.1</b> Red de acceso</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#contexto-de-internet-y-servicios-de-banda-ancha-en-méxico"><i class="fa fa-check"></i><b>6.1.2</b> Contexto de Internet y servicios de Banda Ancha en México</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#banda-ancha"><i class="fa fa-check"></i><b>6.1.3</b> Banda Ancha</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-1"><i class="fa fa-check"></i><b>6.2</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-cableadas"><i class="fa fa-check"></i><b>6.2.1</b> Tecnologías de acceso cableadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-inalámbricas"><i class="fa fa-check"></i><b>6.3</b> Tecnologías de acceso inalámbricas</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#telefonía-celular"><i class="fa fa-check"></i><b>6.3.1</b> Telefonía celular</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#problemas-5"><i class="fa fa-check"></i><b>6.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html"><i class="fa fa-check"></i><b>7</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#introducción-1"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#métricas-financieras"><i class="fa fa-check"></i><b>7.2</b> Métricas financieras</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#costo-total-de-propiedad"><i class="fa fa-check"></i><b>7.2.1</b> Costo total de propiedad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#retorno-de-inversión"><i class="fa fa-check"></i><b>7.2.2</b> Retorno de inversión</a></li>
+<li class="chapter" data-level="7.2.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#valor-presente-neto"><i class="fa fa-check"></i><b>7.2.3</b> Valor Presente Neto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-tecno-económico-1"><i class="fa fa-check"></i><b>7.3</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-de-rentabilidad"><i class="fa fa-check"></i><b>7.3.1</b> Análisis de rentabilidad</a></li>
+<li class="chapter" data-level="7.3.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#despliegue-y-operación-de-la-red"><i class="fa fa-check"></i><b>7.3.2</b> Despliegue y operación de la red</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html"><i class="fa fa-check"></i><b>8</b> Respuestas a problemas seleccionados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#S:Metod"><i class="fa fa-check"></i><b>8.1</b> Metodología de diseño de redes</a></li>
+<li class="chapter" data-level="8.2" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:ReqTec"><i class="fa fa-check"></i><b>8.2</b> Requerimientos técnicos</a></li>
+<li class="chapter" data-level="8.3" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:CaracRed"><i class="fa fa-check"></i><b>8.3</b> Caracterización de la red</a></li>
+<li class="chapter" data-level="8.4" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:DisLog"><i class="fa fa-check"></i><b>8.4</b> Diseño lógico</a></li>
+<li class="chapter" data-level="8.5" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:Admon"><i class="fa fa-check"></i><b>8.5</b> Administración de Redes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diseño y Arquitectura de Redes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="análisis-tecno-económico" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Capítulo 7</span> Análisis tecno-económico<a href="análisis-tecno-económico.html#análisis-tecno-económico" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introducción-1" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Introducción<a href="análisis-tecno-económico.html#introducción-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los proyectos de TI en general, y de infraestructura de redes en
+particular, deben ser coherentes con los objetivos de negocio y poder
+justificarse en términos financieros o estratégicos.</p>
+<p>La empresa tiene objetivos <em>tácticos</em> o <em>duros</em>, que son cuantificables
+(objetivos “SMART”), tales como reducir costos, aumentar la
+productividad, o reducir el tiempo de lanzamiento al mercado. También
+tiene objetivos <em>estratégicos</em> o <em>suaves</em>, los cuales son subjetivos y
+más difíciles de medir, como incrementar la eficiencia, obtener ventajas
+competitivas sostenibles y facilitar una reingeniería de procesos de
+negocio.</p>
+<p>En cualquier caso, al final del día se busca que el dinero empleado para
+el proyecto (y que se obtiene de un préstamo, de las utilidades, o de
+aportaciones de los inversionistas), se utilice con el fin de maximizar
+el retorno de la inversión para los accionistas.</p>
+<p>En este capítulo se hace una muy breve introducción a las métricas
+financieras básicas utilizadas para analizar y justificar proyectos en
+las organizaciones, utilizando ejemplos de proyectos de TI.
+Posteriormente se muestran los elementos a considerar al hacer un
+análisis tecno-económico de un proyecto de redes.</p>
+</div>
+<div id="métricas-financieras" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Métricas financieras<a href="análisis-tecno-económico.html#métricas-financieras" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las métricas financieras básicas para analizar inversiones en proyectos
+son las siguientes:</p>
+<ul>
+<li><p>Costo total de propiedad (TCO, <em>Total Cost of Ownership</em>)</p></li>
+<li><p>Periodo de recuperación (PBP, <em>Pay Back Period</em>)</p></li>
+<li><p>Retorno de Inversión (ROI, <em>Return On Investment</em>)</p></li>
+<li><p>Valor presente neto (NPV, <em>Net Present Value</em>)</p></li>
+</ul>
+<p>Para proyectos específicos de TI algunas consultoras han propuesto
+métricas más especializadas, como <em>Rapid Economic Justification</em> (REJ),
+<em>Total Value of Opportunity</em> (TVO) y <em>Total Economic Impact</em> (TEI).
+Estas métricas rebasan el alcance del curso.</p>
+<div id="costo-total-de-propiedad" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Costo total de propiedad<a href="análisis-tecno-económico.html#costo-total-de-propiedad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El costo total de propiedad (TCO) tiene por objeto considerar de manera
+explícita los costos incurridos durante TODO el ciclo de vida de la
+solución.</p>
+<p>Cuando se tiene poca experiencia es común tomar en cuenta únicamente los
+costos de adquisición de las tecnologías involucradas (por ejemplo, la
+compra de equipo e infraestructura), pero el proyecto tiene costos a lo
+largo de toda su vida útil. Al menos se deben tomar en cuenta los costos
+de las fases que se muestran en la figura <a href="análisis-tecno-económico.html#fig:tco">7.1</a>:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tco"></span>
+<img src="figuras/c7/CicloVidaProy.jpg" alt="*Fases en el ciclo de vida de un proyecto*" width="50%" />
+<p class="caption">
+Figura 7.1: <em>Fases en el ciclo de vida de un proyecto</em>
+</p>
+</div>
+<p>Los costos de adquisición se incluyen en el indicador conocido como
+<strong>CAPEX (<em>Capital Expenditures</em>)</strong>; los de operación, administración y
+mantenimiento (OA&amp;M), en el <strong>OPEX <em>Operational Expenditures</em>)</strong>.</p>
+<p>A manera de ejemplo, podemos imaginar el costo total de poseer un
+automóvil. Además del costo de adquisición del auto (el CAPEX), debemos
+tomar en cuenta los costos de tenencia, mantenimiento, consumo de
+gasolina, seguros, estacionamiento, etcétera. En en un horizonte de tres
+años, estos costos pueden ser lo bastante onerosos como para no tomarlos
+en consideración.</p>
+<p>En algunos proyectos el OPEX puede ser el factor dominante, al grado que
+en ocasiones TCO se interpreta como <em>Total Cost of “Operation”</em>. En otro
+tipo de proyectos, el factor dominante puede ser el CAPEX; para ellos a
+veces la métrica que se utiliza es TCA, <em>Total Cost of Acquisition</em>.</p>
+<p>En proyectos de TI, como la adquisición de un ERP o un manejador de base
+de datos, el CAPEX suele representar entre 20% y 30% del costo total de
+operación en un horizonte de 3 a 5 años.</p>
+<p>En la actualidad, con la gran penetración del cómputo en la nube (<em>cloud
+computing</em>) estos términos se han puesto de moda, pues con la provisión
+de servicios de TI en la nube se reduce drásticamente el CAPEX (se dejan
+de comprar servidores, infraestructura de soporte) y se aumenta el OPEX
+(se paga regularmente el arrendamiento de los servidores virtuales).</p>
+<p>Dado que en el despliegue de grandes redes de comunicaciones los costos
+de implementación iniciales pueden ser muy grandes, en este tipo de
+proyectos suelen especificarse de forma aislada como <strong>IMPEX,
+<em>Implementation Expenditures</em></strong>. Aquí se incluyen costos como la
+adquisición del terreno, obra civil para instalaciones y levantamiento
+de la torre, el equipo de la estación base y antenas, etcétera).</p>
+<p>Para calcular el TCO se deben incluir todos los elementos que puedan
+identificarse, como:</p>
+<ul>
+<li><p>Hardware (servidores, instalación, configuración, planeación,
+modificaciones a la infraestructura existente, ...)</p></li>
+<li><p>Software (adquisición, licencias, configuración, mantenimiento,
+adaptaciones, costos de estabilización, ...)</p></li>
+<li><p>Capital humano (nuevo personal, capacitación, apoyo para
+instalación, gestión del cambio, ...)</p></li>
+<li><p>Indirectos (arrendamiento del local y de los equipos, luz,
+probabilidad e impacto de fallos, ...)</p></li>
+</ul>
+<p>No es extraño que se aumente un margen (entre 10% y 30%) al TCO para
+incluir costos adicionales que no han sido claramente identificados.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-42" class="example"><strong>Ejemplo 7.1  </strong></span><a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>
+Se tienen tres alternativas para desplegar una red local: una red
+cableada (LAN); una red inalámbrica <em>convencional</em> basada en puntos de acceso (AP, <em>Access Point</em>) robustos distribuidos en las instalaciones
+(WLAN) y una red inalámbrica basada en un conmutador inteligente y
+puntos de acceso muy simples (repetidores) distribuidos en las
+instalaciones (Sw-WLAN).</p>
+<p>El conmutador en la última opción, es muy poderoso e incorpora, de forma
+centralizada, muchas de las funcionalidades que se espera encontrar en
+un AP, como control de acceso, configuración de VLANs, asiganción
+dinámica de IPs, gestión de potencia de portadoras, etc. Sin embargo, es
+un equipo muy costoso; en cambio, los APs para esta red son muy
+sencillos y económicos.</p>
+<p>El ambiente en el que se desplegará la red incluye 100 puestos de
+trabajo (100 computadoras) y es muy dinámico; se ha estimado que durante
+un año, alrededor del 30% de los puestos de trabajo deben re-ubicarse.
+Si durante esta reubicacion se pierde conectividad con la red, ese
+puesto de trabajo tendrá una pérdida de productividad estimada en $50
+USD por año <a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.</p>
+<p>Las computadoras en los puestos de trabajo incluyen una tarjeta de red
+cableada; si se desea desplegar una red inalámbrica, se deben adquirir
+nuevas tarjetas de red. Las siguientes tablas muestra los costos que se
+toman en cuenta para este ejemplo:</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Red Alambrada</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Computadoras</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td align="left">Tarjeta de red</td>
+<td>$0</td>
+</tr>
+<tr class="odd">
+<td align="left">Costo del conmutador por puerto</td>
+<td>$20</td>
+</tr>
+<tr class="even">
+<td align="left">Instalación por puerto</td>
+<td>$400</td>
+</tr>
+<tr class="odd">
+<td align="left">Reinstalación por puerto</td>
+<td>$200</td>
+</tr>
+<tr class="even">
+<td align="left">Porcentaje de reubicación por año</td>
+<td>30%</td>
+</tr>
+<tr class="odd">
+<td align="left">Pérdida de productividad</td>
+<td>$50</td>
+</tr>
+<tr class="even">
+<td align="left">Herramientas de administración</td>
+<td>$4,000</td>
+</tr>
+<tr class="odd">
+<td align="left">OA&amp;M y licencias por año</td>
+<td>$200</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">WLAN</th>
+<th align="left">Sw-WLAN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>APs</td>
+<td align="left">20</td>
+<td align="left">20</td>
+</tr>
+<tr class="even">
+<td>Costo AP</td>
+<td align="left">$300</td>
+<td align="left">$100</td>
+</tr>
+<tr class="odd">
+<td>Instalación AP</td>
+<td align="left">$250</td>
+<td align="left">$250</td>
+</tr>
+<tr class="even">
+<td>Tarjeta de red</td>
+<td align="left">$75</td>
+<td align="left">$75</td>
+</tr>
+<tr class="odd">
+<td>Conmutador</td>
+<td align="left">$0</td>
+<td align="left">$10,000</td>
+</tr>
+<tr class="even">
+<td>Herramientas de administración</td>
+<td align="left">$4,000</td>
+<td align="left">$2,000</td>
+</tr>
+<tr class="odd">
+<td>Herramientas Ctl. acceso</td>
+<td align="left">$5,000</td>
+<td align="left">$2,500</td>
+</tr>
+<tr class="even">
+<td>OA&amp;M y licencias por AP por año</td>
+<td align="left">$250</td>
+<td align="left">$150</td>
+</tr>
+<tr class="odd">
+<td>Gestión de radio frecuencia por AP por año</td>
+<td align="left">$200</td>
+<td align="left">$50</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Los costos de adquisición de las tres alternativas son los siguientes:
+<span class="math display">\[\begin{aligned}
+\text{LAN} : &amp; (100)(\$20)+ (100)(\$400) + \$4,000 = \$46,000\\
+\text{WLAN}: &amp; (20)(\$300)+(20)(\$250)+(100)(\$75)+\$0+\$4,000+\$5,000=\$27,500\\
+\text{Sw-WLAN}: &amp; (20)(\$100)+(20)(\$250)+(100)(\$75)+\$10,000+\$2,000+\$2,500=\$29,000
+\end{aligned}\]</span></p>
+<p>Considerando el CAPEX, parecería que la opción de la red local
+inalámbrica convencional es la más atractiva, y es que el costo del
+conmutador en la Sw-WLAN es muy elevado.</p>
+<p>Los gastos de instalación en la red cableada son muy altos, pues suponen
+el tendido de canaletas y cables a lo largo de la empresa. En un
+edificio con cableado estructurado, estos costos disminuirían
+considerablemente.</p>
+<p>Veamos ahora los costos de operación, administración y mantenimiento
+(OA&amp;M) por año: <span class="math display">\[\begin{aligned}
+\text{LAN} : &amp; (0.3)(100)(\$200)+ (0.3)(100)(\$50) + (100)(\$200) = \$27,500\\
+\text{WLAN}:&amp;  (0.3)(100)(\$0)  +(20)(\$250)+(20)(\$200) = \$9,000\\
+\text{Sw-WLAN}:&amp;(0.3)(100)(\$0)+(20)(\$150)+(20)(\$50) = \$4,000\\
+\end{aligned}\]</span></p>
+<p>El OPEX anual de la red local con conmutador inteligente es menos de la
+mitad que el de la red inalámbrica convencional; las funcionalidades del
+conmutador empiezan a rendir frutos. Los dos son mucho menores a los de
+la red cableada porque en la reconfiguración de puestos no se requiere
+de reinstalaciones y no hay pérdida de productividad.</p>
+<p>El costo total de operación a tres años, es mucho más favorable para la
+red inalámbrica basada en conmutador inteligente:</p>
+<p><span class="math display">\[\begin{aligned}
+\text{LAN} : TCO =&amp; \$46,000+3(\$ 9,000) = \$128,500\\
+\text{WLAN}: TCO = &amp;\$27,500 + 3(\$9,000) =  \$54,500\\
+\text{Sw-WLAN}:TCO =&amp;\$29,000 + 3(\$4,000)  = \$41,000\\
+\end{aligned}\]</span></p>
+</div>
+<hr />
+<p>Una de las mayores dificultades para calcular el TCO en el despliegue de redes de telecomunicaciones, es que los costos pueden variar enormemente de una región a otra, y de un año a otro. Son mercados sumamente dinámicos.</p>
+<p>Las siguientes cifras se presentan únicamente como referencia para tener una idea muy somera de los costos de despliegue de este tipo de redes:</p>
+<ul>
+<li><p>Despliegues de redes WiFi municipales en Estados Unidos. Si la red contempla únicamente servicios no públicos (servicios municipales) se estimaba que el OPEX era de 15% del CAPEX por AP por año. Si la red ofrecía servicios públicos el OPEX se duplicaba pues se deben incluir costos de servicio a cliente, tarificación y marketing, entre otros.</p></li>
+<li><p>En algunas redes municipales el OPEX total fue 10 veces superior al CAPEX en un horizonte de 5 años.</p></li>
+<li><p>El arrendamiento de luminarias para instalar los APs variaba
+enormemente de un municipio a otro: En Louisiana costaba $86 USD por poste por año, mientras que en California el costo era de $36.</p></li>
+<li><p>Los AP con calidad comercial para despliegues a la intemperie con un solo radio, gastaban $20 USD de energía eléctrica por año; los AP con dos radios (ideales para despliegues de mallas WiFi municipales) gastan cinco veces más: $100 USD por año.</p></li>
+<li><p>Para despliegues de fibra al hogar (FTTH) en Canadá, se estimó un OPEX de 5% del CAPEX por nodo.</p></li>
+</ul>
+<p>La figura <a href="análisis-tecno-económico.html#fig:capopbs">7.2</a> muestran los porcentajes de los rubros más importantes en CAPEX y OPEX para el despliegue de una estación base de telefonía celular en Estados Unidos a principios de este milenio.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:capopbs"></span>
+<img src="figuras/c7/capexbs.jpg" alt="*Elementos que conforman el CAPEX y OPEX para el despliegue de una radio base*" width="48%" /><img src="figuras/c7/opexbs.jpg" alt="*Elementos que conforman el CAPEX y OPEX para el despliegue de una radio base*" width="48%" />
+<p class="caption">
+Figura 7.2: <em>Elementos que conforman el CAPEX y OPEX para el despliegue de una radio base</em>
+</p>
+</div>
+<p>Recordemos que estas cifras son únicamente un referente y que hay
+grandes variaciones dependiendo del contexto. Por ejemplo, en un país
+grande, el equipo de la red dorsal representa 30% del CAPEX, mientras
+que en uno pequeño, es sólo el 10%. Sin embargo, la adaptación de los
+sitios en el primer caso cubren el 30% del CAPEX, pero en los países
+pequeños puede ascender hasta 50%.</p>
+<p>Es interesante observar que los costos relacionados con los equipos de
+telecomunicaciones no son dominantes ni en CAPEX ni en OPEX, y, de
+hecho, la tendencia es que estos costos disminuyan con el teimpo.</p>
+<p>En México, en áreas rurales, el costo de interconexión era en promedio
+el doble que la figura anterior (18%), pero en algunas regiones podía
+alcanzar hasta el 70%, debido a la enorme variación en los costos de los
+enlaces dedicados: Un enlace E1 podía costar de $15 a $15,000 USD
+mensuales. Estas variaciones explican buena parte de la gran variación
+en cobertura celular que tenía México, donde todavía hay un porcentaje
+sustancial de comunidades no atendidas y subatendidas.</p>
+<p>Para tener una idea general de los costos de implementación, figura <a href="análisis-tecno-económico.html#fig:impex">7.3</a> muestra la distribución de costos para despliegues
+de redes LTE en un país nórdico en 2012.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:impex"></span>
+<img src="figuras/c7/tcomacrosite.jpg" alt="*Distribución de CAPEX, OPEX, IMPEX para redes LTE en un país nórdico*" width="40%" /><img src="figuras/c7/tcomicrosite.jpg" alt="*Distribución de CAPEX, OPEX, IMPEX para redes LTE en un país nórdico*" width="40%" />
+<p class="caption">
+Figura 7.3: <em>Distribución de CAPEX, OPEX, IMPEX para redes LTE en un país nórdico</em>
+</p>
+</div>
+<p>Sorprende la gran diferencia en TCO entre despliegues basados en
+macro-celdas (120,000 €) y micro-celdas (22,000 €). En el despliegue de micro-celdas, el componente más importante del OPEX es la interconexión entre celdas (<em>backhaul</em>) porque se deben desplegar muchas más celdas para la misma zona.</p>
+<p>Terminamos esta sección resaltando algunas características del TCO:</p>
+<ul>
+<li><p>Es muy conocido desde que la consultora Gartner lo empezó a utilizar
+en la industria de TI a finales de los años 80.</p></li>
+<li><p>Es el punto de partida de casi todos los estudios de rentabilidad</p></li>
+<li><p>Es muy útil para comparar proyectos alternativos equiparables. Sin
+embargo, no debemos olvidar que el objetivo de un proyecto es
+maximizar la rentabilidad de una inversión, no minimizar los costos.</p></li>
+<li><p>El TCO no toma en cuenta el costo del capital. Esto es un riesgo
+financiero importante para proyectos de alto costo y tiempo.</p></li>
+</ul>
+</div>
+<div id="retorno-de-inversión" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Retorno de inversión<a href="análisis-tecno-económico.html#retorno-de-inversión" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El Retorno de inversión (ROI) es una técnica muy popular para estimar
+las consecuencias financieras al hacer una inversión o implementar un
+proyecto.</p>
+<p>En su forma más simple, el ROI es el resultado de dividir los beneficios
+netos entre el costo de la inversión, expresado en porcentaje.</p>
+<p><span class="math display">\[\text{ROI} = \frac{(\text{Beneficios}-\text{Costos}}{\text{Costos}}\times 100 %\]</span></p>
+<p>Es una métrica muy popular que permite comparar la tasa de retorno
+esperada de un proyecto, contra otro tipo de inversión de capital, como
+puede ser un portafolio de inversión. Esta métrica debe considerar un
+horizonte de tiempo. Para proyectos de TI, este horizonte suele ser de 3
+a 5 años.</p>
+<p>Con frecuencia se utiliza para comparar la tasa de retorno del proyecto
+contra otro tipo de inversión de capital; por ejemplo, decidir adquirir
+un nuevo servidor, o invertir el dinero en un instrumento financiero.</p>
+<p>Para calcular el ROI se deben tratar de identificar todos los beneficios
+y costos del proyecto. Para el cálculo de costos, se deben incorporar
+las reflexiones presentadas en el análisis del TCO.</p>
+<p>La estimación de los beneficios se complica porque existen distintos
+tipos de beneficios, como tangibles, estratégicos y algunos, como los
+financieros, pueden cambiar en función de las políticas económicas de un
+país. Un buen punto de partida (y un gran reto en muchas empresas), es
+tratar de identificar los llamados KPI,<em>Key Performance Indicators</em>.</p>
+<p>Estos son algunos ejemplos de beneficios a considerar cuando se calcula
+el ROI:</p>
+<dl>
+<dt>Beneficios cuantificables (<em>hard</em>)</dt>
+<dd>
+<p>: Reducción en el ancho de banda en los accesos a Internet;
+consolidación de servidores físicos; reducción en los tiempos de
+procesamiento y en los tiempos de lanzamiento al mercado de una
+nueva aplicación;</p>
+</dd>
+<dt>Beneficios cualitativos (<em>soft</em>)</dt>
+<dd>
+<p>: Mejora la productividad y eficiencia de los empleados; mejora el
+ambiente laboral; aumenta la fidelización de los clientes; mejora la
+reputación de la marca</p>
+</dd>
+<dt>Beneficios en ingresos</dt>
+<dd>
+<p>: Aumento de la producción; mayor participación de mercado;
+Incremento en el ingreso medio por cliente (ARPU, <em>Average Revenue
+Per User</em>)</p>
+</dd>
+</dl>
+<p>Los beneficios cualitativos se les llama <em>soft</em> porque no pueden
+convertirse directamente en un valor económico. Por ejemplo, el aumento
+en la productividad de un empleado no necesariamente implica una aumento
+en la producción ni una reducción en el número de empleados. En general,
+se debe recurrir a profesionales de otras áreas (por ejemplo, al
+director de RH, de marketing, de operaciones) para que ayuden a
+convertir estos beneficios en términos cuantitativos.</p>
+<p>Al estimar el horizonte de tiempo para el cálculo del ROI también deben
+tomarse en consideración los cambios (realistas) esperados durante ese
+tiempo, como pueden ser el incremento en ingresos (por ejemplo, por una
+mayor captación de clientes) y en gastos (por ejemplo, por un aumento en
+los recursos asignados a los centros de atención a clientes).</p>
+<p>Por ello, aunque se recomiendan horizontes de tiempo de tres a cinco
+años para proyectos de TI, en ocasiones el ROI se calcula para dos o
+tres años. Una excepción notable es el cálculo de ROI para redes de
+comunicaciones. Las inversiones iniciales suelen ser tan grandes, que
+los proyectos no son rentables antes de 7 o 10 años; en estos casos, los
+cálculos consideran horizontes de tiempo de 10, 15 o 20 años.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-43" class="example"><strong>Ejemplo 7.2  </strong></span>Una empresa está considerando implementar un CRM con el que espera tener
+una interacción mucho más fluida con sus clientes. A través de esta
+interacción estima que tendrá una gran fidelización (una tasa de
+abandono, CHURN, menor) y la oportunidad de lanzar más y mejorses
+servicios al mercado en menos tiempo.</p>
+<p>Al analizar el proyecto con las distintas unidades de negocio, se
+encontraron los siguientes beneficios. <em>Observe que casi todos están
+expresados como una reducción en costos y que se está haciendo una
+estimación de mejoras a lo largo del tiempo gracias a la implementación
+del CRM</em>.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Beneficios (Millones USD)</th>
+<th align="center">Año 1</th>
+<th align="center">Año 2</th>
+<th align="center">Año 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Reduce costos de transacción</td>
+<td align="center">$ 2.50</td>
+<td align="center">$ 3.00</td>
+<td align="center">$ 3.20</td>
+</tr>
+<tr class="even">
+<td align="left">Reduce costos de operación</td>
+<td align="center">$ 0.80</td>
+<td align="center">$ 1.00</td>
+<td align="center">$ 1.10</td>
+</tr>
+<tr class="odd">
+<td align="left">Reduce costos de TI</td>
+<td align="center">–</td>
+<td align="center">$ 1.50</td>
+<td align="center">$ 1.50</td>
+</tr>
+<tr class="even">
+<td align="left">Reduce CHURN</td>
+<td align="center">$ 3.50</td>
+<td align="center">$ 4.00</td>
+<td align="center">$ 5.00</td>
+</tr>
+<tr class="odd">
+<td align="left">Reduce <em>time to market</em></td>
+<td align="center">–</td>
+<td align="center">$ 2.50</td>
+<td align="center">$ 2.50</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>TOTAL:</strong></td>
+<td align="center"><strong>$ 6.80</strong></td>
+<td align="center"><strong>$ 12.00</strong></td>
+<td align="center"><strong>$ 13.30</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La empresa espera un beneficio total
+<span class="math inline">\(\$ 6.80 + \$ 12.00 + \$ 13.30 = \textbf{\$ 32.10}\)</span> en los tres años
+calculados.</p>
+<p>En la siguiente tabla se presenta la estimación de los principales
+gastos incurridos al implementar el CRM. Observe que el gasto más
+importante se da en el primer año, que es el más intensivo en el
+desarrollo del producto. En los años subsecuentes, los desarrollos están
+limitados a actualizaciones y aumento de funcionalidades.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Costos (Millones USD)</th>
+<th align="center">Año 1</th>
+<th align="center">Año 2</th>
+<th align="center">Año 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Licencias</td>
+<td align="center">$ 1.00</td>
+<td align="center">$ 1.00</td>
+<td align="center">$ 1.00</td>
+</tr>
+<tr class="even">
+<td align="left">Desarrollo y TQM</td>
+<td align="center">$ 2.50</td>
+<td align="center">$ 0.20</td>
+<td align="center">$ 0.20</td>
+</tr>
+<tr class="odd">
+<td align="left">Mantenimiento</td>
+<td align="center">$ 0.70</td>
+<td align="center">$ 0.20</td>
+<td align="center">$ 0.20</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>TOTAL:</strong></td>
+<td align="center"><strong>$ 4.20</strong></td>
+<td align="center"><strong>$ 1.40</strong></td>
+<td align="center"><strong>$ 1.40</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Los costos totales para el proyecto durante los tres años, se estiman en
+<span class="math inline">\(\$ 4.20 + \$ 1.40 + \$ 1.40 = \textbf{\$ 7.00}\)</span>. <em>Con una inversión de
+$ 7 MUSD se espera un beneficio de $ 32.10</em>.</p>
+<p>Los retornos de inversión para el primer año, para el tiempo de vida del
+proyecto, y el anual estimado, son los siguientes:</p>
+<p><span class="math display">\[\begin{aligned}
+\text{ROI primer año} &amp;= \frac{6.8 - 4.2}{4.2}\times 100\% = 62\%\\
+\text{ROI tres años} &amp;= \frac{32.1 - 7}{7}\times 100\% = 358\%\\
+\text{ROI anualizado} &amp;= (1+3.58)^{1/3} - 1 = 66\%\\
+\end{aligned}\]</span></p>
+<hr />
+</div>
+<p>El <strong>Periodo de recuperación</strong> (PBP) es el tiempo en que se recupera la
+inversión. Con mucha frecuencia se suele considerar únicamente la
+inversión inicial (el CAPEX), pero debe tomarse en cuenta que se hacen
+inversiones a lo largo del tiempo de vida del proyecto, por lo que el
+cálculo del PBP debe considerarse en ese horizonte de tiempo.</p>
+<p>Para el ejemplo anterior, el periodo de recuperación es:
+<span class="math display">\[PBP = \frac{\text{costo total}}{\text{beneficio en el tiempo}} = \frac{7}{\frac{32.1}{36}} \approx 7.8\,\text{meses}\]</span></p>
+<p>Como se ha comentado, en el despliegue de redes de comunicaciones, las
+inversiones iniciales pueden ser muy considerables, por lo que no es de
+extrañar que el PBP sea muy grande, mayor a siete años.</p>
+<p>Regresando al ROI, una de sus complicaciones es determinar si la
+erogación que se hace es un <em>gasto</em> o una <em>inversión</em>, y, de hecho, en
+ocasiones ésto se depende de las políticas fiscales del país.</p>
+<p>En el ejemplo anterior, los costos que se tomaron en cuenta son costos
+de operación y se consideran un gasto. En el siguiente ejemplo, el costo
+que se tomará en cuenta es el adquisición de un equipo, que en estricto
+sentido, debe depreciarse anualmente. Sin embargo, para enfatizar la
+complejidad en el cálculo del ROI, se considera que este equipo es <em>un
+activo</em> (como la compra de un edificio, o una inversión bancaria), por
+lo que su "valor" puede ser recuperado con la reventa del equipo.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-44" class="example"><strong>Ejemplo 7.3  </strong></span>Una empresa está considerando adquirir un dispositivo SD-WAN (<em>Software defined WAN</em>) que le permitirá optimizar sus enlaces WAN al consolidar el tráfico de voz y datos y redistribuir el tráfico entre distintos enlaces para optimizar el balanceo de cargas.</p>
+<p>Este ejemplo tiene enfatiza dos características frecuentes en el cálculo del ROI: (1) Los beneficios se derivan al comparar el modo actual de operación (PMO, <em>Present Mode of Operation</em>), y (2) casos en que los "gastos" pueden ser considerados inversiones en activos.</p>
+<p>Los costos de la red WAN en el modo actual de operación se presentan en la siguiente tabla:</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Costos (Miles USD)</th>
+<th align="center">Año 1</th>
+<th align="center">Año 2</th>
+<th align="center">Año 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Enlaces WAN</td>
+<td align="center">$ 1,000</td>
+<td align="center">$ 1,100</td>
+<td align="center">$ 1,250</td>
+</tr>
+<tr class="even">
+<td align="left">Recursos humanos</td>
+<td align="center">$ 200</td>
+<td align="center">$ 200</td>
+<td align="center">$ 250</td>
+</tr>
+<tr class="odd">
+<td align="left">TOTAL:</td>
+<td align="center">$ 1,200</td>
+<td align="center">$ 1,300</td>
+<td align="center">$ 1,500</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Total acumulado:</strong></td>
+<td align="center"><strong>$ 1,200</strong></td>
+<td align="center"><strong>$ 2,500</strong></td>
+<td align="center"><strong>$ 4,000</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Los costos de la red WAN con el equipo SD-WAN son los siguientes:</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Costos (Miles USD)</th>
+<th align="center">Año 1</th>
+<th align="center">Año 2</th>
+<th align="center">Año 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Enlaces WAN</td>
+<td align="center">$ 750</td>
+<td align="center">$ 775</td>
+<td align="center">$ 825</td>
+</tr>
+<tr class="even">
+<td align="left">Recursos humanos</td>
+<td align="center">$ 200</td>
+<td align="center">$ 200</td>
+<td align="center">$ 250</td>
+</tr>
+<tr class="odd">
+<td align="left">Equipo SD-WAN</td>
+<td align="center">$ 500</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">TOTAL:</td>
+<td align="center">$ 1,450</td>
+<td align="center">$ 975</td>
+<td align="center">$ 1,075</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Total acumulado:</strong></td>
+<td align="center"><strong>$ 1,450</strong></td>
+<td align="center"><strong>$ 2,425</strong></td>
+<td align="center"><strong>$ 3,500</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Estamos ahorrando <span class="math inline">\(\$ 4,000-\$ 3,500 = \$ 500\)</span>. Para ello <em>invertimos</em>
+(y aún tenemos) <span class="math inline">\(\$ 500\)</span>, por lo que el retorno es:</p>
+<p><span class="math display">\[\begin{aligned}
+\text{ROI tres años} &amp;= \frac{(500+500) - 500}{500}\times 100\% = 100\%\\
+\text{ROI anualizado} &amp;= (1+1)^{1/3} - 1 = 26\%\\[1ex]
+\text{PBP} &amp; = \frac{500}{\frac{1000}{36}} = 18\,\text{meses}
+\end{aligned}\]</span></p>
+<hr />
+</div>
+<p>Estas son algunas recomendaciones básicas relacionadas con el ROI:</p>
+<ul>
+<li><p>Se debe crear lista de métricas (KPI) relacionadas con la estrategia
+del negocio, como atención a clientes; productividad y
+competitividad; eficiencia operativa. Se debe evaluar cómo el
+proyecto impacta estas métricas, y eso requiere de expertos (no
+sesgados y no afectados por el proyecto) en las demás unidades de
+negocio.</p></li>
+<li><p>Se debe desarrollar la metodología en términos financieros y con
+apoyo del área de finanzas. Un análisis de ROI adecuado difícilmente
+uede salir del área de TI y de telecomunicaciones.</p></li>
+<li><p>Se deben establecer beneficios que puedan ser claramente medibles
+(SMART). Los beneficios “soft” deben verse como deseables, o bien,
+deben ser cuantificables (de forma convincente) por las áreas de
+negocio correspondientes</p></li>
+<li><p>Se deben privilegiar proyectos en los que los beneficios se reflejen
+lo más pronto posible (con PBP corto); de lo contrario, se debe
+tomar en cuenta los gastos financieros del dinero apalancado (los
+gastos de tesorería).</p></li>
+</ul>
+<p>A pesar de su gran popularidad, el ROI tiene algunas limitaciones que
+deben tomarse en cuenta; entre las más importantes están:</p>
+<ul>
+<li><p>No se toma en cuenta el costo del capital, lo cual puede ser muy
+delicado en proyectos con un PBP muy grande. Frecuentemente se
+calcula ROI ajustando a valor presente neto. A esto se le conoce
+como RA-ROI (<em>Risk adjusted ROI</em>).</p></li>
+<li><p>Al reportarse en porcentaje, no considera que los beneficios netos
+podrían ser muy bajos para justificar la inversión. Por ejemplo, una
+inversión de $100,000 que genera un beneficio de 5,000 tiene un ROI
+de 5%, mientras que una inversión con un ROI de 20% puede ser una
+inversión $ 10 que genera un beneficio de $ 2.</p></li>
+<li><p>De forma similar, el ROI oculta los flujos de capital requeridos.
+Específicamente, para grandes proyectos, los costos de inversión
+iniciales pueden ser tan altos, que hagan al proyecto inviable aún
+si el ROI parece atractivo.</p></li>
+</ul>
+</div>
+<div id="valor-presente-neto" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Valor Presente Neto<a href="análisis-tecno-económico.html#valor-presente-neto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El valor presente neto, NPV, es una medida del beneficio que genera una
+inversión durante su vida útil <em>considerando el valor del dinero</em>. Se
+define como el valor presente de los ingresos futuros menos el valor
+presente del flujo de costos futuros.</p>
+<p>En términos simples, podemos entender "valor presente" considerando
+que un peso hoy tiene y se percibe como más valioso que un peso en el
+futuro. Entre muchos otros factores, además de la pérdida de valor por
+inflación, se deben tomar en cuenta factores como el costo de
+oportunidad, es decir, la incapacidad de tomar otras decisiones de
+inversión si ese peso no se tiene disponible.</p>
+<p>Para calcular el valor presente, se utiliza una tasa de descuento <span class="math inline">\(r\)</span>
+que busca ser un indicador del riesgo financiero que la empresa atribuye
+a los factores anteriores. La fórmula de NPV es la siguiente:</p>
+<p><span class="math display">\[NPV=\sum\limits_{t=0}^T\frac{C_t}{(1+r)^t},\]</span></p>
+<p>donde <span class="math inline">\(t\)</span> es el periodo en años, <span class="math inline">\(r\)</span> es la tasa de descuento y <span class="math inline">\(C_t\)</span> es
+el ingreso neto (es decir, ingresos menos egresos) en el año <span class="math inline">\(t\)</span>.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-45" class="example"><strong>Ejemplo 7.4  </strong></span>En la siguiente tabla se muestran dos opciones para invertir $
+1,000,000. La primera es para un proyecto a cinco años con ingresos
+netos de $500,000 cada año. La segunda es para un proyecto a tres años
+con ingresos netos variables.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Opción 1</th>
+<th></th>
+<th align="center">Opción 2</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Año</td>
+<td align="center">Ingreso neto</td>
+<td>Ajustado</td>
+<td align="center">Ingreso neto</td>
+<td>Ajustado</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td align="center">($ 1,000,000)</td>
+<td>($ 1,000,000)</td>
+<td align="center">($ 1,000,000)</td>
+<td>($ 1,000,000)</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td align="center">$ 500,000</td>
+<td>$ 454,500</td>
+<td align="center">$ 1,000,000</td>
+<td>$ 909,000</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="center">$ 500,000</td>
+<td>$ 413,000</td>
+<td align="center">$ 750,000</td>
+<td>$ 619,500</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="center">$ 500,000</td>
+<td>$ 375,500</td>
+<td align="center">$ 500,000</td>
+<td>$ 375,500</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td align="center">$ 500,000</td>
+<td>$ 341,500</td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td align="center">$ 500,000</td>
+<td>$ 310,500</td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Total:</strong></td>
+<td align="center">$ 1,500,000</td>
+<td>$ 895,000</td>
+<td align="center">$ 1,250,000</td>
+<td>$ 904,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En las columnas 2 y 4 se presentan los resultados netos de las dos
+opciones. Aparentemente la primer opción es más atractiva pues reporta
+un beneficio neto $250,000 mayor al de la segunda.</p>
+<p>Sin embargo, al hacer el ajuste a valor presente con una tasa de
+descuento de 10%, la segunda opción es la más rentable.</p>
+<hr />
+</div>
+<p>Para poder determinar los ingresos netos anuales, se deben estimar los flujos de capital. Para proyectos con fuertes inversiones iniciales como el despliegue de una red de comunicaciones, la curva de flujos de capital sería similar a la de la figura @ref(fig:cashflow9:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cashflow"></span>
+<img src="figuras/c7/cashflow.jpg" alt="*Ejemplo de una curva de flujo de capital*" width="50%" />
+<p class="caption">
+Figura 7.4: <em>Ejemplo de una curva de flujo de capital</em>
+</p>
+</div>
+<p>En términos generales, los proyectos con <span class="math inline">\(NPV &lt; 0\)</span> deben rechazarse y aquellos con <span class="math inline">\(NPV \ge 0\)</span> deben analizarse más detenidamente.</p>
+<p>Por otra parte, como debió quedar claro en el ejemplo, los resultados de NPV dependen de la tasa de descuento utilizada. Es muy importante elegir un valor con objetividad y justificarlo. No es raro encontrar tomadores de decisiones que estarán inclinados a definir una tasa de descuento "conveniente".</p>
+<p>Finalmente, todos los proyectos de largo plazo deben incluir un factor de riesgo adicional para tomar en consideración la manifestación de eventos ajenos al proyecto que pueden tener un gran impacto en el mismo.
+Por ejemplo, la aparición de nuevos jugadores disruptores, factores
+macro-económicos, cambios en las prioridades del Estado y otros factores externos, pueden parecer improbables en el corto plazo, pero factibles en un escenario de 15 años.</p>
+</div>
+</div>
+<div id="análisis-tecno-económico-1" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Análisis tecno-económico<a href="análisis-tecno-económico.html#análisis-tecno-económico-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En otras secciones del curso se ha hablado sobre cientos de proyectos de
+redes WiFi municipales desplegadas los Estados Unidos y en otros países
+en los últimos años. Cuando estas redes se pensaron para ofrecer, además
+de servicios municipales, servicios públicos de acceso a Internet, la
+gran mayoría de estos proyectos fracasó, pero estas experiencias dejaron
+muchas lecciones que han contribuido a fortalecer las metodologías de
+diseño de redes.</p>
+<p>Un ejemplo de estas lecciones es el marco propuesto por Mandviwalla
+(2008) para el despliegue de redes inalámbricas municipales (WMN,
+<em>Wireless Municipal Networks</em>). Se trata de un marco compuesto por tres
+fases; si en alguna de ellas los elementos no están claramente definidos
+o si cuestiona la viabilidad de la red, el proyecto debería abandonarse.
+El marco propuesto es el siguiente. Observe la gran semejanza de este
+marco con la metodología de diseño descendente que hemos seguido a lo
+largo del curso.</p>
+<ul>
+<li><p>Fase 1</p>
+<ul>
+<li><p><strong>Objetivos</strong> Los objetivos de la red deben ser claramente identificados.
+Para redes WSN éstos pueden ser disminuir la brecha digital,
+ofrecer mejores servicios municipales, reducir los costos de
+operación de redes actuales, incrementar la atractividad de la
+región, empoderar a los ciudadanos, etcétera.</p></li>
+<li><p><strong>Actores clave</strong> Los objetivos deben estar asociados a cubrir las necesidades
+de actores clave como ciudadanos, turistas, empleados de
+gobierno. Se debe considerar también quiénes se verían
+perjudicados (por ejemplo, competidores comerciales, proyectos a
+los cuales se les recortaría presupuesto para financiar la red).</p></li>
+<li><p><strong>Políticas y regulaciones</strong> Es muy importante tomar en consideración las restricciones de
+política pública y regulatorias en el diseño de estas redes. En
+algunos casos, estas redes pueden ser vistas como competencia
+desleal. Para ello, la Unión Europea ha definido criterios en
+los que se fomenta el despliegue de redes públicas municipales
+(las llamadas zonas blancas) o en los que éstas se prohíben (las
+zonas negras). En esta fase también se analizan las
+implicaciones legales sobre seguridad (si ésta es comprometida),
+niveles de servicio, atención a clientes, entre otros.</p></li>
+</ul></li>
+<li><p>Fase 2</p>
+<ul>
+<li><p><strong>Servicios y aplicaciones</strong> Con los resultados de la primera fase, se pueden definir los
+servicios y aplicaciones que ofrecerá la red. Para ello deben
+priorizarse los objetivos identificados,en función de los
+actores clave y de las restricciones detectadas.</p></li>
+<li><p><strong>Selección de tecnología</strong> Ya se cuenta con todos los elementos necesarios para proceder
+a un primer diseño, similar al diseño conceptual en la
+metodología de diseño descendente. En esta etapa no se trata de
+la selección de tecnologías específicas (lo que llamamos diseño
+físico) sino de consideraciones más generales, como bandas de
+frecuencia para los servicios WiFi y para el backhaul, gateways
+para conexión a la red dorsal, infraestructura municipal
+disponible para desplegar la red, entre otros.</p></li>
+<li><p><strong>Finanzas y gestión</strong> Esta etapa es crítica. Se debe tener un sólido estudio de
+factibilidad económica no sólo para desplegar la red (el CAPEX)
+sino para garantizar su operación (el OPEX) de forma
+sustentable. Se debe si los servicios ofrecidos son gratuitos
+(todos ellos, o sólo algunos), si la red puede ser financiada
+con modelos publicitarios, o si los ahorros por el uso de nuevas
+tecnologías son suficientes para desplegar la red.
+En este capítulo conoceremos los conceptos básicos necesarios
+para realizar este tipo de análisis financiero.</p></li>
+</ul></li>
+<li><dl>
+<dt>Fase 3</dt>
+<dd>
+<p>Si las etapas anteriores dan viabilidad al proyecto, se puede
+proceder al diseño detallado (diseño lógico y físico) y al eventual
+despliegue de la red.</p>
+</dd>
+</dl></li>
+</ul>
+<div id="análisis-de-rentabilidad" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Análisis de rentabilidad<a href="análisis-tecno-económico.html#análisis-de-rentabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para evaluar la viabilidad financiera del proyecto, se debe hacer un
+análisis de rentabilidad. La Unión Europea ha financiado varios
+proyectos marco (Titan, TONIC, EcoSys) de donde se derivan las
+principales líneas de esta sección. Para contextualizar el análisis,
+utilizaremos ejemplos del entorno mexicano.</p>
+<p>Un análisis de rentabilidad tiene los siguientes pasos:</p>
+<ol style="list-style-type: decimal">
+<li><p>Se define el periodo de tiempo en el que el proyecto (la red a
+desplegar) estará vigente</p></li>
+<li><p>Se realiza el análisis del mercado y la definición de los servicios
+a ofrecer. Estos dos pasos permiten hacer una <strong>estimación de la
+demanda</strong></p></li>
+<li><p>Se analizan los aspectos relacionados con el despliegue y operación
+de la red (la <strong>estimación de la oferta</strong>), tales como:</p>
+<ul>
+<li><p>Características tecnológicas de la red</p></li>
+<li><p>Estimación de costos: De adquisición, operación, mantenimiento,
+licenciamiento, etcétera</p></li>
+</ul></li>
+<li><p>Se determinan los parámetros financieros del entorno en el que se
+desplegará la red, tales como tasas de interés, tasa de descuento,
+políticas fiscales para depreciación y valoración de activos,
+impuestos a pagar, estímulos fiscales, etcétera  Se hace el análisis
+de los resultados financieros, como los análisis de sensibilidad y
+de riesgo financiero</p></li>
+</ol>
+<div id="consideraciones-de-riesgos" class="section level5 unnumbered hasAnchor">
+<h5>Consideraciones de Riesgos<a href="análisis-tecno-económico.html#consideraciones-de-riesgos" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Como se ha mencionado en múltiples ocasiones, los proyectos de
+despliegue de redes de comunicaciones requieren de grandes inversiones y
+se espera que duren muchos años. En ambos casos, se entra en zonas de
+incertidumbre no despreciable para elementos clave del proyecto.</p>
+<p>En ejemplo, es la capacidad de estimar la demanda de servicios y de
+anchos de banda requeridos en el corto, mediano y largo plazo. A
+principios del siglo XXI, arrastrados por la burbuja de las startups
+"dot com", muchos de los grandes operadores de telecomunicaciones
+tuvieron pérdidas millonarias al ser excesivamente optimistas en la
+demanda esperada de servicios y desplegar redes sobre-dimensionadas, con
+capacidades que sencillamente excedían por mucho las necesidades de sus
+clientes. En cambio, con la aparición de las tabletas y los teléfonos
+inteligentes, muchas redes celulares se vieron en la necesidad de hacer
+inversiones no planeadas, para poder crecer la capacidad de sus redes.</p>
+<p>En proyectos de largo plazo tampoco es posible estimar con precisión las
+dinámicas de competencia entre operadores, la aparición de nuevos
+jugadores y modelos de negocio, como tampoco se puede estimar cómo
+evolucionará la tecnología y los costos asociados a ella.</p>
+<p>Para protegerse en cierta medida de estas fuentes de incertidumbre, es
+común agregar al análisis de valor presente neto, un factor de riesgo o
+<em>risk penalty</em> que va de cero (para organizaciones aversas al riesgo) a
+uno (para organizaciones que son tomadoras de riesgo.</p>
+<p>En el análisis de riesgos se suele considerar <em>distintos escenarios</em>,
+que se interpretan como posibles rutas de evolución de aspectos
+relevantes del proyecto. Éstos se presentan frecuentemente como tres
+rutas: El escenario tendencial, el cual considera que las condiciones
+actuales no cambiarán sustancialmente; el pesimista, en el que varios de
+los riesgos se materializan (por ejemplo, que en las comunidades rurales
+se acentúen los fenómenos de migración); y el optimista, en el que los
+factores clave del proyecto (como la penetración de mercado) evolucionan
+favorablemente.</p>
+<p>El diseño de escenarios deberá incluir al menos los cuatro elementos que
+se muestran a continuación:</p>
+<ul>
+<li><p><strong>Regulatorio</strong> Entorno que favorezca las condiciones de competencia, de fomento a la competencia y de protección a inversionistas: Número de competidores en los mercados de redes y servicios; participación de mercado de cada uno (índice HHI).</p></li>
+<li><p><strong>Ambiente</strong> Densidad de clientes potenciales en el área de cobertura; nivel socio-económico; porcentaje de ingresos dedicado a
+telecomunicaciones; espacios disponibles para despliegue de
+infraestructura; costos de arrendamiento, trámite de permisos, obra civil</p></li>
+<li><p><strong>Servicios</strong> Tipo de servicios demandados y potencialemnte demandados; tasas de penetración; niveles de alfabetización digital; tarifas de suscripción; modelos de negocio</p></li>
+<li><p><strong>Tecnologías</strong> Tecnologías disponibles; rutas esperadas de evolución tecnológica; costo de equipos de telecomunicaciones; de soporte y de usuario final; costos OA&amp;M</p></li>
+<li><p><strong>De mercado</strong> Un elemento esencial en los estudios de rentabilidad. Por supuesto, se
+debe identificar con la mayor precisión posible a qué población va
+dirigido el producto o servicio que se está deseando introducir al
+mercado.
+En redes de comunicaciones, podemos identificar varios segmentos de
+mercado con necesidades y patrones de consumo diferenciados. Tres
+segmentos típicos son:</p>
+<ul>
+<li><p><strong>El mercado residencial.</strong> Más orientado a consumo de contenidos, y por tanto, justifica la provisión de redes de acceso con velocidades asimétricas. Los periodos de máximo consumo en el sector residencial son de 19:00 a 22:00 horas.</p></li>
+<li><p><strong>El mercado corporativo.</strong> Es un mercado en el que las aplicaciones de misión crítica pueden depender de la disponibilidad de la red, por lo la red debe
+garantizar niveles de servicio (SLA) rigurosos. En este mercado
+también suele requerirse de un alto nivel de privacidad y seguridad, así como de tecnologías avanzadas, como VPNs y enlaces MPLS.</p></li>
+<li><p><strong>Pequeña y mediana empresa.</strong> Es un mercado que también demandará niveles de servicio y funcionalidades de red avanzadas, pero no tan rigurosas como las de los mercados corporativos. En cambio, es un mercado mucho mayor que el corporativo.</p></li>
+</ul></li>
+</ul>
+<p>Habiendo identificado los segmentos de mercado, deberá definirse su
+volumen. Para una zona de cobertura determinada, cuántos hogares habrá, cuántas unidades productivas pequeñas y medianas? es una zona donde existe alta densidad de corporativos? No basta con responder a estas preguntas con los datos presentes; en la medida de lo posible, se debe analizar el crecimiento (o decrecimiento) esperado, pues lo que se busca es estimar el número potencial de suscriptores a lo largo del tiempo de vida del proyecto.</p>
+<p>Estas cifras son las que definen las características demográficas de la región y distintos países las clasifican de distintas maneras. Por ejemplo, en Australia, un área urbana es aquella que tiene más de 200 habitantes por kilómetro cuadrado, mientras que en Canadá, el término se aplica para localidades con más de 400 habitantes por kilómetro cuadrado. Se trata de dos países con territorios muy grandes y con una densidad de población relativamente baja.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-46" class="example"><strong>Ejemplo 7.5  </strong></span>En México, la clasificación oficial y el porcentaje de población en cada
+categoría de acuerdo al censo 2008 del Instituto Nacional de Geografía y
+Estadística es la siguiente:</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><span class="math inline">\(\text{Habitantes}/\text{km}^2\)</span></th>
+<th align="center">Porcentaje</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alta densidad</td>
+<td align="center">12,000</td>
+<td align="center">26.4%</td>
+</tr>
+<tr class="even">
+<td>Densa</td>
+<td align="center">6,000</td>
+<td align="center">21%</td>
+</tr>
+<tr class="odd">
+<td>Urbana</td>
+<td align="center">1,000</td>
+<td align="center">7%</td>
+</tr>
+<tr class="even">
+<td>Suburbana</td>
+<td align="center">250</td>
+<td align="center">1.9%</td>
+</tr>
+<tr class="odd">
+<td>Semi rural</td>
+<td align="center">125</td>
+<td align="center">13.7%</td>
+</tr>
+<tr class="even">
+<td>Rural</td>
+<td align="center">30</td>
+<td align="center">8.2%</td>
+</tr>
+<tr class="odd">
+<td>Aislada</td>
+<td align="center">12</td>
+<td align="center">17.7%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La Ciudad de México, con <span class="math inline">\(5,800\,\text{hab}/\text{km}^2\)</span>, es considerada
+en su conjunto como zona densa, pero si se eliminan las Alcaldías de
+Xochimilco y Milpa Alta, se trata de una zona de alta densidad.</p>
+<hr />
+</div>
+<p>Además de los datos demográficos, el estudio de mercado debe contemplar
+el nivel socio-económico de los segmentos de mercado pues esto ayuda a
+determinar la capacidad de compra de los suscriptores, el tipo de
+servicios que potencialmente estarían demandando, las características de
+los equipos terminales que debieran ofrecerse, etcétera.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-47" class="example"><strong>Ejemplo 7.6  </strong></span><strong>Potencial de mercado en México</strong></p>
+<ul>
+<li><p>De acuerdo a la encuesta ENDUTIH 2017, en México había 71.3 millones
+de usuarios de Internet pero muchos de ellos no son usuarios
+regulares. Más importante aún, se tenían al menos 40.4 millones de
+ciudadanos sin acceso a Internet.</p></li>
+<li><p>En Estados como Baja California, Sonora y la Ciudad de México, el
+porcentaje de usuarios de internet rebasa el 77%, pero en Guerrero,
+Oaxaca y Chiapas, el porcentaje es menor a 50%. A nivel nacional,
+sólo el 39% de la pobalción rural tiene acceso a Internet.</p></li>
+<li><p>Por nivel socio-económico, 78% del quartil más alto accede a
+Internet; el porcentaje baja a 34% en el quartil más bajo de la
+población</p></li>
+<li><p>El porcentaje de hogares con acceso a Internet en zonas urbanas era
+ligeramente inferior al 50%, pero zonas rurales no llegaba al 10%,
+lo que nos coloca muy por debajo de países como Uruguay, Costa Rica
+y Chile en América Latina.</p></li>
+<li><p>De acuerdo a México Evalúa, sólo el 26% de las escuelas tenía acceso
+a Internet en ese año.</p></li>
+</ul>
+<p>Es una priodidad de la Administración actual abatir estas brechas de
+acceso (y uso, y apropiación) a Internet.</p>
+<p>Sin embargo, la demanda depende de la capacidad para poder pagar los
+servicios de telecomunicaciones. En 2006, el gasto promedio por hogar en
+servicios de TIC en los países de la OCDE, era de 2.3% de sus ingresos,
+mientras que en México oscilaba entre el 3% y el 6%.</p>
+<p>Martin Hilbert, un investigador muy reconocido en temas de brecha
+digital, considera que el umbral en el que las TIC transitan de ser un
+bien necesario a un bien de lujo, es de 10 USD por persona por mes. Con
+estas cifras, más de 15 millones de mexicanos jamás podrán acceder a
+Internet.</p>
+<hr />
+</div>
+<p>Otro elemento a considerar en el análisis de mercado, son las tasas de
+adopción tecnológica, pues ellas ayudan a tener un referente de los
+flujos de ingresos esperados, y de los puntos donde el mercado puede
+empezar a presentar condiciones de saturación. En la figura <a href="análisis-tecno-económico.html#fig:scurve">7.5</a>, la imagen de la izquierda muestra la típica curva "S" de
+absorción tecnológica y, a manera de ejemplo, la curva de la derecha
+muestra la penetración de Internet en los hogares mexicanos según INEGI.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:scurve"></span>
+<img src="figuras/c7/s-curve.jpg" alt="*Curva de absorción tecnológica*" width="45%" /><img src="figuras/c7/curvahogares.png" alt="*Curva de absorción tecnológica*" width="45%" />
+<p class="caption">
+Figura 7.5: <em>Curva de absorción tecnológica</em>
+</p>
+</div>
+<p>Se puede concluir que en México todavía hay un alto potencial de
+crecimiento... si las condiciones económicas lo permiten.</p>
+<p>La forma S de absorción tecnológica se basa en una teoría muy aceptada
+propuesta por Everett Rogers en 1962 (y actualizada en 2003). Si se
+acepta esta forma de difusión para analizar la penetración de la red a
+desplegar, también se debe aceptar el riesgo de que una nueva tecnología
+surja y desplace a la anterior antes de que alcance una masa crítica. Es
+una tímida referencia a la teoría de las <em>destrucciones creativas</em> de
+Joseph Schumpeter.</p>
+<p>Tratándose de un despliegue de red, al hacer el análisis demográfico
+también es conveniente incluir información relacionada con las
+características geográficas de la zona a atender. Ya se ha comentado en
+varias ocasiones que una región con una orografía muy accidentada, con
+zonas boscosas presentará retos de despliegue distintos a los que se
+presentan en un valle. Las zonas urbanas densas son particularmente
+complejas por la dificultad para desplegar infraestructura subterránea
+(para medios cableados) y por la pésima propagación de señales
+electromagnéticas en calles angostas con edificios altos (para medios
+inalámbricos).</p>
+<p>Por otro lado, el análisis de mercado debe incluir un análisis de la
+competencia. Como mínimo, debe identificarse el número, su participación
+de mercado, cuáles son sus estrategias y fuentes de ventaja competitiva,
+si existen o pueden imponer barreras de entrada y si el contexto
+regulatorio permite establecer alianzas de competencia y cooperación
+entre ellos.</p>
+<p>Al analizar el mercado de competencia en telecomunicaciones, se debe
+tomar en consideración que este sector presenta características
+similares a las de un Monopolio Natural. A excepción de algunos mercados
+en tecnologías de acceso altamente competidas, es muy frecuente
+encontrar un número muy pequeño (entre tres y cinco) de operadores
+establecidos.</p>
+<p>Por último, dado que en México como en muchos otros países el acceso a
+Internet se ha admitido como un Derecho Humano (de tercera generación),
+también debe contemplar, junto con el análisis de escenarios, modelos de
+incentivos, financiamiento alterno, u otro tipo de apoyos que
+contribuyan a reducir las barreras de entrada para el despliegue de
+infraestructura. Algunas estrategias que han probado su éxito en
+distintas latitudes son:</p>
+<ul>
+<li><p><strong>Facilidades de acceso a infraestructura</strong> La participación del Gobierno para fomentar el despliegue de infraestructura de red y promover su adopción puede darse en diversos ámbitos. Los acuerdos de compartición (que en México son obligatorios) pueden ayudar a reducir drásticamente los costos de despliegue, sobre todo en áreas rurales. En algunos países de Escandinavia se ha fomentado hasta la compartición de distintos elementos de la red.</p>
+<p>En México también se contempla que todos los edificios públicos que puedan hacerlo, se pondrán a disposición para montar sobre ellos infraestructura de telecomunicaciones. Por desgracia, esta
+iniciativa sólo es aplicable en el ámbito federal, mientras que los mayores retos para el despliegue de infraestructura se dan a nivel municipal.</p>
+<p>También está en manos del Estado el garantizar la disponibilidad de espectro para servicios de telecomunicaciones, así como el de facilitar los derechos de vía para el despliegue de infraestructura cableada.</p></li>
+<li><p><strong>Mercado competitivo</strong> Uno de los factores más importantes al analizar la competitividad de un país, es la fortaleza y estabilidad de sus instituciones. En este caso, los marcos regulatorios deben contribuir a garantizar que
+los operadores de redes pueden prestar sus servicios en condiciones de un mercado estable y equilibrado. Esa es la función principal del Instituto Federal de Telecomunicaciones. Así mismo, las instituciones legislativas y judiciales deben contribuir a asegurar
+la estabilidad de las grandes inversiones que se hagan en el país.</p></li>
+<li><p><strong>Mitigación de riesgos financieros</strong> Como se ha comentado, el despliegue de redes de telecomunicaciones de gran escala, conlleva fuertes inversiones en largos periodos de tiempo. Existen varias formas de mitigar los riesgos inherentes a este tipo de inversiones, como lo son las Asociaciones Público-Privadas (APP), que es la figura con la que se ha desplegado la Red Compartida en nuestro país, el acceder a financiamiento a través de las Bancas de Desarrollo nacionales o internacionales -sobre todo para proyectos de impacto social-, y el flexibilizar los modelos de concesionamiento y el pago de contraprestaciones.</p></li>
+</ul>
+</div>
+<div id="definición-de-servicios" class="section level4 unnumbered hasAnchor">
+<h4>Definición de servicios<a href="análisis-tecno-económico.html#definición-de-servicios" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una vez identificados los segmentos de mercado relevantes para el
+proyecto, se deben definir los servicios y las características para su
+aprovisionamiento en función del perfil de suscriptores en cada
+segmento.</p>
+<p>Esta es una tarea sumamente compleja pues en los últimos años los
+patrones de consumo de tráfico han cambiado radicalmente en todo el
+mundo tanto a nivel empresarial como en el segmento residencial.</p>
+<p>En 2007 se estimaban velocidades de acceso de 1 Mb/s para servicios
+residenciales y 2 Mb/s para el segmento PyME, con tasas de crecimiento
+de 20% anual. En ambos sectores, pero sobre todo en el segmento
+residencial, estas cifras han cambiado sustancialmente.</p>
+<p>Este cambio se explica por el surgimiento de nuevos dispositivos, una creciente transición a la provisión de servicios en la nube, nuevos modelos de negocio y nuevas formas de interacción en los llamados ecosistemas digitales.</p>
+<p>Por ejemplo, la figura <a href="análisis-tecno-económico.html#fig:evdisp">7.6</a> muestra cómo ha evolucionado el tipo de dispositivos en el hogar que requieren de servicios de acceso a Internet. La gráfica está tomada de un estudio reciente hecho por Ofcom, el regulador de telecomunicaciones del Reino Unido.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:evdisp"></span>
+<img src="figuras/c7/hhabstecno.JPG" alt="*Penetración de dispositivos en el hogar que requieren de acceso a Internet. Fuente: Ofcom*" width="50%" />
+<p class="caption">
+Figura 7.6: <em>Penetración de dispositivos en el hogar que requieren de acceso a Internet. Fuente: Ofcom</em>
+</p>
+</div>
+<p>En México, como en la mayoría de los países latinoamericanos más
+avanzados, suele observarse una penetración tecnológica similar con
+cinco años de desfase y con picos de absorción un poco más atenuados.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-48" class="example"><strong>Ejemplo 7.7  </strong></span>La consultora Pyramid Research estimó en 2009 el potencial de servicios demandados para México hasta 2014 como se muestra en la figura <a href="análisis-tecno-económico.html#fig:potsvc">7.7</a>. La realidad fue muy distinta a lo proyectado por los especialistas.</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:potsvc"></span>
+<img src="figuras/c7/estimamxpyramid.jpg" alt="Estimación de la evolución del mercado en México*" width="50%" />
+<p class="caption">
+Figura 7.7: Estimación de la evolución del mercado en México*
+</p>
+</div>
+<hr />
+<p>La demanda de ancho de banda ha crecido sustancialmente debido a la
+creciente importancia en el consumo de contenido de video. De acuerdo a
+estimaciones de Cisco, en 2017 el 70% del tráfico en Internet era video.</p>
+<p>La consultora WIK Consult toma algunos de estos datos y proyecta la
+estimación de ancho de banda de varios servicios para 2025. Los
+resultados se presentan en la siguiente tabla. Llama la atención el
+crecimiento de video (consistente con las estimaciones de Cisco) así
+como de consumo de juegos y e-servicios.</p>
+<p><img src="figuras/c7/tfccisco.png" width="95%" style="display: block; margin: auto;" /></p>
+<p>Por supuesto, el despliegue de estos servicios depende en gran medida de
+que las tecnologías para soportar este consumo estén listas y de que los
+suscriptores estén dispuestos a pagar por las capacidades ofertadas.</p>
+<p>El mismo estudio de WIK Consult presenta varios escenarios de absorción
+en los hogares del Reino Unido. En la siguiente tabla se muestran dos de
+ellos: A la izquierda, un escenario optimista con un pronóstico de alto
+consumo de ancho de banda, y a la derecha, uno un poco más conservador
+donde no se despliega masivamente el uso de contenidos 8K ni realidad
+virtual (excepto para videojuegos). Aún en el escenario conservador, se
+prevé que más del 50% de los hogares demandarán velocidades descendentes
+de al menos 300 Mb/s y 8% estarán preparados a contratar servicios de 1
+Gb/s.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-50">Tabla 7.1: </span>Estimación del porcentaje de demanda de ancho de banda en hogares en el Reino Unido en 2025</caption>
+<colgroup>
+<col width="73%" />
+<col width="12%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Demanda</th>
+<th align="center">Optimista</th>
+<th align="center">Conservador</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Muy alta (<span class="math inline">\(&gt;1Gb/s \downarrow\)</span>; <span class="math inline">\(600Mb/s \uparrow\)</span>)</td>
+<td align="center">40%</td>
+<td align="center">20%</td>
+</tr>
+<tr class="even">
+<td align="left">Alta (<span class="math inline">\(300 Mb/s -1Gb/s \downarrow\)</span>; <span class="math inline">\(300Mb/s - 600 Mb/s\uparrow\)</span>)</td>
+<td align="center">42%</td>
+<td align="center">56%</td>
+</tr>
+<tr class="odd">
+<td align="left">Baja (<span class="math inline">\(&lt; 300 Mb/s \downarrow\)</span>; <span class="math inline">\(&lt; 300 Mb/s \uparrow\)</span>)</td>
+<td align="center">10%</td>
+<td align="center">15%</td>
+</tr>
+<tr class="even">
+<td align="left">Sin banda ancha</td>
+<td align="center">7%</td>
+<td align="center">7%</td>
+</tr>
+</tbody>
+</table>
+<p>Para el segmento empresarial, sobre todo para el corporativo, la calidad
+de servicio debe ser una prioridad en el diseño de la red. En los
+acuerdos de nivel de servicio deben especificarse las características
+técnicas que el servicio debe cumplir.</p>
+<p>Para este segmento el factor de sobre-suscripción es nulo o muy bajo. El
+servicio a PyMEs puede ser más tolerante con el fin de reducir los
+costos de servicio. En el segmento residencial, sobre todo cuando la
+provisión de servicios se hace a través de cable, la sobre-suscripción
+suele alcanzar valores de 10 a 30.</p>
+<p>Finalmente, se debe tener una estimación de las tarifas a las que se
+pueden ofertar los servicios, pues esto determina los flujos de ingresos
+de la red. Es un ejercicio particularmente complejo pues los costos de
+servicios de telecomunicaciones han venido a la baja en los últimos
+años. Al mismo tiempo, los usuarios van demandando más capacidad y mayor
+calidad de las redes. Aunque este aumento en la demanda tienda a empujar
+el ARPU <em>Average Revenue per User</em> a la alza, la realidad es que en la
+mayoría de los países desarrollados, la presión competitiva ha sido
+dominante y las empresas de telecomunicaciones han visto una caída neta
+en su ARPU.</p>
+<p>Esto ha hecho que las empresas diversifiquen su oferta de servicios o
+que modifiquen sus modelos de negocio para mantener su rentabilidad. Un
+ejemplo de estas modificaciones es que son cada vez menos las empresas
+que absorben el costo del equipo terminal para ofrecerlo en
+arrendamiento a sus abonados.</p>
+</div>
+</div>
+<div id="despliegue-y-operación-de-la-red" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Despliegue y operación de la red<a href="análisis-tecno-económico.html#despliegue-y-operación-de-la-red" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A grandes rasgos, se puede decir que el análisis del mercado y de los
+servicios permite tener una estimación de los ingresos directos que
+tendrá la red. Para el análisis de factibilidad financiera, será
+necesario analizar los costos de adquisición, operación e implementación
+de la red.</p>
+<p>Por supuesto, estos costos dependen de las tecnologías, de la escala,
+las condiciones de cobertura, y de casi todo lo que se ha mencionado en
+este capítulo. A manera de ejemplo deberán tomarse en consideración,
+entre muchos otros factores:</p>
+<dl>
+<dt>Las bandas de frecuencia asignada</dt>
+<dd>
+<p>. El primer punto debe ser el análisis del costo por hertz, el
+tamaño del bloque asignado y la negociación para pagar los derechos
+de uso de ese bloque. Pero este es sólo uno de muchos otros
+factores. Por ejemplo, es muy probable que el bloque se encuentre
+rigurosamente acotado tanto en frecuencia como en área de cobertura.
+En este caso, se debe incluir equipo adicional para gestión de
+interferencia, control de potencia y monitoreo de ancho de banda.</p>
+</dd>
+<dt>Componentes</dt>
+<dd>
+<p>. Se deben incluir todos los componentes que conforman la red:
+Estaciones base, elementos para las redes de acceso, backhaul y red
+dorsal, equipo en las premisas del cliente <em>CPE, Customer Premises
+Equipment</em> y sus posibles costos de instalación, etcétera. Este
+análisis debe hacerse con todo detalle, aunque para fines didácticos
+en esta sección únicamente se consideran los componentes
+principales.</p>
+</dd>
+<dt>Elementos de servicio.</dt>
+<dd>
+<p>Aquí se incluyen todos los gastos indirectos relacionados con la
+provisión de servicios de la red, casi todos vinculados con los
+costos de operación. Elementos como marketing, ventas, OA&amp;M,
+arrendamiento de sitios, licenciamiento de software, equipos y
+espectro(de ser el caso), costos de interconexión, entre otros.</p>
+<p>Dado que los despliegues de red responden a estimaciones de
+penetración y al calendario establecido en el plan maestro, las
+tasas reales de penetración deben ser estimadas para poder
+planificar los gastos de implementación y la evolución de los gastos
+de servicio</p>
+</dd>
+</dl>
+<p>En esta sección se utilizará como hilo conductor el despliegue de una
+red WiMAX IEEE 802.16 para ofrecer servicios de acceso a Internet. Está
+fuertemente inspirado en los trabajos de Smura et al. (2008)<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.</p>
+<p>Antes de entrar en el ejemplo, conviene recordar que una red se diseña
+con base en la cobertura deseada, en la capacidad requerida o en una
+combinación de ambas.</p>
+<p>El bloque de frecuencias asignadas a un operador móvil suele dividirse
+en sectores. La capacidad (en b/s) de un sector depende de:</p>
+<ul>
+<li><p>El ancho de banda disponible, es decir, del tamaño del bloque del
+sector</p></li>
+<li><p>Las bandas de frecuencia, pues unas frecuencias son más susceptibles
+a interferencias que otras</p></li>
+<li><p>La eficiencia de la modulación espectral, es decir, de la cantidad
+de bits que pueden inyectarse en cada baudio</p></li>
+<li><p>Las condiciones ambientales, tanto por las interferencias generadas
+por objetos como bosques y edificios, como -en nuestro caso- por el
+hecho de que el equipo terminal (o su antena) se encuentren en el
+interior o en el exterior de edificios y si se tiene o no línea de
+vista con la radio base.</p></li>
+<li><p>Los protocolos de red. Como sabemos, las dinámicas de los protocolos
+de comunicaciones en las capas superiores, pueden afectar
+drásticamente la capacidad real de la red.</p></li>
+</ul>
+<p>Sin entrar en detalles técnicos, si en 2011 se estimaba que una celda
+debía ofrecer 1 Mb/s por <span class="math inline">\(\text{km}^2\)</span> y, como se ha mencionado en la
+sección anterior, la tendencia esperada es de 100 a 1000
+<span class="math inline">\(\text{Mbps}/\text{km}^2\)</span>, el radio medio de una celda 3G/HSDPA debería
+ser de unos 500 metros; los despliegues de redes celulares están
+transitando de macro a micro-celdas.</p>
+<p>En las redes IEEE 802.16 cada equipo receptor (cada CPE) puede elegir su
+propio esquema de modulación. A mayor distancia, tiende a usarse un
+modulador más robusto, como se muestra en la figura <a href="análisis-tecno-económico.html#fig:moddist">7.8</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:moddist"></span>
+<img src="figuras/c7/modulrobusto.jpg" alt="*Modulación vs distancia para distintos escenarios*" width="750%" />
+<p class="caption">
+Figura 7.8: <em>Modulación vs distancia para distintos escenarios</em>
+</p>
+</div>
+<p>La figura <a href="análisis-tecno-económico.html#fig:moddist">7.8</a> se estima para un sector de 7 MHz en la banda de frecuencia de 3.5 GHz. También muestra cómo la capacidad del sector disminuye con las condiciones del entorno: Los despliegues en el exterior tienen mayor que capacidad que aquéllos con el CPE en el interior y los despliegues urbanos, en esa banda de frecuencia, tienen una degradación mucho mayor que los despliegues suburbanos.</p>
+<p>En un entorno urbano con CPEs en el interior de los hogares, si la radio base está a 750 metros se distancia, se podrá ofrecer una velocidad de 10 Mbps con un Códec BPSK; sólo podrá ofrecer la velocidad máxima de 25 Mbps en aproximadamente el 40% del área de cobertura.</p>
+<p>La siguiente tabla las coberturas máximas en kilómetros para WiMAX con bloques de 7 MHz en dos bandas de frecuencia distintas para ambientes donde el CPE se encuentra en el exterior, en el interior y en el exterior, puede tener línea de vista (LOS) hacia la radio base, o no tenerla (NLOS).</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="center">Zona</th>
+<th align="center">Urbano</th>
+<th></th>
+<th align="center">Suburbano</th>
+<th></th>
+<th align="center">Rural</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Banda</td>
+<td align="center">2.5 GHz</td>
+<td>3.5 GHz</td>
+<td align="center">2.5 GHz</td>
+<td>3.5 GHz</td>
+<td align="center">2.5 GHz</td>
+<td>3.5 GHz</td>
+</tr>
+<tr class="even">
+<td align="center">NLOS CPE interior</td>
+<td align="center">0.83</td>
+<td>0.7</td>
+<td align="center">1.02</td>
+<td>0.85</td>
+<td align="center">–</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td align="center">NLOS CPE exterior</td>
+<td align="center">2.40</td>
+<td>2.00</td>
+<td align="center">3.25</td>
+<td>2.70</td>
+<td align="center">–</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td align="center">LOS CPE exterior</td>
+<td align="center">–</td>
+<td>–</td>
+<td align="center">–</td>
+<td>–</td>
+<td align="center">12.0</td>
+<td>10.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En el estudio, el único escenario en el que se consideran enlaces con línea de vista, es un despliegue rural en el que se ponen pequeñas antenas rectangulares, como la de la figura <a href="análisis-tecno-económico.html#fig:antlos">7.9</a>, en las azoteas o en los balcones de los hogares.</p>
+<p>Una arquitectura similar se utilizó en México para ofrecer servicios de telefonía y datos en zonas rurales en la banda de 450 MHz a través del Fondo de Cobertura Social.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:antlos"></span>
+<img src="figuras/c7/antenawimax.jpeg" alt="*Antena residencial para enlaces con (casi) línea de vista*" width="40%" />
+<p class="caption">
+Figura 7.9: <em>Antena residencial para enlaces con (casi) línea de vista</em>
+</p>
+</div>
+<p>En la figura <a href="análisis-tecno-económico.html#fig:wimaxc">7.10</a> se muestra una arquitectura muy general de una red WiMAX.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:wimaxc"></span>
+<img src="figuras/c7/componenteswimax.jpg" alt="*Principales componentes de una arquitectura de red WiMax*" width="70%" />
+<p class="caption">
+Figura 7.10: <em>Principales componentes de una arquitectura de red WiMax</em>
+</p>
+</div>
+<p>De estos componentes, sólo se tomarán en consideración los relacionados
+con la red inalámbrica para el análisis de costos, y casi exclusivamente
+tomaremos costos de adquisición y, para estimación de Impex, se
+mencionan los porcentajes de reducción de costos en algunos equipos.</p>
+<p>En la tabla siguiente los costos promedio de los componentes para una
+red WiMAX a 3.5 GHz con seis sectores por radio base. Los precios
+presentados son los costos promedio de esos equipos en Europa en 2006.
+El despliegue se hizo en un país nórdico y el CPE era adquirido por el
+operador y arrendado al cliente.</p>
+<p><img src="figuras/c7/costoeq.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Aunque el CPE en exterior es mucho más caro que el CPE en interiores
+($100 USD del equipo más $100 USD de la instalación), se necesitarían
+menos radio bases para despliegues iniciales, sobre todo en entornos
+rurales y suburbanos, como se mostrará más adelante.</p>
+<p>Como referencia <em>muy imprecisa</em> porque se trata de redes con
+características distintas, en la siguiente tabla se presentan los costos estimados por Del Villar (2009) para un despliegue de una red WiMAX en la banda de 2.5 GHz en México.</p>
+<p><img src="figuras/c7/costomx.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>A pesar de que se trata de redes con muchas diferencias (en particular,
+las fechas del estudio, las bandas de frecuencia y las tecnologías y
+topologías del backhaul, que no se incluyen en el estudio) se muestran
+en azul algunos puntos que conviene resaltar.</p>
+<p>En primer lugar, los costos de la estación base, de los sectores y los
+descuentos anuales esperado son muy distintos en el estudio de Smura
+para un país nórdico, y el de Del Villar para México. Desgraciadamente,
+la causa principal de estas diferencias se explica porque en la región
+nórdica se genera la tecnología, mientras que en América Latina ésta se
+adquiere y se consume.</p>
+<p>Con relación a los costos de arrendamiento de los sitios, son dos las
+causas principales de las diferencias. En primer lugar, el estudio de
+Smura contempla mayoritariamente despliegues suburbanos y rurales, donde
+el costo de la propiedad es mucho menor. En segundo, y sobre todo, en el
+país nórdico la co-ubicación y compartición de infraestructura era
+exigida por ley. En México, hoy se tiene la misma regulación, pero en la
+época del estudio de Del Villar, cada operador debía conseguir y
+arrendar sus propios sitios.</p>
+<p>Finalmente, los costos de operación en México son notablemente más bajos
+que en el estudio de Smura (aunque solamente se están considerando los
+costos asociados al backhaul). Esto refleja la gran diferencia en
+salarios y costos de capital humano entre los países de América Latina y
+los del norte de Europa.</p>
+<p>Ha llegado el momento de integrar toda la información recabada a lo
+largo del estudio, para determinar cuántos componentes de red serán
+necesarios para su despliegue.</p>
+<p>En la siguiente tabla se presentan tres de los escenarios analizados por
+Smura: Despliegues urbanos en la banda 3.5 GHz para zonas con densidades
+de población de 2,000, 1,000 y 500 habitantes por <span class="math inline">\(\text{km}^2\)</span>. En
+todos los casos, se busca cubrir una población objetivo de 50,000
+hogares. Para el bloque de frecuencias asignado, se estima que un sector
+puede ofrecer en promedio 15 Mb/s y que una radio base puede tener hasta seis sectores.</p>
+<p><img src="figuras/c7/scensmura.png" width="85%" style="display: block; margin: auto;" /></p>
+<p>La tabla muestra un escenario de penetración en el que se cubre el 100%
+de la población objetivo en cinco años. Aunque en el estudio no se
+menciona, se puede suponer que la tecnología desplegada se adapta a las
+necesidades crecientes de la población durante ese periodo de tiempo.
+Hay varios puntos a resaltar.</p>
+<ul>
+<li><p>Se pueden observar las limitaciones de capacidad y ancho de banda.
+Sabemos que con la banda de 3.5 GHz, la cobertura es baja. Por ello,
+en la región con la menor densidad de población (tercer escenario)
+se requiere de más estaciones base y más sectores.</p></li>
+<li><p>Conforme el número de abonados va en aumento, se debe aumentar el
+número de radio bases (y por consiguiente, el número de sectores).
+Sin embargo, en el escenario de alta densidad (2000) el número de
+radio bases crece cinco veces, mientras que en el de baja
+densidad (500) crece al doble. Esto se explica por el gran número de
+radio bases que se tuvo que desplegar desde un inicio.</p></li>
+<li><p>Con un número mayor de radio bases, la distancia media entre el CPE
+y la radio base disminuye. Esto permite tener modulaciones con mayor
+densidad espectral.</p></li>
+</ul>
+<div id="análisis-financiero" class="section level4 hasAnchor" number="7.3.2.1">
+<h4><span class="header-section-number">7.3.2.1</span> Análisis financiero<a href="análisis-tecno-económico.html#análisis-financiero" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>De la sección anterior se obtiene el número de componentes estimados
+para desplegar la red conforme al plan maestro. También se identificaron
+los costos de equipos, arrendamiento, licenciamiento y gastos de
+operación, entre otros.</p>
+<p>Para llevar a cabo el análisis financiero, en esta etapa se requiere
+definir el valor de los principales parámetros financieros, como las
+tasas de interés, la tasa de descuento para el análisis de valor
+presente, las tasas fiscales y de depreciación, etcétera.</p>
+<p>El análisis financiero reportará algunas de las métricas que se
+presentaron al inicio de este capítulo, como el costo total de
+propiedad, la tasa interna de retorno, y la utilidad a valor presente
+neto.</p>
+<p>Las gráficas en la figura <a href="análisis-tecno-económico.html#fig:cashflow3">7.11</a> presentan los flujos de capital a valor presente
+de los escenarios analizados por Smura bajo los siguientes supuestos:</p>
+<ul>
+<li><p>No se consideran costos administrativos ni pago de frecuencias ni
+gastos de interconexión</p></li>
+<li><p>Los CPE son adquiridos por el operador y arrendado a los usuarios</p></li>
+<li><p>Los ARPU mensuales considerados eran de 30 USD para el usuario
+residencial y de 200 USD para el comercial.</p></li>
+<li><p>Se consideran dos bandas de frecuencia. Bandas a 2.5 GHz con bloques
+de 5.5 MHz y bandas a 3.5 GHZ con bloques de 7 MHz.</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cashflow3"></span>
+<img src="figuras/c7/cfurb.jpg" alt="*Flujos de capital a valor presente para los escenarios evaluados por Smura*" width="32%" /><img src="figuras/c7/cfsuburb.png" alt="*Flujos de capital a valor presente para los escenarios evaluados por Smura*" width="32%" /><img src="figuras/c7/cfrural.png" alt="*Flujos de capital a valor presente para los escenarios evaluados por Smura*" width="32%" />
+<p class="caption">
+Figura 7.11: <em>Flujos de capital a valor presente para los escenarios evaluados por Smura</em>
+</p>
+</div>
+<p><img src="figuras/c7/tabcashflow3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>En áreas urbanas con mayor densidad poblacional, se tienen VPN
+claramente positivos, aunque con densidades de 500 hogares por
+<span class="math inline">\(\text{km}^2\)</span>, la rentabilidad se empieza a ver amenazada. Por la misma
+razón, en los escenarios suburbanos es limitadamente rentable sólo para
+áreas de 200 hogares por <span class="math inline">\(\text{km}^2\)</span>. En los demás casos, el ingreso
+esperado por los relativamente pocos abonados, no cubre los gastos de
+despliegue a valor presente.</p>
+<p>El análisis de las zonas rurales es de llamar la atención: En todos los
+casos el proyecto tiene alta rentabilidad a valor presente y periodos de
+recuperación muy cortos. Lo que ocurre es que a pesar de que hay muy
+poca población atendida, también se despliegan pocas celdas, pues éstas
+nunca se saturan.</p>
+<p>En las áreas urbanas y rurales, los despliegues en la banda de 3.5 GHz
+con bloques de 7 MHz resultan más rentables que los despliegues de 2.5
+GHz con bloques de 5.5 MHz. Aunque esta última frecuencia tiene mayor
+cobertura, su capacidad más limitada requiere que se desplieguen más
+celdas. En el caso suburbano, hay una densidad menor y se puede
+aprovechar mejor la cobertura de la banda a 2.5 GHz.</p>
+<p>Algunos de los supuestos en el análisis anterior son muy aventurados. No
+considerar costos administrativos, pago de concesión de frecuencias o
+costos de interconexión, pone en grave riesgo la viabilidad del
+proyecto. En este ejercicio se omiten únicamente para simplificar el
+ejemplo.</p>
+<p>De manera similar, es aventurado suponer que en las comunidades rurales
+se puede tener el mismo ARPU que en los entornos urbanos, o que el CPE
+se pueda adquirir al mayoreo a un determinado precio que se recuperará
+con su arrendamiento a los abonados.</p>
+<p>Por estas razones, los análisis financieros deben incluir un análisis de
+sensibilidad. Este análisis consiste en seleccionar aquellas variables
+en las que el cambio en los valores supuestos, pueden tener un fuerte
+impacto en el resultado del análisis.</p>
+<p>Para el ejemplo que se ha estado analizando, las tres variables clave
+que fueron consideras son el ARPU, el costo del CPE (y su instalación,
+si es en exterior) y el costo de los elementos de la radio base (BS,
+<em>Base Station</em>). En las gráficas de la figura <a href="análisis-tecno-económico.html#fig:sens3">7.12</a> se muestran los resultados
+para tres de los escenarios analizados. En el extremo izquierdo se
+presenta el urbano a 3.5 GHz con una densidad de 1,000 habitantes por
+<span class="math inline">\(\text{km}^2\)</span>; al centro el suburbano a 3.5 GHz con 100
+hab/<span class="math inline">\(\text{km}^2\)</span> y a la derecha el rural a 3.5 GHz con 10
+hab/<span class="math inline">\(\text{km}^2\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sens3"></span>
+<img src="figuras/c7/sensurb.jpg" alt="*Análisis de sensibilidad para los tres escenarios*" width="32%" /><img src="figuras/c7/sensuburb.png" alt="*Análisis de sensibilidad para los tres escenarios*" width="32%" /><img src="figuras/c7/sensrural.png" alt="*Análisis de sensibilidad para los tres escenarios*" width="32%" />
+<p class="caption">
+Figura 7.12: <em>Análisis de sensibilidad para los tres escenarios</em>
+</p>
+</div>
+<p>Las líneas continuas sólidas corresponden las variaciones en el ARPU, las punteadas rojas a variaciones en el costo del CPE y las punteadas verdes a variaciones en el costo de la BS.</p>
+<p>Para entender estas curvas, tomemos, por ejemplo, el escenario urbano con 1000 habitantes. En la tabla anterior se había estimado un VPN de 0.695 M€ al cabo de cinco años. Ese es el punto en el que convergen las tres líneas con los supuestos de ARPU, CPE y BS considerados.</p>
+<p>Si el ARPU disminuye, por ejemplo porque las condiciones de mercado
+hacen que no se pueda cobrar más que el 90% del estimado original (es decir, una disminución del 10% en el ARPU), entonces el VPN llegaría prácticamente a cero. En cambio, si logra aumentar el ARPU a 20% más de lo estimado, el VPN subiría hasta aproximadamente 1.4 M€.</p>
+<p>El análisis de sensibilidad nos dice que el ARPU es la variable que más influye en el análisis de factibilidad financiera. Esto es
+particularmente cierto en el escenario rural pues con muy pocos
+usuarios, cualquier cambio en el costo de los servicios tendrá un fuerte impacto en los ingresos de la empresa.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="19">
+<li id="fn19"><p>1Los ejemplos en esta sección son sumamente triviales con el fin de asimilar el concepto sin perdernos en los detalles. Una estimación de TCO formal tomaría en consideración muchos más elementos.<a href="análisis-tecno-económico.html#fnref19" class="footnote-back">↩︎</a></p></li>
+<li id="fn20"><p>Los costos en este ejemplo están en dólares americanos y fueron estimados a valor de mercado en 2007.<a href="análisis-tecno-económico.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>T. Smura, H. Hämmäinen, T. Rokkas and D. Katsianis, <em>Technoeconomic analysis of fixed WiMAX network
+deployments, in Mobile WiMAX – Toward Broadband Wireless Metropolitan Area Networks</em>, New
+York: Auerbach Publications, 2008.<a href="análisis-tecno-económico.html#fnref21" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tecnologías-de-acceso.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="respuestas-a-problemas-seleccionados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-TecnoEco.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown_DisArqRedes.pdf", "bookdown_DisArqRedes.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

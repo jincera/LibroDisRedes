@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Diseño y Arquitectura de Redes</title>
+  <meta name="description" content="Primer intento para hacer las notas en html" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Diseño y Arquitectura de Redes" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/figuras/dar.jpg" />
+  <meta property="og:description" content="Primer intento para hacer las notas en html" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Diseño y Arquitectura de Redes" />
+  
+  <meta name="twitter:description" content="Primer intento para hacer las notas en html" />
+  <meta name="twitter:image" content="/figuras/dar.jpg" />
+
+<meta name="author" content="José Incera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="metodología-de-diseño-de-redes.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diseño y Arquitectura de Redes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html"><i class="fa fa-check"></i><b>1</b> Metodología de diseño de redes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#introducción"><i class="fa fa-check"></i><b>1.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#por-qué-una-empresa-desea-una-red"><i class="fa fa-check"></i>¿Por qué una empresa desea una red?</a></li>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#fracasos-en-proyectos-de-tecnología-de-información"><i class="fa fa-check"></i>Fracasos en proyectos de tecnología de información</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#diseño-descendente"><i class="fa fa-check"></i><b>1.2</b> Diseño descendente</a></li>
+<li class="chapter" data-level="1.3" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#microsoft-solutions-framework"><i class="fa fa-check"></i><b>1.3</b> Microsoft Solutions Framework</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#modelo-de-proceso"><i class="fa fa-check"></i><b>1.3.1</b> Modelo de proceso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#análisis-de-riesgos"><i class="fa fa-check"></i><b>1.4</b> Análisis de riesgos</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#manejo-de-riesgos"><i class="fa fa-check"></i><b>1.4.1</b> Manejo de Riesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#problemas"><i class="fa fa-check"></i><b>1.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html"><i class="fa fa-check"></i><b>2</b> Requerimientos técnicos. Compromisos y restricciones</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#escalabilidad"><i class="fa fa-check"></i><b>2.1</b> Escalabilidad</a></li>
+<li class="chapter" data-level="2.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#disponibilidad"><i class="fa fa-check"></i><b>2.2</b> Disponibilidad</a></li>
+<li class="chapter" data-level="2.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#confiabilidad"><i class="fa fa-check"></i><b>2.3</b> Confiabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#desempeño"><i class="fa fa-check"></i><b>2.4</b> Desempeño</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ancho-de-banda"><i class="fa fa-check"></i><b>2.4.1</b> Ancho de banda</a></li>
+<li class="chapter" data-level="2.4.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#utilización"><i class="fa fa-check"></i><b>2.4.2</b> Utilización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#rendimiento"><i class="fa fa-check"></i><b>2.4.3</b> Rendimiento</a></li>
+<li class="chapter" data-level="2.4.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#tasa-de-error"><i class="fa fa-check"></i><b>2.4.4</b> Tasa de error</a></li>
+<li class="chapter" data-level="2.4.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#eficiencia"><i class="fa fa-check"></i><b>2.4.5</b> Eficiencia</a></li>
+<li class="chapter" data-level="2.4.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#retardo-y-variabilidad"><i class="fa fa-check"></i><b>2.4.6</b> Retardo y variabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#seguridad"><i class="fa fa-check"></i><b>2.5</b> Seguridad</a></li>
+<li class="chapter" data-level="2.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#administración"><i class="fa fa-check"></i><b>2.6</b> Administración</a></li>
+<li class="chapter" data-level="2.7" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#facilidad-de-uso"><i class="fa fa-check"></i><b>2.7</b> Facilidad de uso</a></li>
+<li class="chapter" data-level="2.8" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#adaptabilidad"><i class="fa fa-check"></i><b>2.8</b> Adaptabilidad</a></li>
+<li class="chapter" data-level="2.9" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#costo-beneficio"><i class="fa fa-check"></i><b>2.9</b> Costo-beneficio</a></li>
+<li class="chapter" data-level="2.10" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#conflictos-entre-requerimientos"><i class="fa fa-check"></i><b>2.10</b> Conflictos entre requerimientos</a></li>
+<li class="chapter" data-level="2.11" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#otras-métricas-relevantes"><i class="fa fa-check"></i><b>2.11</b> Otras métricas relevantes</a></li>
+<li class="chapter" data-level="2.12" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#problemas-1"><i class="fa fa-check"></i><b>2.12</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><i class="fa fa-check"></i><b>3</b> Caracterización de la red y del tráfico generado por las aplicaciones</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-la-topología"><i class="fa fa-check"></i><b>3.1</b> Caracterización de la topología</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#mapa-de-la-red"><i class="fa fa-check"></i><b>3.1.1</b> Mapa de la red</a></li>
+<li class="chapter" data-level="3.1.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#asignación-de-nombres-y-direcciones"><i class="fa fa-check"></i><b>3.1.2</b> Asignación de nombres y direcciones</a></li>
+<li class="chapter" data-level="3.1.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-los-medios-de-transmisión"><i class="fa fa-check"></i><b>3.1.3</b> Caracterización de los medios de transmisión</a></li>
+<li class="chapter" data-level="3.1.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#restricciones-ambientales-y-arquitectónicas"><i class="fa fa-check"></i><b>3.1.4</b> Restricciones ambientales y arquitectónicas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#desempeño-de-la-red-actual"><i class="fa fa-check"></i><b>3.2</b> Desempeño de la red actual</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#herramientas-de-recolección"><i class="fa fa-check"></i><b>3.2.1</b> Herramientas de recolección</a></li>
+<li class="chapter" data-level="3.2.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#periodo-y-frecuencia-de-recolección"><i class="fa fa-check"></i><b>3.2.2</b> Periodo y frecuencia de recolección</a></li>
+<li class="chapter" data-level="3.2.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#algunas-métricas-de-desempeño"><i class="fa fa-check"></i><b>3.2.3</b> Algunas métricas de desempeño</a></li>
+<li class="chapter" data-level="3.2.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#presentación-de-resultados"><i class="fa fa-check"></i><b>3.2.4</b> Presentación de resultados</a></li>
+<li class="chapter" data-level="3.2.5" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#análisis-estadístico-de-redes"><i class="fa fa-check"></i><b>3.2.5</b> Análisis estadístico de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-flujo"><i class="fa fa-check"></i><b>3.3</b> Caracterización del flujo</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tipos-de-flujo-por-aplicación"><i class="fa fa-check"></i><b>3.3.1</b> Tipos de flujo por aplicación</a></li>
+<li class="chapter" data-level="3.3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-volumen-de-tráfico"><i class="fa fa-check"></i><b>3.3.2</b> Caracterización del volumen de tráfico</a></li>
+<li class="chapter" data-level="3.3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#requerimientos-de-calidad-de-servicio"><i class="fa fa-check"></i><b>3.3.3</b> Requerimientos de calidad de servicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#problemas-2"><i class="fa fa-check"></i><b>3.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html"><i class="fa fa-check"></i><b>4</b> Diseño lógico de la red</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología"><i class="fa fa-check"></i><b>4.1</b> Diseño de la topología</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-plana"><i class="fa fa-check"></i><b>4.1.1</b> Topología plana</a></li>
+<li class="chapter" data-level="4.1.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-jerárquico"><i class="fa fa-check"></i><b>4.1.2</b> Diseño jerárquico</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-capa-de-acceso"><i class="fa fa-check"></i><b>4.2</b> Diseño de la capa de acceso</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problema-de-localización-asignación"><i class="fa fa-check"></i><b>4.2.1</b> Problema de Localización-asignación</a></li>
+<li class="chapter" data-level="4.2.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#asignación-de-nodos-a-concentradores"><i class="fa fa-check"></i><b>4.2.2</b> Asignación de nodos a concentradores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-de-nodos-a-concentrador"><i class="fa fa-check"></i><b>4.2.3</b> Topología de nodos a concentrador</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#capa-de-distribución"><i class="fa fa-check"></i><b>4.3</b> Capa de distribución</a></li>
+<li class="chapter" data-level="4.4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-red-dorsal"><i class="fa fa-check"></i><b>4.4</b> Diseño de la red dorsal</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología-1"><i class="fa fa-check"></i><b>4.4.1</b> Diseño de la topología</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-basado-en-bloques-modulares"><i class="fa fa-check"></i><b>4.5</b> Diseño basado en bloques modulares</a></li>
+<li class="chapter" data-level="4.6" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#s:redundancia"><i class="fa fa-check"></i><b>4.6</b> Topologías con redundancia</a></li>
+<li class="chapter" data-level="4.7" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problemas-3"><i class="fa fa-check"></i><b>4.7</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="administración-de-redes.html"><a href="administración-de-redes.html"><i class="fa fa-check"></i><b>5</b> Administración de redes</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#evolución-de-administración-de-sistemas"><i class="fa fa-check"></i><b>5.1</b> Evolución de administración de sistemas</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-fallas"><i class="fa fa-check"></i><b>5.1.1</b> Gestión de fallas</a></li>
+<li class="chapter" data-level="5.1.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-configuración"><i class="fa fa-check"></i><b>5.1.2</b> Gestión de configuración</a></li>
+<li class="chapter" data-level="5.1.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-seguridad"><i class="fa fa-check"></i><b>5.1.3</b> Gestión de seguridad</a></li>
+<li class="chapter" data-level="5.1.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-rendimiento"><i class="fa fa-check"></i><b>5.1.4</b> Gestión de rendimiento</a></li>
+<li class="chapter" data-level="5.1.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#contabilidad-de-recursos"><i class="fa fa-check"></i><b>5.1.5</b> Contabilidad de recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#protocolos-de-administración"><i class="fa fa-check"></i><b>5.2</b> Protocolos de administración</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-administración-osi"><i class="fa fa-check"></i><b>5.2.1</b> Modelo de administración OSI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-gestión-ietf"><i class="fa fa-check"></i><b>5.2.2</b> Modelo de gestión IETF</a></li>
+<li class="chapter" data-level="5.2.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#simple-network-management-protocol"><i class="fa fa-check"></i><b>5.2.3</b> Simple Network Management Protocol</a></li>
+<li class="chapter" data-level="5.2.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#base-de-datos-de-información-de-administración-mib"><i class="fa fa-check"></i><b>5.2.4</b> Base de datos de información de administración (MIB)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#rmon"><i class="fa fa-check"></i><b>5.3</b> RMON</a></li>
+<li class="chapter" data-level="5.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#administración-de-sistemas-con-snmp"><i class="fa fa-check"></i><b>5.4</b> Administración de sistemas con SNMP</a></li>
+<li class="chapter" data-level="5.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#problemas-4"><i class="fa fa-check"></i><b>5.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html"><i class="fa fa-check"></i><b>6</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#cobertura-de-internet"><i class="fa fa-check"></i><b>6.1</b> Cobertura de Internet</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#red-de-acceso"><i class="fa fa-check"></i><b>6.1.1</b> Red de acceso</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#contexto-de-internet-y-servicios-de-banda-ancha-en-méxico"><i class="fa fa-check"></i><b>6.1.2</b> Contexto de Internet y servicios de Banda Ancha en México</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#banda-ancha"><i class="fa fa-check"></i><b>6.1.3</b> Banda Ancha</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-1"><i class="fa fa-check"></i><b>6.2</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-cableadas"><i class="fa fa-check"></i><b>6.2.1</b> Tecnologías de acceso cableadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-inalámbricas"><i class="fa fa-check"></i><b>6.3</b> Tecnologías de acceso inalámbricas</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#telefonía-celular"><i class="fa fa-check"></i><b>6.3.1</b> Telefonía celular</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#problemas-5"><i class="fa fa-check"></i><b>6.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html"><i class="fa fa-check"></i><b>7</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#introducción-1"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#métricas-financieras"><i class="fa fa-check"></i><b>7.2</b> Métricas financieras</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#costo-total-de-propiedad"><i class="fa fa-check"></i><b>7.2.1</b> Costo total de propiedad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#retorno-de-inversión"><i class="fa fa-check"></i><b>7.2.2</b> Retorno de inversión</a></li>
+<li class="chapter" data-level="7.2.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#valor-presente-neto"><i class="fa fa-check"></i><b>7.2.3</b> Valor Presente Neto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-tecno-económico-1"><i class="fa fa-check"></i><b>7.3</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-de-rentabilidad"><i class="fa fa-check"></i><b>7.3.1</b> Análisis de rentabilidad</a></li>
+<li class="chapter" data-level="7.3.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#despliegue-y-operación-de-la-red"><i class="fa fa-check"></i><b>7.3.2</b> Despliegue y operación de la red</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html"><i class="fa fa-check"></i><b>8</b> Respuestas a problemas seleccionados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#S:Metod"><i class="fa fa-check"></i><b>8.1</b> Metodología de diseño de redes</a></li>
+<li class="chapter" data-level="8.2" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:ReqTec"><i class="fa fa-check"></i><b>8.2</b> Requerimientos técnicos</a></li>
+<li class="chapter" data-level="8.3" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:CaracRed"><i class="fa fa-check"></i><b>8.3</b> Caracterización de la red</a></li>
+<li class="chapter" data-level="8.4" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:DisLog"><i class="fa fa-check"></i><b>8.4</b> Diseño lógico</a></li>
+<li class="chapter" data-level="8.5" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:Admon"><i class="fa fa-check"></i><b>8.5</b> Administración de Redes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diseño y Arquitectura de Redes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Diseño y Arquitectura de Redes</h1>
+<p class="author"><em>José Incera</em></p>
+<p class="date"><em>Noviembre, 2022</em></p>
+</div>
+<div id="presentación" class="section level1 unnumbered hasAnchor">
+<h1>Presentación<a href="index.html#presentación" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="figuras/dar.jpg" width="80%" style="display: block; margin: auto;" /></p>
+<p>Este documento contiene el material de apoyo para el curso Diseño y Arquitectura de
+Redes que se imparte en el Instituto Tecnológico Autónomo de México.
+La estructura del material en la primera parte sigue básicamente la propuesta de diseño descendente presentada por Priscilla Oppenheimer<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> la cual ha sido ampliada y complementada con otras referencias bibliográficas, y a partir de nuestra propia experiencia profesional.</p>
+<p>En la segunda parte se presentan algunas tecnologías para el diseño de redes de acceso y de transporte. También se introducen nuevas tecnologías de redes definidas por software.</p>
+<p>En la tercera parte se presenta material para analizar la viabilidad financiera de un proyecto de redes.</p>
+<p>El material ha sido integrado a lo largo de varios años de impartir estas materias en los niveles de licenciatura, maestría y diplomado. En él han participado varios profesores, entre los que cabe destacar: Dr. Uciel Fragoso, Dr. José A. Incera, Dr. Marcelo Mejía, Mtro. Javier Salido y Mtro. Enrique Weitzel.</p>
+<p>Este libro ha sido escrito en <a href="http://rmarkdown.rstudio.com/">RMarkdown</a> empleando el paquete <a href="https://bookdown.org/yihui/bookdown/">bookdown</a>.</p>
+
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Oppenheimer, P., <em>Top-Down Network Design</em>, 2nd Ed., Cisco Press, 2004, ISBN: 1587051524<a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="metodología-de-diseño-de-redes.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown_DisArqRedes.pdf", "bookdown_DisArqRedes.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

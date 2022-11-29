@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 6 Tecnologías de acceso | Diseño y Arquitectura de Redes</title>
+  <meta name="description" content="Primer intento para hacer las notas en html" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 6 Tecnologías de acceso | Diseño y Arquitectura de Redes" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/figuras/dar.jpg" />
+  <meta property="og:description" content="Primer intento para hacer las notas en html" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 6 Tecnologías de acceso | Diseño y Arquitectura de Redes" />
+  
+  <meta name="twitter:description" content="Primer intento para hacer las notas en html" />
+  <meta name="twitter:image" content="/figuras/dar.jpg" />
+
+<meta name="author" content="José Incera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="administración-de-redes.html"/>
+<link rel="next" href="análisis-tecno-económico.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diseño y Arquitectura de Redes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html"><i class="fa fa-check"></i><b>1</b> Metodología de diseño de redes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#introducción"><i class="fa fa-check"></i><b>1.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#por-qué-una-empresa-desea-una-red"><i class="fa fa-check"></i>¿Por qué una empresa desea una red?</a></li>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#fracasos-en-proyectos-de-tecnología-de-información"><i class="fa fa-check"></i>Fracasos en proyectos de tecnología de información</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#diseño-descendente"><i class="fa fa-check"></i><b>1.2</b> Diseño descendente</a></li>
+<li class="chapter" data-level="1.3" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#microsoft-solutions-framework"><i class="fa fa-check"></i><b>1.3</b> Microsoft Solutions Framework</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#modelo-de-proceso"><i class="fa fa-check"></i><b>1.3.1</b> Modelo de proceso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#análisis-de-riesgos"><i class="fa fa-check"></i><b>1.4</b> Análisis de riesgos</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#manejo-de-riesgos"><i class="fa fa-check"></i><b>1.4.1</b> Manejo de Riesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#problemas"><i class="fa fa-check"></i><b>1.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html"><i class="fa fa-check"></i><b>2</b> Requerimientos técnicos. Compromisos y restricciones</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#escalabilidad"><i class="fa fa-check"></i><b>2.1</b> Escalabilidad</a></li>
+<li class="chapter" data-level="2.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#disponibilidad"><i class="fa fa-check"></i><b>2.2</b> Disponibilidad</a></li>
+<li class="chapter" data-level="2.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#confiabilidad"><i class="fa fa-check"></i><b>2.3</b> Confiabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#desempeño"><i class="fa fa-check"></i><b>2.4</b> Desempeño</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ancho-de-banda"><i class="fa fa-check"></i><b>2.4.1</b> Ancho de banda</a></li>
+<li class="chapter" data-level="2.4.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#utilización"><i class="fa fa-check"></i><b>2.4.2</b> Utilización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#rendimiento"><i class="fa fa-check"></i><b>2.4.3</b> Rendimiento</a></li>
+<li class="chapter" data-level="2.4.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#tasa-de-error"><i class="fa fa-check"></i><b>2.4.4</b> Tasa de error</a></li>
+<li class="chapter" data-level="2.4.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#eficiencia"><i class="fa fa-check"></i><b>2.4.5</b> Eficiencia</a></li>
+<li class="chapter" data-level="2.4.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#retardo-y-variabilidad"><i class="fa fa-check"></i><b>2.4.6</b> Retardo y variabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#seguridad"><i class="fa fa-check"></i><b>2.5</b> Seguridad</a></li>
+<li class="chapter" data-level="2.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#administración"><i class="fa fa-check"></i><b>2.6</b> Administración</a></li>
+<li class="chapter" data-level="2.7" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#facilidad-de-uso"><i class="fa fa-check"></i><b>2.7</b> Facilidad de uso</a></li>
+<li class="chapter" data-level="2.8" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#adaptabilidad"><i class="fa fa-check"></i><b>2.8</b> Adaptabilidad</a></li>
+<li class="chapter" data-level="2.9" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#costo-beneficio"><i class="fa fa-check"></i><b>2.9</b> Costo-beneficio</a></li>
+<li class="chapter" data-level="2.10" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#conflictos-entre-requerimientos"><i class="fa fa-check"></i><b>2.10</b> Conflictos entre requerimientos</a></li>
+<li class="chapter" data-level="2.11" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#otras-métricas-relevantes"><i class="fa fa-check"></i><b>2.11</b> Otras métricas relevantes</a></li>
+<li class="chapter" data-level="2.12" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#problemas-1"><i class="fa fa-check"></i><b>2.12</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><i class="fa fa-check"></i><b>3</b> Caracterización de la red y del tráfico generado por las aplicaciones</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-la-topología"><i class="fa fa-check"></i><b>3.1</b> Caracterización de la topología</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#mapa-de-la-red"><i class="fa fa-check"></i><b>3.1.1</b> Mapa de la red</a></li>
+<li class="chapter" data-level="3.1.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#asignación-de-nombres-y-direcciones"><i class="fa fa-check"></i><b>3.1.2</b> Asignación de nombres y direcciones</a></li>
+<li class="chapter" data-level="3.1.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-los-medios-de-transmisión"><i class="fa fa-check"></i><b>3.1.3</b> Caracterización de los medios de transmisión</a></li>
+<li class="chapter" data-level="3.1.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#restricciones-ambientales-y-arquitectónicas"><i class="fa fa-check"></i><b>3.1.4</b> Restricciones ambientales y arquitectónicas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#desempeño-de-la-red-actual"><i class="fa fa-check"></i><b>3.2</b> Desempeño de la red actual</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#herramientas-de-recolección"><i class="fa fa-check"></i><b>3.2.1</b> Herramientas de recolección</a></li>
+<li class="chapter" data-level="3.2.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#periodo-y-frecuencia-de-recolección"><i class="fa fa-check"></i><b>3.2.2</b> Periodo y frecuencia de recolección</a></li>
+<li class="chapter" data-level="3.2.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#algunas-métricas-de-desempeño"><i class="fa fa-check"></i><b>3.2.3</b> Algunas métricas de desempeño</a></li>
+<li class="chapter" data-level="3.2.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#presentación-de-resultados"><i class="fa fa-check"></i><b>3.2.4</b> Presentación de resultados</a></li>
+<li class="chapter" data-level="3.2.5" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#análisis-estadístico-de-redes"><i class="fa fa-check"></i><b>3.2.5</b> Análisis estadístico de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-flujo"><i class="fa fa-check"></i><b>3.3</b> Caracterización del flujo</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tipos-de-flujo-por-aplicación"><i class="fa fa-check"></i><b>3.3.1</b> Tipos de flujo por aplicación</a></li>
+<li class="chapter" data-level="3.3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-volumen-de-tráfico"><i class="fa fa-check"></i><b>3.3.2</b> Caracterización del volumen de tráfico</a></li>
+<li class="chapter" data-level="3.3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#requerimientos-de-calidad-de-servicio"><i class="fa fa-check"></i><b>3.3.3</b> Requerimientos de calidad de servicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#problemas-2"><i class="fa fa-check"></i><b>3.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html"><i class="fa fa-check"></i><b>4</b> Diseño lógico de la red</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología"><i class="fa fa-check"></i><b>4.1</b> Diseño de la topología</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-plana"><i class="fa fa-check"></i><b>4.1.1</b> Topología plana</a></li>
+<li class="chapter" data-level="4.1.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-jerárquico"><i class="fa fa-check"></i><b>4.1.2</b> Diseño jerárquico</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-capa-de-acceso"><i class="fa fa-check"></i><b>4.2</b> Diseño de la capa de acceso</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problema-de-localización-asignación"><i class="fa fa-check"></i><b>4.2.1</b> Problema de Localización-asignación</a></li>
+<li class="chapter" data-level="4.2.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#asignación-de-nodos-a-concentradores"><i class="fa fa-check"></i><b>4.2.2</b> Asignación de nodos a concentradores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-de-nodos-a-concentrador"><i class="fa fa-check"></i><b>4.2.3</b> Topología de nodos a concentrador</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#capa-de-distribución"><i class="fa fa-check"></i><b>4.3</b> Capa de distribución</a></li>
+<li class="chapter" data-level="4.4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-red-dorsal"><i class="fa fa-check"></i><b>4.4</b> Diseño de la red dorsal</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología-1"><i class="fa fa-check"></i><b>4.4.1</b> Diseño de la topología</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-basado-en-bloques-modulares"><i class="fa fa-check"></i><b>4.5</b> Diseño basado en bloques modulares</a></li>
+<li class="chapter" data-level="4.6" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#s:redundancia"><i class="fa fa-check"></i><b>4.6</b> Topologías con redundancia</a></li>
+<li class="chapter" data-level="4.7" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problemas-3"><i class="fa fa-check"></i><b>4.7</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="administración-de-redes.html"><a href="administración-de-redes.html"><i class="fa fa-check"></i><b>5</b> Administración de redes</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#evolución-de-administración-de-sistemas"><i class="fa fa-check"></i><b>5.1</b> Evolución de administración de sistemas</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-fallas"><i class="fa fa-check"></i><b>5.1.1</b> Gestión de fallas</a></li>
+<li class="chapter" data-level="5.1.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-configuración"><i class="fa fa-check"></i><b>5.1.2</b> Gestión de configuración</a></li>
+<li class="chapter" data-level="5.1.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-seguridad"><i class="fa fa-check"></i><b>5.1.3</b> Gestión de seguridad</a></li>
+<li class="chapter" data-level="5.1.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-rendimiento"><i class="fa fa-check"></i><b>5.1.4</b> Gestión de rendimiento</a></li>
+<li class="chapter" data-level="5.1.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#contabilidad-de-recursos"><i class="fa fa-check"></i><b>5.1.5</b> Contabilidad de recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#protocolos-de-administración"><i class="fa fa-check"></i><b>5.2</b> Protocolos de administración</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-administración-osi"><i class="fa fa-check"></i><b>5.2.1</b> Modelo de administración OSI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-gestión-ietf"><i class="fa fa-check"></i><b>5.2.2</b> Modelo de gestión IETF</a></li>
+<li class="chapter" data-level="5.2.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#simple-network-management-protocol"><i class="fa fa-check"></i><b>5.2.3</b> Simple Network Management Protocol</a></li>
+<li class="chapter" data-level="5.2.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#base-de-datos-de-información-de-administración-mib"><i class="fa fa-check"></i><b>5.2.4</b> Base de datos de información de administración (MIB)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#rmon"><i class="fa fa-check"></i><b>5.3</b> RMON</a></li>
+<li class="chapter" data-level="5.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#administración-de-sistemas-con-snmp"><i class="fa fa-check"></i><b>5.4</b> Administración de sistemas con SNMP</a></li>
+<li class="chapter" data-level="5.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#problemas-4"><i class="fa fa-check"></i><b>5.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html"><i class="fa fa-check"></i><b>6</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#cobertura-de-internet"><i class="fa fa-check"></i><b>6.1</b> Cobertura de Internet</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#red-de-acceso"><i class="fa fa-check"></i><b>6.1.1</b> Red de acceso</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#contexto-de-internet-y-servicios-de-banda-ancha-en-méxico"><i class="fa fa-check"></i><b>6.1.2</b> Contexto de Internet y servicios de Banda Ancha en México</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#banda-ancha"><i class="fa fa-check"></i><b>6.1.3</b> Banda Ancha</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-1"><i class="fa fa-check"></i><b>6.2</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-cableadas"><i class="fa fa-check"></i><b>6.2.1</b> Tecnologías de acceso cableadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-inalámbricas"><i class="fa fa-check"></i><b>6.3</b> Tecnologías de acceso inalámbricas</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#telefonía-celular"><i class="fa fa-check"></i><b>6.3.1</b> Telefonía celular</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#problemas-5"><i class="fa fa-check"></i><b>6.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html"><i class="fa fa-check"></i><b>7</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#introducción-1"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#métricas-financieras"><i class="fa fa-check"></i><b>7.2</b> Métricas financieras</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#costo-total-de-propiedad"><i class="fa fa-check"></i><b>7.2.1</b> Costo total de propiedad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#retorno-de-inversión"><i class="fa fa-check"></i><b>7.2.2</b> Retorno de inversión</a></li>
+<li class="chapter" data-level="7.2.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#valor-presente-neto"><i class="fa fa-check"></i><b>7.2.3</b> Valor Presente Neto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-tecno-económico-1"><i class="fa fa-check"></i><b>7.3</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-de-rentabilidad"><i class="fa fa-check"></i><b>7.3.1</b> Análisis de rentabilidad</a></li>
+<li class="chapter" data-level="7.3.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#despliegue-y-operación-de-la-red"><i class="fa fa-check"></i><b>7.3.2</b> Despliegue y operación de la red</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html"><i class="fa fa-check"></i><b>8</b> Respuestas a problemas seleccionados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#S:Metod"><i class="fa fa-check"></i><b>8.1</b> Metodología de diseño de redes</a></li>
+<li class="chapter" data-level="8.2" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:ReqTec"><i class="fa fa-check"></i><b>8.2</b> Requerimientos técnicos</a></li>
+<li class="chapter" data-level="8.3" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:CaracRed"><i class="fa fa-check"></i><b>8.3</b> Caracterización de la red</a></li>
+<li class="chapter" data-level="8.4" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:DisLog"><i class="fa fa-check"></i><b>8.4</b> Diseño lógico</a></li>
+<li class="chapter" data-level="8.5" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:Admon"><i class="fa fa-check"></i><b>8.5</b> Administración de Redes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diseño y Arquitectura de Redes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tecnologías-de-acceso" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Capítulo 6</span> Tecnologías de acceso<a href="tecnologías-de-acceso.html#tecnologías-de-acceso" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>En este capítulo se presentan algunas de las tecnologías más populares
+para el despliegue de redes, tanto para la red de acceso como para el
+núcleo.</p>
+<p>Por su relevancia en la sociedad contemporánea, antes de presentar las
+tecnologías de acceso, iniciamos esta parte con algunas estadísticas
+sobre la penetración de internet. Esta información nos será de mucha
+utilidad al analizar la factibilidad de garantizar la cobertura de
+Internet a toda la población <a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.</p>
+<div id="cobertura-de-internet" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Cobertura de Internet<a href="tecnologías-de-acceso.html#cobertura-de-internet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Internet se ha consolidado como una herramienta muy poderosa que ha
+afectado prácticamente todas las esferas en las que nos desarrollamos
+como sociedad. Desde su creación, la cobertura de Internet ha crecido
+muy rápidamente. Como se observa en la
+figura <a href="tecnologías-de-acceso.html#fig:IntUsgGrth">6.1</a>, mientras en 1995 el número de usuarios
+llegaba a 16 millones, lo que representaba un 0.2% de la población
+mundial total, en diciembre de 2018 el número de usuarios alcanzó los
+4,313 millones, aproximadamente 56.5% de la población.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:IntUsgGrth"></span>
+<img src="figuras/c6/Rplot02.jpeg" alt="*Usuarios de Internet por año*" width="50%" />
+<p class="caption">
+Figura 6.1: <em>Usuarios de Internet por año</em>
+</p>
+</div>
+<p>En marzo de 2019 esta cifra alcanzó un total de 4,346 millones los
+cuales se distribuían geográficamente como se muestra en la
+figura <a href="tecnologías-de-acceso.html#fig:IntUsrs">6.2</a>.
+Sin embargo, al analizar la tasa de penetración por región, se observa
+una enorme desigualdad, la cual puede estar ligada a factores
+socioeconómicos en términos de acceso a servicios de Internet, pues
+mientras que en Norteamérica y Europa la penetración rebasa el 85%,
+tanto Asia (51.7%) como África (35.9%) se encuentran por debajo del
+promedio global de 56.3%.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:IntUsrs"></span>
+<img src="figuras/c6/WorldUsers2019.jpg" alt="*Usuarios de Internet (en el eje y porcentaje en la barra) y tasa de penetración. Datos a marzo de 2019 *" width="48%" /><img src="figuras/c6/world2019PR.jpg" alt="*Usuarios de Internet (en el eje y porcentaje en la barra) y tasa de penetración. Datos a marzo de 2019 *" width="48%" />
+<p class="caption">
+Figura 6.2: <em>Usuarios de Internet (en el eje y porcentaje en la barra) y tasa de penetración. Datos a marzo de 2019 </em>
+</p>
+</div>
+<div id="red-de-acceso" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Red de acceso<a href="tecnologías-de-acceso.html#red-de-acceso" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una <strong>red de acceso</strong> es la parte de una red de comunicaciones que
+conecta a los suscriptores con su proveedor de servicios inmediato. Un
+ejemplo de red de acceso es el par trenzado en el bucle local del
+operador telefónico, también llamado última milla, que se refiere a la
+porción de la red que alcanza físicamente las premisas del usuario
+final.</p>
+<p>La infraestructura de las redes de acceso puede llegar a representar
+entre el 70% y 80% de los recursos físicos para los incumbentes. Las
+redes de acceso representan un mercado muy competido y con muchos retos
+para los proveedores, sin embargo, también es un mercado con grandes
+tendencias de crecimiento. En la década anterior representaba del 16% al
+20% de los ingresos globales de las empresas de telecomunicaciones y
+prácticamente todos los operadores tradicionales.</p>
+<p>Se observan dos tendencias en la oferta de los proveedores de acceso a
+Internet:</p>
+<ul>
+<li><p>Las <strong>Redes de Nueva Generación</strong> (NGN, <em>Next Generation Network</em>),
+que ofrecen una amplia gama de servicios de valor agregado en la
+última milla (independientemente de la tecnología de acceso). Su
+modelo de negocios está basado en los servicios ofrecidos.</p></li>
+<li><p>La <strong>provisión de acceso</strong>, que ofrece infraestructura con muy alta capacidad y un suministro de bajo costo (<strong>dumb pipes</strong>). Los
+servicios ofrecidos son de bajo valor agregado, por lo cual su
+modelo de negocio está basado en la administración de la
+infraestructura.</p></li>
+</ul>
+<p>Actualmente, la mayoría de los operadores busca migrar hacia las NGN
+debido a los incentivos que ofrecen, entre los que se encuentran
+maximizar los ingresos a través de la oferta de nuevos servicios de
+Internet (correo electrónico, compartir archivos, mensajería
+instantánea, comunicaciones unificadas, navegación, Web 2.0, etc.) y la conformación de paquetes de triple y cuádruple play (voz, banda ancha y televisión, y acceso móvil).</p>
+<p>En la figura <a href="tecnologías-de-acceso.html#fig:trafico">6.3</a> se observa cómo en seis años cambió drásticamente la conformación del tipo de tráfico cursado por los operadores móviles.
+El tráfico de voz se ha mantenido relativamente estable, pero el de
+datos ha crecido más que exponencialmente.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:trafico"></span>
+<img src="figuras/c6/Trafico2.JPG" alt="*Tráfico por tipo*" width="50%" />
+<p class="caption">
+Figura 6.3: <em>Tráfico por tipo</em>
+</p>
+</div>
+<p>La figura <a href="tecnologías-de-acceso.html#fig:ingresos">6.4</a> muestra cómo durante el mismo periodo el
+crecimiento en los ingresos de los operadoresse ha mantenido más o menos estable (0.3% de aumento). El incremento mayor en ingresos viene de la venta de equipos móviles.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ingresos"></span>
+<img src="figuras/c6/Revenue.JPG" alt="*Ingresos de los operadores*" width="50%" />
+<p class="caption">
+Figura 6.4: <em>Ingresos de los operadores</em>
+</p>
+</div>
+<p>La tendencia hacia mayores servicios a través de Internet explica el
+crecimiento exponencial en el tráfico cursado. Tan sólo de 2010 a 2017, el volumen de datos se ha incrementado 40 veces. Esto hace necesario un despliegue de infraestructura, creando así el círculo virtuoso de la economía digital
+(figura <a href="tecnologías-de-acceso.html#fig:circulo">6.5</a>) en el que una mayor oferta de servicios y
+contenidos produce un aumento en la demanda de los mismos, lo cual hace necesario un nuevo despliegue de redes. Redes más poderas permiten la creación de contenido y servicios de más calidad y con mayores demandas de capacidad... y así sucesivamente.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:circulo"></span>
+<img src="figuras/c6/Circulo_virtuoso.jpg" alt="*Círculo virtuos de la economía digital*" width="50%" />
+<p class="caption">
+Figura 6.5: <em>Círculo virtuos de la economía digital</em>
+</p>
+</div>
+<p>Los mayores obstáculos que enfrenta este círculo, es la demanda excesiva por el crecimiento de flujos de video, como lo muestran los datos de Cisco VNI presentados en la figura <a href="#f:Cisco" reference-type="ref" reference="f:Cisco">6.4</a>. En el 2017, el 59% del tráfico de datos móviles
+era de video y se estima que para 2022 será del 79%.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Cisco"></span>
+<img src="figuras/c6/Cisco1.jpg" alt="*Tráfico de datos móviles estimado (en 2017) por tipo*" width="50%" />
+<p class="caption">
+Figura 6.6: <em>Tráfico de datos móviles estimado (en 2017) por tipo</em>
+</p>
+</div>
+</div>
+<div id="contexto-de-internet-y-servicios-de-banda-ancha-en-méxico" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Contexto de Internet y servicios de Banda Ancha en México<a href="tecnologías-de-acceso.html#contexto-de-internet-y-servicios-de-banda-ancha-en-méxico" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En los últimos años la cantidad de usuarios de Internet en México ha
+crecido considerablemente, alcanzando 71.3 millones en el 2017, lo que
+representa más del doble de los usuarios en 2010, como se muestra en la figura <a href="tecnologías-de-acceso.html#fig:IntMx">6.7</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:IntMx"></span>
+<img src="figuras/c6/InternetMx.JPG" alt="*Usuarios de Internet en México*" width="70%" />
+<p class="caption">
+Figura 6.7: <em>Usuarios de Internet en México</em>
+</p>
+</div>
+<p>Sin embargo, recordemos que es necesario considerar el aumento en la
+oferta de este servicio no sólo en términos de cantidad de usuarios,
+sino la tasa a la que se da esta penetración con relación a otras
+economías, y el porcentaje de penetración dentro de las distintas
+regiones del país<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>.</p>
+<p>Comparando la penetración de Internet en México con otras economías,
+hacia el año 2018 la figura <a href="tecnologías-de-acceso.html#fig:PenetLatam2018">6.8</a> muestra que en 2018, la cobertura en México se encuentra por encima del promedio en Latinoamérica con un 65% de penetración, aunque un poco lejos de Argentina, Chile y Costa Rica.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:PenetLatam2018"></span>
+<img src="figuras/c6/Penet2018.JPG" alt="*Penetración de Internet en América Latina (2018)*" width="50%" />
+<p class="caption">
+Figura 6.8: <em>Penetración de Internet en América Latina (2018)</em>
+</p>
+</div>
+<p>Si ahora vemos la situación de México con respecto a la OCDE, el
+panorama cambia drásticamente pues el país se encuentra en las últimas
+posiciones en servicios de banda ancha tanto fija (penúltimo lugar,
+figura <a href="tecnologías-de-acceso.html#fig:Fixedbbsubs">6.9</a>) como móvil (ante penúltimo lugar,
+figura <a href="tecnologías-de-acceso.html#fig:Mobbbsubs">6.10</a>). Cabe destacar que en el servicio móvil las suscripciones ofrecidas son prácticamente en su totalidad de voz y
+datos, en vez de ofrecer también suscripciones de sólo datos, como
+prácticmaente todos los países de la OCDE.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Fixedbbsubs"></span>
+<img src="figuras/c6/Fixed_bb_subs.JPG" alt="*Suscripciones de banda ancha fija (OCDE)*" width="60%" />
+<p class="caption">
+Figura 6.9: <em>Suscripciones de banda ancha fija (OCDE)</em>
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Mobbbsubs"></span>
+<img src="figuras/c6/Mob_bb_subs.JPG" alt="**Suscripciones de banda ancha móvil (OCDE)*" width="60%" />
+<p class="caption">
+Figura 6.10: **Suscripciones de banda ancha móvil (OCDE)*
+</p>
+</div>
+</div>
+<div id="banda-ancha" class="section level3 hasAnchor" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Banda Ancha<a href="tecnologías-de-acceso.html#banda-ancha" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hemos estado hablando de banda ancha. Se trata de un término
+particularmente elusivo al tratar de definirla. La <strong>banda ancha</strong> puede
+verse como un conjunto de tecnologías de red avanzadas o como el motor
+de una radical y gran transformación que revitaliza la entrega de los
+servicios existentes y da pie a la aparición de nuevos e innovadores
+servicios. La banda ancha se ha convertido en una infraestructura
+fundamental que determina la competitividad nacional de los países en la economía digital mundial.</p>
+<p>En términos técnicos, la banda ancha ha tratado de definirse en función de las velocidades de transmisión mínimas, del tipo de tecnología (por ejemplo, IMT-Avanzadas móviles o las llamadas tecnologías 4G), y de una serie de conceptos funcionales entre los que se encuentran conexión permanente y alta capacidad.</p>
+<p>El debate para tratar de definirla no se ha detenido, y a manera de
+conciliación, suele definirse de manera informal e imprecisa, a la banda ancha como <em>las tecnologías que permiten la entrega fiable con con calidad de servicios convergentes de voz, datos y video</em>.</p>
+<p>La banda ancha ha demostrado ser un elemento esencial para el desarrollo económico, a tal punto que en 2010 Finlandia la declaró como un derecho ciudadano, al mismo nivel que la alimentación, la salud y la educación, pues promueve la creación de nuevos servicios digitales, mayor eficiencia y productividad, estimula la competitividad, habilita ventajas de la globalización y promueve el acceso a redes de innovación.
+En México, si bien no se especifica con servicios de banda ancha, el
+acceso a Internet se convirtió en un derecho ciudadano plasmado en la
+Constitución, con la Reforma en Telecomunicaciones de 2013.</p>
+<p>La figura <a href="tecnologías-de-acceso.html#fig:bbvsgdp">6.11</a> muesra el nivel de penetración de banda ancha fija en los países de la OCDE en 2018, así como su ingreso per cápita en dólares PPP<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>. Hay una clara relación entre penetración banda ancha y nivel de riqueza, pero es difícil demostrar cuál es la dirección de la causalidad.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bbvsgdp"></span>
+<img src="figuras/c6/bbvsgdp.JPG" alt="*Penetración de banda ancha vs GDP (OCDE)*" width="50%" />
+<p class="caption">
+Figura 6.11: <em>Penetración de banda ancha vs GDP (OCDE)</em>
+</p>
+</div>
+<p>Prácticamente todos los países desarrollados y en vías de desarrollo
+disponen de banda ancha. Hoy en día la principal preocupación es evitar la creación de brechas digitales en términos de velocidad o calidad de acceso. Grupos multipartitas como la Comisión de la Banda Ancha para el Desarrollo Digital de las Naciones Unidas están fomentando que todos los países en sus planes de desarrollo den prioridad al desarrollo de redes fijas y móviles de alta velocidad a fin de cimentar sus previsiones de crecimiento económico a largo plazo y de competitividad en la era de la información.</p>
+<p>Parece que en México todavía hay mucho por hacer en banda ancha fija
+pues tenemos un gran rezago en términos de velocidades y de
+suscripciones, como lo muestra la figura <a href="tecnologías-de-acceso.html#fig:speeds">6.12</a>.
+Podemos ver que el país apenas llega a un nivel de alrededor de 15
+suscripciones por cada 100 habitantes, y de éstas, la gran mayoría son
+de una velocidad de entre 10 y 25 Mbps. Esto se encuentra muy lejos de
+objetivos como los fijados en Europa, que establecen una penetración del
+100% al menos a 30 Mbps y del 50% al menos a 100 Mbps y hacia 2018 se
+encuentran cerca de ser alcanzados, según el reporte DESI (<em>Digital
+Economy and Society Index</em>) de la Comisión Europea de 2018.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:speeds"></span>
+<img src="figuras/c6/speeds.JPG" alt="*Banda ancha fija. Penetración y velocidades de acceso (OCDE)*" width="50%" />
+<p class="caption">
+Figura 6.12: <em>Banda ancha fija. Penetración y velocidades de acceso (OCDE)</em>
+</p>
+</div>
+<p>Con relación a los costos a usuarios finales, México presenta un rango
+de precios muy grande en comparación con otros países de la OCDE, con
+costos que van de aproximadamente 30 dólares PPP para usuarios de bajo
+nivel (20 GB/mes, 0.250 Mbps) a los 65 dólares PPP para usuarios de alto nivel (200 GB/mes, 25 Mbps). Este comportamiento se debe principalmente a que si bien los precios a usuarios de bajo nivel se encuentran en el promedio de la OCDE, cuando vemos los precios ofertados a usuarios de alto nivel, México tiene los niveles más elevados como se observa en la figura <a href="tecnologías-de-acceso.html#fig:costos">6.13</a>. Aún con precios ajustados PPP, el acceso a banda ancha fija sigue siendo muy costoso para los deciles más bajos de la población nacional; justamente los grupos de población que se encuentran fuera de los servicios de Internet.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:costos"></span>
+<img src="figuras/c6/costs_low.JPG" alt="*Comparativo de costos (USD, PPP) en países de la OCDE a junio de 2017. (a) Costos  usuarios de bajo nivel; (b) Cosos a usuarios de alto nivel; (c) Rangos de costos (USD, PPP)*" width="48%" /><img src="figuras/c6/costs_high.JPG" alt="*Comparativo de costos (USD, PPP) en países de la OCDE a junio de 2017. (a) Costos  usuarios de bajo nivel; (b) Cosos a usuarios de alto nivel; (c) Rangos de costos (USD, PPP)*" width="48%" /><img src="figuras/c6/ranges.JPG" alt="*Comparativo de costos (USD, PPP) en países de la OCDE a junio de 2017. (a) Costos  usuarios de bajo nivel; (b) Cosos a usuarios de alto nivel; (c) Rangos de costos (USD, PPP)*" width="48%" />
+<p class="caption">
+Figura 6.13: <em>Comparativo de costos (USD, PPP) en países de la OCDE a junio de 2017. (a) Costos usuarios de bajo nivel; (b) Cosos a usuarios de alto nivel; (c) Rangos de costos (USD, PPP)</em>
+</p>
+</div>
+</div>
+</div>
+<div id="tecnologías-de-acceso-1" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Tecnologías de acceso<a href="tecnologías-de-acceso.html#tecnologías-de-acceso-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las expectativas de tráfico para los próximos años alcanzan niveles
+difíciles de asimilar. Se estima que para 2022, el tráfico IP anual será de 4.8 zettabytes<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>, lo cual, para dimensionar la magnitud, es igual a 11 veces el tráfico generado en 2012. 82% de ese tráfico será de aplicaciones de video y 71% será por medio de tecnologías inalámbricas.</p>
+<p>Para cumplir con estas expectativas, las tecnologías de acceso deben
+estar en constante evolución de manera que la provisión de contenidos y servicios innovadores.</p>
+<p>Las tecnologías de acceso pueden clasificarse en dos categorías:</p>
+<ul>
+<li><p>Tecnologías por línea, como lo son:</p>
+<ul>
+<li><p>xDSL</p></li>
+<li><p>Cable Módem</p></li>
+<li><p>PLC</p></li>
+<li><p>Fibra + cable</p></li>
+</ul></li>
+<li><p>Tecnologías inalámbricas, tales como:</p>
+<ul>
+<li><p>WiFi</p></li>
+<li><p>WiMax</p></li>
+<li><p>Celular</p></li>
+<li><p>Satélite, HAP</p></li>
+<li><p>Radio cognitivo</p></li>
+</ul></li>
+</ul>
+<div id="tecnologías-de-acceso-cableadas" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Tecnologías de acceso cableadas<a href="tecnologías-de-acceso.html#tecnologías-de-acceso-cableadas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="xdsl" class="section level4 unnumbered hasAnchor">
+<h4>xDSL<a href="tecnologías-de-acceso.html#xdsl" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>xDSL (<em>Digital Subscriber Line</em>, Línea de Abonado Digital) es una
+familia de tecnologías que proporcionan acceso a Internet mediante la
+transmisión de datos a través del par trenzado de hilos de cobre
+convencionales de la red telefónica convencional. Emplea los rangos de
+frecuencia que no son utilizados para el transporte de voz, maximizando así el ancho de banda de la red de acceso (llamada la red de última milla) de los operadores telefónicos.</p>
+<p>En el equipo que se coloca en las instalaciones del usuario<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a> hay un filtro (<em>splitter</em>) el canal de frecuencias bajas, dedicado a los
+servicios de voz, del resto de frecuencias, dedicadas a la transferencia de datos.</p>
+<p>De forma similar, en la central telefónica las tarjetas DSLAM (<em>Digital Subscriber Line Access Multiplexer</em>) separan las frecuencias bajas (que dirigen a la red telefónica) de las altas, donde viaja el tráfico que debe ser dirigido a Internet, como se muestra en la
+figura <a href="#f:adsl" reference-type="ref" reference="f:adsl">6.11</a>, que se refiere al tecnología ADSL(<em>Asymmetric DSL</em>), que es la tecnología xDSL más popular.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:adsl"></span>
+<img src="figuras/c6/adsl.jpg" alt="*Tecnología ADSL*" width="50%" />
+<p class="caption">
+Figura 6.14: <em>Tecnología ADSL</em>
+</p>
+</div>
+<p>ADSL se denomina “asimétrica” porque las capacidades de descarga o de
+bajada (de la red hacia el usuario) y de subida (en sentido inverso) de datos no coinciden. La tecnología ADSL está diseñada para que la
+capacidad de bajada sea mayor que la de subida, ideal para servicios de red “cliente-servidor” en los que el cliente (el usuario) solicita un servicio, por ejemplo la descarga de una página web y el servidor, por ejemplo el servidor Web, la envía. La consulta requiere de mucho menos capacidad que la transferencia del contenido.</p>
+<p>En ADSL, el ancho de banda dedicado a la transferencia de datos se
+divide en hasta 256 subportadoras (las espigas rectangulares de la
+figura). Típicamente cada una es un canal de 4 kHz con modulación QAM.
+En principio, cada una puede transportar hasta 60 kbps (4000 baudios,
+con 15 bits por baudio). Si una subportadora tiene mucho ruido, ésta
+deja de utilizarse (las espigas blancas de la figura), lo que reduce la velocidad de transmisión del medio.</p>
+<p>Como se ha mencionado, ADSL es la más popular de las tecnologías xDSL,
+pero existen muchas otras. La siguiente tabla muestra las
+características de velocidad teóricas de algunas de las más populares.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">ADSL</th>
+<th align="center">HDSL</th>
+<th align="center">ADSL2+</th>
+<th align="center">VDSL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td align="center">Asymmetric</td>
+<td align="center">High Bit Rate</td>
+<td align="center">Asymmetric</td>
+<td align="center">Very High Speed</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="center">DSL</td>
+<td align="center">DSL</td>
+<td align="center">DSL</td>
+<td align="center">DSL</td>
+</tr>
+<tr class="odd">
+<td>De la red</td>
+<td align="center">256 kbps</td>
+<td align="center">1,168 kbps</td>
+<td align="center">25 Mbps</td>
+<td align="center">13, 42, 200 Mbps</td>
+</tr>
+<tr class="even">
+<td>al usuario</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>Del usuario</td>
+<td align="center">64 kbps</td>
+<td align="center">Simétrico</td>
+<td align="center">1 Mbps</td>
+<td align="center">1, 5, 6 Mbps</td>
+</tr>
+<tr class="even">
+<td>a la red</td>
+<td align="center">1.5 Mbps</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>Distancia</td>
+<td align="center">2.5 km</td>
+<td align="center">Hasta 4 km</td>
+<td align="center">1 km</td>
+<td align="center">52 Mbps 750 m</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Dentro de las ventajas de esta tecnología se encuentran la recuperación del costo de despliegue del par de abonado, la retención del ARPU (<em>Average Revenue per User</em>, ingreso medio por suscriptor), su bajo costo y su ubicuidad. Además, ofrece la posibilidad de hablar por teléfono al mismo tiempo que se navega por Internet.</p>
+<p>Un gran inconveniente de ADSL es que la velocidad del servicio está
+limitada por varios factores, como la calidad del cable y la distancia
+hasta la central telefónica, así como por el número de pares que viajan juntos en el ducto. Además, en muchos países el marco regulatorio puede limitar la desagregación del par<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>, lo que representa una barrera de entrada a la competencia.</p>
+<p>Otro inconveniente de ADSL es que los enlaces asimétricos pueden ser
+inadecuados para las características de los usuarios contemporáneos,
+como lo muestra la figura @ref[fig:upstream) obtenida de tráfico en un servidor de Twitter.</p>
+<p>En un entorno más familiar, jamás se debería poner un servidor local a
+través de un enlace asimétrico.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:upstream"></span>
+<img src="figuras/c6/tfc-simetrico.jpg" alt="*Tráfico simétrico en Internet*" width="50%" />
+<p class="caption">
+Figura 6.15: <em>Tráfico simétrico en Internet</em>
+</p>
+</div>
+</div>
+<div id="cable-módem" class="section level4 unnumbered hasAnchor">
+<h4>Cable módem<a href="tecnologías-de-acceso.html#cable-módem" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El cable módem es un tipo especial de módem diseñado para modular y
+demodular la señal de datos sobre una infraestructura de televisión por
+cable. Se utiliza principalmente para distribuir el acceso a Internet de
+banda ancha, aprovechando el ancho de banda que no se utiliza en la red
+de televisión por cable.</p>
+<div class="figure" style="text-align: center">
+<img src="figuras/c6/cable_modem.jpg" alt="*Cable módem*" width="50%" />
+<p class="caption">
+(#fig:cable_modem)<em>Cable módem</em>
+</p>
+</div>
+<p>Esta tecnología presenta las ventajas de que el cable es de mayor
+calidad que el par trenzado. Bajo la norma DOCSIS 3.1, se pueden
+alcanzar velocidades de 10 Gbps en el canal descendente y 1 Gbps en el
+ascendente, en condiciones ideales.</p>
+<p>La principal desventaja es que los abonados de un mismo vecindario
+comparten el ancho de banda proporcionado por una única línea de cable
+coaxial. Por lo tanto, la velocidad de conexión puede variar dependiendo
+de cuántos equipos están utilizando el servicio al mismo tiempo.</p>
+<p>Otras desventajas son las inversiones necesarias para modificar la
+infraestructura para servicios digitales bidireccionales, y que el
+unbundling (la desagregación de servicios) puede ser legalmente
+complicado pues frecuentemente estas redes se despliegan con los propios
+recursos de los operadores (lo que no necesariamente fue cierto al
+desplegar las redes telefónicas a principios del siglo XX).</p>
+</div>
+<div id="plc-power-line-communications" class="section level4 unnumbered hasAnchor">
+<h4>PLC (<em>Power Line Communications</em>)<a href="tecnologías-de-acceso.html#plc-power-line-communications" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Se refiere a un conjunto de tecnologías para ofrecer acceso a través de los cables de energía eléctrica. El servicio se ofrece a través de la red eléctrica de baja tensión (110-380V) por medio de unidades
+acondicionadoras que filtran y separan las señales eléctrica y de datos.</p>
+<p>Como red de acceso, esta tecnología, también llamada BPL (<em>Broadband
+over Power Lines</em>), prometía ser una alternativa a las redes de DSL y de
+cable módem aprovechando que la cobertura de la red eléctrica es mayor
+que la de las redes telefónicas y de cable.</p>
+<p>Desgraciadamente, las señales de datos, al ser transmitidas en un medio
+no blindado, pueden causar interferencia a otros sistemas de
+radio-comunicaciones, lo que ha limitado severamente su despliegue en
+varios países, aunque en los últimos años se observa un interés
+creciente en aplicaciones emergentes de Internet de las cosas (IoT) que
+no requieren de transferencias de datos a alta velocidad.</p>
+<p>En cambio, HomePlug (HP) es una variante utilizada para desplegar redes
+locales dentro de los hogares ha logrado una gran aceptación en el
+mercado. Su última versión, AV2 puede alcanzar hasta 500 Mbps, más que
+suficiente para transportar flujos de video de alta definición dentro de
+los hogares.</p>
+<p>HomePlug es desarrollada por CEPCA (<em>Consumer Electronics Powerline
+Communications Alliance</em>). Por su parte, ITU desarrolla un nuevo
+estándar G.9960 conocido como G.hn. Pretende utilizar cualquier medio de
+cobre en el hogar (cable telefóncio, cable coaxial de TV y las líneas
+eléctricas de corriente alterna) para transmitir datos a tasas de hasta
+1 Gbps.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:plc"></span>
+<img src="figuras/c6/plc.jpg" alt="*Esquema PLC*" width="50%" />
+<p class="caption">
+Figura 6.16: <em>Esquema PLC</em>
+</p>
+</div>
+</div>
+<div id="redes-de-fibra-e-híbridas" class="section level4 unnumbered hasAnchor">
+<h4>Redes de fibra e híbridas<a href="tecnologías-de-acceso.html#redes-de-fibra-e-híbridas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una red híbrida HFC (<em>Hybrid Fiber Copper</em>) incorpora fibra óptica y
+cable coaxial para crear una red de banda ancha. Esta tecnología se
+implementa típicamente como evolución de las redes de televisión por
+cable para soportar la demanda creciente dde transferencia de datos y
+más canales de video de alta definición.</p>
+<p>Este tipo de red busca aprovechar las ventajas de cada tecnología que la
+conforman. Los hilos de fibra óptica permiten la cobertura de largas
+distancias con un mínimo de amplificación y regeneración de la señal,
+sin embargo, debido al costo y dimensiones de los multiplexores y
+demultiplexores ópticos, no se suele conectar directamente a los nodos
+de clientes; la fibra es conectada a un gateway el cual contiene al
+menos un transformador óptico que permite la transición de la señal a la
+red de cable coaxial. El cable coaxial permite que la señal llegue a los
+equipos terminales.</p>
+<p>Las limitaciones de estos sistemas son que la señal puede necesitar ser
+amplificada y el sistema puede ser susceptible a interferencias
+externas.</p>
+<div class="figure" style="text-align: center">
+<img src="figuras/c6/diagramaHFC.png" alt="*Diagrama de una red HFC*" width="50%" />
+<p class="caption">
+(#fig:red_HFC)<em>Diagrama de una red HFC</em>
+</p>
+</div>
+<div id="redes-fttx" class="section level5 unnumbered hasAnchor">
+<h5>Redes FTTx<a href="tecnologías-de-acceso.html#redes-fttx" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>La fibra hasta el punto x (<em>Fiber To The x</em>) se refiere a un conjunto de
+tecnologías de telecomunicaciones que se basan en la utilización de
+hilos de fibra óptica y sistemas de distribución ópticos para ofrecer
+servicios avanzados a hogares y negocios. Este tipo de tecnología
+presenta características muy deseables, como:</p>
+<ul>
+<li><p>Alta inmunidad a la interferencia electromagnética</p></li>
+<li><p>Enorme ancho de banda para grandes distancias</p></li>
+<li><p>El costo de la fibra es del mismo orden que el cobre, aunque los
+despliegues, interfaces y OAM (Operación, Administración y
+Mantenimiento) son más costosos</p></li>
+</ul>
+<p>Debido a estas ventajas, los despliegues de fibra han crecido
+enormemente en los últimos años. La
+figura <a href="tecnologías-de-acceso.html#fig:crecimientosubsFTTH">6.17</a> muestra que las tecnologías que
+mayor crecimeinto tuvieron de 2017 a 2018 son FTTH (23.2%) y otros
+despliegues de fibra (5.3%), esto en detrimento, sobre todo, de los
+despliegues en par trenzado, que tuvieron una caída de -7.1%.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:crecimientosubsFTTH"></span>
+<img src="figuras/c6/crecimientoSuscriptores.png" alt="*Crecimiento de suscriptores por tecnología*" width="50%" />
+<p class="caption">
+Figura 6.17: <em>Crecimiento de suscriptores por tecnología</em>
+</p>
+</div>
+<p>Para finales de 2018, la región dominante en despliegues de fibra óptica son los países asiáticos donde la cobertura se acerca al 90% de hogares y edificios (figura <a href="tecnologías-de-acceso.html#fig:suscriptoresFTTxmundo">6.18</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:suscriptoresFTTxmundo"></span>
+<img src="figuras/c6/suscriptoresFTTx.png" alt="*Número total de suscriptores a FTTx en el mundo*" width="50%" />
+<p class="caption">
+Figura 6.18: <em>Número total de suscriptores a FTTx en el mundo</em>
+</p>
+</div>
+<p>Este fenómeno está ocurriendo en casi todos los países desarrollados y
+la mayoría ya han entrado a la etapa de crecimiento acelerado de las
+características curvas “S” de absorción tecnológica (que retomaremos en el capítulo <a href="#c:tecnoeco" reference-type="ref" reference="c:tecnoeco">7</a>). La figura <a href="tecnologías-de-acceso.html#fig:FTTHpenetracionEspana">6.19</a> muestra el crecimiento de suscriptores en España de 2007 a 2017 y la
+figura <a href="tecnologías-de-acceso.html#fig:atendidosUSA">6.20</a> la de Estados Unidos de 2001 a 2010. Llama la atención tanto el parecido de las curvas como los números absolutos en ambos países.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:FTTHpenetracionEspana"></span>
+<img src="figuras/c6/ftthespana.png" alt="*Penetración de FTTH en España*" width="50%" />
+<p class="caption">
+Figura 6.19: <em>Penetración de FTTH en España</em>
+</p>
+</div>
+<!-- ```{r, echo=FALSE, fig.align='center', out.width="50%",} -->
+<!-- knitr::include_graphics("figuras/c6/Visitados_FTTH_USA.jpg") -->
+<!-- ``` -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:atendidosUSA"></span>
+<img src="figuras/c6/Visitados_FTTH_USA.jpg" alt="*Penetración FTTH en EUA. (a) Hogares visitados; (b) Hogares antendidos*" width="48%" /><img src="figuras/c6/PenetracionFTTHUSA.jpg" alt="*Penetración FTTH en EUA. (a) Hogares visitados; (b) Hogares antendidos*" width="48%" />
+<p class="caption">
+Figura 6.20: <em>Penetración FTTH en EUA. (a) Hogares visitados; (b) Hogares antendidos</em>
+</p>
+</div>
+<p>Cabe mencionar que los Estados Unidos se vieron beneficiados por
+agresivas políticas públicas como el <em>USA Recovery and Reinvestment
+Act</em>, que destinó más de 7 mil millones de dólares para fomentar el
+despliegue de fibra óptica durante la administración de Barak Obama.
+Este tipo de iniciativas permitió que una gran cantidad de hogares
+tuvieran la posibilidad de contratar accesos en fibra aunque menos de la tercera parte lo haya hecho, como se muestra en la figura <a href="tecnologías-de-acceso.html#fig:atendidosUSA">6.20</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tecnologías-de-acceso-inalámbricas" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Tecnologías de acceso inalámbricas<a href="tecnologías-de-acceso.html#tecnologías-de-acceso-inalámbricas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las tecnologías inalámbricas utilizan una señal radioeléctrica (una
+portadora) para transmitir información modificando algunas de sus
+propiedades (frecuencia, fase o amplitud). Como redes de acceso a
+Internet, las tecnologías inalámbricastienen la gran ventaja de que es
+mucho más rápido y económico levantar una torre y colocar antenas de
+comunicaciones, que hacer tendidos de cable en postes o ductos en
+ciudades y en zonas rurales.</p>
+<p>Esta flexibilidad ayuda a explicar porqué las tecnologías inalámbricas
+han tenido un avance sorprendente en los últimos años. De hecho, si se
+extendieran las curvas mostradas en la
+figura <a href="tecnologías-de-acceso.html#fig:compspeeds">6.21</a>, las velocidades ofrecidas por las
+tecnologías cableadas e inalámbricas convergerían hacia el año 2030.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:compspeeds"></span>
+<img src="figuras/c6/speeds1.jpg" alt="*Velocidades de tecnologías de acceso*" width="50%" />
+<p class="caption">
+Figura 6.21: <em>Velocidades de tecnologías de acceso</em>
+</p>
+</div>
+<p>La realidad es que es difícil creer que esto sucederá, pues las
+tecnologías inalámbricas se enfrentan a muchos retos, como la relativa
+escasez de espectro radioeléctrico y la gran variabilidad de las
+capacidades de estas tecnologías, en función de la frecuencia que
+utilicen para su transmisión.</p>
+<p>Por ello, es claro que no se tendrá “una gran tecnología dominante” sino una serie de soluciones tecnológicas que atienden diferentes nichos con distintas necesidades. La
+figura <a href="tecnologías-de-acceso.html#fig:wireless">6.22</a> muestra una panorámica de las tendencias tecnológicas en función de dos criterios: movilidad y velocidad de transmisión.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:wireless"></span>
+<img src="figuras/c6/wireless.jpg" alt="*Evolución de tecnologías inalámbricas*" width="50%" />
+<p class="caption">
+Figura 6.22: <em>Evolución de tecnologías inalámbricas</em>
+</p>
+</div>
+<p>Tratando de presentar de manera sencilla conceptos que técnicamente son relativamente complejos, siempre encontramos un compromiso entre <strong>la cobertura</strong> (qué tan lejos puede propagarse) y <strong>la capacidad</strong> (qué tasa de transferencia ofrece) de una red. Por ejemplo, en la
+figura <a href="tecnologías-de-acceso.html#fig:tasacober">6.23</a> ubicamos algunas de las tecnologías
+inalámbricas más populares en función de su tasa de transmisión y su
+cobertura.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tasacober"></span>
+<img src="figuras/c6/tasa_cober.jpg" alt="*Sistemas inalámbricos en cobertura vs capacidad*" width="50%" />
+<p class="caption">
+Figura 6.23: <em>Sistemas inalámbricos en cobertura vs capacidad</em>
+</p>
+</div>
+<p>La curva envolvente de la figura anterior es llamada
+Equi-cost/Equi-power porque un elemento clave del alcance y de la
+calidad de la señal (y por tanto, de la tasa de transmisión), es la
+potencia de transmisión la cual puede estar limitada por el costo (a
+mayor potencia, mayor costo) o por aspectos regulatorios para evitar
+daños a la salud o interferencias a otros servicios.</p>
+<p>Dos factores que afectan la propagación de una señal radioeléctrica son la frecuencia de la señal y la distancia entre el emisor y el receptor. La fórmula simplificada de Friis
+(figura <a href="tecnologías-de-acceso.html#fig:frecvsdist">6.24</a>) muestra cómo es esta relación en términos de la potencia recibida: Es directamente proporcional a la potencia transmitida e inversamente proporcional al cuadrado de la distancia y de la frecuencia.</p>
+<p><span class="math display">\[P_{rx} = P_{tx}\{\frac{1}{f\times d}\}^2\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:frecvsdist"></span>
+<img src="figuras/c6/friis.jpg" alt="*Fórmula simpificada de Friis*" width="50%" />
+<p class="caption">
+Figura 6.24: <em>Fórmula simpificada de Friis</em>
+</p>
+</div>
+<p>En las frecuencias más altas, la longitud de onda es del orden de las
+moléculas de agua en la atmósfera y la energía de la señal es
+parcialmente absorbida pór éstas (y por otros objetos); en cambio,
+portadoras en frecuencias más bajas, como las bandas de 600 y 700 MHz,
+hasta pueden atravesar paredes sin sufrir una atenuación tan alta. En la figura <a href="tecnologías-de-acceso.html#fig:freccober">6.25</a> se muestra cómo este efecto tiene un impacto en la cobertura de una radio base transmitiendo con la misma potencia en distintas frecuencias, en una zona urbana. Mientras que a 900 MHz se cubre con una calidad aceptable un área con un radio de 1.5 km, a 3.5 GHz esta cae a menos de 500 metros.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:freccober"></span>
+<img src="figuras/c6/frec_cober.jpg" alt="*Efecto de la frecuencia en el área cubierta por una radio base*" width="50%" />
+<p class="caption">
+Figura 6.25: <em>Efecto de la frecuencia en el área cubierta por una radio base</em>
+</p>
+</div>
+<p>Como la potencia de recepción disminuye con la distancia, la relación
+señal a ruido (SNR, <em>Signal-Noise-Ratio</em>) disminuye drásticamente. Por
+ello, informalmente, la energía que debe tener un bit en un símbolo debe ser mayor; más formalmente, la “eficiencia espectral” disminuye con la distancia, como se muestra en la
+figura <a href="tecnologías-de-acceso.html#fig:eficespec">6.26</a>. La figura muestra cómo debe utilizarse un
+modulador con menor densidad conforme aumenta la distancia. Las
+distintas curvas son para diferentes tipos de receptor en las
+instalaciones del usuario (CPE, <em>Customer Premises Equipment</em>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:eficespec"></span>
+<img src="figuras/c6/rango-vel-cob.jpg" alt="*Densidad del modulador en función de la distancia*" width="50%" />
+<p class="caption">
+Figura 6.26: <em>Densidad del modulador en función de la distancia</em>
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tasadist"></span>
+<img src="figuras/c6/tasa_cober1.jpg" alt="*Tasa de transmisión vs distancia*" width="50%" />
+<p class="caption">
+Figura 6.27: <em>Tasa de transmisión vs distancia</em>
+</p>
+</div>
+<p>El hecho de que se utilice un modulador con menor eficiencia espectral
+es lo que explica que la tasa de transmisión disminuya conforme nos
+alejamos del AP en las redes WiFi o de la radio base en las redes
+celulares, como se muestra en la
+figura <a href="tecnologías-de-acceso.html#fig:tasadist">6.27</a>.</p>
+<p>Resumiendo, la tasa efectiva estará afectada por la potencia del
+transmisor, la distancia del receptor y la frecuencia de la portadora.
+Es claro que también se verá afectada por objetos que obstruyan la
+trayectoria entre transmisor y receptor, la ganancia de la antena del
+receptor (que depende de su tamaño, entre otros factores) y, de manera
+muy importante, de la cantidad de espectro (“el tamaño del bloque”) que
+el regulador del espectro radioeléctrico en un país (en nuestro caso, el
+Instituto Federal de Telecomunicaciones), otorgue para el servicio de
+comunicación inalámbrica de que se trate.</p>
+<p>La siguiente tabla muestra características de equipos receptores CPE
+(<em>Customer Premises Equipment</em>) para cierta tecnología inalámbrica fija,
+por ejemplo, WiMAX. Con un CPE situado en el exterior (por ejemplo, en
+la azotea de una casa), es de esperar que se pueda tener un enlace sin
+obstrucciones (llamado “línea de vista”) entre emisor y receptor.
+Además, la antena del receptor puede ser de tamaño relativamente grande,
+con una ganancia sustancial. En cambio, un AP en el interior recibe una
+señal atenuada por paredes y otros obstáculos. Lo mismo ocurre con un
+receptor USB el cual, además, tiene una antena muy pequeña y con una
+ganancia muy pobre.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="center">Tipo CPE</th>
+<th align="center">Rango de alcance</th>
+<th align="center">% cobertura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Exterior</td>
+<td align="center">20-25 km</td>
+<td align="center">100%</td>
+</tr>
+<tr class="even">
+<td align="center">Interior</td>
+<td align="center">10.6 km</td>
+<td align="center">53%</td>
+</tr>
+<tr class="odd">
+<td align="center">USB</td>
+<td align="center">2.8 km</td>
+<td align="center">14%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En la figura <a href="tecnologías-de-acceso.html#fig:bsdeploy">6.28</a> ejemplifica cómo los factores anteriores tienen un impacto profundo al desplegar un sistema de comunicaciones en distintos entornos: En función de la frecuencia, el área de cobertura, el tamaño del bloque y las características del entorno, el número de radiobases requerido para desplegar el sistema varía drásticamente.</p>
+<p>Como se explicará más adelante, en una zona urbana densa, no merece la
+pena tener frecuencias bajas con bloques pequeños, pues el factor
+determinante es la densidad de usuarios. Una radio base con un bloque
+pequeño rápidamente se saturará por la demanda de los usuarios, por lo
+que habrá que desplegar muchas más radio bases, reduciendo su potencia
+de transmisión para que no se genere interferencia entre ellas. En
+cambio, en unza zona rural, hay muy pocos usuarios, y se tenderá a
+privilegiar el uso de frecuencias que cubran la máxima distancia
+posible.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bsdeploy"></span>
+<img src="figuras/c6/bs_deploy.jpg" alt="*Despliegue de estaciones base en área metropolitana*" width="50%" />
+<p class="caption">
+Figura 6.28: <em>Despliegue de estaciones base en área metropolitana</em>
+</p>
+</div>
+<p>A continuación se presentan brevemente algunas de las tecnologías de
+acceso inalámbricas más populares en la actualidad.</p>
+<div id="acceso-satelital" class="section level4 unnumbered hasAnchor">
+<h4>Acceso satelital<a href="tecnologías-de-acceso.html#acceso-satelital" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La idea de tener una estación de relevo para telecomunicaciones (un
+“espejo”) en el espacio fue propuesta por el científico y escritor
+Arthur C. Clarke y por Vahid K. Sanadi en los años 40. Unos años más
+tarde, la Marina de Estados Unidos realizó varias pruebas de concepto en
+proyectos de espionaje utilizando a la luna, nuestro satélite natural,
+como espejo para captar las señales emitidas por los radares soviéticos.</p>
+<p>El primer satélite artificial lanzado exitosamente fue el satélite ruso Sputnik I, en 1957. No se utilizó para sistemas de telecomunicaciones pero permitió validar la factibilidad técnica de esta tecnología. Un año más tarde la NASA manda fabricar el primer satélite diseñado como relevo de telecomunicaciones dentro del proyecto SCORE.</p>
+<p>Los satélites para telecomunicaciones más comunes se encuentran en la
+llamada “órbita de Clark” en honor a Arthur Clark, a 35,784 km
+(<span class="math inline">\(\approx 36,000 km\)</span>) sobre el nivel del mar (snm) en el ecuador. A esa altura, las fuerzas centrífuga y centrípeta están en equilibrio y el satélite tiene la misma velocidad angular que la rotación de la tierra, por lo que parecen “fijos” en el espacio para un observador terrestre. Se les llama <strong>satélites geo-estacionarios</strong> o GEO (<em>Geo-stationary earth orbit</em>).</p>
+<p>Todos los satélites dedicados a difusión de radio y televisión y muchos de los utilizados para acceso a Internet son GEO, pues entre sus ventajas está el hecho de que una vez orientada la antena hacia el
+satélite, ya no tiene que ajustarse.</p>
+<p>Los satélites GEO poseen otras ventajas, como el hecho de que, en
+principio, con sólo tres satélites se podría cubrir casi toda la
+superficie terrestre, como se muestra en la
+figura <a href="tecnologías-de-acceso.html#fig:sat">6.29</a> (a).</p>
+<p>Los satélties GEO tienen varias limitantes. En primer lugar, es que es
+muy costoso y complejo colocar un satélite a esa altitud. Además, se
+requiere de antenas relativamente grandes y de una potencia de
+transmisión sustancial para que la comunicación pueda llevarse a cabo.
+Por ello, el uso de satélites GEO para comunicaciones en smartphones, es
+sencillamente imposible. Por último, la latencia imposibilita
+comunicaciones bi-direccionales en tiempo real.</p>
+<p>Los <strong>satélites MEO</strong> (<em>Medium-earth Orbit</em>) operan órbitas entre 5,000
+y 12,000 km snm. Su diseño es más simple y su puesta en órbita mucho
+menos costosa. Se utilizan para aplicaciones como monitoreo y
+fotografiado terrestre, monitoreo atmosférico y para aplicaciones
+militares.</p>
+<p>Se han llegado a utilizar como sistemas de comunicaciones, pero ello
+implica el uso de antenas especiales que van siguiendo la órbita de un
+satélite, y del relevo de la comunicación entre algunos de ellos, que
+forman una constelación.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sat"></span>
+<img src="figuras/c6/satgeo.JPG" alt="*Sistemas satelitales (a) geo-estacionarios y (b) de órbita baja*" width="42%" /><img src="figuras/c6/satleo.JPG" alt="*Sistemas satelitales (a) geo-estacionarios y (b) de órbita baja*" width="42%" />
+<p class="caption">
+Figura 6.29: <em>Sistemas satelitales (a) geo-estacionarios y (b) de órbita baja</em>
+</p>
+</div>
+<p>Los <strong>satélites LEO</strong> (<em>Low-earth orbit</em>) operan a distancias de 500 a
+1,500 km snm. A esa distancia, la latencia es bastante reducida; además,
+se pueden utilizar antenas de baja potencia (alrededor de 1 Watt). Sin
+embargo, su cobertura es muy limitada, por lo que se deben desplegar
+constelaciones de alta densidad (decenas de satélites, como se muestra
+en la figura <a href="tecnologías-de-acceso.html#fig:sat">6.29</a> (b)) y el relevo entre ellos es muy complejo.</p>
+<p>Su tiempo de vida es muy corto (5 a 8 años). Si una constelación tiene
+50 satélites, se tendría que estar renovando un satélite cada dos meses,
+lo que hace que estos sistemas tengan un costo de operación muy alto.</p>
+<p>Como tecnologías de acceso, los satélites GEO de los años 90 operaban en
+la banda de frecuencias “C” (4 a 6 GHz) con anchos de banda de 36 a 72
+MHz y ofrecían velocidades de acceso de 128 kbps a 2 Mbps.</p>
+<p>En la última década se ha hecho popular el uso de la banda Ku (11 a 14
+GHz) con anchos de banda más granades. Junto con sofisticadas
+tecnologías de compresión y codificación, estos satélites permiten
+velocidades de bajada de cientos de Mbps.</p>
+<p>Aunque el servicio de acceso a Internet es sustancialmente más costoso
+que con las otras tecnologías de acceso, los satélites artificiales
+garantizan conectividad en zonas donde ninguna otra tecnología es
+factible, como en aviones, océanos, montañas o zonas desérticas.</p>
+<p>Para reducir los costos de los equipos terminales en enlaces satelitales GEO, se han popularizado los sistemas con <strong>antenas VSAT</strong> (<em>Very small apperture terminal</em>). En éstos, las antenas de los equipos terminales son comparativamente muy pequeñas (70 cm a 1.5 mt). Dado que estas antenas tienen una ganancia muy baja, la comunicación entre dos usuarios pasa a través de un nodo central (un hub,
+figura <a href="tecnologías-de-acceso.html#fig:vsat">6.30</a>) con una antena mucho más grande (4 a 10 metros) que permite una gran amplificación de la señal. Desgraciadamente, esto hace que se duplique la latencia, pues el mensaje va del emisor al satélite, de éste al hub, nuevamente al satélite y finalmente al destinatario.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vsat"></span>
+<img src="figuras/c6/vsat.jpg" alt="*Sistema VSAT*" width="50%" />
+<p class="caption">
+Figura 6.30: <em>Sistema VSAT</em>
+</p>
+</div>
+<p>A pesar de que la gran mayoría de los proyectos de constelaciones
+satelitales LEO de los años 90 fueron un gran fracaso comercial, en los
+últimos 5 años ha resurgido el interés por estos sistemas y empresas
+como SpaceX, Amazon y OneWeb están invirtiendo miles de millones de
+dólares para desplegar constelaciones con cientos de satélites
+intercomunicados entre sí a través de enlaces láser.</p>
+</div>
+<div id="hap-high-altitude-platform" class="section level4 unnumbered hasAnchor">
+<h4>HAP (<em>High Altitude Platform</em>)<a href="tecnologías-de-acceso.html#hap-high-altitude-platform" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Las estaciones HAP consisten en vehículos típicamente no tripulados a
+una altitud de 20 a 50 km en un punto específico relativo a la tierra.
+Tienen muchos usos en aplicaciones militares y de monitoreo remoto. Para
+telecomunicaciones, se trata de estaciones de relevo que ofrecen una
+excelente alternativas para regiones donde no hay servicio terrestre o
+satelital. También pueden ser desplegados rápidamente para dar cobertura
+en áreas que han sido afectadas por desastres naturales.</p>
+<p>Las tecnologías HAP se empezaron a probar a principios de los años 90,
+principalmente para aplicaciones militares. A finales de los años 90 el
+interés por estas tecnologías fue tal, que la Unión Internacional de
+Telecomunicaciones asignó bandas de frecuencia específicas para
+servicios HAP: 2 GHz en la banda 47/48 GHz y 6 GHz en la banda 27/31
+GHz.</p>
+<p>Potencialmente, las HAP ofrecen muchas ventajas: Mayor cobertura y menor
+tiempo de despliegue que un sistema basado en radio-bases, y por
+supuesto, con menor interferencia. Con relación a los sistemas
+satelitales, su costo es mucho menor así como la latencia. Además, se
+pueden regresar fácilmente a tierra para su reparación y actualización.</p>
+<p>Por estas razones, se esperaba que las HAP fueran una atractiva
+alternativa para tecnologías de acceso a Internet. En la década pasada,
+hubo muchos proyectos para evaluar su factibilidad en Japón, Corea del
+Sur, Brasil, la Unión Europea y Estados Unidos. Sin embargo, de las
+decenas de proyectos documentados, sólo continuaron tres: Los proyectos
+LOON de Google (actualmente en suspensión), Aquila de Facebook (que se
+ha aliado con Airbus) y Zephyr de Airbus
+(figura <a href="tecnologías-de-acceso.html#fig:zephyr">6.31</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:zephyr"></span>
+<img src="figuras/c6/zephyr.jpg" alt="*Plataforma no tripulada Zephyr de Airbus*" width="50%" />
+<p class="caption">
+Figura 6.31: <em>Plataforma no tripulada Zephyr de Airbus</em>
+</p>
+</div>
+<p>Algunas de las razones por las que estas tecnologías no han sido
+desplegadas son el hecho de que, a pesar de que tienen un costo
+sustancialmente menor que los satélites, los componentes de los HAPs son
+sofisticados, pues deben soportar condiciones de operación muy adversas
+y tener una alta tolerancia a fallos. En zonas urbanas otras
+alternativas de acceso son más atractivas y en zonas aisladas, el modelo
+de negocio los hace inviables.</p>
+<p>Por otra parte, varias de las pruebas de concepto se cancelaron por
+fallos en los vehículos no tripulados, lo que representa un serio riesgo
+de seguridad en zonas pobladas.</p>
+</div>
+<div id="radios-cognitivos" class="section level4 unnumbered hasAnchor">
+<h4>Radios cognitivos<a href="tecnologías-de-acceso.html#radios-cognitivos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Tradicionalmente se ha considerado que el espectro radioeléctrico es un
+recurso escaso que debe ser regulado. La forma en que esto suele
+hacerse, es concesionando bloques de espectro para usos específicos. Por
+ejemplo, el rango de frecuencias de 87.5 MHz a 108 MHz, está contemplado
+para concesionarios de radiodifusión en FM, mientras que la banda de 1.9
+GHz es una de las frecuencias utilizadas por concesionarios de telefonía
+celular.</p>
+<p>Sin enmbargo, el espectro es un recurso particular pues no se desgasta
+con su uso. Además, mientras las frecuencias para unos servicios pueden
+estar saturadas (por ejemplo, telefonía celular) otras bandas pueden
+estar seriamente subutilizadas (por ejemplo, bandas para radio
+aficionados, difusión de TV en ultra alta frecuencia y frecuencias para
+uso militar).</p>
+<p>Con el fin de aprovechar mejor el espectro y dejar atrás la percepción
+de que se trata de un “recurso escaso”, nace la idea de utilizar radios
+cognitivos (CR, <em>cognitive radio</em>). Se trata de dispositivos que pueden
+ser configurados dinámicamente para utilizar las bandas de frecuencia
+disponibles en su entorno y si se detecta que éstas empiezan a ser
+utilizadas (por otros CR o por los concesionarios de la banda), el radio
+puede brincar a otras frecuencias libres. De esta manera, se consigue lo
+que se conoce como <strong>gestión dinámica del espectro</strong>.</p>
+<p>Las primeras propuestas de CR eran un subconjunto de los “radios
+definidos por software”. El dispositivo sensa su entorno; si encuentra
+una banda que aparentemente esté libre, calcula cuánta energía generaría
+su transmisión y si ésta no rebasa un umbral llamado “temperatura de
+interferencia” (figura <a href="tecnologías-de-acceso.html#fig:inter">6.32</a>), transmite en esa banda; de lo contrario, busca
+otro canal.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:inter"></span>
+<img src="figuras/c6/inter.jpg" alt="*Temperatura de interferencia*" width="50%" />
+<p class="caption">
+Figura 6.32: <em>Temperatura de interferencia</em>
+</p>
+</div>
+<p>Se ha encontrado que es sumamente complicado implementar dispositivos
+basados en la idea de sensar el entorno y calcular la temperatura de
+interferencia para establecer una red de comunicaciones confiable. Se
+requiere de nuevos protocolos y algoritmos para estimar de manera
+confiable qué bandas podrían ser utilizadas sin generar interferencia.</p>
+<p>Una alternativa, surgida en el Reino Unido y ampliamente aceptada, sobre
+todo para aprovechar los bloques de espectro asignados a difusión de
+televisión abierta, es la conocida como “espacios blancos” (<em>white
+spaces</em>). La idea básica es que el regulador sabe qué frecuencias ha
+asignado en qué regiones, y por lo tanto, cuáles quedan libres en esa
+región (figura <a href="tecnologías-de-acceso.html#fig:whitespace">6.33</a>). El dispositivo tiene un módulo de
+geolocalización y cuando desea establecer una comunicación, determina su
+ubicación, consulta la base de datos del regulador y se auto-configura
+para utilizar alguana de las bandas que están libres en su entorno.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:whitespace"></span>
+<img src="figuras/c6/white-spaces.jpg" alt="*Radio cognitivo*" width="50%" />
+<p class="caption">
+Figura 6.33: <em>Radio cognitivo</em>
+</p>
+</div>
+<p>El grupo de trabajo IEEE 802.22 ha definido estándares para desplegar
+redes de área regional (hasta 100 km con baja densidad de población) con
+base en la tecnología de radios cognitivos con espacios blancos. En
+Estados Unidos, la base de datos del órgano regulador que consultan
+estos radios es administrada por Google.</p>
+<p>La IEEE también ha definido el estándar IEEE 802.11af para desplegar
+redes locales inalámbricas con tecnología de espacios blancos. Se le
+conoce como <em>White-Fi</em> o <em>Super Wi-Fi</em>.</p>
+</div>
+<div id="telefonía-celular" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Telefonía celular<a href="tecnologías-de-acceso.html#telefonía-celular" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Como se ha mostrado al inicio de este capítulo, la penetración de
+Internet con tecnologías inalámbricas ha tenido un crecimiento
+exponencial en todo el planeta. El principal medio de acceso inalámbrico
+a Internet es la telefonía celular o móvil. En México, el crecimiento de
+líneas móviles por cada 100 habitantes ha rebasado el 90% como se
+muestra en la figura <a href="tecnologías-de-acceso.html#fig:teledensidadMex">6.34</a>. La penetración de la telefonía móvil ha sido tal que en algunos países ha logrado desplazar hasta el 50% de las líneas de telefonía fija.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:teledensidadMex"></span>
+<img src="figuras/c6/teledensidadMexico.png" alt="*Evolución de la teledensidad de líneas de telefonía móvil en México*" width="50%" />
+<p class="caption">
+Figura 6.34: <em>Evolución de la teledensidad de líneas de telefonía móvil en México</em>
+</p>
+</div>
+<p>Como se muestra en la tabla <a href="tecnologías-de-acceso.html#tab:velcel">6.1</a>, desde la segunda generación de telefonía celular se han contemplado tecnologías para facilitar la transferencia de datos en las redes móviles, y, eventualmente, proveer acceso a Internet.</p>
+<table>
+<caption><span id="tab:velcel">Tabla 6.1: </span>Evolución de generaciones de telefonía celular</caption>
+<thead>
+<tr class="header">
+<th align="center">Generación</th>
+<th align="center">Tecnología</th>
+<th align="center">Velocidad.típica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">GSM</td>
+<td align="center">14.4 kbps</td>
+</tr>
+<tr class="even">
+<td align="center">2G</td>
+<td align="center">HSCSD</td>
+<td align="center">36.6 kbps</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">PDC; CDMA</td>
+<td align="center">64 kbps</td>
+</tr>
+<tr class="even">
+<td align="center">2.5G</td>
+<td align="center">GPRS</td>
+<td align="center">115 kbps</td>
+</tr>
+<tr class="odd">
+<td align="center">2.75G</td>
+<td align="center">EDGE</td>
+<td align="center">384 kbps</td>
+</tr>
+<tr class="even">
+<td align="center">3G</td>
+<td align="center">UMTS</td>
+<td align="center">2 Mbps</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:demandaTransferencia"></span>
+<img src="figuras/c6/demandaTransferencia.jpg" alt="*Aumento de demanda de tasas de transferencia*" width="50%" />
+<p class="caption">
+Figura 6.35: <em>Aumento de demanda de tasas de transferencia</em>
+</p>
+</div>
+<p>Las primeras generaciones de telefonía celular respondían razonablemente
+bien a las necesidades de teléfonos con pantallas sumamente pequeñas y
+capacidad de procesamiento muy limitada. Con la llegada de los teléfonos
+inteligentes, y en especial con la introducción de la familia de
+dispositivos móviles de Apple, el panorama cambió radicalmente, como se
+muestra en la
+figura <a href="tecnologías-de-acceso.html#fig:demandaTransferencia">6.35</a>.</p>
+<p>Estos dispositivos en los que toda la superficie es una pantalla,
+basados en el uso de aplicaciones móviles (Apps) y que requieren de
+conexión constante (a veces, continua) a Internet rebasaron por mucho
+las capacidades de las redes celulares.</p>
+<p>Ello llevó a los fabricantes y operadores a acelerar sus hojas de ruta y se dio un rápido despliegue de subgeneraciones (3.5G, 3.75G) que
+ofrecían mayores velocidades de transferencia, hasta llegar a las
+actuales redes 4G (LTE, <em>Long Term Evolution</em>) cuya principal
+característica es que son redes basadas en los principios de
+transferencia de datos (conmutación de paquetes), en las que la
+telefonía es un servicio más.</p>
+<p>Para zonas donde las redes celulares están altamente congestionadas o la cobertura al interior de edificios es un problema, se han implementado alternativas ingeniosas que complementan el acceso a Internet a través de teléfonos inteligentes. Dos de ellas son las femto celdas y UMA que aparecen en la figura <a href="tecnologías-de-acceso.html#fig:femtouma">6.36</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:femtouma"></span>
+<img src="figuras/c6/femto.jpg" alt="*Alternativas pra desfogar carga en redes celulares: (a) Femto celdas; (b) Unlicensed Mobile Access*" width="46%" /><img src="figuras/c6/uma.jpg" alt="*Alternativas pra desfogar carga en redes celulares: (a) Femto celdas; (b) Unlicensed Mobile Access*" width="46%" />
+<p class="caption">
+Figura 6.36: <em>Alternativas pra desfogar carga en redes celulares: (a) Femto celdas; (b) Unlicensed Mobile Access</em>
+</p>
+</div>
+<div id="femtoceldas" class="section level5 unnumbered hasAnchor">
+<h5>FemtoCeldas<a href="tecnologías-de-acceso.html#femtoceldas" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Se trata de una pequeña estación base que proporciona tecnología celular
+dentro del hogar o la oficina. Se enlaza a la red del operador a través
+de cualquier tecnología de acceso disponible (típicamente una tecnología
+alambrada, como FTTH o ADSL). En esa red se establece una VPN con los
+equipos del operador para fines de administración, tarificación,
+etcétera.</p>
+<p>Los puntos de acceso utilizan las mismas frecuencias que las macro
+celdas, pero operan a una potencia mucho menor para evitar
+interferencia. Algunas femto celdas permiten el relevo con las macro
+celdas (<em>handover</em>) sin perder la conexión, exactamente como ocurre con
+la itinerancia entre radio bases.</p>
+<p>Con técnicas similares a las empleadas para planear el despliegue de
+redes WiFi, se eligen los puntos óptimos para la instalación de estos
+puntos de acceso, lo que permite incrementar la capacidad a bajo costo y
+mejorar la cobertura en interiores.</p>
+</div>
+<div id="unlicensed-mobile-access" class="section level5 unnumbered hasAnchor">
+<h5><em>Unlicensed Mobile Access</em><a href="tecnologías-de-acceso.html#unlicensed-mobile-access" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Es el nombre comercial de una tecnología llamada <em>Generic Access
+Network</em> (GAN). También se le llama <em>Wi-Fi Calling, VoWiFi</em>.</p>
+<p>Dado que prácticamente todos los teléfonos móviles en la actualidad
+cuentan con la posibilidad de conectarse a redes WiFi, esta tecnología
+permite que los usuarios utilicen los recursos de la red local cuando se
+encuentren dentro de su cobertura para acceder a Internet pero también
+para establecer llamadas telefónicas. Si el usuario sale del área de
+cobertura de la red WiFi, la red celular se ocupará de hcer la
+transición a la radio base de manera transparente.</p>
+<p>La principal diferencia entre las femto celdas y UMA/GAN, es que en este
+último caso, el relevo se hace transitando de una pila de protocolos
+(WiFi) a otra (GSM, UMTS, LTE) además de la transición del AP a la radio
+base. A esto se le conoce como “relevo vertical” (<em>vertical handover</em>) y
+requiere de dispositivos móviles que cuenten con esta funcionalidad.</p>
+</div>
+<div id="wimax---ieee-802.16" class="section level4 unnumbered hasAnchor">
+<h4>WiMAX - IEEE 802.16<a href="tecnologías-de-acceso.html#wimax---ieee-802.16" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Worldwide Ineroperability for Microwave Access es una norma de
+transmisión de datos que pertenece a las tecnologías de última milla,
+utiliza las ondas radioeléctricas en las frecuencias 2,5 a 5,8 GHz y
+puede llegar a proveer una cobertura de hasta 70 km. En las
+implementaciones para cobertura móvil, WiMAX permite que los usuarios se
+desplacen de manera similar que en las redes móviles convencionales
+(UMTS). También, las características de WiMAX lo hacen adecuado para
+aplicaciones potenciales como acceso a Internet, backhaul o triple play.
+Una de sus mayores ventajas es que permite proveer servicios de banda
+ancha a zonas con baja densidad poblacional que presentan altos costos
+por usuario. Una de las últimas implenetaciones de WiMAX (WiMAX2-IEEE
+802.16m) tiene como objetivo alcanzar una velocidad de descarga de 100
+Mbit/s, esto la da potencial para el despliegue de tecnologías de cuarta generación.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:wimax"></span>
+<img src="figuras/c6/wimax.jpg" alt="*Esquema de comunicación WiMAX*" width="50%" />
+<p class="caption">
+Figura 6.37: <em>Esquema de comunicación WiMAX</em>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="problemas-5" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Problemas<a href="tecnologías-de-acceso.html#problemas-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-38" class="exercise"><strong>Problema 6.1  </strong></span>Además de ADSL, identifique otras tres
+tecnologías de acceso, resaltando su principal ventaja y grado de
+madurez en México</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-39" class="exercise"><strong>Problema 6.2  </strong></span>¿Por qué en un sistema de VSAT se debe recorrer el
+segmento terrestre-satélite 4 veces?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-40" class="exercise"><strong>Problema 6.3  </strong></span>¿Aproximadamente cuál es la latencia de fuente
+a destino para una comunicación en los globos de Google? (Tip: un globo
+vuela más o menos a la altura de un HAP)</p>
+<ul>
+<li><span class="math inline">\(\approx 60 \mu\,s\)</span></li>
+<li><span class="math inline">\(\approx 130 \mu\,s\)</span></li>
+<li><span class="math inline">\(\approx 120 ms\)</span></li>
+<li><span class="math inline">\(\approx 240 ms\)</span></li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-41" class="exercise"><strong>Problema 6.4  </strong></span>El perfil de Don Lencho en Internet es
+principalmente el de un consumidor de contenidos: Ve regularmente series
+y películas de Netflix y algunos videos de youtube. En su localidad,
+solo tiene dos opciones: Contratar un enlace ADSL de 5 Mbps con una
+renta mensual de $500.00, o un FTTH de 10 Mbps con una renta mensual de
+$800.00.</p>
+<p>¿Qué le recomendarías? Justifica muy brevemente tu respuesta</p>
+</div>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="13">
+<li id="fn13"><p>Agradecemos la colaboración de Rodrigo Calderón Serafín y Diego Gutiérrez Romero para actualizar este material.<a href="tecnologías-de-acceso.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>En este curso no ahondaremos en las tasas de penetración y las inequidades de cobertura de Internet en México, pero debemos tenerlo presente.<a href="tecnologías-de-acceso.html#fnref14" class="footnote-back">↩︎</a></p></li>
+<li id="fn15"><p>El costo del dólar llevado a Paridad de Poder Adquisitivo (Parity Purchasing Power) para eliminar las diferencias entre el valor de las distintas economías.<a href="tecnologías-de-acceso.html#fnref15" class="footnote-back">↩︎</a></p></li>
+<li id="fn16"><p>1 zettabyte = <span class="math inline">\(10^{21}\)</span> bytes<a href="tecnologías-de-acceso.html#fnref16" class="footnote-back">↩︎</a></p></li>
+<li id="fn17"><p>CPE, Customer Premises Equipment, se trata del modem que instala el operador<a href="tecnologías-de-acceso.html#fnref17" class="footnote-back">↩︎</a></p></li>
+<li id="fn18"><p>Desagregación del bucle local, o del par trenzado, se refiere a un lineamiento que permite que distintos operadores puedan ofrecer sus propios servicios (voz, datos, video) por el par trenzado a pesar de no haber sido ellos quienes lo desplegaron.<a href="tecnologías-de-acceso.html#fnref18" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="administración-de-redes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análisis-tecno-económico.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-TecnoAcceso.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown_DisArqRedes.pdf", "bookdown_DisArqRedes.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

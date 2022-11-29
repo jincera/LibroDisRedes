@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 5 Administración de redes | Diseño y Arquitectura de Redes</title>
+  <meta name="description" content="Primer intento para hacer las notas en html" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 5 Administración de redes | Diseño y Arquitectura de Redes" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/figuras/dar.jpg" />
+  <meta property="og:description" content="Primer intento para hacer las notas en html" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 5 Administración de redes | Diseño y Arquitectura de Redes" />
+  
+  <meta name="twitter:description" content="Primer intento para hacer las notas en html" />
+  <meta name="twitter:image" content="/figuras/dar.jpg" />
+
+<meta name="author" content="José Incera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="diseño-lógico-de-la-red.html"/>
+<link rel="next" href="tecnologías-de-acceso.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diseño y Arquitectura de Redes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html"><i class="fa fa-check"></i><b>1</b> Metodología de diseño de redes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#introducción"><i class="fa fa-check"></i><b>1.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#por-qué-una-empresa-desea-una-red"><i class="fa fa-check"></i>¿Por qué una empresa desea una red?</a></li>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#fracasos-en-proyectos-de-tecnología-de-información"><i class="fa fa-check"></i>Fracasos en proyectos de tecnología de información</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#diseño-descendente"><i class="fa fa-check"></i><b>1.2</b> Diseño descendente</a></li>
+<li class="chapter" data-level="1.3" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#microsoft-solutions-framework"><i class="fa fa-check"></i><b>1.3</b> Microsoft Solutions Framework</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#modelo-de-proceso"><i class="fa fa-check"></i><b>1.3.1</b> Modelo de proceso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#análisis-de-riesgos"><i class="fa fa-check"></i><b>1.4</b> Análisis de riesgos</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#manejo-de-riesgos"><i class="fa fa-check"></i><b>1.4.1</b> Manejo de Riesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#problemas"><i class="fa fa-check"></i><b>1.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html"><i class="fa fa-check"></i><b>2</b> Requerimientos técnicos. Compromisos y restricciones</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#escalabilidad"><i class="fa fa-check"></i><b>2.1</b> Escalabilidad</a></li>
+<li class="chapter" data-level="2.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#disponibilidad"><i class="fa fa-check"></i><b>2.2</b> Disponibilidad</a></li>
+<li class="chapter" data-level="2.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#confiabilidad"><i class="fa fa-check"></i><b>2.3</b> Confiabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#desempeño"><i class="fa fa-check"></i><b>2.4</b> Desempeño</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ancho-de-banda"><i class="fa fa-check"></i><b>2.4.1</b> Ancho de banda</a></li>
+<li class="chapter" data-level="2.4.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#utilización"><i class="fa fa-check"></i><b>2.4.2</b> Utilización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#rendimiento"><i class="fa fa-check"></i><b>2.4.3</b> Rendimiento</a></li>
+<li class="chapter" data-level="2.4.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#tasa-de-error"><i class="fa fa-check"></i><b>2.4.4</b> Tasa de error</a></li>
+<li class="chapter" data-level="2.4.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#eficiencia"><i class="fa fa-check"></i><b>2.4.5</b> Eficiencia</a></li>
+<li class="chapter" data-level="2.4.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#retardo-y-variabilidad"><i class="fa fa-check"></i><b>2.4.6</b> Retardo y variabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#seguridad"><i class="fa fa-check"></i><b>2.5</b> Seguridad</a></li>
+<li class="chapter" data-level="2.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#administración"><i class="fa fa-check"></i><b>2.6</b> Administración</a></li>
+<li class="chapter" data-level="2.7" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#facilidad-de-uso"><i class="fa fa-check"></i><b>2.7</b> Facilidad de uso</a></li>
+<li class="chapter" data-level="2.8" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#adaptabilidad"><i class="fa fa-check"></i><b>2.8</b> Adaptabilidad</a></li>
+<li class="chapter" data-level="2.9" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#costo-beneficio"><i class="fa fa-check"></i><b>2.9</b> Costo-beneficio</a></li>
+<li class="chapter" data-level="2.10" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#conflictos-entre-requerimientos"><i class="fa fa-check"></i><b>2.10</b> Conflictos entre requerimientos</a></li>
+<li class="chapter" data-level="2.11" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#otras-métricas-relevantes"><i class="fa fa-check"></i><b>2.11</b> Otras métricas relevantes</a></li>
+<li class="chapter" data-level="2.12" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#problemas-1"><i class="fa fa-check"></i><b>2.12</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><i class="fa fa-check"></i><b>3</b> Caracterización de la red y del tráfico generado por las aplicaciones</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-la-topología"><i class="fa fa-check"></i><b>3.1</b> Caracterización de la topología</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#mapa-de-la-red"><i class="fa fa-check"></i><b>3.1.1</b> Mapa de la red</a></li>
+<li class="chapter" data-level="3.1.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#asignación-de-nombres-y-direcciones"><i class="fa fa-check"></i><b>3.1.2</b> Asignación de nombres y direcciones</a></li>
+<li class="chapter" data-level="3.1.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-los-medios-de-transmisión"><i class="fa fa-check"></i><b>3.1.3</b> Caracterización de los medios de transmisión</a></li>
+<li class="chapter" data-level="3.1.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#restricciones-ambientales-y-arquitectónicas"><i class="fa fa-check"></i><b>3.1.4</b> Restricciones ambientales y arquitectónicas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#desempeño-de-la-red-actual"><i class="fa fa-check"></i><b>3.2</b> Desempeño de la red actual</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#herramientas-de-recolección"><i class="fa fa-check"></i><b>3.2.1</b> Herramientas de recolección</a></li>
+<li class="chapter" data-level="3.2.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#periodo-y-frecuencia-de-recolección"><i class="fa fa-check"></i><b>3.2.2</b> Periodo y frecuencia de recolección</a></li>
+<li class="chapter" data-level="3.2.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#algunas-métricas-de-desempeño"><i class="fa fa-check"></i><b>3.2.3</b> Algunas métricas de desempeño</a></li>
+<li class="chapter" data-level="3.2.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#presentación-de-resultados"><i class="fa fa-check"></i><b>3.2.4</b> Presentación de resultados</a></li>
+<li class="chapter" data-level="3.2.5" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#análisis-estadístico-de-redes"><i class="fa fa-check"></i><b>3.2.5</b> Análisis estadístico de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-flujo"><i class="fa fa-check"></i><b>3.3</b> Caracterización del flujo</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tipos-de-flujo-por-aplicación"><i class="fa fa-check"></i><b>3.3.1</b> Tipos de flujo por aplicación</a></li>
+<li class="chapter" data-level="3.3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-volumen-de-tráfico"><i class="fa fa-check"></i><b>3.3.2</b> Caracterización del volumen de tráfico</a></li>
+<li class="chapter" data-level="3.3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#requerimientos-de-calidad-de-servicio"><i class="fa fa-check"></i><b>3.3.3</b> Requerimientos de calidad de servicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#problemas-2"><i class="fa fa-check"></i><b>3.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html"><i class="fa fa-check"></i><b>4</b> Diseño lógico de la red</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología"><i class="fa fa-check"></i><b>4.1</b> Diseño de la topología</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-plana"><i class="fa fa-check"></i><b>4.1.1</b> Topología plana</a></li>
+<li class="chapter" data-level="4.1.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-jerárquico"><i class="fa fa-check"></i><b>4.1.2</b> Diseño jerárquico</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-capa-de-acceso"><i class="fa fa-check"></i><b>4.2</b> Diseño de la capa de acceso</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problema-de-localización-asignación"><i class="fa fa-check"></i><b>4.2.1</b> Problema de Localización-asignación</a></li>
+<li class="chapter" data-level="4.2.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#asignación-de-nodos-a-concentradores"><i class="fa fa-check"></i><b>4.2.2</b> Asignación de nodos a concentradores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-de-nodos-a-concentrador"><i class="fa fa-check"></i><b>4.2.3</b> Topología de nodos a concentrador</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#capa-de-distribución"><i class="fa fa-check"></i><b>4.3</b> Capa de distribución</a></li>
+<li class="chapter" data-level="4.4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-red-dorsal"><i class="fa fa-check"></i><b>4.4</b> Diseño de la red dorsal</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología-1"><i class="fa fa-check"></i><b>4.4.1</b> Diseño de la topología</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-basado-en-bloques-modulares"><i class="fa fa-check"></i><b>4.5</b> Diseño basado en bloques modulares</a></li>
+<li class="chapter" data-level="4.6" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#s:redundancia"><i class="fa fa-check"></i><b>4.6</b> Topologías con redundancia</a></li>
+<li class="chapter" data-level="4.7" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problemas-3"><i class="fa fa-check"></i><b>4.7</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="administración-de-redes.html"><a href="administración-de-redes.html"><i class="fa fa-check"></i><b>5</b> Administración de redes</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#evolución-de-administración-de-sistemas"><i class="fa fa-check"></i><b>5.1</b> Evolución de administración de sistemas</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-fallas"><i class="fa fa-check"></i><b>5.1.1</b> Gestión de fallas</a></li>
+<li class="chapter" data-level="5.1.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-configuración"><i class="fa fa-check"></i><b>5.1.2</b> Gestión de configuración</a></li>
+<li class="chapter" data-level="5.1.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-seguridad"><i class="fa fa-check"></i><b>5.1.3</b> Gestión de seguridad</a></li>
+<li class="chapter" data-level="5.1.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-rendimiento"><i class="fa fa-check"></i><b>5.1.4</b> Gestión de rendimiento</a></li>
+<li class="chapter" data-level="5.1.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#contabilidad-de-recursos"><i class="fa fa-check"></i><b>5.1.5</b> Contabilidad de recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#protocolos-de-administración"><i class="fa fa-check"></i><b>5.2</b> Protocolos de administración</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-administración-osi"><i class="fa fa-check"></i><b>5.2.1</b> Modelo de administración OSI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-gestión-ietf"><i class="fa fa-check"></i><b>5.2.2</b> Modelo de gestión IETF</a></li>
+<li class="chapter" data-level="5.2.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#simple-network-management-protocol"><i class="fa fa-check"></i><b>5.2.3</b> Simple Network Management Protocol</a></li>
+<li class="chapter" data-level="5.2.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#base-de-datos-de-información-de-administración-mib"><i class="fa fa-check"></i><b>5.2.4</b> Base de datos de información de administración (MIB)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#rmon"><i class="fa fa-check"></i><b>5.3</b> RMON</a></li>
+<li class="chapter" data-level="5.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#administración-de-sistemas-con-snmp"><i class="fa fa-check"></i><b>5.4</b> Administración de sistemas con SNMP</a></li>
+<li class="chapter" data-level="5.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#problemas-4"><i class="fa fa-check"></i><b>5.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html"><i class="fa fa-check"></i><b>6</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#cobertura-de-internet"><i class="fa fa-check"></i><b>6.1</b> Cobertura de Internet</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#red-de-acceso"><i class="fa fa-check"></i><b>6.1.1</b> Red de acceso</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#contexto-de-internet-y-servicios-de-banda-ancha-en-méxico"><i class="fa fa-check"></i><b>6.1.2</b> Contexto de Internet y servicios de Banda Ancha en México</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#banda-ancha"><i class="fa fa-check"></i><b>6.1.3</b> Banda Ancha</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-1"><i class="fa fa-check"></i><b>6.2</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-cableadas"><i class="fa fa-check"></i><b>6.2.1</b> Tecnologías de acceso cableadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-inalámbricas"><i class="fa fa-check"></i><b>6.3</b> Tecnologías de acceso inalámbricas</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#telefonía-celular"><i class="fa fa-check"></i><b>6.3.1</b> Telefonía celular</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#problemas-5"><i class="fa fa-check"></i><b>6.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html"><i class="fa fa-check"></i><b>7</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#introducción-1"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#métricas-financieras"><i class="fa fa-check"></i><b>7.2</b> Métricas financieras</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#costo-total-de-propiedad"><i class="fa fa-check"></i><b>7.2.1</b> Costo total de propiedad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#retorno-de-inversión"><i class="fa fa-check"></i><b>7.2.2</b> Retorno de inversión</a></li>
+<li class="chapter" data-level="7.2.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#valor-presente-neto"><i class="fa fa-check"></i><b>7.2.3</b> Valor Presente Neto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-tecno-económico-1"><i class="fa fa-check"></i><b>7.3</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-de-rentabilidad"><i class="fa fa-check"></i><b>7.3.1</b> Análisis de rentabilidad</a></li>
+<li class="chapter" data-level="7.3.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#despliegue-y-operación-de-la-red"><i class="fa fa-check"></i><b>7.3.2</b> Despliegue y operación de la red</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html"><i class="fa fa-check"></i><b>8</b> Respuestas a problemas seleccionados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#S:Metod"><i class="fa fa-check"></i><b>8.1</b> Metodología de diseño de redes</a></li>
+<li class="chapter" data-level="8.2" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:ReqTec"><i class="fa fa-check"></i><b>8.2</b> Requerimientos técnicos</a></li>
+<li class="chapter" data-level="8.3" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:CaracRed"><i class="fa fa-check"></i><b>8.3</b> Caracterización de la red</a></li>
+<li class="chapter" data-level="8.4" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:DisLog"><i class="fa fa-check"></i><b>8.4</b> Diseño lógico</a></li>
+<li class="chapter" data-level="8.5" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:Admon"><i class="fa fa-check"></i><b>8.5</b> Administración de Redes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diseño y Arquitectura de Redes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="administración-de-redes" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> Administración de redes<a href="administración-de-redes.html#administración-de-redes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>La administración de redes es una parte fundamental de los sistemas
+integrados de gestión de sistemas de información. Con el enorme
+crecimiento en la variedad y número de equipos y redes como el ambiente
+mostrado en la figura <a href="administración-de-redes.html#fig:redheterogenea">5.1</a>, una administración centralizada resulta impensable. La integración de equipos heterogéneos impide la utilización de sistemas propietarios de bajo nivel.</p>
+<p>La administración de redes representa el conjunto de funciones que
+permiten una adecuada explotación, mantenimiento, seguridad y
+seguimiento en la operación de la red.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:redheterogenea"></span>
+<img src="figuras/c5/redheterogenea.jpg" alt="*Una red heterogénea*" width="50%" />
+<p class="caption">
+Figura 5.1: <em>Una red heterogénea</em>
+</p>
+</div>
+<p>Para poder garantizar el acceso ubicuo a la información y servicios en
+las redes heterogéneas tendrá que haber una inversión considerable en
+tecnologías de gestión y monitoreo de redes y sistemas (NSM, <em>network
+and systems management</em>). Una mala estrategia de NSM es la razón típica
+por la que falla un esfuerzo de downsizing, así como por la que se
+perciben bajos incrementos en la productividad del personal no técnico.</p>
+<p>En el viejo modelo de cómputo centralizado, los administradores debían
+preocuparse únicamente por el equipo central y unas cuantas terminales
+<em>tontas</em>. En la actualidad, el modelo está basado en estaciones de
+trabajo inteligentes, capaces de realizar muchas más tareas pero que al
+mismo tiempo necesitan más dedicación y tiempo para su instalación,
+configuración, evaluación y mantenimiento.</p>
+<p>Estudios recientes (figura <a href="administración-de-redes.html#fig:retosadmon">5.2</a>) sobre los costos incurridos en redes en Estados Unidos, muestran que el costo anual de administración de sistemas excede los costos de adquisición tanto de hardware como de software.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:retosadmon"></span>
+<img src="figuras/c5/costosMF.jpg" alt="*Retos en la gestión de TI por su evolución*" width="45%" /><img src="figuras/c5/costosCS.jpg" alt="*Retos en la gestión de TI por su evolución*" width="45%" />
+<p class="caption">
+Figura 5.2: <em>Retos en la gestión de TI por su evolución</em>
+</p>
+</div>
+<div id="evolución-de-administración-de-sistemas" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Evolución de administración de sistemas<a href="administración-de-redes.html#evolución-de-administración-de-sistemas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La evolución de los sistemas administrativos comienza con la
+administración tradicional del Mainframe y sus equipos asociados. A este
+ambiente de administración se le llamaba de invernadero (<em>Glass house</em>).
+Durante más de treinta años, los responsables de los sistemas
+informáticos debían gestionar todos sus sistemas en el centro de
+cómputo. En grandes centros, esto implicaba decenas de herramientas
+distintas, todas ellas especializadas en cada una de las plataformas
+disponibles.</p>
+<p>Conforme fue evolucionando el ambiente de cómputo, lo fue haciendo su
+gestión, transitando hacia un modelo distribuido donde se debía
+considerar la administración de:</p>
+<ul>
+<li><p>Minicomputadoras</p></li>
+<li><p>Estaciones de trabajo</p></li>
+<li><p>Computadoras personales departamentales</p></li>
+</ul>
+<p>A estos sistemas de cómputo hoy deben agregarse equipos portátiles como
+laptops, tabletas y hasta teléfonos inteligentes.</p>
+<p>Además de los equipos terminales, la gestión debe incluir, por supuesto,
+los equipos de interconexión, que es el tema central de este capítulo.</p>
+<p>De acuerdo al marco de referencia OSI, los componentes básicos de
+administración de redes se conforman por cinco subsistemas:</p>
+<ul>
+<li><p>Gestión de fallas (<em>Fault Management</em>)</p></li>
+<li><p>Gestión de configuración (<em>Configuration Management</em>)</p></li>
+<li><p>Gestión de seguridad (<em>Security Management</em>)</p></li>
+<li><p>Gestión de rendimiento (<em>Performance Management</em>)</p></li>
+<li><p>Contabilidad de recursos (<em>Accounting Management</em>)</p></li>
+</ul>
+<p>En el modelo OSI, estos subsistemas ofrecen un conjunto de servicios:
+<em>Common Management Information Services</em>, CMIS, con ayuda del protocolo
+de nivel de aplicación <em>Common Management Information Protocol</em>, CMIP.</p>
+<div id="gestión-de-fallas" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Gestión de fallas<a href="administración-de-redes.html#gestión-de-fallas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La gestión de fallas debe ser preferentemente proactiva, es decir, se
+debe tratar de identificar tempranamente una condición potencial de
+falla antes de que ésta se manifieste. Se sigue un modelo de gestión
+activa en el que un mecanismo de sondeo solicita información a los
+dispositivos administrados.</p>
+<p>Debe haber un compromiso entre la precisión de la información adquirida
+y la cantidad de tráfico inyectado; también deben contemplarse canales
+alternos para recabar información de los dispositivos en caso de fallos
+en la red.</p>
+<p>También debe definirse con claridad, como se mencionó al presentar el
+modelo de administración de riesgos, que es importante definir qué
+fallas se desean gestionar y cuáles no. Debe considerarse que hay muchos
+tipos de fallos que ocurren raramente, pero sobre todo tienen un impacto
+bajo en el desempeño de la red, por lo que quizás no merece la pena
+incluirlas en el modelo (automatizado) de gestión de fallas.</p>
+<p>En el proceso de localizar y corregir problemas en la red, los tres
+pasos básicos son:</p>
+<ul>
+<li><p>Identificar (pasiva o activamente) un comportamiento anormal de la
+red.</p></li>
+<li><p>Aislar el problema; minimizar su impacto en el resto de la red.
+Tratar de reproducirlo para poder analizarlo.</p></li>
+<li><p>Corregir el problema.</p></li>
+</ul>
+</div>
+<div id="gestión-de-configuración" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Gestión de configuración<a href="administración-de-redes.html#gestión-de-configuración" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La gestión de configuración tiene por objeto alinear la configuración de
+equipos a las políticas de operación definidas, simplificar su
+despliegue y minimizar errores durante este proceso. Para ello, es muy
+recomendable definir perfiles de usuarios con sus respectivos permisos
+para acceso a equipos y servicios de red.</p>
+<p>Las gestión de configuración debe tomar en cuenta tanto el nivel físico
+como el nivel lógico de la red. En operación, este subsistema obtiene
+datos e información de la red y los utiliza para gestionar la
+configuración de los diferentes dispositivos. Para ello se debe:</p>
+<ul>
+<li><p>Obtener información sobre la configuración actual de la red,
+incluyendo dispositivos instalados por el usuario (autodiscovery);</p></li>
+<li><p>Utilizar dicha información y las herramientas (automatizadas) para
+modificar los dispositivos según se desee;</p></li>
+<li><p>Almacenar información, mantener y actualizar el inventario y
+producir reportes. Este inventario debe incluir elementos como
+direcciones asignadas, hardware y software instalado, números de
+serie, localización física, capacidad, etcétera.</p></li>
+</ul>
+</div>
+<div id="gestión-de-seguridad" class="section level3 hasAnchor" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Gestión de seguridad<a href="administración-de-redes.html#gestión-de-seguridad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La gestión de seguridad no se limita a los mecanismos de seguridad
+(protocolos, mecanismos de encripción) sino a toda la política de
+seguridad que debe ser implementada en la organización, como la
+administración de contraseñas, responsabilidades de los usuarios,
+seguridad de acceso físico, entre muchos otros. En capítulos posteriores
+se tratará con más detalle este tema.</p>
+<p>La protección de información importante se logra mediante la limitación
+en el acceso de los usuarios a hosts y dispositivos de red y mediante la
+notificación al administrador de red de intentos y violaciones de
+seguridad. Para realizar estos objetivos tenemos que:</p>
+<ul>
+<li><p>Definir e identificar la información que será protegida.</p></li>
+<li><p>Localizar los puntos de acceso a dicha información.</p></li>
+<li><p>Asegurar dichos puntos de acceso mediante los mecanismos apropiados
+(encripción, filtrado de paquetes, Identificación de hosts e
+Identificación de usuarios).</p></li>
+<li><p>Incluir seguridad física (control de acceso) de los dispositivos.</p></li>
+</ul>
+</div>
+<div id="gestión-de-rendimiento" class="section level3 hasAnchor" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Gestión de rendimiento<a href="administración-de-redes.html#gestión-de-rendimiento" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El objetivo de la gestión de rendimiento es el garantizar que la red
+está dentro de los parámetros de operación definidos en la etapa de
+diseño, mediante el monitoreo de los dispositivos de red y sus enlaces
+asociados para determinar su utilización, niveles de error, etcétera. El
+monitoreo continuo permite una gestión proactiva de la red y ayuda a
+anticipar las extensiones y cambios necesarios cuando la infraestructura
+de comunicaciones empieza a rebasar sus condiciones óptimas de
+operación.</p>
+<p>La gestión de rendimiento puede ser extremo a extremo y por componente.
+Deben identificarse las métricas a utilizar para evaluar el rendimiento.
+Para lograr los objetivos de la gestión de rendimiento es recomendable:</p>
+<ul>
+<li><p>Reunir información de la utilización actual de dispositivos y
+enlaces, como tiempo de respuesta, ocupación media de las colas,
+disponibilidad (MTBF), etcétera.</p></li>
+<li><p>Analizar la información relevante par discernir si hay altos niveles
+de utilización.</p></li>
+<li><p>Fijar umbrales de utilización.</p></li>
+<li><p>Valerse de herramientas de simulación para determinar cómo la red
+puede ser alterada para maximizar su rendimiento.</p></li>
+</ul>
+</div>
+<div id="contabilidad-de-recursos" class="section level3 hasAnchor" number="5.1.5">
+<h3><span class="header-section-number">5.1.5</span> Contabilidad de recursos<a href="administración-de-redes.html#contabilidad-de-recursos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La gestión contable o auditoría de recursos almacena y procesa datos
+referentes al consumo de los recursos de la red. Esta información puede
+ser utilizada para fines de tarificación y también como apoyo para
+planear la capacidad y/o detectar fallas de la red. En esencia, la
+gestión contable implica:</p>
+<ul>
+<li><p>Medir la utilización de los recursos de la red para determinar su
+correcta distribución.</p></li>
+<li><p>Definir cuotas de uso utilizando métricas adecuadas.</p></li>
+<li><p>Determinar y reportar costos y utilización, para cobrar a los
+usuarios por el servicio.</p></li>
+</ul>
+</div>
+</div>
+<div id="protocolos-de-administración" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Protocolos de administración<a href="administración-de-redes.html#protocolos-de-administración" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Existe un conjunto amplio de protocolos y herramientas propietarias para
+la gestión de redes y sistemas informáticos, pero la admistración de
+redes se concentra en dos grandes categorías: el enfoque de
+administración de OSI y el de IETF.</p>
+<div id="modelo-de-administración-osi" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Modelo de administración OSI<a href="administración-de-redes.html#modelo-de-administración-osi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En el modelo de administración OSI cada capa cuenta con una "entidad de
+administración de capa" (LME, <em>layer management entity</em>) que se
+comunica con la "entidad de aplicación de administración del sistema"
+(SMAE, <em>system management application entity</em>). Las SMAE se comunican
+entre sí a través de CMIP como se muestra en la
+figura <a href="administración-de-redes.html#fig:cmip">5.3</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cmip"></span>
+<img src="figuras/c5/ModMgmtOSI.jpg" alt="*Modelo de gestión OSI*" width="60%" />
+<p class="caption">
+Figura 5.3: <em>Modelo de gestión OSI</em>
+</p>
+</div>
+<p>Las primitivas del modelo definen los servicios ofrecidos (CMIS):</p>
+<ul>
+<li><p>Set (manipular información de administración)</p></li>
+<li><p>Action (ejecutar un comando, p.e., reinicio)</p></li>
+<li><p>Get (leer información de administración)</p></li>
+<li><p>Create (crear una nueva instancia de un objeto)</p></li>
+<li><p>Delete (eliminar una instancia de un objeto)</p></li>
+<li><p>Event-report (reportar eventos anormales)</p></li>
+</ul>
+<p>CMIS está basado en un modelo orientado a conexión. Todos los servicios
+se ofrecen con confirmación, aunque Set, Action e Event-report también
+pueden ofrecerse sin confirmación.</p>
+<p>Observe que en este modelo, para que pueda haber intercambio de
+información, toda la pila de protocolos debe estar funcionando.</p>
+</div>
+<div id="modelo-de-gestión-ietf" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Modelo de gestión IETF<a href="administración-de-redes.html#modelo-de-gestión-ietf" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A los inicios del desarrollo de Internet, se implementó el protocolo
+ICMP (Internet Control Message Protocol) para depuración, control y
+monitoreo de errores del protocolo IP. Una de sus aplicaciones más
+conocidas es la herramienta PING que permite verificar si un dispositivo
+determinado es "alcanzable".</p>
+<p>Claramente, este tipo de mecanismos es insuficiente para la
+administración de redes cada vez más complejas. A mediados de los años
+80 se reconoció la necesidad de incorporar un mecanismo de
+administración de red. Se consideraba que las propuestas de OSI para
+gestión debían ser incorporadas a Internet, pero OSI avanzaba muy
+lentamente, por lo que se optó en 1987 por seguir dos estrategias
+paralelas:</p>
+<ul>
+<li><p>A corto plazo se desarrollaría un protocolo sencillo basado en SGMP
+(<em>Simple Gateway Monitoring Protocol</em>), un protocolo utilizado para
+depurar la operación de enruteadores. Este protocolo es SNMP
+(<em>Simple Network Monitoring Protocol</em>). La idea de base es: <em>el
+impacto de añadir administración de red debe tener un efecto mínimo
+en los nodos administrados</em></p></li>
+<li><p>A largo plazo se debía soportar CMIP sobre TCP/IP: CMOT</p></li>
+</ul>
+<p>Como se consideraba que las dos estrategias eventualmente deberían
+converger y, de hecho, se esperaba que la dominante fuera CMOT, se
+decidió definir un marco de referencia común inspirado en las ideas y
+las mejores prácticas de OSI.</p>
+<p>El marco de referencia común consistió en la definición de una
+Estructura de Información Común (SMI, <em>Structure of Management
+Information</em>) y un conjunto de <em>elementos</em> de administración: la base de
+información de administración (MIB, <em>Management Information Base</em>). En
+otras palabras, el modelo de administración en IETF se divide en dos
+partes:</p>
+<ul>
+<li><p>El formato de los mensajes (SMI) y el protocolo de transferencia
+entre agentes y administrador: SNMP</p></li>
+<li><p>La información que se administra: MIB</p></li>
+</ul>
+<p>En general, los dispositivos tienen agentes encargados de colectar la
+información que les corresponde (las variables MIB) y el administrador
+contacta a los agentes para recabar esta información. Ver
+figura <a href="#f:modsnmp" reference-type="ref" reference="f:modsnmp">5.5</a>.
+Siguiendo la idea de no sobrecargar los nodos, los agentes son entidades
+simplificadas y la inteligencia es desplazada a la consola de
+administración.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:modsnmp"></span>
+<img src="figuras/c5/ModMgmtIETF.jpg" alt="*Modelo de gestión IETF*" width="60%" />
+<p class="caption">
+Figura 5.4: <em>Modelo de gestión IETF</em>
+</p>
+</div>
+</div>
+<div id="simple-network-management-protocol" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Simple Network Management Protocol<a href="administración-de-redes.html#simple-network-management-protocol" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Especifica cómo debe ser la comunicación entre la estación de
+administración y los agentes para intercambiar información sobre las
+variables MIB en cuestión. En su primera versión (SNMPv1) se definen
+únicamente cinco comandos:</p>
+<dl>
+<dt>Get-request</dt>
+<dd>
+<p>La consola solicita el valor de una variable</p>
+</dd>
+<dt>Get-next-request</dt>
+<dd>
+<p>Solicita el valor de la siguiente variable. Se utiliza para recorrer
+tablas</p>
+</dd>
+<dt>Get-response</dt>
+<dd>
+<p>El agente devuelve el valor solicitado</p>
+</dd>
+<dt>Set-request</dt>
+<dd>
+<p>La consola establece el valor de una variable</p>
+</dd>
+<dt>Trap</dt>
+<dd>
+<p>El agente reporta alguna anormalidad</p>
+</dd>
+</dl>
+<p>La primera versión trabaja sobre UDP; en las últimas versiones, el
+protocolo de transporte puede ser TCP o UDP. Los comandos get, get-next
+y set esperan contactar al agente en el puerto 161; el comando trap
+espera contactar al administrador en el puerto 162.</p>
+<p>Las anormalidades reportadas con el comando trap están claramente
+definidas en SNMP aunque pueden extenderse. Como ejemplos de las
+anomalías reportadas tenemos:</p>
+<ul>
+<li><p>Reinicio del sistema.</p></li>
+<li><p>Enlace caído / restablecido.</p></li>
+<li><p>Autentificación fallida.</p></li>
+<li><p>Pérdida de vecino EGP.</p></li>
+</ul>
+<p>Para los administradores de redes, SNMP se mantiene oculto detrás de
+paquetes de software conocidos como consolas de administración. La
+consola manda comandos y recibe respuestas de los agentes que se
+encuentran en los dispositivos administrados. Como se muestra en la
+figura <a href="administración-de-redes.html#fig:elemsnmp">5.5</a>, los agentes se encargan de recabar información sobre objetos determinados, los cuales son un subconjunto de la Base MIB.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:elemsnmp"></span>
+<img src="figuras/c5/ElemSNMP.jpg" alt="*Elementos de SNMP*" width="50%" />
+<p class="caption">
+Figura 5.5: <em>Elementos de SNMP</em>
+</p>
+</div>
+<p>Para que un administrador pueda interactuar con un agente, deben
+pertenecer a la misma <em>comunidad</em>. Este concepto permite que en redes
+con muchos dispositivos la carga de la gestión se pueda distribuir entre
+varios administradores. En la
+figura <a href="administración-de-redes.html#fig:comunsnmp">5.6</a> se aprecian dos comunidades, public y public2.</p>
+<p>En su empeño por mantener los agentes simples, SNMPv1 ignora el problema
+de seguridad de acceso. El identificador de comunidad es un campo en el
+paquete SNMP que viaja sin encriptar por la red.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:comunsnmp"></span>
+<img src="figuras/c5/comunidadessnmp.jpg" alt="*Comunidades SNMP*" width="50%" />
+<p class="caption">
+Figura 5.6: <em>Comunidades SNMP</em>
+</p>
+</div>
+</div>
+<div id="base-de-datos-de-información-de-administración-mib" class="section level3 hasAnchor" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Base de datos de información de administración (MIB)<a href="administración-de-redes.html#base-de-datos-de-información-de-administración-mib" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Se trata de una estructura jerárquica en la que se definen los
+identificadores de los objetos (llamados las variables MIB) que pueden
+administrados a través de SNMP. Las variables MIB están organizadas en
+una estructura arborescente basada en el árbol de identificadores de
+objetos (OID, <em>Object Identifier</em> definido en conjunto por OSI y por la
+ITU. En la figura <a href="administración-de-redes.html#fig:arboloid">5.7</a> se muestran las diez categorías de variables
+definidas en el RFC 1213, que corresponden a la segunda versión de
+variables, las variables MIB-II, definida cuando se separan, en 1989,
+los grupos CMOT y SNMP.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:arboloid"></span>
+<img src="figuras/c5/mib-oid.jpg" alt="*Variables MIB-II en el árbol de identificadores de objetos*" width="50%" />
+<p class="caption">
+Figura 5.7: <em>Variables MIB-II en el árbol de identificadores de objetos</em>
+</p>
+</div>
+<p>Un objeto o variable MIB-II tiene un identificador único recorriendo el
+árbol desde la raíz hasta la hoja que lo representa. El primer nivel del
+árbol tiene tres ramas: los objetos definidos por ISO (1), los definidos
+por ITU -anteriormente CCITT- (2) y los definidos conjuntamente por ISO
+e ITU. Abajo de ISO encontramos la rama que corresponde a las
+organizaciones (org, 3) y dejado de ésta, hay una rama para el
+Departamento de Defensa de Estados Unidos (dod, 6).</p>
+<p>Así se sigue recorriendo el árbol hasta llegar al objeto deseado. Por
+ejemplo, el identificador 1.3.6.1.2.1.1.1 corresponde a la variable
+iso.org.dod.internet.mgmt.MIB-II.system.sysDescr. Una instancia de esa
+variable, es decir, el valor actual de la variable, es gestionado por el
+agente del dispositivo y se puede acceder a él agregando un 0 al OID de
+la variable, en este caso, 1.3.6.1.2.1.1.1.0.</p>
+<p>De manera similar, el OID 1.3.6.1.2.1.4.3.0 hace referencia a la
+instancia de la variable IpInReceives bajo la rama IP, que lleva el
+conteo de datagramas IP recibidos por el dispositivo.</p>
+<p>Los valores para la mayor parte de las características listadas pueden
+almacenarse en un solo entero. Sin embargo, MIB también define
+estructuras más complejas. Por ejemplo, la variable IpRoutingTable se
+refiere a la tabla de ruteo del ruteador.</p>
+<p>Dado que la administración de la red involucra muchos equipos
+heterogéneos, los responsables del protocolo establecieron normas muy
+específicas sobre cómo definir, identificar y representar las variables.
+El conjunto de estas normas es lo que se conoce como la estructura de la
+información de administración (SMI, <em>Structure of Management
+Information</em>).</p>
+<p>SMI indica que los objetos deben ser identificados en el árbol OID y
+deben ser definidos utilizando un subconjunto de la notación <strong>ASN.1
+(<em>Abstract Syntax Notation v1</em>)</strong>. ASN.1 es un metalengauje que permite
+representar de manera universal una información (tipos básicos y
+estructuras de datos complejas) y establece la forma en que debe ser
+codificada esta información para el intecambio de datos, es decir, la
+sintaxis de los objetos.</p>
+<p>Para SNMP, se eligió BER (<em>Basic Encoding Rules</em>) como el formato de
+codificación. Como se muestra en la figura <a href="administración-de-redes.html#fig:ber">5.8</a>, la
+codificación BER tiene tres campos: El identificador del tipo de objeto, la longitud del objeto y su valor.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ber"></span>
+<img src="figuras/c5/codifBER.jpg" alt="*Reglas de codificación BER*" width="50%" />
+<p class="caption">
+Figura 5.8: <em>Reglas de codificación BER</em>
+</p>
+</div>
+<p>Como se muestra en la figura <a href="administración-de-redes.html#fig:ber">5.8</a>, los primeros dos bits indican si el objeto es un
+tipo de datos "universal", es decir, definido en ASN.1, si depende de
+la aplicación, si está definido en un contexto determinado (por ejemplo,
+en el contexto de la definición de SNMP) o si es un objeto definido por
+el usuario. El tercer bit indica si el objeto es un tipo básico, como un
+entero, o uno complejo, como una estructura de datos. Los cinco bits
+restantes de la etiqueta indican de qué objeto se trata dentro del
+dominio definido (universal, aplicación, etc.).</p>
+<p>Si la longitud del objeto es menor a 127 bytes, ésta ocupa un solo campo
+(el segundo octeto de la codificación); si es mayor, el bit más
+significativo es "1" y los demás bits indican el número de octetos
+subsecuentes que representan la longitud del objeto.</p>
+<p>En la tabla <a href="administración-de-redes.html#tab:tiposUniversales">5.1</a> se muestran algunos de los tipos de datos universales definidos en ASN.1 y se resaltan en negritas aquellos utilizados en la definición de SNMP.</p>
+<table>
+<caption><span id="tab:tiposUniversales">Tabla 5.1: </span>Ejemplo de tipos de datos universales en ASN.1</caption>
+<colgroup>
+<col width="10%" />
+<col width="28%" />
+<col width="61%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Clase</th>
+<th align="left">Tipo</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">BOOLEAN</td>
+<td align="left">Valores cierto o falso</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>2</strong></td>
+<td align="left"><strong>INTEGER</strong></td>
+<td align="left"><strong>Números enteros positivos o negativos</strong></td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left">BIT STRING</td>
+<td align="left">Serie de bits sin representación específica</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>4</strong></td>
+<td align="left"><strong>OCTET STRING</strong></td>
+<td align="left"><strong>Cadena de caracteres</strong></td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>5</strong></td>
+<td align="left"><strong>NULL</strong></td>
+<td align="left"><strong>Entrada sin valor</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><strong>6</strong></td>
+<td align="left"><strong>OBJECT IDENTIFIER</strong></td>
+<td align="left"><strong>Identificador de un objeto en el árbol OID</strong></td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="left">OBJECT DESCRIPTOR</td>
+<td align="left">Cadena que describe el objeto</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="left">EXTERNAL</td>
+<td align="left">Tipo definido en otro módulo</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="left">REAL</td>
+<td align="left">Número en punto flotante</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="left">ENUMERATED</td>
+<td align="left">Lista de enteros</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>16</strong></td>
+<td align="left"><strong>SEQUENCE OF</strong></td>
+<td align="left"><strong>Conjunto de elementos</strong></td>
+</tr>
+<tr class="even">
+<td align="center">17</td>
+<td align="left">SET; SET OF</td>
+<td align="left">Lista no ordenada de elementos</td>
+</tr>
+</tbody>
+</table>
+<p>Por su parte, la tabla <a href="administración-de-redes.html#tab:tipodsnmp">5.2</a> los objetos definidos en el contexto de SNMPv1 y que corresponden a los PDU del protocolo.</p>
+<table>
+<caption><span id="tab:tipodsnmp">Tabla 5.2: </span>Tipos de datos ASN.1 en el contexto de SNMPv1</caption>
+<thead>
+<tr class="header">
+<th align="center">Clase</th>
+<th align="center">Tipo.de.Dato</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0</td>
+<td align="center">GetRequest</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">GetNextRequest</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center">GetResponse</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="center">SetRequest</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="center">Trap</td>
+</tr>
+</tbody>
+</table>
+<div id="formato-de-mensajes-snmp-v1" class="section level4 hasAnchor" number="5.2.4.1">
+<h4><span class="header-section-number">5.2.4.1</span> Formato de mensajes SNMP (v1)<a href="administración-de-redes.html#formato-de-mensajes-snmp-v1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En la definición SMI el formato de los mensajes SNMPv1 tiene la
+siguiente estructura:</p>
+<p><img src="figuras/c5/fmtsnmp.png" width="65%" style="display: block; margin: auto;" /></p>
+<!-- ```{verbatim, lang='ASN'} -->
+<!-- Request ID = INTEGER; -->
+<!-- ErrorStatus = INTEGER {noError(0), tooBig(1), noSuchName(2), -->
+<!-- badValue(3), readOnly(4), genError(5)}; -->
+<!-- ErroIndex = INTEGER: -->
+<!-- varBind = SEQUENCE {name ObjName, syntax ObjSyntax} -->
+<!-- ``` -->
+<p>El protocolo está definido en el RFC 1157. Una sección de la definición
+se muestra a continuación:</p>
+<p><img src="figuras/c5/rfc1157.png" width="45%" style="display: block; margin: auto;" /></p>
+<!-- ````{verbatim, lang="ASN"} -->
+<!-- RFC 1157-SNMP DEFINITIONS::=BEGIN -->
+<!-- IMPORTS ObjectName, ObjectSyntax, ... -->
+<!-- FROM RFC1155-SMI -->
+<!--    Message::=  SEQUENCE { -->
+<!--       version  INTEGER { -->
+<!--          VERSION-1(0) }, -->
+<!--       community OCTET STRING, -->
+<!--          data  ANY -->
+<!--    } -->
+<!--    PDUs::= CHOICE { -->
+<!--      get-request GetRequest-PDU, -->
+<!--      get-next-request GetNextRequest-PDU, -->
+<!--      get-response GetResponse-PDU, -->
+<!--      set-request SetRequest-PDU, -->
+<!--      trap Trap-PDU -->
+<!--    } -->
+<!-- END -->
+<!-- GetRequest-PDU::=[0] IMPLICIT SEQUENCE { -->
+<!--    request-id RequestID, -->
+<!--    error-status ErrorStatus, -->
+<!--    error-index ErrorIndex, -->
+<!--    variable-bindings VarBindList -->
+<!-- } -->
+<!-- Trap-PDU::=[4] IMPLICIT  SEQUENCE { -->
+<!--    enterprise OBJECT IDENTIFIER, -->
+<!--    agent-addr NetworkAddress, -->
+<!--    generic-trap INTEGER { -->
+<!--       coldStart(0), warmStart(1), -->
+<!--      ... }, -->
+<!--    specific-trap INTEGER, -->
+<!--    time-stamp TimeTicks, -->
+<!--    variable-bindings VarBindList -->
+<!-- } -->
+<!-- ```` -->
+<p>De esta manera, un mensaje SNMP versión 1 está formado por una secuencia con cuatro campos: versión (tiene el valor 1), comunidad y cualquiera de cinco opciones para el PDU. El formato de los PDU para GetRequest (0), GetNextRequest (1), SetRequest (2) y GetResponse (3), es el mismo; lo único que cambia es el identificador de tipo de PDU con los valores indicados en paréntesis.</p>
+<p>En la figura <a href="administración-de-redes.html#fig:msgsnmp">5.9</a> se muestra codificado un mensaje GetRequest de la
+variable sysDescr. El primer octeto es 0x30 hexadecimal (<em>0011 0000</em>
+binario). Los dos primeros bits indican que es un tipo de dato
+universal, el tercero que es un tipo complejo y los últimos cinco (con
+valor 10000 binario, es decir, 16) nos dice que se trata de un SEQUENCE
+según lo indica la tabla <a href="administración-de-redes.html#tab:tiposUniversales">5.1</a>. Esto es consistente con el formato del
+mensaje definido en el RFC 1157.</p>
+<p>Como el mensaje está codificado con reglas BER, el segundo octeto, 0x29
+(41 decimal) muestra la longitud de esa estructura y los campos
+subsecuentes indican su valor.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:msgsnmp"></span>
+<img src="figuras/c5/msgsnmp.jpg" alt="*Mensaje SNMP, PDU GetRequest con codificación BER*" width="60%" />
+<p class="caption">
+Figura 5.9: <em>Mensaje SNMP, PDU GetRequest con codificación BER</em>
+</p>
+</div>
+<p>Como se trata de una solicitud, los campos errorStatus y errorIndex
+tienen un valor de cero. Para el campo OID hay un tratamiento especial:
+dado que el primer dígito sólo puede ser 0,1 ó 2 y el segundo es menor a 39, estos dos se combinan en un solo octeto siguiendo la fórmula
+<span class="math inline">\(40*A + B\)</span>, donde A es el primer dígito y B es el segundo.</p>
+</div>
+<div id="snmpv2-y-v3" class="section level4 hasAnchor" number="5.2.4.2">
+<h4><span class="header-section-number">5.2.4.2</span> SNMPv2 y v3<a href="administración-de-redes.html#snmpv2-y-v3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>SNMPv1 (RFC 1157) no toma en cuenta la seguridad. Además, el acceso a
+las variables mediante los PDU GetRequest y GetNextRequest es muy
+ineficiente si se desea recabar mucha información.</p>
+<p>La segunda versión introduce mejoras en las áreas de:</p>
+<ul>
+<li><p>Rendimiento, Se agregan los PDU Get-bulk, Inform y se definen
+contadores con un tamaño mayor a 64 bits, entre otras).</p></li>
+<li><p>Seguridad. Desgraciadamente, los mecanismos para implementar
+seguridad en la segunda versión podían ser incompatibles entre sí,
+por lo que al final del día se tuvo que abandonar.</p></li>
+<li><p>Comunicaciones administrador-administrador.</p></li>
+</ul>
+<p>La tercera versión, SNMPv3 (RFC 2570-2576), tiene la categoría de
+Proposed Standard. es una profunda revisión del protocolo en la que se
+retienen las mejores propuestas de la versión 2 y se aclaran las
+confusiones para asegurar los mensajes mediante algoritmos de cifrado y
+autenticación. También se da flexibilidad para que el protocolo de
+transporte pueda ser UDP o TCP.</p>
+</div>
+</div>
+</div>
+<div id="rmon" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> RMON<a href="administración-de-redes.html#rmon" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Si cada dispositivo que es administrado con SNMP está conectado a una
+red, entonces puede contribuir al monitoreo activo de sus segmentos de
+red local como si se tratara de un analizador de protocolos. Eso es lo
+que se busca con RMON (<em>Remote monitoring</em>), una extensión a las
+variables MIB definida en el RFC 1757.</p>
+<p>Como se muestra en la figura <a href="administración-de-redes.html#fig:rmon">5.10</a>, las funciones de monitoreo se dividen en diez
+grupos y permiten el monitoreo de topologías Ethernet y Token Ring. El
+agente se instala en sondas (<em>probes</em>).</p>
+<p>La segunda versión, RMON2, agrega objetos para el monitoreo de tráfico
+de red por encima de la capa de MAC.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rmon"></span>
+<img src="figuras/c5/rmon.jpg" alt="*Árbol OID para variables RMON*" width="50%" />
+<p class="caption">
+Figura 5.10: <em>Árbol OID para variables RMON</em>
+</p>
+</div>
+</div>
+<div id="administración-de-sistemas-con-snmp" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Administración de sistemas con SNMP<a href="administración-de-redes.html#administración-de-sistemas-con-snmp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Como se comentó al inicio de este capítulo, SNMP puede ser utilizado
+para gestionar dispositivos y equipos terminales que estén conectados a
+la red aunque no formen parte de su operación. Para ello, sólo es
+necesario que se definan las variables MIB correspondientes en el árbol
+OID, típicamente debajo de la rama para <em>enterprises</em>. Por supuesto, los
+dispositivos deben tener los agentes dedicados a monitorear y actualizar
+los contadores relacionados con esas variables.</p>
+<p>Por ejemplo, con las extensiones MIB privadas, la estación de
+administración puede consultar al agente SNMP de una impresora y
+detectar el nivel de tóner o de hojas en la bandeja de impresión. De la
+misma forma, podría consultar un agente en un servidor para conocer la
+ocupación media de memoria principal, el espacio disponible en disco, el
+número de procesos activos, entre muchos otros parámetros.</p>
+</div>
+<div id="problemas-4" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Problemas<a href="administración-de-redes.html#problemas-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:c51" class="exercise"><strong>Problema 5.1  </strong></span>De acuerdo al modelo de OSI, la gestión de la red
+se divide en cinco componentes. Descríbalos brevemente.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c52" class="exercise"><strong>Problema 5.2  </strong></span>Seleccione las respuestas correctas</p>
+<ul>
+<li><p>SNMP define [_____] que se enviarán del administrador al agente y viceversa</p>
+<ol style="list-style-type: lower-alpha">
+<li>el formato de los paquetes<br />
+</li>
+<li>la codificación de los paquetes<br />
+</li>
+<li>el número de paquetes<br />
+</li>
+<li>ninguno de los anteriores<br />
+</li>
+</ol></li>
+<li><p>Un agente es una computadora en la que se ejecuta el proceso [_____] de SNMP</p>
+<ol style="list-style-type: lower-alpha">
+<li>cliente<br />
+</li>
+<li>servidor<br />
+</li>
+<li>cliente y servidor<br />
+</li>
+<li>ninguno de los anteriores<br />
+</li>
+</ol></li>
+<li><p>SMI enfatiza tres atributos para manipular un objeto: [_____]</p>
+<ol style="list-style-type: lower-alpha">
+<li>nombre; tipo de dato; tamaño<br />
+</li>
+<li>nombre; tamaño; método de codificación<br />
+</li>
+<li>nombre; tipo de dato; método de codificación<br />
+</li>
+<li>ninguno de los anteriores<br />
+</li>
+</ol></li>
+<li><p>El OID de todos los objetos administrados por SNMP comienza por: [_____]</p>
+<ol style="list-style-type: lower-alpha">
+<li>iso.org.dod.internet.management.mib.<br />
+</li>
+<li>iso.org.dod.internet.management.mib-II.<br />
+</li>
+<li>iso-itu.std.dod.internet.management.mib-II.<br />
+</li>
+<li>ninguna de las anteriores<br />
+</li>
+</ol></li>
+<li><p>Para definir sus tipos de datos, SMI utiliza y extiende las
+definiciones de objetos establecidas en [_____]</p>
+<ol style="list-style-type: lower-alpha">
+<li>ASN.1<br />
+</li>
+<li>BER<br />
+</li>
+<li>SNMP<br />
+</li>
+<li>ninguna de las anteriores<br />
+</li>
+</ol></li>
+<li><p>SMI se basa en el estándar [_____] para codificar la información que será transmitida por la red</p>
+<ol style="list-style-type: lower-alpha">
+<li>MIB<br />
+</li>
+<li>ASN.1<br />
+</li>
+<li>BER<br />
+</li>
+<li>ninguna de las anteriores<br />
+</li>
+</ol></li>
+<li><p>El PDU GetReques se envía del [_____] para obtener el valor de una variable o conjunto de variables</p>
+<ol style="list-style-type: lower-alpha">
+<li>cliente al servidor<br />
+</li>
+<li>servidor al cliente<br />
+</li>
+<li>servidor a la red<br />
+</li>
+<li>ninguna de las anteriores<br />
+</li>
+</ol></li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:c53" class="exercise"><strong>Problema 5.3  </strong></span>¿Qué valor tiene el entero codificado en BER 02 01 08?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c54" class="exercise"><strong>Problema 5.4  </strong></span>Describa brevemente las operaciones Get, Get Next,
+Trap e Inform de SNMP</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c55" class="exercise"><strong>Problema 5.5  </strong></span>Mencione los principales cambios propuestos en
+SNMPv3 respecto de SNMPv1</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c56" class="exercise"><strong>Problema 5.6  </strong></span>Codifique el siguiente segmento utilizando reglas
+BER. Suponga que los identificadores de los tipos de datos son:
+(1) Boolean, (2) integer, (9) real, (16) sequence, (28) character
+string. Suponga también que los enteros son de longitud variable y que
+los números de punto flotante son siempre de 8 bytes.</p>
+</div>
+<p><img src="figuras/c5/pbmcodif.jpg" width="50%" style="display: block; margin: auto;" /></p>
+<!-- ```{verbatim, lang="ASN"} -->
+<!-- int x = 0xFE3A04; -->
+<!-- float y[2] = {1.23, 4.0}; -->
+<!-- struct { char nombre = ``Luis Felipe''; -->
+<!--     int edad = 25; -->
+<!--     boolean casado = 0; }status; -->
+<!-- char seccion = 'K'; -->
+<!-- ``` -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="diseño-lógico-de-la-red.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tecnologías-de-acceso.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-Admon.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown_DisArqRedes.pdf", "bookdown_DisArqRedes.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

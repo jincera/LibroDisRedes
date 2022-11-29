@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 3 Caracterización de la red y del tráfico generado por las aplicaciones | Diseño y Arquitectura de Redes</title>
+  <meta name="description" content="Primer intento para hacer las notas en html" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 3 Caracterización de la red y del tráfico generado por las aplicaciones | Diseño y Arquitectura de Redes" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/figuras/dar.jpg" />
+  <meta property="og:description" content="Primer intento para hacer las notas en html" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 3 Caracterización de la red y del tráfico generado por las aplicaciones | Diseño y Arquitectura de Redes" />
+  
+  <meta name="twitter:description" content="Primer intento para hacer las notas en html" />
+  <meta name="twitter:image" content="/figuras/dar.jpg" />
+
+<meta name="author" content="José Incera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="requerimientos-técnicos.-compromisos-y-restricciones.html"/>
+<link rel="next" href="diseño-lógico-de-la-red.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diseño y Arquitectura de Redes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html"><i class="fa fa-check"></i><b>1</b> Metodología de diseño de redes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#introducción"><i class="fa fa-check"></i><b>1.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#por-qué-una-empresa-desea-una-red"><i class="fa fa-check"></i>¿Por qué una empresa desea una red?</a></li>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#fracasos-en-proyectos-de-tecnología-de-información"><i class="fa fa-check"></i>Fracasos en proyectos de tecnología de información</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#diseño-descendente"><i class="fa fa-check"></i><b>1.2</b> Diseño descendente</a></li>
+<li class="chapter" data-level="1.3" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#microsoft-solutions-framework"><i class="fa fa-check"></i><b>1.3</b> Microsoft Solutions Framework</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#modelo-de-proceso"><i class="fa fa-check"></i><b>1.3.1</b> Modelo de proceso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#análisis-de-riesgos"><i class="fa fa-check"></i><b>1.4</b> Análisis de riesgos</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#manejo-de-riesgos"><i class="fa fa-check"></i><b>1.4.1</b> Manejo de Riesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#problemas"><i class="fa fa-check"></i><b>1.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html"><i class="fa fa-check"></i><b>2</b> Requerimientos técnicos. Compromisos y restricciones</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#escalabilidad"><i class="fa fa-check"></i><b>2.1</b> Escalabilidad</a></li>
+<li class="chapter" data-level="2.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#disponibilidad"><i class="fa fa-check"></i><b>2.2</b> Disponibilidad</a></li>
+<li class="chapter" data-level="2.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#confiabilidad"><i class="fa fa-check"></i><b>2.3</b> Confiabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#desempeño"><i class="fa fa-check"></i><b>2.4</b> Desempeño</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ancho-de-banda"><i class="fa fa-check"></i><b>2.4.1</b> Ancho de banda</a></li>
+<li class="chapter" data-level="2.4.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#utilización"><i class="fa fa-check"></i><b>2.4.2</b> Utilización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#rendimiento"><i class="fa fa-check"></i><b>2.4.3</b> Rendimiento</a></li>
+<li class="chapter" data-level="2.4.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#tasa-de-error"><i class="fa fa-check"></i><b>2.4.4</b> Tasa de error</a></li>
+<li class="chapter" data-level="2.4.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#eficiencia"><i class="fa fa-check"></i><b>2.4.5</b> Eficiencia</a></li>
+<li class="chapter" data-level="2.4.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#retardo-y-variabilidad"><i class="fa fa-check"></i><b>2.4.6</b> Retardo y variabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#seguridad"><i class="fa fa-check"></i><b>2.5</b> Seguridad</a></li>
+<li class="chapter" data-level="2.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#administración"><i class="fa fa-check"></i><b>2.6</b> Administración</a></li>
+<li class="chapter" data-level="2.7" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#facilidad-de-uso"><i class="fa fa-check"></i><b>2.7</b> Facilidad de uso</a></li>
+<li class="chapter" data-level="2.8" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#adaptabilidad"><i class="fa fa-check"></i><b>2.8</b> Adaptabilidad</a></li>
+<li class="chapter" data-level="2.9" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#costo-beneficio"><i class="fa fa-check"></i><b>2.9</b> Costo-beneficio</a></li>
+<li class="chapter" data-level="2.10" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#conflictos-entre-requerimientos"><i class="fa fa-check"></i><b>2.10</b> Conflictos entre requerimientos</a></li>
+<li class="chapter" data-level="2.11" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#otras-métricas-relevantes"><i class="fa fa-check"></i><b>2.11</b> Otras métricas relevantes</a></li>
+<li class="chapter" data-level="2.12" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#problemas-1"><i class="fa fa-check"></i><b>2.12</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><i class="fa fa-check"></i><b>3</b> Caracterización de la red y del tráfico generado por las aplicaciones</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-la-topología"><i class="fa fa-check"></i><b>3.1</b> Caracterización de la topología</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#mapa-de-la-red"><i class="fa fa-check"></i><b>3.1.1</b> Mapa de la red</a></li>
+<li class="chapter" data-level="3.1.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#asignación-de-nombres-y-direcciones"><i class="fa fa-check"></i><b>3.1.2</b> Asignación de nombres y direcciones</a></li>
+<li class="chapter" data-level="3.1.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-los-medios-de-transmisión"><i class="fa fa-check"></i><b>3.1.3</b> Caracterización de los medios de transmisión</a></li>
+<li class="chapter" data-level="3.1.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#restricciones-ambientales-y-arquitectónicas"><i class="fa fa-check"></i><b>3.1.4</b> Restricciones ambientales y arquitectónicas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#desempeño-de-la-red-actual"><i class="fa fa-check"></i><b>3.2</b> Desempeño de la red actual</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#herramientas-de-recolección"><i class="fa fa-check"></i><b>3.2.1</b> Herramientas de recolección</a></li>
+<li class="chapter" data-level="3.2.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#periodo-y-frecuencia-de-recolección"><i class="fa fa-check"></i><b>3.2.2</b> Periodo y frecuencia de recolección</a></li>
+<li class="chapter" data-level="3.2.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#algunas-métricas-de-desempeño"><i class="fa fa-check"></i><b>3.2.3</b> Algunas métricas de desempeño</a></li>
+<li class="chapter" data-level="3.2.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#presentación-de-resultados"><i class="fa fa-check"></i><b>3.2.4</b> Presentación de resultados</a></li>
+<li class="chapter" data-level="3.2.5" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#análisis-estadístico-de-redes"><i class="fa fa-check"></i><b>3.2.5</b> Análisis estadístico de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-flujo"><i class="fa fa-check"></i><b>3.3</b> Caracterización del flujo</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tipos-de-flujo-por-aplicación"><i class="fa fa-check"></i><b>3.3.1</b> Tipos de flujo por aplicación</a></li>
+<li class="chapter" data-level="3.3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-volumen-de-tráfico"><i class="fa fa-check"></i><b>3.3.2</b> Caracterización del volumen de tráfico</a></li>
+<li class="chapter" data-level="3.3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#requerimientos-de-calidad-de-servicio"><i class="fa fa-check"></i><b>3.3.3</b> Requerimientos de calidad de servicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#problemas-2"><i class="fa fa-check"></i><b>3.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html"><i class="fa fa-check"></i><b>4</b> Diseño lógico de la red</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología"><i class="fa fa-check"></i><b>4.1</b> Diseño de la topología</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-plana"><i class="fa fa-check"></i><b>4.1.1</b> Topología plana</a></li>
+<li class="chapter" data-level="4.1.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-jerárquico"><i class="fa fa-check"></i><b>4.1.2</b> Diseño jerárquico</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-capa-de-acceso"><i class="fa fa-check"></i><b>4.2</b> Diseño de la capa de acceso</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problema-de-localización-asignación"><i class="fa fa-check"></i><b>4.2.1</b> Problema de Localización-asignación</a></li>
+<li class="chapter" data-level="4.2.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#asignación-de-nodos-a-concentradores"><i class="fa fa-check"></i><b>4.2.2</b> Asignación de nodos a concentradores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-de-nodos-a-concentrador"><i class="fa fa-check"></i><b>4.2.3</b> Topología de nodos a concentrador</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#capa-de-distribución"><i class="fa fa-check"></i><b>4.3</b> Capa de distribución</a></li>
+<li class="chapter" data-level="4.4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-red-dorsal"><i class="fa fa-check"></i><b>4.4</b> Diseño de la red dorsal</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología-1"><i class="fa fa-check"></i><b>4.4.1</b> Diseño de la topología</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-basado-en-bloques-modulares"><i class="fa fa-check"></i><b>4.5</b> Diseño basado en bloques modulares</a></li>
+<li class="chapter" data-level="4.6" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#s:redundancia"><i class="fa fa-check"></i><b>4.6</b> Topologías con redundancia</a></li>
+<li class="chapter" data-level="4.7" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problemas-3"><i class="fa fa-check"></i><b>4.7</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="administración-de-redes.html"><a href="administración-de-redes.html"><i class="fa fa-check"></i><b>5</b> Administración de redes</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#evolución-de-administración-de-sistemas"><i class="fa fa-check"></i><b>5.1</b> Evolución de administración de sistemas</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-fallas"><i class="fa fa-check"></i><b>5.1.1</b> Gestión de fallas</a></li>
+<li class="chapter" data-level="5.1.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-configuración"><i class="fa fa-check"></i><b>5.1.2</b> Gestión de configuración</a></li>
+<li class="chapter" data-level="5.1.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-seguridad"><i class="fa fa-check"></i><b>5.1.3</b> Gestión de seguridad</a></li>
+<li class="chapter" data-level="5.1.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-rendimiento"><i class="fa fa-check"></i><b>5.1.4</b> Gestión de rendimiento</a></li>
+<li class="chapter" data-level="5.1.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#contabilidad-de-recursos"><i class="fa fa-check"></i><b>5.1.5</b> Contabilidad de recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#protocolos-de-administración"><i class="fa fa-check"></i><b>5.2</b> Protocolos de administración</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-administración-osi"><i class="fa fa-check"></i><b>5.2.1</b> Modelo de administración OSI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-gestión-ietf"><i class="fa fa-check"></i><b>5.2.2</b> Modelo de gestión IETF</a></li>
+<li class="chapter" data-level="5.2.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#simple-network-management-protocol"><i class="fa fa-check"></i><b>5.2.3</b> Simple Network Management Protocol</a></li>
+<li class="chapter" data-level="5.2.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#base-de-datos-de-información-de-administración-mib"><i class="fa fa-check"></i><b>5.2.4</b> Base de datos de información de administración (MIB)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#rmon"><i class="fa fa-check"></i><b>5.3</b> RMON</a></li>
+<li class="chapter" data-level="5.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#administración-de-sistemas-con-snmp"><i class="fa fa-check"></i><b>5.4</b> Administración de sistemas con SNMP</a></li>
+<li class="chapter" data-level="5.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#problemas-4"><i class="fa fa-check"></i><b>5.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html"><i class="fa fa-check"></i><b>6</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#cobertura-de-internet"><i class="fa fa-check"></i><b>6.1</b> Cobertura de Internet</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#red-de-acceso"><i class="fa fa-check"></i><b>6.1.1</b> Red de acceso</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#contexto-de-internet-y-servicios-de-banda-ancha-en-méxico"><i class="fa fa-check"></i><b>6.1.2</b> Contexto de Internet y servicios de Banda Ancha en México</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#banda-ancha"><i class="fa fa-check"></i><b>6.1.3</b> Banda Ancha</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-1"><i class="fa fa-check"></i><b>6.2</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-cableadas"><i class="fa fa-check"></i><b>6.2.1</b> Tecnologías de acceso cableadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-inalámbricas"><i class="fa fa-check"></i><b>6.3</b> Tecnologías de acceso inalámbricas</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#telefonía-celular"><i class="fa fa-check"></i><b>6.3.1</b> Telefonía celular</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#problemas-5"><i class="fa fa-check"></i><b>6.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html"><i class="fa fa-check"></i><b>7</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#introducción-1"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#métricas-financieras"><i class="fa fa-check"></i><b>7.2</b> Métricas financieras</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#costo-total-de-propiedad"><i class="fa fa-check"></i><b>7.2.1</b> Costo total de propiedad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#retorno-de-inversión"><i class="fa fa-check"></i><b>7.2.2</b> Retorno de inversión</a></li>
+<li class="chapter" data-level="7.2.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#valor-presente-neto"><i class="fa fa-check"></i><b>7.2.3</b> Valor Presente Neto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-tecno-económico-1"><i class="fa fa-check"></i><b>7.3</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-de-rentabilidad"><i class="fa fa-check"></i><b>7.3.1</b> Análisis de rentabilidad</a></li>
+<li class="chapter" data-level="7.3.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#despliegue-y-operación-de-la-red"><i class="fa fa-check"></i><b>7.3.2</b> Despliegue y operación de la red</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html"><i class="fa fa-check"></i><b>8</b> Respuestas a problemas seleccionados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#S:Metod"><i class="fa fa-check"></i><b>8.1</b> Metodología de diseño de redes</a></li>
+<li class="chapter" data-level="8.2" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:ReqTec"><i class="fa fa-check"></i><b>8.2</b> Requerimientos técnicos</a></li>
+<li class="chapter" data-level="8.3" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:CaracRed"><i class="fa fa-check"></i><b>8.3</b> Caracterización de la red</a></li>
+<li class="chapter" data-level="8.4" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:DisLog"><i class="fa fa-check"></i><b>8.4</b> Diseño lógico</a></li>
+<li class="chapter" data-level="8.5" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:Admon"><i class="fa fa-check"></i><b>8.5</b> Administración de Redes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diseño y Arquitectura de Redes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Capítulo 3</span> Caracterización de la red y del tráfico generado por las aplicaciones<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Con mucha frecuencia un proyecto de diseño de redes está orientado a la
+evolución o crecimiento de una infraestructura ya existente, y rara vez
+hacia la creación de una red completamente nueva. Por esta razón, es muy
+importante iniciar el proyecto con un estudio detallado de las
+características de la red existente y del tráfico que circula por ella.</p>
+<p>Este estudio permitirá identificar si los objetivos de diseño son
+realistas, se pueden detectar cuellos de botella existentes o
+potenciales y se podrá garantizar la interoperabilidad del diseño con la
+infraestructura actual. Además, dará una referencia de base (<em>baseline</em>)
+contra la cual sea posible evaluar el desempeño del sistema una vez
+implementado.</p>
+<p>A pesar de estas ventajas, la caracterización de la red suele hacerse de
+manera incompleta o superficial argumentando falta de tiempo o
+suponiendo que la red es bien conocida. A menos de que la organización
+que administra la red haya hecho una muy buena labor de caracterización,
+definición de procedimientos y sea sumamente disciplinada en la
+documentación de los diversos tipos de cambios que se pueden realizar en
+dispositivos, topología, servicios, etc., la realidad es que un buen
+análisis en la fase de planeación del modelo de proceso es
+indispensable.</p>
+<p>Habiendo dicho esto, se habrá de reconocer que la necesidad de terminar
+lo antes posible con el proyecto puede ser la consecuencia de
+necesidades de negocio reales y justificadas. Un buen administrador del
+proyecto debe poder negociar un balance de prioridades y empujar la
+implementación de algunos servicios, localidades o dispositivos para
+versiones futuras de la red, y definir la forma de trabajo más eficiente
+posible para acortar tiempos sin perder calidad. Sea cual sea el camino,
+en la gran mayoría de los proyectos en donde estos pasos se omiten o se
+recortan demasiado, el resultado es que el tiempo ganado con las
+omisiones, se perderá con creces en las fases finales del proyecto.</p>
+<p>La caracterización de la red implica identificar claramente su
+topología, los repositorios y consumidores de información, los volúmenes
+de tráfico que son intercambiados y la estructura protocolaria para
+lograrlo.</p>
+<div id="caracterización-de-la-topología" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Caracterización de la topología<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-la-topología" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La caracterización de la topología empieza por la obtención de un mapa
+de la red que describa su configuración física y lógica, pero abarca
+mucho más que eso: se deben obtener y documentar las políticas de
+asignación de nombres y direcciones y el esquema de direccionamiento
+actualmente utilizado. También se habrá de observar el tipo y estado que
+guardan los esquemas de cableado y si existen restricciones
+(ambientales, arquitectónicas, legales) para instalar alguna
+infraestructura de capa física.</p>
+<p>Mucha de esta información fue recabada en la fase de visión y alcance.
+Durante la fase de planeación, se recaba la información adicional
+necesaria para completar la caracterización de la red.</p>
+<div style="color: blue;">
+<p><em>La información recabada debe ser examinada y validada tratando de
+asegurar que no se han hecho cambios importantes no documentados. Partir
+de suposiciones erróneas es un grave riesgo que puede comprometer
+seriamente el éxito del proyecto.</em></p>
+</div>
+<div id="mapa-de-la-red" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Mapa de la red<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#mapa-de-la-red" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El mapa de la red comienza por un conjunto de esquemas de interconexión
+con diferentes niveles de abstracción en donde se presenta la
+organización topológica de la red. Existen diversas herramientas que
+permiten automatizar la construcción y/o validación de estos esquemas.</p>
+<p>Al integrar el mapa de la red, se debe crear un documento lo más
+completo posible en el que se especifique, cuando corresponda:</p>
+<ul>
+<li><p>la ubicación física de las instalaciones: ciudad, edificio, piso y,
+en algunos casos, hasta cubículo donde se encuentren los equipos
+principales (nodos de conmutación, servidores, etc.);</p></li>
+<li><p>el personal responsable de los diferentes elementos de la red;</p></li>
+<li><p>los enlaces WAN entre ciudades especificando tecnología, capacidad y
+restricciones;</p></li>
+<li><p>los enlaces CAN y LAN entre edificios especificando igualmente la
+tecnología utilizada, sus capacidades y restricciones.</p></li>
+<li><p>los puntos de acceso al proveedor de acceso a Internet y los
+servicios contratados;</p></li>
+<li><p>los servidores de acceso remoto y de VPNs, y las políticas de
+acceso;</p></li>
+<li><p>las políticas y procedimientos de seguridad;</p></li>
+<li><p>las políticas y procedimientos de administración;</p></li>
+<li><p>la estructura lógica de la red.</p></li>
+</ul>
+<div class="greybox">
+<p><strong>Caso de estudio: Topología física y topología lógica</strong></p>
+<p>En una empresa de servicios con cobertura nacional, el servicio de
+correo enfrentaba serios problemas de rendimiento, pero extrañamente,
+parecían afectar solamente la comunicación entre algunas ciudades. Por
+ejemplo, la ciudad <span class="math inline">\(F\)</span> en la figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:ce-topo">3.1</a> podía tener problemas de comunicación con la ciudades <span class="math inline">\(G\)</span>, <span class="math inline">\(I\)</span> y <span class="math inline">\(J\)</span>,
+pero no con las demás. Algunas ciudades no tenían problema alguno.</p>
+<p>Al estudiar las condiciones de la organización, se encontraron dos
+elementos interesantes. En primer término, el departamento responsable
+de administrar el servicio de correo electrónico no era el mismo que se
+hacía cargo de la administración de los enlaces de comunicación entre
+las diferentes ciudades, tampoco reportaban al mismo jefe, y en realidad
+tenían poca comunicación entre sí. En segundo lugar, la topología de la
+red de correo electrónico (<em>topología lógica</em>) era una estrella
+simbolizada por las líneas rectas de la figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:ce-topo">3.1</a>:
+todos los servidores de correo electrónico avanzaban el correo para
+otras ciudades a las oficinas centrales en la ciudad <span class="math inline">\(A\)</span>, y un servidor
+central ahí lo redistribuía hacia las ciudades destino.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ce-topo"></span>
+<img src="figuras/c3/ce-topo.bmp" alt="*Topología física y lógica de un servidor de correo*" width="50%" />
+<p class="caption">
+Figura 3.1: <em>Topología física y lógica de un servidor de correo</em>
+</p>
+</div>
+<p>Por su parte, los enlaces (<em>topología física</em>), representados por las
+líneas quebradas en la figura, mostraban la topología de estrellas
+interconectadas a través del triangulo <span class="math inline">\(A\)</span>, <span class="math inline">\(E\)</span>, <span class="math inline">\(H\)</span>. Al enviar un
+mensaje de correo electrónico de la ciudad <span class="math inline">\(F\)</span> a la ciudad <span class="math inline">\(G\)</span>, el
+servicio de correo electrónico asumía una topología con una única
+estrella y lo enviaba a la ciudad <span class="math inline">\(A\)</span>, para que de ahí el mensaje fuera
+enviado a la ciudad <span class="math inline">\(G\)</span>.</p>
+<p>Dada la topología física de los enlaces, el mensaje salía de <span class="math inline">\(F\)</span> hacia
+<span class="math inline">\(E\)</span>, de ahí viajaba a <span class="math inline">\(A\)</span>, hasta llegar al servidor distribuidor de
+correo electrónico, quien entonces lo enviaba de vuelta sobre el mismo
+enlace entre <span class="math inline">\(A\)</span> y <span class="math inline">\(E\)</span>, y de ahí viajaba hasta <span class="math inline">\(G\)</span>. El mensaje recorría
+entonces cuatro segmentos de red, cuando idealmente solo necesitaba
+recorrer dos, y los dos viajes de sobra se daban sobre un mismo segmento
+de red.</p>
+<p>Una vez identificado el problema, se reconfiguraron los servidores de
+correo locales para ofrecer un servicio distribuido coherente con la
+arquitectura de la red</p>
+</div>
+</div>
+<div id="asignación-de-nombres-y-direcciones" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Asignación de nombres y direcciones<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#asignación-de-nombres-y-direcciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Conocer el esquema de asignación de nombres nos permitirá acotar la
+solución de diseño de red. El esquema de direccionamiento puede afectar
+el diseño propuesto para satisfacer los requerimientos técnicos. Por
+ejemplo, puede ser necesario el uso de traductores de direcciones (NAT,
+<em>Network Adress Translation</em>) o el renunciar a sumarización de rutas si
+los protocolos actualmente utilizados no soportan este esquema<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>.</p>
+<p>Durante la caracterización de la red es necesario distinguir cuáles son
+las prácticas comunes para asignar nombres a dispositivos y servicios.
+También deberá quedar clara la estrategia de asignación de direcciones.
+Por ejemplo, deberá tenerse una respuesta clara a las siguientes
+preguntas:</p>
+<ul>
+<li><p>¿Se sigue o promueve un modelo de direccionamiento jerárquico? ¿Se
+utiliza o puede utilizarse la sumarización de direcciones?</p></li>
+<li><p>¿Se utiliza o puede utilizarse una estrategia de asignación dinámica
+de direcciones?</p></li>
+<li><p>¿Se cuenta con un rango de direcciones libre suficiente para los
+objetivos de diseño? ¿Se debe negociar un bloque de direcciones?</p></li>
+<li><p>¿Se utiliza o puede proponerse un esquema de direccionamiento
+privado?</p></li>
+</ul>
+</div>
+<div id="caracterización-de-los-medios-de-transmisión" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Caracterización de los medios de transmisión<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-los-medios-de-transmisión" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Es imprescindible realizar este estudio para poder satisfacer los
+requerimientos de escalabilidad y disponibilidad. Al recabar información
+referente a los medios de transmisión, es decir, a la capa física del
+modelo de OSI, se deben identificar las tecnologías utilizadas tanto en
+la red local como en las interconexiones MAN y WAN. También se debe
+identificar la ubicación y estado de los puntos de conexión: paneles de
+parcheo, clóset de alambrado, puntos de cruce de cableado vertical y
+horizontal, etcétera. Para una red CAN, <em>Campus Area Network</em>), debe
+señalarse claramente cuál es la tecnología de interconexión entre
+edificios y cuál es la distancia que los separa.</p>
+<p>La experiencia indica que se es más informal al desplegar una red local,
+por lo que es ahí donde se sugiere que se ponga mayor énfasis en la
+caracterización. Al detectar el tipo de cableado y/o de red inalámbrica
+que se utiliza, se pueden identificar problemas potenciales al diseño
+propuesto.</p>
+<p>En lo que concierne al cableado de la red, se deberá detectar si se
+siguen correctamente las normas de cableado estructurado; si la
+categoría de cables, rosetas, conectores, etc. es compatible con la
+velocidad de transmisión deseada; si se respetan las distancias máximas,
+los códigos de color para los conectores; etc.</p>
+<p>Se deberá verificar cuántos pares de cable están siendo utilizados y en
+qué estado se encuentran. Por supuesto, también deberá documentarse la
+cantidad de pares disponibles y en qué áreas se encuentran. Además, se
+debe verificar que la ductería tiene espacio suficiente para introducir
+más cable de ser necesario.</p>
+<div style="color: blue;">
+<p><em>Un ducto de par trenzado nunca debe estar ocupado a más del 50% de
+su capacidad.</em></p>
+</div>
+<p>Si se utilizan redes inalámbricas, se debe verificar que las tarjetas de
+red y los puntos de acceso están homologados a las normas mexicanas. Así
+mismo, es necesario verificar que los puntos de acceso están
+configurados correctamente, que no interfieren entre sí y que el radio
+de cobertura satisface los nuevos requerimientos.</p>
+</div>
+<div id="restricciones-ambientales-y-arquitectónicas" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Restricciones ambientales y arquitectónicas<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#restricciones-ambientales-y-arquitectónicas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Durante el recorrido de las instalaciones se debe prestar mucha atención
+al entorno en el que éstas se ubican con el fin de identificar riesgos
+que pudieran comprometer seriamente la viabilidad del proyecto en etapas
+posteriores. Por ejemplo, si el edificio se encuentra en una zona con
+riesgos de inundaciones (alta precipitación pluvial, cercano a un río o
+laguna), se debe buscar que los nodos de interconexión (y en general, el
+centro de cómputo) se ubiquen al menos en el primer piso. De hecho, esta
+es una práctica recomendada para la seguridad física de las
+instalaciones de <code>TI</code>.</p>
+<p>Si la instalación se encuentra en una zona de vibraciones anormalmente
+altas (por las características de la empresa, por encontrarse muy cerca
+de una vía de ferrocarril, etcétera.), el tipo de conector a utilizar
+debe ser más robusto. Así mismo, se deben prever revisiones frecuentes
+de las condiciones del cableado.</p>
+<p>Es posible que el edificio sea rentado o que sea de interés histórico y
+esté protegido por leyes especiales. En estos casos, será importante
+garantizar que se cuenta con los permisos necesarios para instalar la
+infraestructura de red necesaria (perforaciones para instalar cableado
+en red local, obra civil para instalar antenas, etcétera.)</p>
+<p>Para interconectar dos edificios, aún si están relativamente cercanos,
+se debe contar con permiso de vía. Si se piensa utilizar algún medio
+inalámbrico (los enlaces láser suelen ser una excelente opción) se debe
+verificar que se cuenta con línea de vista y que no hay razones para
+suponer que ésta va a perderse en el mediano plazo.</p>
+<p>También es conveniente identificar y registrar que se cuenta con las
+condiciones adecuadas de ventilación, control de temperatura, suministro
+de energía eléctrica regulada y fuentes de poder no interrumpible (UPS).</p>
+<p>Se debe prestar una atención particular a ambientes extremos. Por
+ejemplo, en ciudades con muy altos niveles de humedad y temperatura,
+equipos convencionales de interconexión pueden no funcionar
+correctamente si no se cuenta con una instalación ambiental apropiada.
+De forma similar, en naves industriales con maquinaria eléctrica pesada,
+las inducciones electromagnéticas pueden afectar severamente las
+transmisiones en cables no blindados.</p>
+<hr />
+<div class="greybox">
+<p><strong>Caso de estudio: Equipo de aire acondicionado</strong></p>
+<p>En una empresa financiera, se decidió instalar equipos de aire
+acondicionado. Para no alterar la arquitectura del edificio, se
+determinó colocar los equipos en los clósets de cableado, encima de los
+concentradores y enrutadores de la red. Una tarde de invierno, algún
+empleado consideró conveniente apagar los equipos de aire acondicionado
+pues la temperatura no justificaba su utilización. Al condensarse el
+líquido de estos equipos, éste cayó hacia los equipos de interconexión,
+los cuales, naturalmente, dejaron de funcionar.</p>
+</div>
+</div>
+</div>
+<div id="desempeño-de-la-red-actual" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Desempeño de la red actual<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#desempeño-de-la-red-actual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="color: blue;">
+<p><em>Evaluar el desempeño de la red actual es fundamental para
+establecer una referencia a partir de la cual se puedan comparar las
+prestaciones del nuevo diseño. Esta evaluación también permite
+identificar potenciales cuellos de botella y puntos críticos donde habrá
+que prestar atención especial al diseño.</em></p>
+</div>
+<p>La evaluación del desempeño de una red puede realizarse a través de
+modelos analíticos, de simulación y mediante mediciones directas. En
+esta sección se plantea brevemente esta última opción y las técnicas de
+modelado se presentarán en el capítulo 7.</p>
+<p>Para colectar información sobre el estado de la red y sus equipos, se
+medirán variables y parámetros de desempeño de la red, lo cual suele ser
+un proceso largo y complejo. Hay que decidir lo más pronto posible
+cuáles son las variables a estudiar, el tipo de herramienta a utilizar,
+la duración del experimento y sobre qué puntos de la red llevarla a
+cabo. Para todos estos elementos no hay una respuesta única, pues
+dependen completamente de los objetivos del estudio.</p>
+<p>En cuanto a los puntos de evaluación, los primeros candidatos son los
+segmentos en la red dorsal y aquellos por donde corren los flujos de
+misión crítica, así como los segmentos que interactuarán con el nuevo
+diseño.</p>
+<div id="herramientas-de-recolección" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Herramientas de recolección<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#herramientas-de-recolección" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Existen diversas herramientas que nos permiten obtener distintos
+parámetros de desempeño, y con distintos niveles de detalle.</p>
+<div style="color: blue;">
+<p><em>Es muy importante conocer la utilidad y las características (sus
+capacidades y nichos de aplicación) de las herramientas a nuestra
+disposición pues el éxito del estudio dependerá de la selección de la
+herramienta apropiada.</em></p>
+</div>
+<p>Entre las herramientas típicas para realizar estudios de evaluación de
+desempeño se encuentran los monitores y analizadores de protocolos, los
+agentes y protocolos de administración (estudiados en el capítulo 4),
+las bitácoras y guiones de administración en sistemas operativos y las
+sondas especializadas tanto activas (que introducen un flujo de
+evaluación en la red) como pasivas.</p>
+<p>Hoy en día es posible encontrar herramientas de monitoreo muy
+sofisticadas, que incorporan agentes inteligentes para apoyar al
+administrador de la red a detectar posibles problemas en la red y
+proponerle alternativas de solución. Dicho esto, sigue siendo de
+primordial importancia el saber interpretar adecuadamente la información
+que estas herramientas ofrecen. Por ejemplo, al analizar una gráfica de
+porcentaje de utilización como la que se muestra en la
+figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:anaproto1">3.2</a>, es importante considerar que los analizadores
+de protocolos muestran la carga transportada en algún segmento de la
+red, la cual puede ser distinta a la carga ofrecida a la red.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:anaproto1"></span>
+<img src="figuras/c3/anaproto1.bmp" alt="*Una vista típica de un analizador de protocolos en el que se observa la utilización del segmento, posibles indicadores de congestión, y la distribución algunas de las características de los protocolos observados*" width="60%" />
+<p class="caption">
+Figura 3.2: <em>Una vista típica de un analizador de protocolos en el que se observa la utilización del segmento, posibles indicadores de congestión, y la distribución algunas de las características de los protocolos observados</em>
+</p>
+</div>
+<p>También se debe tener alguna idea de lo que se está buscando o de lo que
+se espera observar en el estudio. Por ejemplo, la
+figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:anaproto2">3.3</a> muestra otra pantalla del analizador en el que se reporta cómo se
+distribuye la capacidad del segmento utilizada entre los distintos
+protocolos detectados, junto con otras estadísticas de utilización
+(cantidad de bytes y de tramas medidos, número de tramas en difusión,
+errores detectados, etcétera.). Más adelante en este capítulo se
+presentan algunas cifras de lo que se considera una red “saludable”.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:anaproto2"></span>
+<img src="figuras/c3/anaproto2.bmp" alt="*Otra vista del analizador de protocolos que permite conocer la distribución de cómo se está utilizando la red*" width="50%" />
+<p class="caption">
+Figura 3.3: <em>Otra vista del analizador de protocolos que permite conocer la distribución de cómo se está utilizando la red</em>
+</p>
+</div>
+<p>Este tipo de gráfica permite detectar si hay protocolos que no deberían
+en principio transitar en la red, si existen protocolos que envían
+demasiadas tramas de difusión, cuáles son las aplicaciones/protocolos
+más utilizados, etcétera.</p>
+<p>Los monitores y analizadores de protocolos se instalan en el segmento de
+red de interés y recaban información de los flujos observados. Esto
+significa que para tener una idea global de la red, habría que colocar
+un analizador en cada uno de los segmentos de interés y correr el
+monitoreo durante el tiempo “suficiente”. En ciertos casos es necesario
+hacer el estudio de esta manera, pero la mayoría de las veces, es
+suficiente incorporar agentes de monitoreo en los mismos dispositivos de
+red (las sondas RMON) que se incorporan al sistema de administración de
+red, como se verá en el capítulo 4.</p>
+</div>
+<div id="periodo-y-frecuencia-de-recolección" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Periodo y frecuencia de recolección<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#periodo-y-frecuencia-de-recolección" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div style="color: blue;">
+<p><em>En un estudio de evaluación de desempeño, frecuentemente los
+parámetros de interés son promedios evaluados en una ventana de tiempo.
+La selección del intervalo, su duración y la frecuencia de captura de
+los valores son fundamentales para poder tener una interpretación
+adecuada los resultados obtenidos.</em></p>
+</div>
+<p>Consideremos, por ejemplo, que se desea evaluar la red en condiciones de
+carga normal, pero el muestreo se hace durante un período atípico (a la
+hora de entrada, muchos empleados encienden su computadora y se generan
+muchos mensajes de difusión DHCP; en fin de mes o al cierre del ciclo,
+cuando hay picos de operación; etcétera.). Entonces, se tendrá una
+imagen distorsionada del tráfico y se tenderá a sobredimensionar la red.</p>
+<p>En otras ocasiones, son precisamente los picos de tráfico los eventos de
+interés y es donde se deberán realizar mediciones especialmente
+detalladas. Dependiendo del giro de la empresa, se deberá tener una idea
+de la forma en que la utilización variará. Por ejemplo, es común que el
+tráfico en la red se incrementa al llegar el fin de mes o el cierre del
+año o del periodo fiscal. El incremento de tráfico en estos periodos
+puede ser considerable y es muy importante que la red esté en
+condiciones de proporcionar un servicio apropiado en estos periodos
+críticos.</p>
+<p>Para poder diseñar e interpretar correctamente este tipo de estudios,
+también es importante conocer las características de operación dentro de
+la organización. Por ejemplo, se detectarán picos hacia el servidor de
+correo si en las mañanas los empleados entran más o menos a la misma
+hora y suelen revisar y responder a sus mensajes. En ciertas
+organizaciones se detectan picos similares inmediatamente antes del
+almuerzo y del fin de la jornada pues la política organizacional es
+tratar de evitar dejar asuntos. Algunas empresas hacen un uso intensivo
+de su red WAN en horas no hábiles para consolidar bases de datos y
+distribuir respaldos. En esos casos, es necesario determinar si deben
+realizarse mediciones detalladas durante este periodo.</p>
+<p>Con esta información y habiendo identificado claramente el objetivo del
+estudio, se procede a diseñar el mecanismo de recolección. El periodo
+deberá ser suficientemente largo para ser significativo; idealmente,
+deberá cubrir un ciclo completo de operación del comportamiento a
+evaluar.</p>
+<p>La evaluación deberá realizarse sobre una población (nodos, enlaces,
+aplicaciones) representativa. La selección de los segmentos debe
+comenzar obviamente por aquellos en los que se ubican servidores
+importantes y los segmentos en donde hay grupos grandes de usuarios,
+tanto como los segmentos por donde habrá de fluir el tráfico en el
+camino de un sitio al otro.</p>
+<p>La frecuencia de recolección, es decir, la intensidad con la que se
+evalúan las métricas de interés, establece un compromiso entre el nivel
+de detalle deseado y la cantidad de información a almacenar y procesar.
+La decisión adecuada se tomará en función del objetivo del estudio:</p>
+<ul>
+<li><p>Muestreando en el orden de segundos, se pueden detectar problemas a
+nivel protocolos de comunicación: retransmisiones por temporizadores
+mal configurados, tormentas de difusión, enrutadores que publican
+rutas demasiado frecuentemente, etcétera.</p></li>
+<li><p>Para poder llevar a cabo un análisis de desempeño y obtener una
+referencia de base sobre el comportamiento general de la red, suelen
+realizarse mediciones con intervalos de uno a cinco minutos.</p></li>
+<li><p>Para identificar patrones globales de utilización, períodos de picos
+de operación y gráficas de tendencias, muestreos del orden de 5 a
+diez minutos suelen ser utilizados.</p></li>
+</ul>
+</div>
+<div id="algunas-métricas-de-desempeño" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Algunas métricas de desempeño<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#algunas-métricas-de-desempeño" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dependiendo del tipo de red (LAN, WAN) y de la tecnología utilizada,
+existen distintos parámetros para evaluar la tasa de error observada –y
+para saber si ésta es aceptable. En todos los casos, es deseable
+correlacionar la tasa observada contra las métricas de carga y
+utilización para detectar cuellos de botella o equipo defectuoso en la
+red.</p>
+<p>Considerando que ethernet es la tecnología dominante en redes locales, a
+continuación se presentan algunas de las métricas comunes de error y sus
+valores recomendables.</p>
+<dl>
+<dt>Número de tramas con CRC incorrecto.</dt>
+<dd>
+<p>La recomendación es que no debe haber más de una trama por cada
+megabyte de información. Se evita definir esta métrica como un
+porcentaje del número de tramas para evitar la dependencia con el
+tamaño de las tramas.</p>
+</dd>
+<dt>Número de colisiones.</dt>
+<dd>
+<p>En una red que trabaja correctamente, las colisiones detectadas no
+deberán exceder el 0.1% de los paquetes emitidos. A primera
+instancia esto puede parecer extraño dado que las colisiones son el
+mecanismo natural del control de acceso en ethernet. Sin embargo, la
+mayoría de las colisiones se detectan durante el preámbulo y no son
+tomadas en cuenta como tramas en colisión.</p>
+</dd>
+<dt>Porcentaje de paquetes perdidos.</dt>
+<dd>
+<p>En una red bien dimensionada, el porcentaje de paquetes perdidos
+debe ser inferior al 1%.</p>
+</dd>
+</dl>
+<p>Los dispositivos de red y los equipos terminales pueden introducir
+retardos adicionales o comportamientos que pueden afectar el desempeño y
+deben ser tomados en esta fase. Por desgracia, son muchos los factores a
+considerar y se requiere de mucha experiencia para poder identificarlos.
+A continuación se mencionan algunos de ellos.</p>
+<ul>
+<li><p>En TCP/IP, los valores por omisión para los buffers de transmisión y
+recepción pueden no ser adecuados para la aplicación específica. Por
+ejemplo, si el espacio reservado para el buffer de recepción es
+pequeño, el protocolo anunciará una ventana de recepción muy
+pequeña, que limitará el desempeño de la red.</p></li>
+<li><p>La configuración y la granularidad de los temporizadores también
+pueden afectar el desempeño: temporizadores mal configurados y que
+no se adapten dinámicamente a las condiciones de la red pueden
+ocasionar retransmisiones de información innecesarias. La
+granularidad de los temporizadores en muchas implementaciones de
+TCP/IP es de <span class="math inline">\(500\,ms\)</span>, un valor que puede resultar demasiado grande
+para reaccionar a condiciones de congestión en ciertas
+implementaciones.</p></li>
+<li><p>La implementación de las pilas de protocolos en muchos sistemas
+operativos populares realizan copias de información mientras ésta es
+transferida de una capa a otra. Estas copias de memoria a memoria
+pueden degradar el desempeño de los equipos involucrados.</p></li>
+<li><p>El mecanismo de atención a interrupciones de entrada-salida puede
+ser muy ineficiente. Al enviar o recibir tramas por las interfaces
+de red, los cambios de contexto en los sistemas operativos también
+pueden introducir retrasos considerables, degradando así el
+desempeño de las aplicaciones.</p></li>
+</ul>
+<p>Debe considerarse que existen varios sistemas complementarios a las
+aplicaciones de red y que también deben ser tomados en cuenta. Por
+ejemplo, deberá evaluarse el tiempo de respuesta de los servidores de
+nombres (DNS) y –aunque su efecto es menor– de los servidores de
+configuración.</p>
+<p>Finalmente, se debe evaluar el desempeño de los nodos de conmutación
+para identificar si ellos representan un posible cuello de botella. En
+particular, se debe medir la tasa de ocupación media en los buffers de
+salida, la cual debe ser muy baja, y el porcentaje de utilización del
+CPU. De acuerdo a recomendaciones de Cisco, este porcentaje debe ser
+menor al 75% en intervalos de muestreo de 5 min.</p>
+<p>Al evaluar los nodos de conmutación, se debe verificar que cuentan con
+los elementos necesarios para satisfacer los requerimientos de diseño.
+Por ejemplo, es importante identificar la cantidad de memoria
+disponible, la versión de sistema operativo y los protocolos de
+enrutamiento soportados. Podría también ser necesario detectar si el
+equipo cuenta con los elementos necesarios para dar soporte a los
+requerimientos de calidad de servicio identificados.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-16" class="example"><strong>Ejemplo 3.1  </strong></span>Si bien es cierto que prácticamente todos los enrutadores actuales
+soportan el protocolo IPv6, la dominante mayoría lo hace por software en
+la actualidad. El <em>throughput</em> sería muy inferior al conmutar paquetes
+IPv6 comparado con el obtenido para paquetes IPv4, que pueden ser
+conmutados por hardware en muchos equipos.</p>
+<p>Similarmente, una empresa que desea migrar su red de IPv4 a IPv6 (o
+permitir la coexistencia de los dos protocolos), debe asegurarse que sus
+equipos cuentan con la capacidad necesaria para aumentar tanto la
+memoria RAM, donde se almacenan las tablas de enrutamiento (con
+direcciones mucho mayores), como del <em>firmware</em>, donde se implementan
+muchas de las funcionalidades inherentes al nuevo protocolo.</p>
+</div>
+<hr />
+</div>
+<div id="presentación-de-resultados" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Presentación de resultados<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#presentación-de-resultados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La información recolectada durante un cierto intervalo de tiempo debe
+ser presentada de manera tal que permita sacar conclusiones útiles. Los
+datos obtenidos pueden ser presentados en un listado, por medio de una
+gráfica, o bien mediante un resumen estadístico de los mismos. La
+representación adecuada depende, una vez más, de los objetivos de la
+prueba.</p>
+<div id="gráficas-de-tendencia" class="section level4 unnumbered hasAnchor">
+<h4>Gráficas de tendencia<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#gráficas-de-tendencia" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una gráfica de tendencia representa la variable de interés contra el
+tiempo. Es una manera muy cómoda de visualizar su comportamiento y
+permite identificar rápidamente si la variable presenta comportamientos
+cíclicos, cuándo hay picos, de qué orden son y cuánto duran, etcétera.</p>
+<p>Al capturar la información necesaria para producir las gráficas de
+tendencia, es posible entender con mayor claridad el compromiso entre el
+período y la frecuencia de recolección en función de los objetivos de
+estudio, discutidos en los párrafos anteriores. Por ejemplo, las
+gráficas de las figuras <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:graften1">3.4</a> y <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:graften2">3.5</a>, muestran la tasa de salida de un enrutador (en bytes por segundo) en un periodo de un día y de una semana. En la
+primera gráfica se desea tener un mayor nivel de detalle, por lo que la
+frecuencia de captura debe ser mayor. La gráfica de tendencia semanal
+(figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:graften2">3.5</a>)
+únicamente se utiliza para tener una idea del comportamiento global de
+la variable por día. Se puede observar claramente un comportamiento
+cíclico relacionado con la actividad durante las horas hábiles. El hueco
+largo sin actividad al centro de la gráfica corresponde a un fin de
+semana con un día festivo.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graften1"></span>
+<img src="figuras/c3/gtend1.bmp" alt="*Tasa obtenida (en bytes/s) en la interfaz de salida de un enrutador comercial durante un día*" width="60%" />
+<p class="caption">
+Figura 3.4: <em>Tasa obtenida (en bytes/s) en la interfaz de salida de un enrutador comercial durante un día</em>
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graften2"></span>
+<img src="figuras/c3/gtend2.bmp" alt="*Tasa obtenida (en bytes/s) en la interfaz de salida de un enrutador comercial durante una semana*" width="60%" />
+<p class="caption">
+Figura 3.5: <em>Tasa obtenida (en bytes/s) en la interfaz de salida de un enrutador comercial durante una semana</em>
+</p>
+</div>
+</div>
+</div>
+<div id="análisis-estadístico-de-redes" class="section level3 hasAnchor" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> Análisis estadístico de redes<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#análisis-estadístico-de-redes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En general, es imposible determinar con exactitud el valor que tomarán
+las métricas de desempeño de interés, por lo que se les suele considerar
+como variables aleatorias (V.A.) a las que se debe aplicar algún
+análisis estadístico para poder interpretar correctamente los resultados
+obtenidos.</p>
+<p>Al considerar las métricas de interés como V.A., se debe obtener un
+número grande de muestras antes de poder sacar conclusiones sobre ellas.
+Al agrupar las muestras obtenidas en un histograma que represente la
+frecuencia de ocurrencia de los valores obtenidos, éste se aproxima a la
+<em>función de densidad de probabilidad (pdf, </em>probability density
+function**).</p>
+<p>La <em>pdf</em> de una variable aleatoria indica qué tan probable es la
+obtención de cada uno de sus valores y contiene todas sus propiedades
+estadísticas.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pdf"></span>
+<img src="figuras/c3/pdf.bmp" alt="*Histograma que representa la función de densidad de probabilidad de una variable aleatoria discreta*" width="60%" />
+<p class="caption">
+Figura 3.6: <em>Histograma que representa la función de densidad de probabilidad de una variable aleatoria discreta</em>
+</p>
+</div>
+<p>En la figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:pdf">3.6</a> se
+observa una curva con un solo pico o moda. Se trata de una <em>pdf</em>
+monomodal. Es bastante común que en redes de comunicaciones se
+encuentren V.A. con varios picos. Por ejemplo, al graficar el tamaño de
+las tramas en una red local, típicamente se encontrarán dos picos muy
+notorios en los valores de 64 y 1,500 bytes. Esto se debe principalmente
+al hecho de que dicho tráfico se compone por lo general de tramas de
+control (acuses de recibo, solicitud de conexión, etcétera.) y tramas de
+aplicaciones que intercambian grandes volúmenes de información.</p>
+<div id="sumarización-estadística" class="section level5 unnumbered hasAnchor">
+<h5>Sumarización estadística<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#sumarización-estadística" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Si bien la <em>pdf</em> contiene toda la información estadística de la V.A. de
+interés, puede resultar muy poco práctica para tomar decisiones, sobre
+todo cuando se desean hacer comparaciones entre varias V.A. Por ejemplo,
+al evaluar varias opciones de diseño de acuerdo a su incidencia sobre
+las métricas como retardo, carga y utilización, será difícil hacer una
+comparación objetiva al contar únicamente con los histogramas obtenidos
+para cada caso. Es por estas razones, entre otras, que se busca
+sumarizar el comportamiento de una V.A. en una serie de valores
+puntuales conocidos como indicadores. Entre los indicadores más
+utilizados se encuentran los indicadores de tendencia media y los de
+dispersión.</p>
+</div>
+<div id="indicadores-de-tendencia-media" class="section level5 unnumbered hasAnchor">
+<h5>Indicadores de tendencia media<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#indicadores-de-tendencia-media" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Los indicadores de tendencia media son <em>la media aritmética o promedio</em>,
+que se obtiene al sumar todos los valores obtenidos entre el número de
+muestras; <em>la moda</em>, que es el valor más observado, es decir, el
+obtenido un mayor número de veces; y <em>la mediana</em>, que es el valor justo
+al 50% del área bajo la curva de la <em>pdf</em> de la V.A.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-17" class="example"><strong>Ejemplo 3.2  </strong></span>Para cierta V.A. se han obtenido las siguientes muestras:</p>
+<div class="center">
+<p><span class="math inline">\(1,~~3,~~ 3,~~ 3,~~ 4,~~ 8,~~ 12,~~ 15,~~ 30\)</span><br />
+<span class="math inline">\(N=9\qquad \Sigma \text{valores} = 79\)</span><br />
+<span class="math inline">\(Media = \frac{79}{9} = 8.\bar{7}\qquad Mediana = \text{valor}[5] = 4\qquad Moda = 3\)</span></p>
+</div>
+</div>
+<hr />
+<p>El promedio es el indicador más popular para sumarizar una V.A., pero
+muchas veces no es el adecuado. Como se observa en la
+figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:mmm">3.7</a>, en una
+distribución simétrica, el promedio, mediana y moda caen en el mismo
+lugar, pero en una distribución asimétrica no necesariamente. En el caso
+de redes de comunicaciones las distribuciones son típicamente
+asimétricas.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mmm"></span>
+<img src="figuras/c3/medmodavg.bmp" alt="*Indicadores de tendencia media en distribuciones monomodales simétricas y asimétricas*" width="70%" />
+<p class="caption">
+Figura 3.7: <em>Indicadores de tendencia media en distribuciones monomodales simétricas y asimétricas</em>
+</p>
+</div>
+<p>Si los datos son discretos y pueden ser clasificados, es probable que la
+moda sea el indicador apropiado. Por ejemplo, considere un enrutador con
+tres interfaces de salida del que se desea conocer cuál es la interfaz
+más utilizada. En este caso, el promedio no tiene ningún interés.</p>
+<p>Por regla general, el promedio es relevante cuando el valor total de la
+métrica puede ser de interés, aunque si la <em>pdf</em> está sesgada, la
+mediana puede ser más representativa pues con frecuencia lo que nos
+interesa es el indicador de tendencia central.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-18" class="example"><strong>Ejemplo 3.3  </strong></span>Para cierto servidor de base de datos, se han obtenido los siguientes
+tiempos de respuesta (valores en milisegundos):</p>
+<p><span class="math display">\[20,~~20,~~20,~~30,~~40,~~50,~~60,~~60,~~70,~~80,~~940,~~950.\]</span></p>
+<p>La media es de <span class="math inline">\(195\,ms\)</span> y la mediana de <span class="math inline">\(55\,ms\)</span>. Claramente la mediana
+es más representativa de la realidad, pues la distribución está muy
+sesgada por las dos transacciones "largas". De hecho, el 83% de las
+mediciones está por debajo del promedio.</p>
+</div>
+<hr />
+<div style="color: blue;">
+<p><em>Entre los errores más comunes que se cometen al resumir una
+variable aleatoria a un indicador de tendencia media, está el emplear
+los promedios sin tener en cuenta su dispersión. Por ejemplo, muy pocas
+veces es significativo el calcular el promedio de valores notablemente
+diferentes.</em></p>
+</div>
+<p>Otro error que se debe evitar al trabajar con promedios es el llamado
+<em>juego de radios</em>, que se genera al comparar valores divididos con bases
+distintas, como se muestra en el ejemplo siguiente. Desgraciadamente,
+esta técnica se encuentra con cierta frecuencia en estudios comparativos
+y <em>benchmarks</em> de productos comerciales.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-19" class="example"><strong>Ejemplo 3.4  </strong></span>Para tratar de comparar el desempeño de
+dos tipos de enrutadores, <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se evalúa el tiempo total de
+conmutación de cada uno sometido a dos condiciones de carga distintas,
+<span class="math inline">\(L_1\)</span> y <span class="math inline">\(L_2\)</span>, obteniendo los resultados siguientes:</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="center">Equipo</th>
+<th align="center"><span class="math inline">\(L_1\)</span></th>
+<th align="center"><span class="math inline">\(L_2\)</span></th>
+<th align="center">Promedio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(A\)</span></td>
+<td align="center"><span class="math inline">\(10\,s\)</span></td>
+<td align="center"><span class="math inline">\(20\,s\)</span></td>
+<td align="center"><span class="math inline">\(15\,s\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(B\)</span></td>
+<td align="center"><span class="math inline">\(20\,s\)</span></td>
+<td align="center"><span class="math inline">\(10\,s\)</span></td>
+<td align="center"><span class="math inline">\(15\,s\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Suponiendo que en condiciones de operación la proporción de <span class="math inline">\(L_1\)</span> es
+similar a la de <span class="math inline">\(L_2\)</span>, con los promedios obtenidos no hay motivos para
+preferir un enrutador sobre el otro. Considere ahora qué sucede si se
+desea "normalizar" los resultados en relación con el sistema B. La
+normalización es una práctica común para eliminar las unidades y para
+restarle importancia al valor absoluto de las variables de estudio.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="center">Equipo</th>
+<th align="center"><span class="math inline">\(L_1\)</span></th>
+<th align="center"><span class="math inline">\(L_2\)</span></th>
+<th align="center">Promedio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(A\)</span></td>
+<td align="center"><span class="math inline">\(10/20= 0.5\,s\)</span></td>
+<td align="center"><span class="math inline">\(20/10=2\,s\)</span></td>
+<td align="center"><span class="math inline">\(1.25\,s\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(B\)</span></td>
+<td align="center"><span class="math inline">\(20/20=1\,s\)</span></td>
+<td align="center"><span class="math inline">\(10/10=1\,s\)</span></td>
+<td align="center"><span class="math inline">\(1\,s\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>¡Ahora parecería ser que el enrutador <span class="math inline">\(A\)</span> es 25% más lento que <span class="math inline">\(B\)</span>! Por
+supuesto, de haber normalizado con respecto al enrutador A, los
+resultados serían exactamente los contrarios.</p>
+</div>
+<hr />
+</div>
+<div id="indicadores-de-dispersión" class="section level5 unnumbered hasAnchor">
+<h5>Indicadores de dispersión<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#indicadores-de-dispersión" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Los indicadores de tendencia media por sí solos pueden dar una
+información muy limitada sobre el comportamiento de la variable de
+estudio. Estos indicadores deben estar siempre acompañados de alguno que
+permita tener una idea sobre la variabilidad que existe entre los
+valores que puede tomar la variable. Estos son los indicadores de
+dispersión.</p>
+<p>Para una distribución unimodal y simétrica, el indicador de dispersión
+más común es la <em>varianza</em> o su raíz cuadrada, <em>la desviación estándar</em>.
+También se suele utilizar el <em>coeficiente de varianza</em>, que es la razón
+entre el promedio y la desviación estándar.</p>
+<p>Si la distribución no es simétrica no debería utilizarse la varianza. En
+caso de que ésta esté acotada, se puede especificar el rango, es decir,
+los valores máximo y mínimo que la variable puede tomar. En otro caso,
+se deben utilizar los percentiles.</p>
+<p>Un percentil es el punto en el que el área bajo la curva de la función
+de distribución acumulativa alcanza un cierto porcentaje. Por ejemplo,
+el percentil 5% indica que el 5% de todos los valores obtenidos para la
+distribución son iguales o menores a ese punto. Este valor podría ser
+equivalente en algunos casos al valor mínimo en una distribución
+acotada.</p>
+<p>Los percentiles son de mucha utilidad y comúnmente utilizados pues
+eliminan los valores que son atípicos (<em>outliers</em>) y que podrían sesgar
+indebidamente la distribución. Por ejemplo, si se desea conocer qué
+interfaces de un enrutador mantienen una utilización alta sostenida es
+recomendable utilizar percentiles 90% o 95%: es casi seguro que todas
+las interfaces tuvieron una utilización de 100% en algún intervalo en
+que se emitió una ráfaga de datos.</p>
+</div>
+</div>
+</div>
+<div id="caracterización-del-flujo" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Caracterización del flujo<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-flujo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Durante la caracterización de la red también es importante obtener un
+"mapa" de los "ríos" de información que fluyen por la organización y
+sus características generales. Esta información es de gran utilidad para
+determinar qué tan adecuada es la infraestructura de red actual y qué
+modificaciones podrían hacerse para mejorarla.</p>
+<p>La caracterización de los flujos implica identificar los repositorios de
+información, los principales usuarios de dicha información, la simetría
+y características de los intercambios, los volúmenes de información
+intercambiados y las trayectorias recorridas.</p>
+<p>Como se mencionó en la sección 2.1, se debe tener presente que el modelo
+en el que los usuarios en una organización utilizaban mayoritariamente
+recursos disponibles y administrados localmente en su área o
+departamento ha ido desapareciendo gradualmente.</p>
+<p>Los repositorios de información (<em>data stores</em>) pueden ser servidores,
+granjas de servidores, <em>mainframes</em>, cintas, lectores de CD, redes de
+almacenamiento (NAS, SAN), etcétera. Por su parte, los consumidores de
+información pueden ser redes, subredes o sistemas autónomos.</p>
+<div id="tipos-de-flujo-por-aplicación" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Tipos de flujo por aplicación<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tipos-de-flujo-por-aplicación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para poder satisfacer los requerimientos de diseño, es importante
+identificar las características de los flujos generados por las
+aplicaciones. Se puede empezar por clasificar la simetría,
+direccionalidad y requerimientos de calidad de servicio de los flujos y
+posteriormente se tratará de evaluar el volumen del tráfico
+intercambiado. Como punto de partida, algunos flujos típicos en redes de
+cómputo tienen las siguientes características:</p>
+<ul>
+<li><p>Terminal virtual - servidor. Asimétrico y bidireccional (ejemplo:
+telnet)</p></li>
+<li><p>Cliente - servidor. Asimétrico y bidireccional (ejemplo: sesiones
+HTTP)</p></li>
+<li><p>Entre pares. Simétrico y bidireccional (ejemplo: NIS-II,
+videoconferencia)</p></li>
+<li><p>Servidor - servidor. Bidireccional y generalmente simétrico
+(ejemplo: <em>cluster</em> de servidores, respaldo de información)</p></li>
+<li><p>Cómputo distribuido. Las características dependen de la aplicación
+particular (ejemplo: <em>grid computing</em>)</p></li>
+<li><p>Difusión multimedia. Tráfico unidireccional (ejemplo: podcasts)</p></li>
+</ul>
+<p>La simetría de los flujos debe considerarse en varias dimensiones como
+por ejemplo, en el volumen de tráfico intercambiado, en la velocidad de
+los enlaces en cada dirección, y en los requerimientos de QoS.</p>
+<p>Algunas tecnologías como ADSL aprovechan las características asimétricas
+de los flujos cliente-servidor. Sin embargo, se debe tener muy presente
+que las características de estos flujos pueden variar drásticamente con
+el diseño de la red. Por ejemplo, los nodos de almacenamiento local de
+páginas web (<em>cache engines</em>) modifican por completo las caracterísicas
+de los flujos entre el cliente y el servidor (original).</p>
+<div class="greybox">
+<p><strong>Caso de estudio: Documentación del flujo</strong></p>
+<p>La documentación necesaria para caracterizar los flujos se empieza a
+integrar identificando las áreas de la organización, el número de
+empleados por área, las aplicaciones (fuentes de información) comúnmente
+utilizadas en esa área, su ubicación física (generalmente ésta se
+encuentra relacionada de alguna manera con la topología de la red) y
+otra información que pueda parecer relevante. Esta información puede
+conjuntarse en una tabla como la siguiente.</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="9%" />
+<col width="45%" />
+<col width="13%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Área</th>
+<th align="center">Usuarios</th>
+<th align="left">Aplicaciones</th>
+<th align="center">Sist. Op.</th>
+<th align="left">Ubicación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Contabilidad</td>
+<td align="center">56</td>
+<td align="left">Office; Exchange; SAP</td>
+<td align="center">W98</td>
+<td align="left">Corp. Edif. 2</td>
+</tr>
+<tr class="even">
+<td align="left">Ingenieria</td>
+<td align="center">200</td>
+<td align="left">Web; Exchange; Office; Visio; CAD</td>
+<td align="center">W2K; Solaris</td>
+<td align="left">Corp. Edif 2; Mérida</td>
+</tr>
+<tr class="odd">
+<td align="left">Finanzas</td>
+<td align="center">25</td>
+<td align="left">Web; Exchange; Office; Bloomberg; Infosel</td>
+<td align="center">W2K</td>
+<td align="left">Corp. Edif. 2</td>
+</tr>
+<tr class="even">
+<td align="left">Pers. admin</td>
+<td align="center">33</td>
+<td align="left">Web; Office; Exchange</td>
+<td align="center">W98</td>
+<td align="left">Toda la empresa</td>
+</tr>
+<tr class="odd">
+<td align="left">Ejecutivos</td>
+<td align="center">20</td>
+<td align="left">Web; Office; Exchange; Blomber; Infosel; SAP</td>
+<td align="center">W2K</td>
+<td align="left">Corp. Edif. Princ.</td>
+</tr>
+<tr class="even">
+<td align="left">Operaciones</td>
+<td align="center">22</td>
+<td align="left">Office; Exchange</td>
+<td align="center">W98</td>
+<td align="left">Mérida</td>
+</tr>
+<tr class="odd">
+<td align="left">Sistemas</td>
+<td align="center">15</td>
+<td align="left">Web; Office; Exchange; SQL; SAP; Visio; Adm. Red</td>
+<td align="center">W2K</td>
+<td align="left">Corp. Edif. 1</td>
+</tr>
+</tbody>
+</table>
+<p>Al mismo tiempo, deberán identificarse las principales aplicaciones
+generadoras de información, los repositorios de información y las
+características principales de los flujos generados. Esta información
+también se presenta en una tabla como la siguiente.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="27%" />
+<col width="30%" />
+<col width="9%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Repositorio</th>
+<th align="left">Área</th>
+<th align="left">Características</th>
+<th align="center">Sist.Op.</th>
+<th align="left">Ubicación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BD SAP</td>
+<td align="left">Finanzas</td>
+<td align="left">RPC Asim BD a Servs. Aplicación</td>
+<td align="center">HP9000</td>
+<td align="left">Corp. Edif. 1</td>
+</tr>
+<tr class="even">
+<td align="left">Aplicaciones SAP</td>
+<td align="left">Finanzas y Ejecutivos</td>
+<td align="left">RPC Asim. Serv. Aplic a usuarios</td>
+<td align="center">W2K</td>
+<td align="left">Corp. Edif. 2</td>
+</tr>
+<tr class="odd">
+<td align="left">Bloomberg Infosel</td>
+<td align="left">Piso financiero y Ejecutivos</td>
+<td align="left">C/S; T. Real</td>
+<td align="center">Internet</td>
+<td align="left">Internet/Edif. 1</td>
+</tr>
+<tr class="even">
+<td align="left">Serv. Exchange 1</td>
+<td align="left">Corporativo Edif. Princ.</td>
+<td align="left">RPC Asim</td>
+<td align="center">W2K</td>
+<td align="left">Corp. Edif. 1</td>
+</tr>
+<tr class="odd">
+<td align="left">Serv. Exchange 2</td>
+<td align="left">Ingeniería</td>
+<td align="left">RPC Asim</td>
+<td align="center">W2K</td>
+<td align="left">Mérida</td>
+</tr>
+<tr class="even">
+<td align="left">Serv. Exchange 3</td>
+<td align="left">Secretarias y Operaciones</td>
+<td align="left">RPC Asim</td>
+<td align="center">W2K</td>
+<td align="left">Mérida</td>
+</tr>
+<tr class="odd">
+<td align="left">Serv. Red 1</td>
+<td align="left">Corporativo Edif.. Princ.</td>
+<td align="left">C/S y Peer</td>
+<td align="center">W2K</td>
+<td align="left">Corp. Edif. 1</td>
+</tr>
+<tr class="even">
+<td align="left">Serv. Red 2</td>
+<td align="left">Mérida</td>
+<td align="left">C/S y Peer</td>
+<td align="center">W2K</td>
+<td align="left">Mérida</td>
+</tr>
+<tr class="odd">
+<td align="left">Serv. Archivos</td>
+<td align="left">Cada piso Corp.</td>
+<td align="left">C/S</td>
+<td align="center">W2K</td>
+<td align="left">Todos</td>
+</tr>
+</tbody>
+</table>
+<p>A partir de las tablas anteriores se puede generar una especie de matriz
+de tráfico que vincula los repositorios y generadores de información con
+sus usuarios como se muestra en la tabla siguiente. Esa matriz se podrá
+asociar a la topología física de la red para identificar si los enlaces
+y equipos involucrados están dimensionados adecuadamente.</p>
+<p><img src="figuras/c3/matriztfcpmx.JPG" width="110%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="caracterización-del-volumen-de-tráfico" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Caracterización del volumen de tráfico<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-volumen-de-tráfico" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La caracterización de la carga es obviamente necesaria para poder
+cumplir con los objetivos de diseño: en general, la capacidad de la red
+debe poder satisfacer la carga estimada. La manera más fácil de medir un
+flujo es utilizando un analizador de protocolos o un monitor de red como
+se ha mencionado en el capítulo 2. Sin embargo, este modelo solamente
+puede aplicarse –y parcialmente– a los flujos ya existentes. La
+estimación de la carga para los nuevos flujos es bastante imprecisa.</p>
+<div style="color: blue;">
+<p><em>Existen demasiados factores que influyen en las características del
+tráfico de red. El objetivo no es hacer una estimación muy precisa, sino
+evitar cuellos de botella críticos.</em></p>
+</div>
+<p>Para evitar cuellos de botella críticos, deben analizarse los patrones
+de uso de las aplicaciones, los intervalos entre paquetes y las
+sesiones, los tamaños de paquete y los patrones característicos
+introducidos por los protocolos de red.</p>
+<div id="estimación-de-la-carga" class="section level5 unnumbered hasAnchor">
+<h5>Estimación de la carga<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#estimación-de-la-carga" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Es necesario conocer el tamaño de los objetos que se transmiten en cada
+aplicación y la sobrecarga introducida por los protocolos que utilizan.
+De ser posible, se deberán obtener métricas que caracterizan a cada
+fuente tratando de evaluar el comportamiento y las demandas de servicio
+de las aplicaciones existentes. Para aplicaciones "típicas" se podrá
+recurrir, con ciertas reservas, a tablas de referencia como las que se
+mostrarán más adelante.</p>
+<p>Para cada flujo identificado, debe investigarse el número de usuarios
+simultáneos, el tamaño de sus ráfagas y la frecuencia de transmisión
+para calcular la capacidad agregada necesaria por aplicación.</p>
+<p>Mientras la sesión está activa, con ayuda de un analizador de protocolos
+es posible medir el intervalo medio entre paquetes (MTBA) y por
+consiguiente el número medio de paquetes por segundo. También es posible
+estimar el tamaño medio de los paquetes para así estimar el ancho de
+banda promedio por sesión y, de esta forma, el ancho de banda requerido
+para esa aplicación.</p>
+<p>Con esta información, y dado que ya se conocen las tablas de las
+comunidades de usuarios y sus rutas, se podrá tener una estimación de la
+carga por segmento. Con ello se podrá elegir la tecnología más apropiada
+para el núcleo y para los dispositivos de conmutación.</p>
+<p>La ecuación siguiente utiliza los parámetros anteriores y algunos
+elementos de retardo para dar una aproximación del ancho de banda
+necesario para una aplicación:</p>
+<p><span class="math display">\[B_w = \frac{8\times (N_A\times K\times L)}{K\times P+T},\]</span></p>
+<p>donde <span class="math inline">\(B_w\)</span> es el ancho de banda estimado, <span class="math inline">\(N_A\)</span> el número medio de
+sesiones, <span class="math inline">\(K\)</span> el promedio de paquetes por sesión y <span class="math inline">\(L\)</span> el tamaño medio
+de paquete. <span class="math inline">\(P\)</span> es la latencia de la red en uno solo sentido y <span class="math inline">\(T\)</span> es el
+"<em>think time</em>", es decir, el tiempo estimado que duraría un usuario de
+la aplicación en procesar o explotar la información recibida antes de
+solicitar un nuevo mensaje.</p>
+<p>Por supuesto, aquí se está hablando de valores promedio, lo que permite
+simplificar enormemente el dimensionamiento pero que no necesariamente
+corresponderán con los valores observados. Una mejor aproximación es la
+de representar los flujos por medio de distribuciones aleatorias y
+utilizar la teoría de colas para estimar el comportamiento de éstos. En
+el capítulo 7 se presentarán las ventajas y limitaciones de esta
+técnica.</p>
+<p>Los patrones de uso están relacionados con el nivel de sesión: ¿Cuánto
+dura en promedio una sesión? ¿Cuál es el intervalo entre sesiones por
+usuario? ¿Cuántos usuarios o estaciones hay? Con esto, y un análisis
+estadístico, se puede establecer cuántas sesiones en promedio se están
+ejecutando simultáneamente.</p>
+<p>Si no se cuenta con la información necesaria, a veces será necesario
+considerar el peor caso: todas las aplicaciones están siendo utilizadas
+al mismo tiempo y hay tantos usuarios de cada aplicación como usuarios
+hay en la comunidad de estudio.</p>
+</div>
+<div id="estimación-de-volumen-por-aplicación" class="section level5 hasAnchor" number="3.3.2.0.1">
+<h5><span class="header-section-number">3.3.2.0.1</span> Estimación de volumen por aplicación<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#estimación-de-volumen-por-aplicación" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Es claro que las aplicaciones y los patrones de uso varían demasiado.
+Sin embargo, es necesario contar con una referencia para poder estimar
+la carga generada por éstas. La siguiente tabla, hecha alrededor de
+1999, da una idea vaga del volumen generado por algunas aplicaciones
+para hacer estimaciones rápidas.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Aplicación</strong></th>
+<th align="center"><span class="math inline">\({\bf Volumen~(kBytes)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Pantalla de terminal</td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Mensaje de correo electrónico</td>
+<td align="center"><span class="math inline">\(10\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Página Web</td>
+<td align="center"><span class="math inline">\(50\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Hoja de Excel</td>
+<td align="center"><span class="math inline">\(200\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Documento de Word</td>
+<td align="center"><span class="math inline">\(200\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Presentación de PowerPoint</td>
+<td align="center"><span class="math inline">\(1,000\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Video MPEG-4 (30 seg)</td>
+<td align="center"><span class="math inline">\(4,000\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Imagen de alta resolución</td>
+<td align="center"><span class="math inline">\(50,000\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Respaldo de una base de datos</td>
+<td align="center"><span class="math inline">\(1,000,000\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="estimación-del-volumen-por-sobrecarga-de-protocolos" class="section level4 hasAnchor" number="3.3.2.1">
+<h4><span class="header-section-number">3.3.2.1</span> Estimación del volumen por sobrecarga de protocolos<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#estimación-del-volumen-por-sobrecarga-de-protocolos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para calcular el volumen total de tráfico transportado por la red, no
+basta con calcular el tráfico generado por las aplicaciones. También
+debe considerarse la sobrecarga de los protocolos de transporte y el
+volumen generado por otros protocolos y aplicaciones que sirven de
+soporte a la operación de la red. En lo que respecta a los protocolos de
+transporte, la tabla siguiente muestra la sobrecarga de algunos de los
+protocolos más comunes.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Protocolo</strong></th>
+<th align="center"><span class="math inline">\({\bf Sobrecarga~(Bytes)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ethernet</td>
+<td align="center"><span class="math inline">\(18 + 20\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">IEEE802.3, IEEE802.2 y SNAP</td>
+<td align="center"><span class="math inline">\(26 + 20\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">HDLC</td>
+<td align="center"><span class="math inline">\(10\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">IPv4</td>
+<td align="center"><span class="math inline">\(20\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">IPv6</td>
+<td align="center"><span class="math inline">\(40\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">TCP</td>
+<td align="center"><span class="math inline">\(20\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">IPX</td>
+<td align="center"><span class="math inline">\(30\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En el caso de ethernet y de IEEE 802.2, los 20 bytes extra corresponden
+a 8 de preámbulo (que en realidad es variable) y los 12 de separación
+entre tramas. Este último, por supuesto, no es tráfico que se genera
+pero afecta la eficiencia del medio.</p>
+<p>La actualización de rutas, en particular con protocolos de vector de
+distancia, puede tener un impacto importante en redes grandes en
+capacidad de procesamiento de los enrutadores. Su impacto en la
+capacidad de los enlaces típicamente es muy poca y sólo tiene un impacto
+importante cuando los enlaces están muy limitados en ancho de banda.</p>
+<div class="greybox">
+<p><strong>Caso de estudio: Actualización tablas de enrutamiento</strong></p>
+<p>Un ejemplo bien conocido sobre el impacto que los protocolos de
+enrutamiento pueden tener sobre la red data de principios de los años 90
+en que se realizaban los primeros experimentos de transferencia de audio
+y video sobre internet entre Europa y los Estados Unidos.</p>
+<p>La calidad de las comunicaciones era muy inferior a lo esperado. Al
+revisar las trazas de tráfico, se encontró que la latencia de los
+paquetes sufría degradaciones muy importantes cada dos minutos
+aproximadamente. Tras muchos estudios, se concluyó que este
+comportamiento estaba relacionado con el intercambio y la actualización
+de tablas de ruteo al interior de algunos de los enrutadores en el
+enlace intercontinental.</p>
+</div>
+<p>Varios protocolos comunes en redes locales utilizan tramas de difusión
+para su operación. Estas tramas también deben ser tomadas en cuenta.
+Además, un número excesivo de tramas de difusión puede degradar
+seriamente la eficiencia de la red.</p>
+<div id="dinámica-de-los-protocolos-de-transporte" class="section level5 unnumbered hasAnchor">
+<h5>Dinámica de los protocolos de transporte<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#dinámica-de-los-protocolos-de-transporte" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Además de la sobrecarga de los encabezados, los protocolos de transporte
+controlan cómo y cuándo se envía la información, lo cual incide
+directamente en las características del trafico y en la carga observada.
+Por ejemplo, si la capa de enlace y la de transporte ofrecen ambas un
+servicio confiable y los temporizadores de la primera no están bien
+configurados, habrá retransmisiones innecesarias.</p>
+<p>En protocolos de ventana deslizante, como TCP, el tamaño de la ventana
+está asociado a la cantidad de información que puede viajar en la red
+("llenar el tubo"), la cual es igual al producto ancho de banda por el
+retraso de ida y vuelta (RTT). Si la ventana es menor a este tamaño
+(como ocurre en redes satelitales o de fibra óptica de gran distancia),
+la ventana limitará la eficiencia de la conexión. Dicho esto, una
+ventana grande puede introducir una ráfaga grande de información a la
+red, lo que puede acarrear otras consecuencias no deseables, como
+congestión temporal en los nodos de conmutación y <em>jitter</em>.</p>
+<p>Para proteger la red ante un exceso de carga, muchos protocolos de
+transporte utilizan mecanismos de control de congestión que también
+influyen en las características de los flujos, por lo que se recomienda
+conocer qué mecanismos de control de congestión se están utilizando: de
+lazo abierto (<em>token bucket</em>), reactivos por los nodos (ECN, ABR) o de
+lazo cerrado en los extremos (TCP). Si no hay una forma de reacción a la
+congestión, la red puede quedar completamente inhabilitada.</p>
+</div>
+<div id="influencia-de-otros-componentes" class="section level5 unnumbered hasAnchor">
+<h5>Influencia de otros componentes<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#influencia-de-otros-componentes" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Debe tomarse en cuenta el tráfico generado por otros protocolos en los
+que se basa la operación de la red y que no se utilizan directamente
+para el transporte de los flujos de las aplicaciones como:</p>
+<ul>
+<li><p>La configuración automática con DHCP (que se presenta en el
+capítulo 4) genera intercmbios de 328 bytes;</p></li>
+<li><p>se considera que un mensaje del protocolo de administración SNMP
+(capítulo 6) utiliza 128 bytes por variable monitoreada.</p></li>
+</ul>
+<p>Dependiendo de las condiciones de la organización y de la configuración
+de su red, es posible que se detecten ráfagas de mensajes DHCP en
+ciertos momentos del día. Aunque es poco común, estas ráfagas pueden
+afectar el desempeño de la red por saturación momentánea de los enlaces,
+o por falta de capacidad de procesamiento en los servidores.</p>
+<p>Como se verá más adelante, la granularidad con que deben ser
+monitoreadas las variables de administración no debe ser muy fina para
+reducir el tráfico en la red.</p>
+</div>
+<div id="copias-de-tráfico" class="section level5 unnumbered hasAnchor">
+<h5>Copias de tráfico<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#copias-de-tráfico" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Para ciertas aplicaciones, como la difusión de video en demanda, vuelve
+a tomar importancia el uso de sistemas que faciliten la difusión
+restringida (<em>multicast</em>) de la información. En el capítulo 9 se
+mostrará cómo estos sistemas permiten hacer un uso más eficiente de los
+recursos de la red al evitar copias innecesarias, como se indica en la
+figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:mcast">3.8</a>.
+Observe que en el caso de transmisiones <em>unicast</em>, en el enlace de la
+izquierda se genera un flujo por cada receptor de la información,
+mientras que en un sistema que soporte <em>multicasting</em>, son los
+enrutadores los que generan réplicas de la información en caso de ser
+necesario.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mcast"></span>
+<img src="figuras/c3/ucast.bmp" alt="*Flujos de tráfico en aplicaciones unicast y multicast*" width="48%" /><img src="figuras/c3/mcast.bmp" alt="*Flujos de tráfico en aplicaciones unicast y multicast*" width="48%" />
+<p class="caption">
+Figura 3.8: <em>Flujos de tráfico en aplicaciones unicast y multicast</em>
+</p>
+</div>
+<p>Por supuesto, al establecer la caracterización de los flujos, deberá
+conocerse si se emplean protocolos de difusión restringida en la
+organización.</p>
+<p>Otro elemento que debe tomarse en cuenta, es que si bien se ha tratado
+de caracterizar los flujos de las fuentes de manera individual, su
+combinación para estimar el volumen total no es tan sencillo como la
+suma aritmética que se pretende simbolizar en la
+figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:sumaflows">3.9</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sumaflows"></span>
+<img src="figuras/c3/sumaflows.bmp" alt="*La mezcla de fuentes no puede realizarse como una superposición de flujos*" width="65%" />
+<p class="caption">
+Figura 3.9: <em>La mezcla de fuentes no puede realizarse como una superposición de flujos</em>
+</p>
+</div>
+<p>En realidad éste es un problema bastante complejo. El reto es cómo
+lograr un modelo que permita mezclar las fuentes para determinar la
+capacidad que será requerida y así poder estimar los retardos que
+sufrirán las distintas fuentes.</p>
+<p>Para redes donde las métricas de desempeño son críticas, el
+dimensionamiento puede realizarse considerando el peor caso en el que
+los picos de cada flujo coinciden en el tiempo. Sin embargo, esto genera
+redes sumamente sub-dimensionadas y costosas. En la mayoría de los casos
+se utiliza un multiplexaje estadístico basado en alguna técnica de
+modelado.</p>
+</div>
+</div>
+</div>
+<div id="requerimientos-de-calidad-de-servicio" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Requerimientos de calidad de servicio<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#requerimientos-de-calidad-de-servicio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La calidad de servicio (<em>QoS, Quality of Service</em>) parte del hecho de
+que no todas las aplicaciones tienen las mismas necesidades y, por lo
+tanto, no demandan los mismos recursos de la red. Por ello, no basta con
+caracterizar el tráfico y la carga. También hay que identificar los
+requerimientos de los distintos flujos que se han identificado. La
+siguiente tabla muestra algunos requerimientos de QoS para algunas
+aplicaciones típicas.</p>
+<p><img src="figuras/c3/treqqos.JPG" width="90%" style="display: block; margin: auto;" /></p>
+<p>Los distintos tipos de flujo son más o menos tolerantes al retardo que pueden sufrir en la red. Una transferencia de archivos es relativamente inmune al retardo y a su variabilidad. A este tipo de flujos suele llamársele <em>elásticos</em>. En cambio, un flujo de audio para aplicaciones interactivas es sumamente estricto en sus requerimientos de retardo y <em>jitter</em>. Estas aplicaciones se llaman <em>inelásticas</em>.</p>
+<p>Existen diversos mecanismos para garantizar la calidad de servicio en la red. Dichos mecanismos son discutidos en forma general en el capítulo 8, pero el concepto central se basa en hacer posible que cada aplicación pueda solicitar de la red una garantía de que los recursos que necesita estarán disponibles.</p>
+<p>Es importante señalar el hecho de que aún cuando los mecanismos
+mencionados permiten a las aplicaciones solicitar los recursos
+necesitados, siempre quedará en manos del administrador de la red el
+decidir si dichos recursos son autorizados o no.</p>
+<p>Cada aplicación puede indicar sus requerimientos específicos hacia la
+red antes de iniciar la transmisión de datos. El "contrato" hacia la
+red (<em>SLA, Service Level Agreement</em>) se negocia especificando
+típicamente el tipo de tráfico, su variabilidad en la intensidad
+(<em>burstiness</em>), el ancho de banda, latencia y jitter requeridos y la
+tasa de pérdida tolerada.</p>
+<p>La terminología de <code>ATM</code> es útil para poder clasificar las aplicaciones
+y para poder determinar los parámetros que determinan la calidad de
+servicio requerida. En <code>ATM</code> hay cinco categorías de servicio: CBR
+(<em>Constant Bit Rate</em>), rt-VBR (<em>Real-time Variable Bit Rate</em>), nrt-VBR
+(<em>non real-time Variable Bit Rate</em>), ABR (<em>Available Bit Rate</em>) y UBR
+(<em>Unspecified Bit Rate</em>).</p>
+<p>Para cada una de ellas, el forum ATM indica una serie de parámetros que
+describen el tráfico y los requerimientos de QoS de la red. Ejemplos de
+estos parámetros son PCR (<em>peak cell rate</em>), SCR (<em>sustainable cell
+rate</em>), max CTD (<em>cell transfer delay</em>), y MBS (<em>max burst size</em>).</p>
+<div id="tráfico-cbr" class="section level6 unnumbered hasAnchor">
+<h6>Tráfico CBR<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tráfico-cbr" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<p>Esta categoría está pensada para aplicaciones que generan una tráfico
+con una tasa constante como es el caso de una conversación telefónica y
+la transmisión de video sin compresión. Este tipo de flujos demanda de
+la red una capacidad constante en bits por segundo (ver
+figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:cbrvbr">3.10</a> <em>(a)</em>), un retardo máximo predecible, una
+variabilidad del retardo y tasa de pérdidas mínimas.</p>
+<p>Es común que si la red puede ofrecer garantías para el tráfico CBR, este
+servicio se utilice para otros objetivos, como la interconexión de redes
+locales.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cbrvbr"></span>
+<img src="figuras/c3/cbrvbr.jpg" alt="*Ejemplo de flujos a tasa constante y a tasa variable*" width="70%" />
+<p class="caption">
+Figura 3.10: <em>Ejemplo de flujos a tasa constante y a tasa variable</em>
+</p>
+</div>
+</div>
+<div id="tráfico-vbr" class="section level6 unnumbered hasAnchor">
+<h6>Tráfico VBR<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tráfico-vbr" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<p>El tráfico VBR es el tipo de tráfico típico en las aplicaciones de red "tradicionales" las cuales generan flujos de información en ráfagas seguidas de períodos de silencio, lo que produce una tasa variable de información (figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:cbrvbr">3.10</a> <em>(b)</em>). Algunas aplicaciones de tiempo real, como el video comprimido, también generan un tráfico VBR (por ello la categoría rt-VBR) y demandarán de la red un retardo máximo predecible, aunque normalmente menos rígido que para los flujos CBR.</p>
+<p>Existen varias definiciones distintas para medir la variabilidad en la intensidad con la que las aplicaciones "inyectan" tráfico a la red. Este término es lo que en inglés se llama <em>burstiness</em>. Una medida muy popular de burstiness es la relación entre la tasa de emisión pico (<em>PBR, Peak bit rate</em>) y la tasa promedio (<em>MBR, Mean bit rate</em>).</p>
+<p><span class="math display">\[Burstiness = \frac{PBR}{ MBR}\]</span></p>
+<p>Una aplicación CBR tiene un <em>burstiness</em> muy bajo; una VBR puede tenerlo
+muy alto. Otras formas de evaluarla son a través de la duración de la
+ráfaga o de su probabilidad de ocurrencia.</p>
+</div>
+<div id="distribución-del-ancho-de-banda" class="section level4 unnumbered hasAnchor">
+<h4>Distribución del ancho de banda<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#distribución-del-ancho-de-banda" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para poder satisfacer los requerimientos de calidad de servicio, la
+infraestructura de la red debe contar con mecanismos que permitan
+distribuir la capacidad disponible en los enlaces de acuerdo al nivel de
+importancia de los distintos flujos (o de las clases de servicio, como
+se verá en el capítulo 8.</p>
+<p>En los mecanismos llamados de conservación de trabajo, cuando la carga
+es ligera la capacidad se distribuye entre los distintos flujos, pero
+conforme la demanda empieza a aumentar rebasando la capacidad de la red,
+los anchos de banda se asignan en función de prioridad, como aparece en
+la figura <a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fig:prio">3.11</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:prio"></span>
+<img src="figuras/c3/prio.bmp" alt="*Distribución del ancho de banda en función de la prioridad de los flujos*" width="50%" />
+<p class="caption">
+Figura 3.11: <em>Distribución del ancho de banda en función de la prioridad de los flujos</em>
+</p>
+</div>
+<p>Algunas aplicaciones, como las que generan tráfico CBR, o algunas
+aplicaciones de misión crítica, requieren de la asignación de un ancho
+de banda determinado. Si el administrador está de acuerdo, entonces el
+ancho de banda de la línea de comunicaciones se divide entre los
+diferentes tipos de aplicación, y se pueden realizar múltiples sesiones
+sobre un mismo espacio asignado.</p>
+</div>
+</div>
+</div>
+<div id="problemas-2" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Problemas<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#problemas-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:c31" class="exercise"><strong>Problema 3.1  </strong></span>¿Cómo se realiza y para qué sirve el baselining de
+la red en Diseño de Redes?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c32" class="exercise"><strong>Problema 3.2  </strong></span>Llene la siguiente tabla:</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Aplicación</th>
+<th align="center">Direccionalidad</th>
+<th align="right">Simetría    </th>
+<th>  Burstiness</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Telnet</td>
+<td align="center"></td>
+<td align="right"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left">HTTP</td>
+<td align="center"></td>
+<td align="right"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left">Respaldo servidores</td>
+<td align="center"></td>
+<td align="right"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left">Video en demanda</td>
+<td align="center"></td>
+<td align="right"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left">Audio conferencia</td>
+<td align="center"></td>
+<td align="right"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:c33" class="exercise"><strong>Problema 3.3  </strong></span>Caracterice los siguientes flujos en función de su:
+<em>a) Direccionalidad</em>: uni/bidireccional; <em>b) Simetría</em>: (en relación con
+los volúmenes de información en cada dirección; <em>c) Tolerancia al
+retardo</em>: elástica/inelástica; <em>d) Disponibilidad</em>: misión crítica, o
+no. <strong>Justfique brevemente su respuesta</strong></p>
+<ul>
+<li><p>Telemetría</p></li>
+<li><p>Video conferencia para empresas</p></li>
+<li><p>Visualizador realidad virtual para síntesis de proteinas</p></li>
+<li><p>Sistema para autorización de tarjetas de crédito en tienda
+departamental</p></li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:c34" class="exercise"><strong>Problema 3.4  </strong></span>¿Cuáles son los valores que los siguientes
+parámetros deben tener para considerar que la red es "sana"?</p>
+<ul>
+<li>Porcentaje de utilización de un segmento ethernet</li>
+<li>Disponibilidad de las aplicaciones de misión crítica</li>
+<li>Porcentaje de colisiones</li>
+<li>Porcentaje de paquetes perdidos</li>
+<li>Porcentaje de utilización de <code>CPU</code> en enrutadores</li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:c35" class="exercise"><strong>Problema 3.5  </strong></span>¿Cuáles son los valores típicos de BER en enlaces:</p>
+<ol style="list-style-type: lower-alpha">
+<li>de cobre</li>
+<li>de fibra óptica</li>
+<li>satelitales?</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c36" class="exercise"><strong>Problema 3.6  </strong></span>Si un proyecto de diseño de redes debe incorporarse
+a una infraestructura de red ya existente, ¿cómo es posible asegurar que
+el diseño propuesto será interoperable y que los objetivos de diseño son
+realistas?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c37" class="exercise"><strong>Problema 3.7  </strong></span>Describa brevemente y proporcione un ejemplo de
+mecanismos de control de congestión de:</p>
+<ul>
+<li><p>Lazo abierto</p></li>
+<li><p>Reactivos en los nodos de conmutación</p></li>
+<li><p>Lazo cerrado en los extremos.</p></li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:c38" class="exercise"><strong>Problema 3.8  </strong></span>Se envía información con un protocolo de
+ventanas deslizantes por un enlace de <span class="math inline">\(155\,Mb/s\)</span>. La distancia entre
+transmisor y receptor es de <span class="math inline">\(800\,km\)</span>. La velocidad de propagación en el
+medio es de <span class="math inline">\(200,000\,km/s\)</span>. ¿Cuál debe ser el tamaño máximo de la
+ventana para que no se degrade la eficiencia de la comunicación por esta
+razón?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c39" class="exercise"><strong>Problema 3.9  </strong></span>¿Por qué el mecanismo de control de congestión de
+<code>TCP</code> puede ser ineficiente en redes limitadas en latencia y qué
+modificaciones se han propuesto para mejorarlo?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c310" class="exercise"><strong>Problema 3.10  </strong></span>¿Qué elementos se deben tomar en cuenta para
+estimar el volumen de los flujos que fluyen por la red?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c311" class="exercise"><strong>Problema 3.11  </strong></span>Si durante la caracterización de la red se utiliza
+un analizador de protocolos para monitorear el tráfico, ¿durante cuánto
+tiempo y con qué frecuencia se debe capturar la información que nos
+interesa?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c312" class="exercise"><strong>Problema 3.12  </strong></span>¿Qué relación hay entre un histograma y una <em>pdf</em>
+de una métrica de desempeño? ¿Qué propiedades estadísticas tiene la
+<em>pdf</em>?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c313" class="exercise"><strong>Problema 3.13  </strong></span>¿Cómo es la varianza de una distribución Pareto
+con parámetro de forma <span class="math inline">\(\beta &lt; 1\)</span>?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c314" class="exercise"><strong>Problema 3.14  </strong></span>¿Para qué tipo de variable recomendaría utilizar
+como medida de dispersión la desviación estándar? ¿Los percentiles 5% y
+95%?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c315" class="exercise"><strong>Problema 3.15  </strong></span>¿Qué significa "Burstiness" y cómo se calcula?
+¿Qué significa el término Jitter y cómo se relaciona con la QoS?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c316" class="exercise"><strong>Problema 3.16  </strong></span>¿Qué es un proceso de Poisson? ¿Por qué suele
+utilizarse para modelar tráfico en redes de datos? ¿En qué casos este
+modelo puede no ser adecuado?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c317" class="exercise"><strong>Problema 3.17  </strong></span>¿Por qué es cuestionable modelar el tráfico de
+aplicaciones "clásicas" con procesos de Poisson? ¿Podría modelarse el
+flujo de VoIP como Poisson?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c318" class="exercise"><strong>Problema 3.18  </strong></span>Describa brevemente cuáles son las
+características de los flujos definidos por el foro de ATM y de un
+ejemplo de una aplicación que genere cada tipo de flujo.</p>
+</div>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>Estos temas serán tratados con mayor detalle en el capítulo 4.<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="requerimientos-técnicos.-compromisos-y-restricciones.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diseño-lógico-de-la-red.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-CaracRed.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown_DisArqRedes.pdf", "bookdown_DisArqRedes.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

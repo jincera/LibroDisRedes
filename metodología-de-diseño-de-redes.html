@@ -1,0 +1,2587 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 1 Metodología de diseño de redes | Diseño y Arquitectura de Redes</title>
+  <meta name="description" content="Primer intento para hacer las notas en html" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 1 Metodología de diseño de redes | Diseño y Arquitectura de Redes" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/figuras/dar.jpg" />
+  <meta property="og:description" content="Primer intento para hacer las notas en html" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 1 Metodología de diseño de redes | Diseño y Arquitectura de Redes" />
+  
+  <meta name="twitter:description" content="Primer intento para hacer las notas en html" />
+  <meta name="twitter:image" content="/figuras/dar.jpg" />
+
+<meta name="author" content="José Incera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="requerimientos-técnicos.-compromisos-y-restricciones.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diseño y Arquitectura de Redes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html"><i class="fa fa-check"></i><b>1</b> Metodología de diseño de redes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#introducción"><i class="fa fa-check"></i><b>1.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#por-qué-una-empresa-desea-una-red"><i class="fa fa-check"></i>¿Por qué una empresa desea una red?</a></li>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#fracasos-en-proyectos-de-tecnología-de-información"><i class="fa fa-check"></i>Fracasos en proyectos de tecnología de información</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#diseño-descendente"><i class="fa fa-check"></i><b>1.2</b> Diseño descendente</a></li>
+<li class="chapter" data-level="1.3" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#microsoft-solutions-framework"><i class="fa fa-check"></i><b>1.3</b> Microsoft Solutions Framework</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#modelo-de-proceso"><i class="fa fa-check"></i><b>1.3.1</b> Modelo de proceso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#análisis-de-riesgos"><i class="fa fa-check"></i><b>1.4</b> Análisis de riesgos</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#manejo-de-riesgos"><i class="fa fa-check"></i><b>1.4.1</b> Manejo de Riesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#problemas"><i class="fa fa-check"></i><b>1.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html"><i class="fa fa-check"></i><b>2</b> Requerimientos técnicos. Compromisos y restricciones</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#escalabilidad"><i class="fa fa-check"></i><b>2.1</b> Escalabilidad</a></li>
+<li class="chapter" data-level="2.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#disponibilidad"><i class="fa fa-check"></i><b>2.2</b> Disponibilidad</a></li>
+<li class="chapter" data-level="2.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#confiabilidad"><i class="fa fa-check"></i><b>2.3</b> Confiabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#desempeño"><i class="fa fa-check"></i><b>2.4</b> Desempeño</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ancho-de-banda"><i class="fa fa-check"></i><b>2.4.1</b> Ancho de banda</a></li>
+<li class="chapter" data-level="2.4.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#utilización"><i class="fa fa-check"></i><b>2.4.2</b> Utilización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#rendimiento"><i class="fa fa-check"></i><b>2.4.3</b> Rendimiento</a></li>
+<li class="chapter" data-level="2.4.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#tasa-de-error"><i class="fa fa-check"></i><b>2.4.4</b> Tasa de error</a></li>
+<li class="chapter" data-level="2.4.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#eficiencia"><i class="fa fa-check"></i><b>2.4.5</b> Eficiencia</a></li>
+<li class="chapter" data-level="2.4.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#retardo-y-variabilidad"><i class="fa fa-check"></i><b>2.4.6</b> Retardo y variabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#seguridad"><i class="fa fa-check"></i><b>2.5</b> Seguridad</a></li>
+<li class="chapter" data-level="2.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#administración"><i class="fa fa-check"></i><b>2.6</b> Administración</a></li>
+<li class="chapter" data-level="2.7" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#facilidad-de-uso"><i class="fa fa-check"></i><b>2.7</b> Facilidad de uso</a></li>
+<li class="chapter" data-level="2.8" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#adaptabilidad"><i class="fa fa-check"></i><b>2.8</b> Adaptabilidad</a></li>
+<li class="chapter" data-level="2.9" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#costo-beneficio"><i class="fa fa-check"></i><b>2.9</b> Costo-beneficio</a></li>
+<li class="chapter" data-level="2.10" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#conflictos-entre-requerimientos"><i class="fa fa-check"></i><b>2.10</b> Conflictos entre requerimientos</a></li>
+<li class="chapter" data-level="2.11" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#otras-métricas-relevantes"><i class="fa fa-check"></i><b>2.11</b> Otras métricas relevantes</a></li>
+<li class="chapter" data-level="2.12" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#problemas-1"><i class="fa fa-check"></i><b>2.12</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><i class="fa fa-check"></i><b>3</b> Caracterización de la red y del tráfico generado por las aplicaciones</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-la-topología"><i class="fa fa-check"></i><b>3.1</b> Caracterización de la topología</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#mapa-de-la-red"><i class="fa fa-check"></i><b>3.1.1</b> Mapa de la red</a></li>
+<li class="chapter" data-level="3.1.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#asignación-de-nombres-y-direcciones"><i class="fa fa-check"></i><b>3.1.2</b> Asignación de nombres y direcciones</a></li>
+<li class="chapter" data-level="3.1.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-los-medios-de-transmisión"><i class="fa fa-check"></i><b>3.1.3</b> Caracterización de los medios de transmisión</a></li>
+<li class="chapter" data-level="3.1.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#restricciones-ambientales-y-arquitectónicas"><i class="fa fa-check"></i><b>3.1.4</b> Restricciones ambientales y arquitectónicas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#desempeño-de-la-red-actual"><i class="fa fa-check"></i><b>3.2</b> Desempeño de la red actual</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#herramientas-de-recolección"><i class="fa fa-check"></i><b>3.2.1</b> Herramientas de recolección</a></li>
+<li class="chapter" data-level="3.2.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#periodo-y-frecuencia-de-recolección"><i class="fa fa-check"></i><b>3.2.2</b> Periodo y frecuencia de recolección</a></li>
+<li class="chapter" data-level="3.2.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#algunas-métricas-de-desempeño"><i class="fa fa-check"></i><b>3.2.3</b> Algunas métricas de desempeño</a></li>
+<li class="chapter" data-level="3.2.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#presentación-de-resultados"><i class="fa fa-check"></i><b>3.2.4</b> Presentación de resultados</a></li>
+<li class="chapter" data-level="3.2.5" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#análisis-estadístico-de-redes"><i class="fa fa-check"></i><b>3.2.5</b> Análisis estadístico de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-flujo"><i class="fa fa-check"></i><b>3.3</b> Caracterización del flujo</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tipos-de-flujo-por-aplicación"><i class="fa fa-check"></i><b>3.3.1</b> Tipos de flujo por aplicación</a></li>
+<li class="chapter" data-level="3.3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-volumen-de-tráfico"><i class="fa fa-check"></i><b>3.3.2</b> Caracterización del volumen de tráfico</a></li>
+<li class="chapter" data-level="3.3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#requerimientos-de-calidad-de-servicio"><i class="fa fa-check"></i><b>3.3.3</b> Requerimientos de calidad de servicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#problemas-2"><i class="fa fa-check"></i><b>3.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html"><i class="fa fa-check"></i><b>4</b> Diseño lógico de la red</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología"><i class="fa fa-check"></i><b>4.1</b> Diseño de la topología</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-plana"><i class="fa fa-check"></i><b>4.1.1</b> Topología plana</a></li>
+<li class="chapter" data-level="4.1.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-jerárquico"><i class="fa fa-check"></i><b>4.1.2</b> Diseño jerárquico</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-capa-de-acceso"><i class="fa fa-check"></i><b>4.2</b> Diseño de la capa de acceso</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problema-de-localización-asignación"><i class="fa fa-check"></i><b>4.2.1</b> Problema de Localización-asignación</a></li>
+<li class="chapter" data-level="4.2.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#asignación-de-nodos-a-concentradores"><i class="fa fa-check"></i><b>4.2.2</b> Asignación de nodos a concentradores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-de-nodos-a-concentrador"><i class="fa fa-check"></i><b>4.2.3</b> Topología de nodos a concentrador</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#capa-de-distribución"><i class="fa fa-check"></i><b>4.3</b> Capa de distribución</a></li>
+<li class="chapter" data-level="4.4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-red-dorsal"><i class="fa fa-check"></i><b>4.4</b> Diseño de la red dorsal</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología-1"><i class="fa fa-check"></i><b>4.4.1</b> Diseño de la topología</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-basado-en-bloques-modulares"><i class="fa fa-check"></i><b>4.5</b> Diseño basado en bloques modulares</a></li>
+<li class="chapter" data-level="4.6" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#s:redundancia"><i class="fa fa-check"></i><b>4.6</b> Topologías con redundancia</a></li>
+<li class="chapter" data-level="4.7" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problemas-3"><i class="fa fa-check"></i><b>4.7</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="administración-de-redes.html"><a href="administración-de-redes.html"><i class="fa fa-check"></i><b>5</b> Administración de redes</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#evolución-de-administración-de-sistemas"><i class="fa fa-check"></i><b>5.1</b> Evolución de administración de sistemas</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-fallas"><i class="fa fa-check"></i><b>5.1.1</b> Gestión de fallas</a></li>
+<li class="chapter" data-level="5.1.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-configuración"><i class="fa fa-check"></i><b>5.1.2</b> Gestión de configuración</a></li>
+<li class="chapter" data-level="5.1.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-seguridad"><i class="fa fa-check"></i><b>5.1.3</b> Gestión de seguridad</a></li>
+<li class="chapter" data-level="5.1.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-rendimiento"><i class="fa fa-check"></i><b>5.1.4</b> Gestión de rendimiento</a></li>
+<li class="chapter" data-level="5.1.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#contabilidad-de-recursos"><i class="fa fa-check"></i><b>5.1.5</b> Contabilidad de recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#protocolos-de-administración"><i class="fa fa-check"></i><b>5.2</b> Protocolos de administración</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-administración-osi"><i class="fa fa-check"></i><b>5.2.1</b> Modelo de administración OSI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-gestión-ietf"><i class="fa fa-check"></i><b>5.2.2</b> Modelo de gestión IETF</a></li>
+<li class="chapter" data-level="5.2.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#simple-network-management-protocol"><i class="fa fa-check"></i><b>5.2.3</b> Simple Network Management Protocol</a></li>
+<li class="chapter" data-level="5.2.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#base-de-datos-de-información-de-administración-mib"><i class="fa fa-check"></i><b>5.2.4</b> Base de datos de información de administración (MIB)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#rmon"><i class="fa fa-check"></i><b>5.3</b> RMON</a></li>
+<li class="chapter" data-level="5.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#administración-de-sistemas-con-snmp"><i class="fa fa-check"></i><b>5.4</b> Administración de sistemas con SNMP</a></li>
+<li class="chapter" data-level="5.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#problemas-4"><i class="fa fa-check"></i><b>5.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html"><i class="fa fa-check"></i><b>6</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#cobertura-de-internet"><i class="fa fa-check"></i><b>6.1</b> Cobertura de Internet</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#red-de-acceso"><i class="fa fa-check"></i><b>6.1.1</b> Red de acceso</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#contexto-de-internet-y-servicios-de-banda-ancha-en-méxico"><i class="fa fa-check"></i><b>6.1.2</b> Contexto de Internet y servicios de Banda Ancha en México</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#banda-ancha"><i class="fa fa-check"></i><b>6.1.3</b> Banda Ancha</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-1"><i class="fa fa-check"></i><b>6.2</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-cableadas"><i class="fa fa-check"></i><b>6.2.1</b> Tecnologías de acceso cableadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-inalámbricas"><i class="fa fa-check"></i><b>6.3</b> Tecnologías de acceso inalámbricas</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#telefonía-celular"><i class="fa fa-check"></i><b>6.3.1</b> Telefonía celular</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#problemas-5"><i class="fa fa-check"></i><b>6.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html"><i class="fa fa-check"></i><b>7</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#introducción-1"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#métricas-financieras"><i class="fa fa-check"></i><b>7.2</b> Métricas financieras</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#costo-total-de-propiedad"><i class="fa fa-check"></i><b>7.2.1</b> Costo total de propiedad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#retorno-de-inversión"><i class="fa fa-check"></i><b>7.2.2</b> Retorno de inversión</a></li>
+<li class="chapter" data-level="7.2.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#valor-presente-neto"><i class="fa fa-check"></i><b>7.2.3</b> Valor Presente Neto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-tecno-económico-1"><i class="fa fa-check"></i><b>7.3</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-de-rentabilidad"><i class="fa fa-check"></i><b>7.3.1</b> Análisis de rentabilidad</a></li>
+<li class="chapter" data-level="7.3.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#despliegue-y-operación-de-la-red"><i class="fa fa-check"></i><b>7.3.2</b> Despliegue y operación de la red</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html"><i class="fa fa-check"></i><b>8</b> Respuestas a problemas seleccionados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#S:Metod"><i class="fa fa-check"></i><b>8.1</b> Metodología de diseño de redes</a></li>
+<li class="chapter" data-level="8.2" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:ReqTec"><i class="fa fa-check"></i><b>8.2</b> Requerimientos técnicos</a></li>
+<li class="chapter" data-level="8.3" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:CaracRed"><i class="fa fa-check"></i><b>8.3</b> Caracterización de la red</a></li>
+<li class="chapter" data-level="8.4" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:DisLog"><i class="fa fa-check"></i><b>8.4</b> Diseño lógico</a></li>
+<li class="chapter" data-level="8.5" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:Admon"><i class="fa fa-check"></i><b>8.5</b> Administración de Redes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diseño y Arquitectura de Redes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="metodología-de-diseño-de-redes" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Metodología de diseño de redes<a href="metodología-de-diseño-de-redes.html#metodología-de-diseño-de-redes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introducción" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Introducción<a href="metodología-de-diseño-de-redes.html#introducción" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Es impresionante constatar la gran cantidad de redes que han sido
+implementadas de manera empírica y reactiva: reaccionando a las demandas
+inmediatas de los usuarios sin tomar el tiempo necesario para hacer una
+buena planeación de la misma con base en las necesidades reales de la
+empresa.</p>
+<p>La mayoría de estas redes están destinadas al fracaso conforme exceden
+una mínima complejidad: no fueron dimensionadas adecuadamente; no se
+contemplaron con anticipación aspectos fundamentales como la seguridad y
+la gestión de la red; no fueron previstos los requerimientos de
+escalabilidad a mediano plazo; etcétera. Es decir, este tipo de redes no
+fueron planificadas y por consiguiente las demandas de los usuarios
+tarde o temprano terminarán por exceder sus capacidades. Inspirados en
+las palabras de Dwigth D. Eisenhower:</p>
+<blockquote>
+<p><em>“Nunca una batalla se ganó de acuerdo con el plan…. Pero jamás una
+batalla se ganó sin un plan”,</em></p>
+</blockquote>
+<p>el objetivo principal de esta obra es presentar una metodología que
+facilite el diseño de redes eficientes. Esta metodología, basada en un
+diseño descendente, permite planear los requerimientos de la red a
+partir de los requerimientos de negocio de las aplicaciones y usuarios
+de la red.</p>
+<p>Lo que se busca es proporcionar un marco operativo para hacer frente a
+la batalla permanente en la que se encontrará enfrentada la red debido a
+los factores tan dinámicos en los que ésta se verá inmersa (cambio
+tecnológico, nuevas aplicaciones, escenarios cambiantes de negocio y de
+usuarios, etc.).</p>
+<div id="por-qué-una-empresa-desea-una-red" class="section level3 unnumbered hasAnchor">
+<h3>¿Por qué una empresa desea una red?<a href="metodología-de-diseño-de-redes.html#por-qué-una-empresa-desea-una-red" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Prácticamente todas les redes de interés no son triviales y fueron
+creadas para soportar las necesidades de una empresa u organización.
+Antes de presentar formalmente la metodología propuesta, conviene
+reconocer algunas razones que pueden motivar el despliegue de la
+infraestructura de red, como por ejemplo:</p>
+<ul>
+<li><p>Satisfacer las necesidades de los clientes;</p></li>
+<li><p>mejorar la comunicación interna y externa;</p></li>
+<li><p>reducir el ciclo de diseño - fabricación - introducción al mercado;</p></li>
+<li><p>incrementar la productividad y reducir los costos de operación;</p></li>
+<li><p>responder con agilidad a las condiciones cambiantes del mercado.</p></li>
+</ul>
+<p>Es claro que la empresa no busca como objetivo el tener la red más
+avanzada tecnológicamente hablando, sino que desea alcanzar uno o varios
+objetivos de negocio específicos. Por ello:</p>
+<div style="color: blue;">
+<p><em>El mejor diseño NO es aquel que es tecnológicamente más avanzado, o el que
+aparece más elegante y eficiente desde el punto de vista de ingeniería.
+El mejor diseño es aquel que apoya con efectividad a la consecución de los
+objetivos de negocio y que, además, hace a la red invisible ante los ojos del
+usuario final.</em></p>
+</div>
+</div>
+<div id="fracasos-en-proyectos-de-tecnología-de-información" class="section level3 unnumbered hasAnchor">
+<h3>Fracasos en proyectos de tecnología de información<a href="metodología-de-diseño-de-redes.html#fracasos-en-proyectos-de-tecnología-de-información" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Desde 1994, la consultora <em>The Standish Group International</em> ha venido
+realizando diversos estudios (conocidos como los reportes CHAOS) sobre
+la calidad de los proyectos de desarrollo de software en los Estados
+Unidos. La figura <a href="metodología-de-diseño-de-redes.html#fig:chaos">1.1</a> presenta cómo han evolucionado estos reportes de
+1994 a 2009.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:chaos"></span>
+<img src="figuras/c1/chaos2.jpg" alt="*Resolución de proyectos de desarrollo de software. Fuente: Política digital, con base en los estudios de The Standish Group*" width="600px" />
+<p class="caption">
+Figura 1.1: <em>Resolución de proyectos de desarrollo de software. Fuente: Política digital, con base en los estudios de The Standish Group</em>
+</p>
+</div>
+<p>Aunque la encuesta se orientaba principalmente a proyectos de software,
+es bastante representativa de lo que ocurre con los proyectos de
+tecnología de información (TI) en general, incluidos los proyectos de
+infraestructura (redes, migraciones, etcétera).</p>
+<p>Generalmente, un proyecto cambiado se excedió en tiempo, en recursos, o
+no cumplió con sus especificaciones. Se puede observar que apenas poco
+más de la cuarta parte de los proyectos de TI cubre con sus expectativas
+iniciales.</p>
+<p>Otra encuesta indica que 53% de los proyectos de tecnología en
+realizados en el Reino Unido en 1999 costaron en promedio 189% más de lo
+originalmente estipulado.</p>
+<p>La figura <a href="metodología-de-diseño-de-redes.html#fig:standish">1.2</a> presenta algunas de las principales causas que
+llevan a la anulación o cambio de proyectos, de acuerdo a lo reportado
+por las empresas en el estudio CHAOS de 1994. Estudios subsecuentes
+reflejan resultados similares.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:standish"></span>
+<img src="figuras/c1/Standish2.bmp" alt="*Principales razones por las que un proyecto fue anulado o modificado. Fuente: The Standish Group, 1994*" width="600px" />
+<p class="caption">
+Figura 1.2: <em>Principales razones por las que un proyecto fue anulado o modificado. Fuente: The Standish Group, 1994</em>
+</p>
+</div>
+<p>Como puede observarse, casi el 13% de los proyectos de TI falla porque
+los requerimientos no fueron suficientes. Esto no necesariamente
+significa que el cliente o el usuario no los haya proporcionado. En
+muchas ocasiones, el responsable del proyecto no los solicitó, no los
+entendió, o no los interpretó adecuadamente.</p>
+<p>Todos los elementos identificados en la figura <a href="metodología-de-diseño-de-redes.html#fig:standish">1.2</a> han ocurrido y ocurren regularmente en proyectos de diseño y construcción de redes y sus servicios correspondientes. Todos ellos
+deben ser considerados riesgos potenciales de cualquier proyecto.
+Sortear los escollos que imponen estos riesgos requiere de orden, método
+y disciplina.</p>
+</div>
+</div>
+<div id="diseño-descendente" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Diseño descendente<a href="metodología-de-diseño-de-redes.html#diseño-descendente" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La figura <a href="metodología-de-diseño-de-redes.html#fig:dd">1.3</a> presenta el método de diseño llamado descendente, en el cual se estructura el
+contenido de estas notas.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dd"></span>
+<img src="figuras/c1/DisDescendente.bmp" alt="*El método de diseño descendente*" width="350px" />
+<p class="caption">
+Figura 1.3: <em>El método de diseño descendente</em>
+</p>
+</div>
+<p>El método inicia con un esfuerzo enfocado a comprender los objetivos de
+negocio de la organización que necesita la red, y de ahí a comprender
+los objetivos específicos que se deben fijar en términos de calidad y
+variedad de servicios a ofrecer. Con estos elementos, se podrán
+identificar las aplicaciones capaces de proporcionar los servicios
+necesarios y las implicaciones e impacto que dichas aplicaciones tendrán
+sobre la red que las soporta.</p>
+<p>La identificación de las aplicaciones y sus características permite
+establecer los requerimientos con los que se realiza el diseño de la
+red, partiendo de los servicios que debe ofrecer a los usuarios (capas
+superiores), y aumentando el nivel de detalle hasta llegar al diseño
+físico con la selección de tecnologías y equipos específicos.</p>
+<p>Como todo proceso de diseño, este método es iterativo y es consistente
+con el ciclo de vida de un proyecto de desarrollo de red, el cual se
+muestra en la figura <a href="metodología-de-diseño-de-redes.html#fig:ciclovida">1.4</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ciclovida"></span>
+<img src="figuras/c1/CicloVida.bmp" alt="*El ciclo de vida de un proyecto de red*" width="400px" />
+<p class="caption">
+Figura 1.4: <em>El ciclo de vida de un proyecto de red</em>
+</p>
+</div>
+<p>Si bien estas notas se centran en las dos primeras fases del ciclo de
+vida, y principalmente en la de diseño, las fases no son independientes.
+Por ejemplo, en el capítulo @ref(<a href="cap:dislog" class="uri">cap:dislog</a>) se mostrará que durante el diseño lógico de la red
+se definen políticas de administración y monitoreo con las que se
+validará la red de producción.</p>
+<p>El proceso es continuo. Una vez que los parámetros monitoreados indican
+que la red es insuficiente, o cuando los requerimientos cambian, se
+reinicia el ciclo.</p>
+</div>
+<div id="microsoft-solutions-framework" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Microsoft Solutions Framework<a href="metodología-de-diseño-de-redes.html#microsoft-solutions-framework" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El diseño descendente es la metodología propuesta para realizar un
+proyecto de diseño de redes. También es necesario identificar una
+estrategia, una forma de trabajo que permita controlar de forma adecuada
+el desarrollo del proyecto. La que se presentará brevemente en este
+capítulo es la conocida como los Principios de Desarrollo de
+Infraestructura del Marco de Soluciones de Microsoft (<em>Microsoft
+Solutions Framework, MSF</em>).</p>
+<p><em>Microsoft Solutions Framework</em> es un conjunto de principios y procesos
+que resume las “mejores prácticas” en proyectos de TI. Es una disciplina
+de trabajo, no una metodología, que ayuda a estructurar el proceso, el
+equipo de trabajo y la administración de riesgos en proyectos de alta
+tecnología. Los Principios de Desarrollo de Infraestructura son el
+componente de MSF que se enfoca a proyectos de infraestructura de TI,
+más que a proyectos de desarrollo de software.</p>
+<p>Para MSF, los cuatro componentes principales de un proyecto de diseño
+de redes se muestran en la figura <a href="metodología-de-diseño-de-redes.html#fig:msf">1.5</a> y son:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:msf"></span>
+<img src="figuras/c1/msf.bmp" alt="*Componentes de MSF para el desarrollo de un proyecto de TI*" width="350px" />
+<p class="caption">
+Figura 1.5: <em>Componentes de MSF para el desarrollo de un proyecto de TI</em>
+</p>
+</div>
+<dl>
+<dt>El modelo de equipo.</dt>
+<dd>
+<p>Explica cuáles son los principales roles y funciones que deben ser
+cubiertos en el proceso de organizar y estructurar nuestro equipo de
+trabajo.</p>
+</dd>
+<dt>El modelo de proceso.</dt>
+<dd>
+<p>Explica cuáles son las diferentes fases del proyecto y sobre qué
+aspectos debe hacerse énfasis en cada proyecto.</p>
+</dd>
+<dt>El diseño de red.</dt>
+<dd>
+<p>Señala, desde un punto de vista técnico, cuáles son los pasos a
+seguir y qué variables deben ser consideradas en el proceso de
+análisis y diseño de la red.</p>
+</dd>
+<dt>El análisis de riesgos.</dt>
+<dd>
+<p>Explica cómo se pueden detectar y evaluar los diferentes tipos de
+riesgo que afectan al proyecto y el tratamiento que se les debe dar
+con objeto de evitar que se materialicen o, si es imposible
+evitarlos, cómo aminorar sus efectos lo más posible.</p>
+</dd>
+</dl>
+<p>Podría decirse que el modelo de diseño descendente explica los pasos a
+seguir para completar el diseño de una red mientras que los Principios
+de Desarrollo de Infraestructura explican cómo organizar los otros tres
+componentes y cómo mantener balanceado el triángulo de variables a
+gestionar:</p>
+<ul>
+<li><p>Recursos (humanos y materiales) para realizar el proyecto;</p></li>
+<li><p>funciones que habrá de ofrecer la red y sistemas asociados;</p></li>
+<li><p>calendario que deberá cumplirse para llevar el proyecto al éxito.</p></li>
+</ul>
+<p>La base de ese triángulo es la calidad. Estos tres componentes deben
+estar bien apuntalados con el fin de mantener equilibrado el triángulo
+de calidad.</p>
+<p>MSF reconoce que en los proyectos tecnológicos actuales existe una
+gran cantidad de riesgos propios de la naturaleza cambiante de las
+mismas tecnologías, así como de su utilización en condiciones diferentes
+a aquellas para las que fueron desarrolladas.</p>
+<div style="color: blue;">
+<p><em>MSF hace énfasis en identificar y comprender los riesgos que amenazan al
+proyecto para poder trabajar en su control y mitigación y finalmente busca
+facilitar la división de la visión en porciones o versiones con alcances
+intermedios y realistas.</em></p>
+</div>
+<p>  <br />
+  </p>
+<div id="modelo-de-proceso" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Modelo de proceso<a href="metodología-de-diseño-de-redes.html#modelo-de-proceso" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mproc"></span>
+<img src="figuras/c1/mproceso.bmp" alt="*Las cuatro fases del modelo de proceso de MSF para el desarrollo de infraestructura*" width="300px" />
+<p class="caption">
+Figura 1.6: <em>Las cuatro fases del modelo de proceso de MSF para el desarrollo de infraestructura</em>
+</p>
+</div>
+<p>El modelo de proceso marca cuatro fases para todo proyecto: <em>visión,
+planeación, desarrollo y despliegue</em>. Cada una de ellas tiene un punto
+claro de cierre que va acompañado con un entregable específico. Este
+punto de cierre se representa por el diamante azul en la
+figura <a href="metodología-de-diseño-de-redes.html#fig:mproc">1.6</a>. Es muy importante que haya un acuerdo claro, y preferentemente firmado, por
+todos los jugadores al final de cada fase.</p>
+<dl>
+<dt>Visión/Alcance.</dt>
+<dd>
+<p>La primera fase busca establecer una <em>Visión conjunta</em> del proyecto,
+determinar el alcance del mismo y establecer en forma general las
+condiciones iniciales de que se dispone para el proyecto. Así mismo
+es importante entender los elementos básicos y objetivos de negocio
+generales de la organización que necesita la red. La palabra clave
+en esta fase es <strong><em>Escuchar</em></strong>.</p>
+</dd>
+<dt>Planeación.</dt>
+<dd>
+<p>La segunda fase busca caracterizar todos los aspectos importantes de
+la red y/o infraestructura ya existente, transformar los objetivos y
+alcances de negocio expresados en la fase anterior a requerimientos
+técnicos que habrán de ser cumplidos por el diseño que se elaborará
+en esta. La palabra clave en esta fase es <strong><em>Proponer</em></strong>.</p>
+</dd>
+<dt>Desarrollo.</dt>
+<dd>
+<p>La tercera fase busca evaluar y validar el diseño propuesto, evaluar
+las nuevas y diferentes tecnologías propuestas para integrar la
+solución y proponer los ajustes necesarios al diseño y planes
+propuestos en la fase anterior. Las pruebas se realizan primero a
+nivel individual para cada nueva tecnología, y posteriormente se
+realizan pruebas de integración y pilotos. Esta fase concluye con la
+liberación de la solución/diseño propuestos y las palabras clave son
+<strong><em>Analizar y Probar</em></strong>.</p>
+</dd>
+<dt>Despliegue.</dt>
+<dd>
+<p>La última fase es propiamente el despliegue e implementación de la
+solución de acuerdo con el diseño propuesto. Los elementos centrales
+a considerar en esta etapa son la logística y la comunicación con el
+cliente. La palabra clave para esta fase es <strong><em>Actuar</em></strong>.</p>
+</dd>
+</dl>
+<p>Para MSF es fundamental el concepto de desarrollo por versiones
+mostrado en la figura <a href="metodología-de-diseño-de-redes.html#fig:versiones">1.7</a>. Como se verá más adelante, para una primera
+versión se definen algunas de las especificaciones más importantes del
+proyecto con las cuales se realiza una primera iteración en el modelo de
+proceso.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:versiones"></span>
+<img src="figuras/c1/Versiones.bmp" alt="*En MSF el proyecto va creciendo en funcionalidad en distintas versiones*" width="350px" />
+<p class="caption">
+Figura 1.7: <em>En MSF el proyecto va creciendo en funcionalidad en distintas versiones</em>
+</p>
+</div>
+<p>Para una nueva iteración se incorporan las especificaciones que habían
+quedado fuera junto con las solicitudes adicionales del cliente y de los
+usuarios que se han ido recabando. Estos requerimientos se evalúan a la
+luz del triángulo de recursos y calidad para elegir los requerimientos
+con los que se realizará la nueva iteración, dejando los demás para
+versiones futuras.</p>
+<p>El diseño por versiones es conveniente para el desarrollador con el fin
+de minimizar los riesgos y mantener el control sobre el proyecto.
+También es conveniente para el cliente pues en proyectos de TI, es común
+que el usuario identifique con mayor claridad lo que realmente desea y
+necesita conforme empieza trabajando con el nuevo producto.</p>
+<p>  <br />
+  </p>
+<div id="fase-i-visión-y-alcance.-escuchar" class="section level4 hasAnchor" number="1.3.1.1">
+<h4><span class="header-section-number">1.3.1.1</span> Fase I: Visión y alcance. (<em>Escuchar</em>)<a href="metodología-de-diseño-de-redes.html#fase-i-visión-y-alcance.-escuchar" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fasevis"></span>
+<img src="figuras/c1/FaseVis.bmp" alt="*La fase de visión/alcance de MSF y sus entregables*" width="350px" />
+<p class="caption">
+Figura 1.8: <em>La fase de visión/alcance de MSF y sus entregables</em>
+</p>
+</div>
+<p>Es conveniente recordar que ninguna empresa diseña y construye redes
+porque desea tener la tecnología más novedosa. Las organizaciones
+suelen, o al menos debieran, tener objetivos claros y específicos sobre
+lo que quieren lograr o facilitar con la construcción de una red de
+comunicaciones, como de cualquier otro proyecto de tecnología de
+información. Lo que las empresas buscan con la red es alcanzar uno o
+varios objetivos de negocio. El proyecto tendrá éxito en la medida en la
+que esto se comprenda.</p>
+<div style="color: blue;">
+<p><em>Lo primero que debe conseguirse en esta fase, es el establecimiento
+de una Visión única de lo que se desea lograr. La Visión es la imagen
+que se forman y comparten todos los involucrados sobre lo que el
+proyecto les permitirá hacer cuando esté terminado.</em></p>
+</div>
+<p>Una visión puede ser demasiado extensa y concebida en el largo plazo, en
+cuyo caso es conveniente descomponerla en partes más pequeñas llamadas
+versiones, que permitirán tener un acercamiento gradual y ordenado hacia
+la visión final. Es importante explicar desde el principio el concepto
+de desarrollo por versiones a clientes y usuarios, de manera que se
+puedan asignar prioridades a las especificaciones y se eviten
+expectativas no realistas en las primeras versiones del proyecto.</p>
+<p>Por ello es necesario definir el <em>alcance</em> inmediato del proyecto, es
+decir, hasta dónde llegará la versión actual en la que se estará
+trabajando, en su camino a la consecución de la visión. La mejor manera
+de lograr esto es definiendo un número limitado de objetivos claros y
+concretos, como se verá más adelante.</p>
+<p>De la figura <a href="metodología-de-diseño-de-redes.html#fig:standish">1.2</a> se infiere que el no definir los objetivos con
+precisión, puede tener un efecto devastador para el proyecto. Por ello,
+es fundamental escuchar y entender claramente las necesidades de los
+usuarios y de sus aplicaciones. Es importante también identificar lo que
+suele llamarse la <em>cultura tecnológica</em> reinante dentro de la empresa
+(tecnologías dominantes, experiencia de los usuarios y administradores,
+acuerdos de negocio predefinidos) y <em>su cultura social</em> (estructura
+jerárquica, grupos dominantes, apertura de comunicación, flexibilidad al
+cambio, etc.).</p>
+<p>  <br />
+</p>
+<div id="la-visión" class="section level5 unnumbered hasAnchor">
+<h5>La Visión<a href="metodología-de-diseño-de-redes.html#la-visión" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>La visión es primordialmente un documento de negocios, escrito para una
+audiencia de negocios, por lo que se debe evitar utilizar un lenguaje
+demasiado técnico y, sobre todo, pensar en tecnologías específicas en
+esta fase.</p>
+<p>Si bien es cierto que un proyecto de diseño de red es eminentemente
+tecnológico y que el impacto sobre el negocio es principalmente
+indirecto, es extremadamente importante que la visión y los objetivos
+estén especificados en un lenguaje que pueda ser entendido por el
+cliente, y que este se sienta identificado tanto con la visión como con
+los objetivos.</p>
+<div class="center">
+<div style="color: blue;">
+<p><em>Es fundamental establecer una visión conjunta, que sea enunciada
+por el cliente, y que los integrantes del proyecto entiendan y
+compartan. Una visión que entienda que una red está al servicio del
+negocio. Nunca al revés.</em></p>
+</div>
+</div>
+<p>La visión es la traducción a palabras de cómo será el ambiente ideal que
+habrá de traer la solución. El tener una visión y objetivos compartidos
+proporciona una serie de beneficios a todos los involucrados, entre los
+que se pueden destacar:</p>
+<ul>
+<li><p>compromiso de todo el equipo para lograr los objetivos y así avanzar
+hacia la visión;</p></li>
+<li><p>ayuda a todos los miembros del equipo a dirigir sus esfuerzos hacia
+el mismo objetivo;</p></li>
+<li><p>evita posibles conflictos futuros;</p></li>
+<li><p>ayuda al equipo a identificar y aplicar los recursos de manera
+apropiada;</p></li>
+<li><p>le da identidad al equipo;</p></li>
+<li><p>motiva al equipo.</p></li>
+</ul>
+<p>  <br />
+</p>
+</div>
+<div id="el-alcance" class="section level5 unnumbered hasAnchor">
+<h5>El alcance<a href="metodología-de-diseño-de-redes.html#el-alcance" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Una vez obtenida la visión, se procede a establecer el alcance de ESTA
+versión pues es probable que la visión sea demasiado amplia para poder
+ser lograda de una sola vez.</p>
+<p>Definir los alcances para la versión particular que se está
+especificando, permite <em>mapear</em> la visión contra la realidad actual. En
+este mapeo se debe tomar en cuenta aquello que el cliente considera
+indispensable para el éxito del proyecto. Esto permite acotar la versión
+actual a un número limitado de objetivos muy concretos y desplazar lo no
+esencial hacia versiones futuras.</p>
+<p>Para poder lograr esto es fundamental haber definido con el cliente una
+visión y objetivos compartidos. Sin este compromiso, el cliente bien
+podría tomar la posición de <em>“quererlo todo, quererlo bien, quererlo
+ahora”</em>:</p>
+<ul>
+<li><p>sin retardos</p></li>
+<li><p>sin costo para el usuario</p></li>
+<li><p>sin restricciones de protocolos ni de funcionalidad</p></li>
+<li><p>sin restricciones físicas ni lógicas</p></li>
+<li><p>sin errores</p></li>
+<li><p>acceso universal</p></li>
+<li><p>interconectividad entre redes</p></li>
+<li><p>facilidades de difusión</p></li>
+</ul>
+<p>Al recibir una lista como la anterior, es necesario cuestionar si el
+cliente realmente depende de esos requerimientos. Como se verá más
+adelante, este tipo de criterios puede entrar en serios conflictos con
+otros requerimientos de la red, lo cual puede comprometer todo el
+proyecto. Pero además, si no se han definido los alcances de manera
+conjunta, lo más probable es que los requerimientos del usuario sean
+vagos, incompletos, y, además, variarán durante el tiempo de vida del
+proyecto.</p>
+<p>La imagen y la comprensión común sobre lo que se va a hacer y los
+objetivos del proyecto tienen que estar totalmente claros, como también
+lo deben estar para el usuario las implicaciones de las decisiones que
+se toman en términos de restricciones futuras, costos y riesgos. Si hay
+algo que el cliente/usuario solicita y se considera que no se puede o
+que tiene implicaciones graves en términos de costo, tiempos, etc. este
+es el mejor momento para decirlo.</p>
+<p>  <br />
+ </p>
+</div>
+<div id="be-smart" class="section level5 unnumbered hasAnchor">
+<h5>Be SMART<a href="metodología-de-diseño-de-redes.html#be-smart" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Los objetivos de negocio y los criterios de éxito (que pueden ser los
+mismos), tienen que ser claros, acotados y limitados a no más de cinco,
+y preferentemente menos de tres. Pueden ser técnicos y de negocio, de
+preferencia una combinación de ambos.</p>
+<p>Vaguedades en la definición de cualquier objetivo puede conducir a no
+cubrir las expectativas del cliente, a no tener claro cuándo se ha
+cumplido (y por consiguiente a alargar el proyecto indefinidamente), y
+en general a situaciones que redundarán en la inconformidad y
+consiguiente insatisfacción del cliente.</p>
+<p>Al definir los objetivos de esta versión del proyecto, es muy importante
+que cumplan con los criterios “SMART”<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>:</p>
+<div class="description">
+<p><strong>S</strong>pecific.- Deben establecer claramente lo que se debe realizar (“qué,
+quién, cuándo, cómo, por qué”).<br />
+</p>
+<p><strong>M</strong>esurable.- Deben ser determinados en términos cuantitativos, que puedan
+medirse para establecer si se está cumpliendo el objetivo.<br />
+</p>
+<p><strong>A</strong>chievable.- Deben ser realizables en esta versión del producto o en esta
+iteración del proyecto considerando las capacidades y restricciones
+impuestas.<br />
+</p>
+<p><strong>R</strong>ealistic.- Debe tratarse de objetivos en los que se puede y se desea
+trabajar.<br />
+</p>
+<p><strong>T</strong>ime-oriented.- Deben estar claramente especificados en un horizonte de
+tiempo realista.</p>
+</div>
+<p>En muchas ocasiones es el cliente mismo quien no está interesado o
+dispuesto a establecer estos objetivos SMART. Las razones para esto
+pueden ser variadas, pero radican típicamente en el hecho de que el
+cliente mismo no tiene claro qué es lo que quiere o puede pedir. Es
+altamente recomendable trabajar con él para llegar a una definición
+precisa.</p>
+<p>La opción aquí es rechazar el proyecto, actitud por demás profesional y
+recomendable si la indefinición es extrema, o correr el riesgo de la
+insatisfacción final o de pérdidas económicas por no haber podido
+dimensionarlo apropiadamente.</p>
+<p>  <br />
+ </p>
+</div>
+<div id="culminando-la-fase-de-visiónalcance" class="section level5 unnumbered hasAnchor">
+<h5>Culminando la fase de visión/alcance<a href="metodología-de-diseño-de-redes.html#culminando-la-fase-de-visiónalcance" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>El entregable en esta etapa es un documento muy completo de visión y
+alcance, el cual contiene típicamente:</p>
+<ul>
+<li><p>visión del negocio;</p></li>
+<li><p>objetivos de negocio y criterios de éxito definidos con
+características <em>SMART</em>;</p></li>
+<li><p>otra información de negocio;</p></li>
+<li><p>estructura corporativa a nivel macro o medio, según sea necesario;</p></li>
+<li><p>distribución geográfica de oficinas, personal y departamentos. Toda
+aquella información que permita posteriormente evaluar las
+necesidades de hoy y las posibles necesidades en términos de
+escalabilidad: ¿Cuánto espera el cliente crecer en el futuro y en
+dónde?</p></li>
+<li><p>identificar tipos de usuario, puede ser por departamento por
+función, rango, etc. En la siguiente fase se buscará entender cuáles
+son las necesidades de cada tipo de usuario;</p></li>
+<li><p>presupuesto;</p></li>
+<li><p>políticas y estándares corporativos relevantes;</p></li>
+<li><p>información técnica;</p></li>
+<li><p>requerimientos de seguridad.</p></li>
+</ul>
+<p>El documento de visión puede incluir la documentación concerniente a la
+red actual (si existe) y las minutas de las reuniones realizadas durante
+esta fase. Para poder integrar este documento de la mejor manera
+posible, es necesario recabar bastante información (la palabra clave
+aquí es escuchar). Un ejemplo del tipo de información a colectar en esta
+etapa es:</p>
+<ul>
+<li><p>uso que dará el usuario a la red, sin tener en cuenta cómo estará
+internamente implementada;</p></li>
+<li><p>tipo y número de usuarios y aplicaciones haciendo uso de la red;</p></li>
+<li><p>caracterización de aplicaciones;</p></li>
+<li><p>requerimientos geográficos;</p></li>
+<li><p>prioridades por aplicación o tipo de tráfico;</p></li>
+<li><p>interconexión a otras redes y a la Internet;</p></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>expectativas de tiempo de acceso y respuesta;</p></li>
+<li><p>requerimientos de disponibilidad y confiabilidad;</p></li>
+<li><p>requerimientos de seguridad;</p></li>
+<li><p>holgura y capacidad para demanda futura de servicio;</p></li>
+<li><p>tarificación;</p></li>
+<li><p>restricciones presupuestales.</p></li>
+</ul>
+<p>Este documento permitirá iniciar con un diseño conceptual de la red.
+También permitirá identificar el orden en el que se responderá a los
+requerimientos de negocio, ayudará a cimentar el plan maestro y
+calendario de trabajo que serán definidos en la etapa siguiente, y dará
+una estimación de los recursos humanos, económicos y tecnológicos
+necesarios para completar el proyecto.</p>
+<p>Un buen documento para cerrar esta etapa deja sentadas las bases para
+traducir las necesidades y objetivos de negocios en él expresadas, a
+requerimientos técnicos<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Por otra parte, este documento debe
+reflejar claramente que se ha llegado a un acuerdo entre todos los
+involucrados acerca de los siguientes puntos:</p>
+<ul>
+<li><p>los objetivos de negocio;</p></li>
+<li><p>la visión del proyecto y el alcance de esta versión;</p></li>
+<li><p>el diseño conceptual de la solución propuesta;</p></li>
+<li><p>los entregables identificados;</p></li>
+<li><p>una idea general del orden de recursos necesarios;</p></li>
+<li><p>un plan para la siguiente fase;</p></li>
+<li><p>un documento de análisis de riesgos.</p></li>
+</ul>
+<p>  <br />
+  </p>
+</div>
+</div>
+<div id="fase-ii-planeación.-proponer" class="section level4 hasAnchor" number="1.3.1.2">
+<h4><span class="header-section-number">1.3.1.2</span> Fase II: Planeación. (<em>Proponer</em>)<a href="metodología-de-diseño-de-redes.html#fase-ii-planeación.-proponer" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:faseplan"></span>
+<img src="figuras/c1/FasePlan.bmp" alt="*La fase de planeación de MSF y sus entregables*" width="350px" />
+<p class="caption">
+Figura 1.9: <em>La fase de planeación de MSF y sus entregables</em>
+</p>
+</div>
+<p>En la primera fase del proyecto se enfatizó en comprender las
+necesidades y objetivos de negocio. Al hacerlo se fue aclarando el tipo
+de aplicaciones y servicios que se utilizarán y algunas de las
+restricciones impuestas por ellos, ya sea porque existan y se
+manifiesten antes del inicio del proyecto, o porque vayan a aparecer
+durante o después del mismo.</p>
+<p>En esta fase el resto de las restricciones impuestas por las
+aplicaciones y servicios deberán conocerse. Contando con esta
+información, se podrá avanzar en el diseño de las cuatro capas
+inferiores de la red. Se está aplicando el método descendente de diseño
+de redes al comenzar por las capas superiores (necesidades de negocio,
+aplicaciones y requerimientos) y con ello la funcionalidad y
+especificaciones necesarias para las capas más bajas se va aclarando. Es
+importante realizar un trabajo detallado y exhaustivo para comprender
+las implicaciones y restricciones impuestas por las necesidades y
+objetivos de negocio, así como las implicaciones y restricciones
+impuestas por las aplicaciones que se ejecutarán.</p>
+<p>Sin embargo, siempre existirá la posibilidad de que las aplicaciones se
+comporten de una manera diferente a lo esperado, por ejemplo, porque el
+nivel de carga es muy distinto a lo planeado, por cambios de versión,
+por especificaciones inexactas por parte del proveedor, etc. Por ello,
+se debe realizar un buen análisis de riesgos, para poder tomar
+decisiones apropiadas en lo que se refiere a garantizar calidad de
+servicio en las etapas iniciales, o inclusive posteriores al inicio de
+la operación del proyecto.</p>
+<p>Los entregables de esta fase están constituidos por <em>borradores</em> de los
+documentos individuales, pues el diseño no puede validarse sino hasta la
+siguiente fase, en la que se realiza una serie de pruebas de concepto.
+Es posible que esas pruebas generen cambios en el diseño propuesto. Una
+vez concluidas las pruebas necesarias en la Fase III, se procede a fijar
+el diseño y con ello el plan y el calendario maestros.</p>
+<p>  <br />
+ </p>
+<div id="el-proceso-de-diseño" class="section level5 unnumbered hasAnchor">
+<h5>El proceso de diseño<a href="metodología-de-diseño-de-redes.html#el-proceso-de-diseño" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>El proceso de diseño es iterativo y pasa por tres etapas, cada una
+agregando mayor nivel de detalle que la anterior.</p>
+<dl>
+<dt>Diseño conceptual.</dt>
+<dd>
+<p>El diseño conceptual ocurre durante la fase de Visión/Alcance y
+consiste en listar y entender los diferentes elementos de negocio
+que intervendrán en la solución final. Es decir, considerar y
+entender qué factores de organización de la compañía, distribución
+geográfica y características propias del negocio tendrán un impacto
+en el diseño de la red. Una vez conocidos estos elementos, se
+procede a elaborar un borrador o diseño inicial que se habrá de
+enfocar en representar la funcionalidad y distribución general
+requerida, incorporando poco o ningún detalle de tipo técnico. Este
+es un diseño que fácilmente podrán comprender las personas de áreas
+de negocios.</p>
+</dd>
+<dt>Diseño lógico.</dt>
+<dd>
+<p>Las siguientes etapas ocurren durante la fase de Planeación. Se
+realiza un primer plano técnico de la solución, sin incluir
+dimensionamientos, modelos ni configuraciones específicas.</p>
+</dd>
+<dt>Diseño físico.</dt>
+<dd>
+<p>Una vez que el diseño lógico está completo y se considera que cumple
+con los requisitos establecidos, se incrementa el nivel de detalle,
+agregando modelos, configuraciones y demás especificaciones,
+llegando con esto al máximo nivel de detalle posible en papel.</p>
+</dd>
+</dl>
+<p>Durante las etapas de diseño se habrán de ir integrando las tres
+componentes fundamentales del documento que termina esta etapa:</p>
+<dl>
+<dt>Especificación funcional.</dt>
+<dd>
+<p>Indica el <em>qué</em> debe hacerse.</p>
+</dd>
+<dt>Plan maestro.</dt>
+<dd>
+<p>Indica el <em>cómo</em> y con qué recursos la solución será desarrollada,
+evaluada y desplegada.</p>
+</dd>
+<dt>Calendario maestro.</dt>
+<dd>
+<p>Indica el <em>cuándo</em> se harán dichos desarrollos, evaluaciones y
+despliegues.</p>
+</dd>
+</dl>
+<div class="center">
+<div style="color: blue;">
+<p><em>Este documento debe ser considerado como un contrato entre las personas que desarrollan el proyecto, el cliente y usuarios. Es vital que haya un acuerdo claro en lo que se refiere a la funcionalidad esperada en esta versión del producto por todas las partes.</em></p>
+</div>
+</div>
+<p>  <br />
+</p>
+</div>
+<div id="especificación-funcional" class="section level5 unnumbered hasAnchor">
+<h5>Especificación Funcional<a href="metodología-de-diseño-de-redes.html#especificación-funcional" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>La especificación funcional es el documento de diseño propiamente, en el
+cual se incluyen los objetivos y requerimientos de negocio como fueron
+expresados en el documento de Visión/Alcance. De hecho, el documento de
+Visión/Alcance sirve por lo general como introducción a este documento.</p>
+<p>Para poder hacer una especificación funcional adecuada, es necesario
+recabar el máximo de información posible, por ejemplo:</p>
+<ul>
+<li><p>documento de visión/alcance;</p></li>
+<li><p>caracterización de la red (topología de red, flujos de información,
+características del tráfico);</p></li>
+<li><p>diseño de red: conceptual, lógico (requerimientos de seguridad,
+administración, QoS, etc.), y físico (selección de tecnologías,
+estándares, dispositivos, capacidades, protocolos, etcétera).</p></li>
+</ul>
+<p>La especificación funcional deberá proporcionar una indicación clara y
+concisa sobre cómo se cumplirá con los requerimientos de diseño y cómo
+se responderá a las necesidades de negocio. Si hay una limitante grave,
+hay que sacarla a la luz cuanto antes. También debe quedar claro de qué
+manera la solución propuesta se integra con los estándares y políticas
+corporativas.</p>
+<p>Durante la caracterización de la red, se obtendrá una definición
+completa de los perfiles de usuario y sus necesidades: se deberán
+detallar los “tipos” de usuario definidos por las aplicaciones que
+utilizan; ¿Dónde se encuentran las aplicaciones y servicios a los que
+tendrán acceso?; ¿Quién necesita acceso remoto y desde dónde?</p>
+<p>También se deberán identificar los requerimientos técnicos y las
+limitaciones de las configuraciones resultantes, y cómo responderá el
+diseño a los mismos. Se deberán especificar los requerimientos mínimos
+de hardware, software y de comunicaciones para la solución propuesta.</p>
+<p>Desde la especificación funcional se define la estrategia de
+administración y monitoreo: se seleccionan los métodos para recolección
+periódica de información; se identifican “signos vitales” de la red; se
+empiezan a documentar los procesos o pasos a seguir en caso de detectar
+diversas fallas en la red; se especifican los métodos de escalamiento,
+los reportes de fallas a proveedores de productos y servicios; se
+delinea la implementación de una mesa de ayuda, si ésta no existe.</p>
+<p>Los siguientes son algunos de los riesgos más importantes que deben
+evitarse al documentar la especificación funcional:</p>
+<ul>
+<li><p>falta de detalle que impida hacer las pruebas y/o despliegue
+apropiados;</p></li>
+<li><p>diseño demasiado costoso para ser implementado;</p></li>
+<li><p>demasiada información innecesaria;</p></li>
+<li><p>congelar el diseño antes de tener la información apropiada;</p></li>
+<li><p>especificación incompleta al momento de iniciar los trabajos
+finales.</p></li>
+</ul>
+<p>  <br />
+</p>
+</div>
+<div id="plan-maestro" class="section level5 unnumbered hasAnchor">
+<h5>Plan maestro<a href="metodología-de-diseño-de-redes.html#plan-maestro" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>El plan maestro enuncia la secuencia de tareas y actividades que habrán
+de realizarse e indica quién es el responsable de cada una y quiénes
+participan. Esto es muy importante ya que de otra manera se dejará
+abierta la puerta a todo tipo de riesgos y malentendidos.</p>
+<p>En el borrador del plan maestro se detalla la estrategia de pruebas y el
+plan piloto así como el plan y la estrategia de despliegue. Esta
+información permitirá dar una estimación de los recursos humanos,
+económicos y tecnológicos necesarios para completar el proyecto. También
+deberá incluir un plan de capacitación a personal técnico y a usuarios,
+así como una estrategia de comunicación entre los participantes.
+Finalmente, se debe especificar el presupuesto disponible junto con el
+plan de flujo financiero y de adquisiciones.</p>
+<p>  <br />
+</p>
+</div>
+<div id="calendario-maestro" class="section level5 unnumbered hasAnchor">
+<h5>Calendario maestro<a href="metodología-de-diseño-de-redes.html#calendario-maestro" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>El calendario maestro indica las fechas en las que se realizarán las
+diferentes actividades. En él debe especificarse la secuencia y duración
+de todas las actividades antes señaladas. Es común y recomendable que se
+trate de diseñar un calendario maestro que permita incluir el llamado
+<em>tiempo buffer</em> para manejar la incertidumbre. Bajo este esquema, se
+consideran dos fechas objetivo: una interna (fecha real) y otra externa,
+para el cliente. Como se observa en la
+figura <a href="#f:tbuffer" reference-type="ref" reference="f:tbuffer">1.10</a>,
+la diferencia entre la fecha objetivo interna y la externa es el <em>tiempo
+buffer</em>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tbuffer"></span>
+<img src="figuras/c1/tbuffer.bmp" alt="*Buffer interno para manejar la incertidumbre*" width="350px" />
+<p class="caption">
+Figura 1.10: <em>Buffer interno para manejar la incertidumbre</em>
+</p>
+</div>
+<p>Esta es una práctica sana, siempre y cuando no se abuse de la misma.
+Como los proyectos de TI involucran una gran cantidad de variables que
+pueden modificar tiempo y resultados, es conveniente que el
+administrador del proyecto mantenga tiempos de reserva que puedan ser
+utilizados para cubrir los imprevistos. Dicho margen o buffer está bajo
+su control y se utiliza para emergencias.</p>
+<p>Es muy importante subrayar que el análisis, el diseño y las pruebas
+deben realizarse en forma completa, de tal manera que la especificación
+funcional, el plan maestro y el calendario maestro se basen en
+información concreta y lo más realista posible, en hechos. Los buffers
+de tiempo mencionados aquí serán insuficientes si se utilizan como
+margen de error para un proyecto mal diseñado.</p>
+<p>  <br />
+</p>
+</div>
+<div id="culminando-la-fase-de-planeación" class="section level5 unnumbered hasAnchor">
+<h5>Culminando la fase de planeación<a href="metodología-de-diseño-de-redes.html#culminando-la-fase-de-planeación" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Para finalizar la fase de planeación es necesario que el diseño esté
+concluido en su totalidad. Se debe contar con un acuerdo grupal sobre
+los elementos desarrollados durante la planeación: especificación
+funcional, plan maestro, calendario maestro y una nueva iteración del
+análisis de riesgos.</p>
+<p>  <br />
+  </p>
+</div>
+</div>
+<div id="fase-iii-desarrollo.-analizar-y-probar" class="section level4 hasAnchor" number="1.3.1.3">
+<h4><span class="header-section-number">1.3.1.3</span> Fase III: Desarrollo. (<em>Analizar y probar</em>)<a href="metodología-de-diseño-de-redes.html#fase-iii-desarrollo.-analizar-y-probar" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fasedesa"></span>
+<img src="figuras/c1/FaseDesa.bmp" alt="*La fase de desarrollo de MSF y sus entregables*" width="350px" />
+<p class="caption">
+Figura 1.11: <em>La fase de desarrollo de MSF y sus entregables</em>
+</p>
+</div>
+<p>El proceso de construir e integrar porciones de la solución para
+convertir la especificación en una solución completa es lo que se conoce
+como el desarrollo de la infraestructura. En esta fase se busca evaluar
+y validar el diseño, empezando por evaluar las nuevas tecnologías
+propuestas para integrar la solución y, eventualmente, proponer los
+ajustes necesarios al diseño original.</p>
+<p>Las pruebas se realizan de manera cíclica e incremental: pasando por las
+etapas de desarrollo, evaluación y validación contra los criterios de
+aceptación previamente definidos. Este ciclo se aplica a nivel
+individual, para cada nueva tecnología y posteriormente, para las
+pruebas de integración e implementación de los pilotos.</p>
+<p>  <br />
+</p>
+<div id="validación-de-la-tecnología" class="section level5 unnumbered hasAnchor">
+<h5>Validación de la tecnología<a href="metodología-de-diseño-de-redes.html#validación-de-la-tecnología" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Conforme se están validando las nuevas tecnologías seleccionadas, en
+esta etapa se van creando manuales de instalación y operación y otros
+documentos de apoyo (capacitación, bitácoras, etc.). Por lo tanto, la
+validación de tecnologías incluye realizar las actividades siguientes:</p>
+<ul>
+<li><p>analizar los criterios de selección de tecnologías, sobre todo si
+éstas son nuevas;</p></li>
+<li><p>instalar y configurar manualmente en condiciones ideales;</p></li>
+<li><p>documentar los pasos a seguir para que opere correctamente;</p></li>
+<li><p>comenzar a identificar y documentar pendientes y riesgos
+tecnológicos;</p></li>
+<li><p>actualizar el calendario de trabajo con base en los riesgos
+detectados.</p></li>
+</ul>
+<p>El desarrollar una campaña de pruebas es una tarea compleja que puede
+demandar muchos recursos (tiempo, equipo, personal) y que puede no
+arrojar los resultados esperados si no se hace correctamente. Por ello,
+es muy importante que se dedique el tiempo necesario para diseñar las
+pruebas en función de los objetivos que se persiguen. Algunos de los
+objetivos que deben quedar claros en esta etapa son:</p>
+<ul>
+<li><p>sacar a la luz todos los puntos que el equipo debe resolver;</p></li>
+<li><p>validar lo que se tiene contra la especificación funcional;</p></li>
+<li><p>realizar pruebas de regresión (cuando la solución falla o hace
+fallar algo en el ambiente de operación);</p></li>
+<li><p>determinar si la solución requiere componentes adicionales
+(controladores actualizados, librerías dinámicas, versiones
+específicas de ambientes operativos, etcétera).</p></li>
+</ul>
+<p>Es fundamental poder separar el ambiente de pruebas del de producción en
+las primeras etapas del proceso de evaluación: errores o problemas
+detectados con la solución evaluada no deben afectar a la red de
+producción. Esta etapa de la fase de desarrollo es conocida como de
+pruebas de preproducción y sus objetivos son los siguientes:</p>
+<ul>
+<li><p>probar tanto de la solución como sea posible, antes de integrar el
+piloto;</p></li>
+<li><p>evaluar resultados contra los objetivos y criterios de éxito;</p></li>
+<li><p>completar guías de instalación (<em>checklists</em>) y desarrollar
+procedimientos automatizados para ello (bitácoras, <em>s</em>cripts,
+etcétera);</p></li>
+<li><p>desarrollar el material de capacitación completo;</p></li>
+<li><p>resolver pendientes y problemas de soporte.</p></li>
+</ul>
+<p>El automatizar en la medida de lo posible las tareas de instalación y
+validación es sumamente aconsejable, pues ello contribuye a disminuir
+tiempos y esfuerzo en la etapa de despliegue, reduce drásticamente los
+retardos debidos a errores humanos, proporciona lineamientos para
+diagnosticar y corregir problemas, y ayuda en la definición de
+procedimientos de respaldo y recuperación de desastres.</p>
+<p>Otros entregables que deben generarse al realizar las validaciones en
+esta etapa, están orientados al personal encargado de la operación de la
+red en producción e incluyen documentos que abarquen temas como:</p>
+<ul>
+<li><p>requerimientos especiales para mantenimiento de clientes, servidores
+y dispositivos de red;</p></li>
+<li><p>lineamientos para recuperación de desastres y reinstalación;</p></li>
+<li><p>monitoreo de fallas y parámetros de desempeño en operación normal;</p></li>
+<li><p>soporte y solución de problemas;</p></li>
+<li><p>procedimientos de respaldo.</p></li>
+</ul>
+<p>  <br />
+ </p>
+</div>
+<div id="prueba-de-concepto" class="section level5 unnumbered hasAnchor">
+<h5>Prueba de concepto<a href="metodología-de-diseño-de-redes.html#prueba-de-concepto" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Una vez que las herramientas individuales han sido evaluadas, la prueba
+de concepto consiste en validar la solución completa inmediatamente
+antes de integrarla a la red de producción. Específicamente, debe
+validarse que se cumple completamente con los requerimientos de diseño.
+Esto se hace generalmente junto con el cliente y/o personal que va a
+operar la red de manera cotidiana, y basándose en el plan de pruebas
+definido con anterioridad.</p>
+<p>Conforme se va integrando la prueba de concepto, se seguirán
+documentando los procesos de implementación, se desarrollarán mecanismos
+de automatización para la instalación y despliegue, se verificarán y
+complementarán las guías de instalación y se desarrollarán manuales de
+operación.</p>
+<p>  <br />
+ </p>
+</div>
+<div id="prueba-piloto" class="section level5 unnumbered hasAnchor">
+<h5>Prueba piloto<a href="metodología-de-diseño-de-redes.html#prueba-piloto" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>El piloto es el momento en que se evalúa la solución dentro del ambiente
+de producción. Es una actividad muy importante pues valida la solución
+completa y su integración con los sistemas ya implementados. Además, se
+debe considerar al piloto como un proceso de entrenamiento hacia la fase
+de despliegue que permite verificar que todo lo que se ha hecho durante
+la fase de desarrollo está correcto y completo:</p>
+<ul>
+<li><p>procesos de instalación y automatización;</p></li>
+<li><p>identificar pendientes y darles seguimiento;</p></li>
+<li><p>realizar y probar planes de recuperación;</p></li>
+<li><p><em>checklist</em> de preparación del sitio;</p></li>
+<li><p>materiales de capacitación para el usuario y para los
+administradores de la red.</p></li>
+</ul>
+<p>Implementar y activar el piloto puede tener serias consecuencias en la
+operación de los sistemas y dispositivos en la red de producción, por lo
+que debe haber una muy buena planeación, manteniendo una estrecha
+comunicación con todos los involucrados. Por ejemplo, se deberá:</p>
+<ul>
+<li><p>asegurar que se tiene el soporte técnico y los recursos necesarios
+para instalar y activar el piloto (identificación y acceso a los
+locales donde se llevará a cabo la instalación; disponibilidad de
+espacio, de energía eléctrica, de direcciones de red, de posibles
+contraseñas para acceder y configurar equipo, etcétera);</p></li>
+<li><p>identificar a usuarios del piloto, comunicarse con ellos y asegurar
+que existe un proceso de retroalimentación por su parte;</p></li>
+<li><p>encontrar horarios fuera y dentro de horas laborales para llevar a
+cabo distintos tipos de evaluación (desempeño, interoperabilidad,
+estrés, etcétera);</p></li>
+<li><p>prevenir a los usuarios de posibles degradaciones en la calidad de
+servicio durante la fase de evaluación.</p></li>
+</ul>
+<p>  <br />
+ </p>
+</div>
+<div id="culminando-la-fase-de-desarrollo" class="section level5 unnumbered hasAnchor">
+<h5>Culminando la fase de desarrollo<a href="metodología-de-diseño-de-redes.html#culminando-la-fase-de-desarrollo" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Al terminar esta fase ya no puede haber cambios en el diseño. Debe
+existir un acuerdo sobre las tecnologías empleadas, el plan y
+documentación para apoyar la capacitación de usuarios y administradores
+y sobre las actualizaciones al plan maestro y al calendario maestro del
+proyecto.</p>
+<p>Los entregables de esta fase son todos los documentos desarrollados a lo
+largo de las evaluaciones: material de capacitación, estrategias para el
+proceso de despliegue, procedimientos automatizados de instalación,
+<em>checklists</em> para configuración e instalación, guías para el personal de
+operaciones; etcétera.</p>
+<p>  <br />
+  </p>
+</div>
+</div>
+<div id="fase-iv-despliegue.-actuar" class="section level4 hasAnchor" number="1.3.1.4">
+<h4><span class="header-section-number">1.3.1.4</span> Fase IV: Despliegue. (<em>Actuar</em>)<a href="metodología-de-diseño-de-redes.html#fase-iv-despliegue.-actuar" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fasedesp"></span>
+<img src="figuras/c1/FaseDesp.bmp" alt="*La fase de despliegue de MSF y sus entregables*" width="350px" />
+<p class="caption">
+Figura 1.12: <em>La fase de despliegue de MSF y sus entregables</em>
+</p>
+</div>
+<p>En la última fase se lleva a cabo el despliegue e implementación de la
+solución de acuerdo con el diseño propuesto y se cierra el proyecto.
+Básicamente existen dos estrategias: despliegue en serie, en donde se
+parte implementando el núcleo de la red y se van agregando sitios de
+acuerdo a su orden de importancia, y despliegue en paralelo en el que
+todos los sitios se van implementando más o menos al mismo tiempo.</p>
+<p>Con la estrategia de despliegue en serie se reduce el riesgo del
+proyecto, la necesidad de personal especializado y la erogación de
+recursos. Sin embargo, aumenta el tiempo de liberación de la solución
+completa. La decisión dependerá, en realidad, de las características del
+proyecto y de los recursos disponibles.</p>
+<p>En cualquier caso, el despliegue de un sitio pasa básicamente por las
+mismas etapas, que son:</p>
+<dl>
+<dt>Preparación del sitio.</dt>
+<dd>
+<p>Se valida información obtenida a lo largo del proyecto, se realiza
+el plan de despliegue para el sitio y se notifica a los usuarios
+sobre el calendario y las perturbaciones posibles que sufrirán.</p>
+</dd>
+<dt>Instalación de la solución.</dt>
+<dd>
+<p>Al igual que en la etapa de desarrollo, se debe tener una estrecha
+comunicación con los administradores de la red para garantizar que
+se dispone de los recursos físicos y lógicos para llevar a cabo la
+instalación.</p>
+</dd>
+<dt>Capacitación del personal.</dt>
+<dd>
+<p>En función de los objetivos y alcances del proyecto, el plan de
+capacitación puede incluir a los administradores y operadores de la
+red, a los encargados de la mesa de ayuda, y a los usuarios finales.</p>
+</dd>
+<dt>Estabilización.</dt>
+<dd>
+<p>Es importante que el sistema quede estabilizado cuando aún está
+presente el personal responsable del diseño y se está migrando la
+gestión del mismo al personal de operaciones. Esta transición
+debería incluir la activación del sistema de reportes (mesa de
+ayuda), la creación de bitácoras de fallas, estrategia de solución y
+análisis de tendencias que permita la creación de una base de
+conocimiento. La etapa de estabilización termina con la aceptación
+final.</p>
+</dd>
+</dl>
+<p>  <br />
+ </p>
+<div id="culminando-la-fase-de-despliegue" class="section level5 unnumbered hasAnchor">
+<h5>Culminando la fase de despliegue<a href="metodología-de-diseño-de-redes.html#culminando-la-fase-de-despliegue" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Una vez que se ha liberado y estabilizado el proyecto, se obtendrá la
+aceptación final por parte del cliente, pero para el equipo de trabajo
+el proyecto no ha terminado pues debe hacerse una revisión de las
+experiencias adquiridas a lo largo del desarrollo del proyecto que
+permita plasmar en un reporte final las consideraciones a tomar en
+cuenta para proyectos futuros similares al recién liberado.</p>
+<p>  <br />
+  </p>
+</div>
+</div>
+</div>
+</div>
+<div id="análisis-de-riesgos" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Análisis de riesgos<a href="metodología-de-diseño-de-redes.html#análisis-de-riesgos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El análisis de riesgos es una actividad fundamental en toda metodología
+formal de administración de proyectos. Para MSF, se trata de uno de
+los cuatro componentes fundamentales y constituye una actividad continua
+a todo lo largo del modelo de proceso. Tiene por objetivo identificar
+las fuentes principales de riesgos, sus implicaciones y la forma en la
+que estos pueden ser controlados.</p>
+<div class="center">
+<div style="color: blue;">
+<p><em>Los riesgos son peligros que se presentan y amenazan el éxito del
+proyecto; su identificación es algo completamente deseable y su solución
+y mitigación es responsabilidad del equipo entero.</em></p>
+</div>
+</div>
+<p>Al identificar el riesgo global del proyecto se busca determinar cuáles
+son las implicaciones si el proyecto falla completamente o si no
+corresponde a las expectativas. Hay que empezar por establecer si el
+proyecto es crítico para la operación de la empresa.</p>
+<p>También es importante conocer el nivel de visibilidad y repercusión del
+proyecto: ¿El éxito (o fracaso) del proyecto es visible por otras áreas?
+¿Por las áreas directivas? ¿Por los clientes? La respuesta a estas
+preguntas puede influir de manera importante en los criterios de diseño
+a emplear.</p>
+<p>Los riesgos se pueden originar de las más diversas fuentes, entre las
+más evidentes se pueden citar:</p>
+<ul>
+<li><p>definición imprecisa de visión, objetivos y restricciones;</p></li>
+<li><p>nivel de motivación en la decisión o dirección de la organización;</p></li>
+<li><p>perfil y compromiso de clientes o usuarios;</p></li>
+<li><p>presupuesto, costo, calendario y recursos humanos;</p></li>
+<li><p>características del proyecto;</p></li>
+<li><p>ambiente y proceso de desarrollo e implementación;</p></li>
+<li><p>ambiente de operaciones;</p></li>
+<li><p>nuevas tecnologías.</p></li>
+</ul>
+<p>Las restricciones del proyecto son riesgos naturales que deben ser
+identificados. La siguiente lista muestra algunos aspectos que deben ser
+típicamente tomados en cuenta durante la fase de análisis de riesgos:</p>
+<ul>
+<li><p>restricciones presupuestales y gestión del mismo;</p></li>
+<li><p>adquisición de equipo, software, licencias, etcétera;</p></li>
+<li><p>contratación / capacitación de personal;</p></li>
+<li><p>agenda: ¿Existen agendas ocultas? ¿El proyecto ya se ha retrasado?
+¿Se está retomando un proyecto que fue abandonado por otro grupo?
+¿Por qué?;</p></li>
+<li><p>políticas y estrategias;</p></li>
+<li><p>existencia de grupos de poder: tomadores de decisiones vs.
+seguidores;</p></li>
+<li><p>implicaciones del proyecto: ¿A quién beneficia el éxito del
+proyecto? ¿Quién lo apoya? ¿Provoca despidos de personal? ¿Cambio de
+funciones y de roles?;</p></li>
+<li><p>alianzas y/o políticas de adquisición de equipo, estándares
+internos, etcétera;</p></li>
+<li><p>aspectos personales de todos los involucrados;</p></li>
+<li><p>actitud de la empresa: innovadora o conservadora tecnológicamente.</p></li>
+</ul>
+<p>  <br />
+ </p>
+<div id="manejo-de-riesgos" class="section level3 hasAnchor" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Manejo de Riesgos<a href="metodología-de-diseño-de-redes.html#manejo-de-riesgos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La identificación de riesgos en un proyecto es completamente inútil si
+no se dan inmediatamente los pasos necesarios para evitar el riesgo o
+para amortiguar su impacto. El proceso de manejo de riesgos es sumamente
+importante y debe ser tratado con la mayor seriedad y profesionalismo.
+Una estrategia para administración de riesgos se muestra en la
+figura <a href="metodología-de-diseño-de-redes.html#fig:riesgos">1.13</a> y se explica en los párrafos subsecuentes.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:riesgos"></span>
+<img src="figuras/c1/riesgos.bmp" alt="*Estrategia de gestión de riesgos*" width="350px" />
+<p class="caption">
+Figura 1.13: <em>Estrategia de gestión de riesgos</em>
+</p>
+</div>
+<p>Es muy importante que el proyecto involucre representantes de cada uno
+de los roles del modelo de equipo. Cada rol estará en posición de
+identificar y entender diferentes tipos de riesgo y de traerlos a la
+atención del resto del equipo.</p>
+<p>Una vez logrado esto y que los riesgos se han puesto por escrito, se
+procede a analizarlos, a tratar de evaluar la posibilidad de que dichos
+riesgos se materialicen y, en caso de que lo hagan, a evaluar el impacto
+que tendrían sobre el proyecto. Conociendo y entendiendo las
+probabilidades e implicaciones, es posible entonces proceder a la
+elaboración de un plan para eliminar el riesgo, o bien, para reducir la
+probabilidad de que ocurra. En los casos en que la probabilidad de
+ocurrencia no puede ser eliminada, se debe diseñar un plan de
+contingencia adecuado.</p>
+<p>El plan de atención a cada riesgo debe ser asignado a un <em>propietario</em>,
+que será la persona responsable de darle seguimiento y facilitar la
+ejecución del plan. El paso final en el proceso es la revisión o control
+de los riesgos en cartera, donde se determina si el riesgo ha sido
+eliminado, si la ejecución del plan de atención a ese riesgo en
+particular está todavía en curso, o si no se puede eliminar, pero los
+planes de contingencia están listos. Dependiendo del resultado el riesgo
+se elimina o se mantiene en la lista.</p>
+<p>El documento conteniendo la lista de riesgos vigentes debe ser revisado
+con la periodicidad necesaria, misma que sólo puede ser estimada por los
+integrantes del equipo. Existirán períodos del proyecto en donde la
+revisión tenga que ser diaria, y periodos en los que una revisión
+semanal sea suficiente.</p>
+<p>Es altamente recomendable mantener el documento de evaluación de riesgos
+y los planes relacionados en una escala manejable. Es decir, no se deben
+tener demasiados riesgos siendo atacados al mismo tiempo. Nuevamente,
+esto depende del tamaño y complejidad del proyecto.</p>
+<div class="center">
+<div style="color: blue;">
+<p><em>Como regla general se debe procurar no manejar más de diez riesgos
+al mismo tiempo.</em></p>
+</div>
+</div>
+<p>Una forma de superar esta limitante en proyectos grandes consiste en
+llevar un documento de análisis de riesgo por rol del modelo de equipo,
+o por equipos de trabajo dentro del proyecto. Sin embargo, es importante
+subrayar que deberá existir un documento principal que contenga la
+evaluación de riesgos globales del proyecto, el cual podrá contener
+algunos de los riesgos que están en documentos individuales, pero no
+todos ellos.</p>
+<div class="greybox">
+<p><strong>Caso de estudio: Cuantificación del riesgo</strong></p>
+<p>El siguiente caso de estudio tiene por objeto mostrar cómo cuantificar
+el nivel de riesgo de un proyecto de redes. Se trata de un proyecto de
+integración de servicios entre las tres ciudades más importantes de la
+República Mexicana<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
+<p>Cierta empresa con cobertura nacional cuenta con dos redes superpuestas:
+Enlaces Frame Relay en varios puntos de la República para transporte de
+datos, y enlaces privados TDM para transporte de voz y datos.</p>
+<p>La empresa desea migrar hacia una única red WAN multiservicios. En una
+primera fase, se diseña la red dorsal formada por un triángulo con
+puntos de presencia en México, Guadalajara y Monterrey (ver
+figura <a href="metodología-de-diseño-de-redes.html#fig:reddorsal">1.14</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:reddorsal"></span>
+<img src="figuras/c1/reddorsal.bmp" alt="*Red dorsal multiservicio entre las tres principales ciudades del país*" width="350px" />
+<p class="caption">
+Figura 1.14: <em>Red dorsal multiservicio entre las tres principales ciudades del país</em>
+</p>
+</div>
+<p>Una vez definido el diseño básico de la red y el plan de actividades, se
+llevó a cabo una revisión detallada del proyecto tratando de identificar
+posibles riesgos y su impacto. En la planeación de riesgos se deciden
+las tácticas de manejo que se utilizarán para disminuir cada uno y
+posteriormente se evalúa el nuevo impacto que podrían tener, una vez
+aplicadas dichas tácticas.</p>
+<p>El análisis de impacto y la planeación de riesgos se realizó en grupo y
+con ayuda de expertos. Cada riesgo se evaluó según su probabilidad de
+ocurrencia y su impacto en el proyecto. Estos criterios fueron
+calificados de la siguiente manera:</p>
+<div class="center">
+<table>
+<colgroup>
+<col width="37%" />
+<col width="36%" />
+<col width="12%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Probabilidad de ocurrencia</th>
+<th></th>
+<th align="center">Impacto</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td>Muy poco probable (0-20%)</td>
+<td align="center">1</td>
+<td>Mínimo</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td>Poco probable (20-40%)</td>
+<td align="center">2</td>
+<td>Poco</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td>Puede ocurrir (40-60%)</td>
+<td align="center">3</td>
+<td>Moderado</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td>Probable (60-80%)</td>
+<td align="center">4</td>
+<td>Alto</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td>Muy probable (80-100%)</td>
+<td align="center">5</td>
+<td>Extremo</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Los riesgos asociados al proyecto y su evaluación se presentan en la
+siguiente tabla.</p>
+<table>
+<colgroup>
+<col width="29%" />
+<col width="54%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Riesgo</th>
+<th align="left">Descripción</th>
+<th align="center">Probabilidad/Impacto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">(A) ENTORNO DE NEGOCIO</td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">A1</td>
+<td align="left">Fondos no asignados</td>
+<td align="center">1/5</td>
+</tr>
+<tr class="odd">
+<td align="center">A2</td>
+<td align="left">Proyecto no ha sido justificado</td>
+<td align="center">2/5</td>
+</tr>
+<tr class="even">
+<td align="center">A3</td>
+<td align="left">Alta dirección no ha dado soporte</td>
+<td align="center">4/4</td>
+</tr>
+<tr class="odd">
+<td align="center">(B) ENTORNO DE PROYECTO</td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">B1</td>
+<td align="left">Objetivos no claros o no identificados</td>
+<td align="center">4/3</td>
+</tr>
+<tr class="odd">
+<td align="center">B2</td>
+<td align="left">Alcances incompletos o no definidos</td>
+<td align="center">5/3</td>
+</tr>
+<tr class="even">
+<td align="center">B3</td>
+<td align="left">Estimados y costos no validados</td>
+<td align="center">4/3</td>
+</tr>
+<tr class="odd">
+<td align="center">B4</td>
+<td align="left">Criterios de aceptación no claros</td>
+<td align="center">3/4</td>
+</tr>
+<tr class="even">
+<td align="center">B5</td>
+<td align="left">Mala comunicación</td>
+<td align="center">4/4</td>
+</tr>
+<tr class="odd">
+<td align="center">B6</td>
+<td align="left">Pérdida de interés del patrocinador</td>
+<td align="center">2/4</td>
+</tr>
+<tr class="even">
+<td align="center">(C) EL CLIENTE</td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">C1</td>
+<td align="left">No entiende un entorno de proyectos</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="even">
+<td align="center">C2</td>
+<td align="left">Sin autoridad para tomar decisiones</td>
+<td align="center">3/1</td>
+</tr>
+<tr class="odd">
+<td align="center">C3</td>
+<td align="left">Personal no participa en el proyecto</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="even">
+<td align="center">C4</td>
+<td align="left">Insiste en utilizar equipo obsoleto de su propiedad</td>
+<td align="center">3/4</td>
+</tr>
+<tr class="odd">
+<td align="center">C5</td>
+<td align="left">Tiempos largos de instalación en sitios remotos</td>
+<td align="center">3/4</td>
+</tr>
+<tr class="even">
+<td align="center">C6</td>
+<td align="left">No permite acceso a instalaciones</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="odd">
+<td align="center">C7</td>
+<td align="left">No tiene experiencia en proyectos similares</td>
+<td align="center">3/4</td>
+</tr>
+<tr class="even">
+<td align="center">C8</td>
+<td align="left">No está comprometido con el proyecto</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="odd">
+<td align="center">(D) EL USUARIO</td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">D1</td>
+<td align="left">No involucrado en def. requerimientos</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="odd">
+<td align="center">D2</td>
+<td align="left">Demanda capacitación no factible</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="even">
+<td align="center">D3</td>
+<td align="left">No está involucrado</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="odd">
+<td align="center">D4</td>
+<td align="left">No entiende el impacto</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="even">
+<td align="center">D5</td>
+<td align="left">No tiene experiencia en proyectos similares</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="odd">
+<td align="center">D6</td>
+<td align="left">No entiende un entorno de proyectos</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="even">
+<td align="center">D7</td>
+<td align="left">No está comprometido con proy.</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="odd">
+<td align="center">(E) LA SOLUCIÓN TÉCNICA</td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">E1</td>
+<td align="left">No ha sido realizada antes</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="odd">
+<td align="center">E2</td>
+<td align="left">Basado en métodos o he-rramientas no probadas</td>
+<td align="center">3/3</td>
+</tr>
+<tr class="even">
+<td align="center">E3</td>
+<td align="left">Se requiere de expertos para algunos equipos</td>
+<td align="center">2/4</td>
+</tr>
+<tr class="odd">
+<td align="center">(F) CALIDAD</td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">F1</td>
+<td align="left">Req. calidad no bien documentados</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="odd">
+<td align="center">F2</td>
+<td align="left">Req. calidad no son entendidos</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="even">
+<td align="center">F3</td>
+<td align="left">No se asegura la calidad del proyecto</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="odd">
+<td align="center">(G) PROVEEDORES Y OTROS REC. HUMANOS</td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">G1</td>
+<td align="left">No hay equipos en mercado local</td>
+<td align="center">4/4</td>
+</tr>
+<tr class="odd">
+<td align="center">G2</td>
+<td align="left">No hay proveedor de enlaces</td>
+<td align="center">1/4</td>
+</tr>
+<tr class="even">
+<td align="center">G3</td>
+<td align="left">Proveedor inestable económicamente o en situación desconocida</td>
+<td align="center">1/5</td>
+</tr>
+<tr class="odd">
+<td align="center">G4</td>
+<td align="left">Tiempos de entrega muy prolongados</td>
+<td align="center">3/4</td>
+</tr>
+<tr class="even">
+<td align="center">G5</td>
+<td align="left">Falla de enlaces contratados</td>
+<td align="center">1/4</td>
+</tr>
+<tr class="odd">
+<td align="center">G6</td>
+<td align="left">Falla de equipos entregados</td>
+<td align="center">1/5</td>
+</tr>
+<tr class="even">
+<td align="center">G7</td>
+<td align="left">Personal no tiene conocimientos req.</td>
+<td align="center">3/4</td>
+</tr>
+<tr class="odd">
+<td align="center">G8</td>
+<td align="left">Personal especializado no disponible</td>
+<td align="center">2/4</td>
+</tr>
+<tr class="even">
+<td align="center">G9</td>
+<td align="left">Huelgas y paros laborales</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="odd">
+<td align="center">(H) ADMINISTRACIÓN DE PROYECTOS</td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">H1</td>
+<td align="left">Administrador de proyectos con experiencia no ha sido asignado</td>
+<td align="center">3/4</td>
+</tr>
+<tr class="odd">
+<td align="center">H2</td>
+<td align="left">Adm. proyectos no tiene experiencia en proyectos de esta magnitud</td>
+<td align="center">3/3</td>
+</tr>
+<tr class="even">
+<td align="center">H3</td>
+<td align="left">No se cuenta con una metodología formal de administración de proyectos</td>
+<td align="center">1/4</td>
+</tr>
+<tr class="odd">
+<td align="center">(I) FACTORES EXTERNOS</td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">I1</td>
+<td align="left">Actos del gobierno</td>
+<td align="center">1/1</td>
+</tr>
+<tr class="odd">
+<td align="center">I2</td>
+<td align="left">Depreciación del tipo de cambio</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="even">
+<td align="center">I3</td>
+<td align="left">Cambios en el Mercado</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="odd">
+<td align="center">I4</td>
+<td align="left">Legislaciones</td>
+<td align="center">1/3</td>
+</tr>
+</tbody>
+</table>
+<p>Los riesgos se colocan en una matriz de impacto contra probabilidad:</p>
+<p><img src="figuras/c1/matrsk1.JPG" width="70%" style="display: block; margin: auto;" /></p>
+<p>Para cada riesgo, se propone un plan de manejo. El énfasis se concentra
+en aquellos riesgos colocados en el cuadrante superior derecho de la
+matriz anterior. Se tratará de eliminarlos o de llevarlos al cuadrante
+inferior izquierdo.</p>
+<p>Los riesgos asociados al proyecto, su evaluación, el plan de manejo y su
+nueva evaluación si se aplica el plan, se presentan en la siguiente
+tabla.</p>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="29%" />
+<col width="6%" />
+<col width="44%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Riesgo</th>
+<th align="left">Descripción</th>
+<th align="center">Prob./Impacto</th>
+<th align="left">Plan</th>
+<th align="center">Nva. Eval.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">(A) ENTORNO DEL NEGOCIO</td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">A1</td>
+<td align="left">Fondos no asignados</td>
+<td align="center">1/5</td>
+<td align="left">Asume riesgo</td>
+<td align="center">1/5</td>
+</tr>
+<tr class="odd">
+<td align="center">A2</td>
+<td align="left">Proyecto no ha sido justificado</td>
+<td align="center">2/5</td>
+<td align="left">Identifica actores y justifica</td>
+<td align="center">1/5</td>
+</tr>
+<tr class="even">
+<td align="center">A3</td>
+<td align="left">Alta dirección no ha dado soporte</td>
+<td align="center">4/4</td>
+<td align="left">Ajusta alcances p/obtener soporte</td>
+<td align="center">2/4</td>
+</tr>
+<tr class="odd">
+<td align="center">(B) ENTORNO DEL NEGOCIO</td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">B1</td>
+<td align="left">Objetivos no claros o no identificados</td>
+<td align="center">4/3</td>
+<td align="left">Clarifica con actores</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="odd">
+<td align="center">B2</td>
+<td align="left">Alcances incompletos o no definidos</td>
+<td align="center">5/3</td>
+<td align="left">Completa y define</td>
+<td align="center">3/2</td>
+</tr>
+<tr class="even">
+<td align="center">B3</td>
+<td align="left">Estimados y costos no validados</td>
+<td align="center">4/3</td>
+<td align="left">Valida con los actores</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="odd">
+<td align="center">B4</td>
+<td align="left">Criterios de aceptación no claros</td>
+<td align="center">3/4</td>
+<td align="left">Explica criterios a los actores</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="even">
+<td align="center">B5</td>
+<td align="left">Mala comunicación</td>
+<td align="center">4/4</td>
+<td align="left">Establece y refuerza plan comunic.</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="odd">
+<td align="center">B6</td>
+<td align="left">Pérdida de interés del patrocinador</td>
+<td align="center">2/4</td>
+<td align="left">Encuestas periódicas de satisfacción</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="even">
+<td align="center">(C) EL CLIENTE</td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">C1</td>
+<td align="left">No entiende un entorno de proyectos</td>
+<td align="center">2/3</td>
+<td align="left">Integra al cliente en el proyecto</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="even">
+<td align="center">C2</td>
+<td align="left">Sin autoridad para tomar decisiones</td>
+<td align="center">3/1</td>
+<td align="left">Asume riesgo</td>
+<td align="center">3/1</td>
+</tr>
+<tr class="odd">
+<td align="center">C3</td>
+<td align="left">Personal no participa en el proyecto</td>
+<td align="center">2/3</td>
+<td align="left">Asume riesgo</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="even">
+<td align="center">C4</td>
+<td align="left">Insiste en utilizar equipo obsoleto de su propiedad</td>
+<td align="center">3/4</td>
+<td align="left">Clarifica requerimientos; motiva y compromete para que acepte el cambio</td>
+<td align="center">2/4</td>
+</tr>
+<tr class="odd">
+<td align="center">C5</td>
+<td align="left">Tiempos largos de instalación en sitios remotos</td>
+<td align="center">3/4</td>
+<td align="left">Informar sobre la importancia de respetar calendario. Involucrar personal del cliente con responsabilidades</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="even">
+<td align="center">C6</td>
+<td align="left">No permite acceso a instalaciones</td>
+<td align="center">2/3</td>
+<td align="left">Establece horarios de acceso y controles por si surgen problemas</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="odd">
+<td align="center">C7</td>
+<td align="left">No tiene experiencia en proyectos similares</td>
+<td align="center">3/4</td>
+<td align="left">Involucra más al cliente</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="even">
+<td align="center">C8</td>
+<td align="left">No está comprometido con el proyecto</td>
+<td align="center">1/2</td>
+<td align="left">Asume riesgo</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="odd">
+<td align="center">(D) EL USUARIO</td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">D1</td>
+<td align="left">No involucrado en def. de requerimientos</td>
+<td align="center">2/2</td>
+<td align="left">Asume riesgo</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="odd">
+<td align="center">D2</td>
+<td align="left">Demanda capacitación no factible</td>
+<td align="center">1/3</td>
+<td align="left">Asume riesgo</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="even">
+<td align="center">D3</td>
+<td align="left">No está involucrado</td>
+<td align="center">1/3</td>
+<td align="left">Asume riesgo</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="odd">
+<td align="center">D4</td>
+<td align="left">No entiende el impacto</td>
+<td align="center">2/2</td>
+<td align="left">Asume riesgo</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="even">
+<td align="center">D5</td>
+<td align="left">No tiene experiencia en proyectos similares</td>
+<td align="center">2/3</td>
+<td align="left">Involúcralo más en el proyecto</td>
+<td align="center">2/1</td>
+</tr>
+<tr class="odd">
+<td align="center">D6</td>
+<td align="left">No entiende un entorno de proyectos</td>
+<td align="center">2/3</td>
+<td align="left">Involúcralo más en el proyecto</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="even">
+<td align="center">D7</td>
+<td align="left">No está comprometido con proy.</td>
+<td align="center">1/2</td>
+<td align="left">Asume riesgo</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="odd">
+<td align="center">(E) LA SOLUCIÓN TÉCNICA</td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">E1</td>
+<td align="left">No ha sido realizada antes</td>
+<td align="center">2/3</td>
+<td align="left">Encontrar expertos para las áreas relevantes</td>
+<td align="center">2/1</td>
+</tr>
+<tr class="odd">
+<td align="center">E2</td>
+<td align="left">Basado en métodos o herramientas no probadas</td>
+<td align="center">3/3</td>
+<td align="left">Encontrar expertos para las áreas relevantes</td>
+<td align="center">3/1</td>
+</tr>
+<tr class="even">
+<td align="center">E3</td>
+<td align="left">Se requiere de expertos para algunos equipos</td>
+<td align="center">2/4</td>
+<td align="left">Encontrar expertos para las áreas relevantes</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="odd">
+<td align="center">(F) CALIDAD</td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">F1</td>
+<td align="left">Req. de calidad no bien documentados</td>
+<td align="center">1/2</td>
+<td align="left">Asume riesgo</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="odd">
+<td align="center">F2</td>
+<td align="left">Req. de calidad no son entendidos</td>
+<td align="center">2/3</td>
+<td align="left">Aclara requerimientos a los actores</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="even">
+<td align="center">F3</td>
+<td align="left">No se asegura la calidad del proyecto</td>
+<td align="center">2/2</td>
+<td align="left">Asume riesgo</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="odd">
+<td align="center">(G) PROVEEDORES Y OTROS REC. HUMANOS</td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">G1</td>
+<td align="left">No hay equipos en mercado local</td>
+<td align="center">4/4</td>
+<td align="left">Busca en otro mercado e importa</td>
+<td align="center">4/2</td>
+</tr>
+<tr class="odd">
+<td align="center">G2</td>
+<td align="left">No hay proveedor de enlaces</td>
+<td align="center">1/4</td>
+<td align="left">Busca otras soluciones: más enlaces de menor capacidad; otra tecnología; etc.</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="even">
+<td align="center">G3</td>
+<td align="left">Proveedor inestable económicamente o en situación desconocida</td>
+<td align="center">1/5</td>
+<td align="left">Busca proveedores secundarios; apalanca vía fianzas y seguros</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="odd">
+<td align="center">G4</td>
+<td align="left">Tiempos de entrega muy prolongados</td>
+<td align="center">3/4</td>
+<td align="left">Estima tiempos en exceso</td>
+<td align="center">3/2</td>
+</tr>
+<tr class="even">
+<td align="center">G5</td>
+<td align="left">Falla de enlaces contratados</td>
+<td align="center">1/4</td>
+<td align="left">Resuelve problema con proveedor; busca enlaces alternos</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="odd">
+<td align="center">G6</td>
+<td align="left">Falla de equipos entregados</td>
+<td align="center">1/5</td>
+<td align="left">Resuelve problema o busca proveedor alterno con entregas rápidas</td>
+<td align="center">1/1</td>
+</tr>
+<tr class="even">
+<td align="center">G7</td>
+<td align="left">Personal no tiene conocimientos requeridos</td>
+<td align="center">3/4</td>
+<td align="left">Capacita al personal</td>
+<td align="center">2/4</td>
+</tr>
+<tr class="odd">
+<td align="center">G8</td>
+<td align="left">Personal especializado no disponible</td>
+<td align="center">2/4</td>
+<td align="left">Contrata consultor experto; capacita</td>
+<td align="center">2/2</td>
+</tr>
+<tr class="even">
+<td align="center">G9</td>
+<td align="left">Huelgas y paros laborales</td>
+<td align="center">1/3</td>
+<td align="left">Asume riesgo</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="odd">
+<td align="center">(H) ADMINISTRACIÓN DE PROYECTOS</td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">H1</td>
+<td align="left">Administrador de proyectos con experiencia no ha sido asignado</td>
+<td align="center">3/4</td>
+<td align="left">Busca administrador con más experiencia</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="odd">
+<td align="center">H2</td>
+<td align="left">Adm. proyectos no tiene experiencia en proyectos de esta magnitud</td>
+<td align="center">3/3</td>
+<td align="left">Busca administrador con más experiencia</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="even">
+<td align="center">H3</td>
+<td align="left">No se cuenta con una metodología formal de administración de proyectos</td>
+<td align="center">1/4</td>
+<td align="left">Implanta administrador y metodología</td>
+<td align="center">1/2</td>
+</tr>
+<tr class="odd">
+<td align="center">(I) FACTORES EXTERNOS</td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">I1</td>
+<td align="left">Actos del gobierno</td>
+<td align="center">1/1</td>
+<td align="left">Asume riesgo</td>
+<td align="center">1/1</td>
+</tr>
+<tr class="odd">
+<td align="center">I2</td>
+<td align="left">Depreciación del tipo de cambio</td>
+<td align="center">2/3</td>
+<td align="left">Asume riesgo</td>
+<td align="center">2/3</td>
+</tr>
+<tr class="even">
+<td align="center">I3</td>
+<td align="left">Cambios en el Mercado</td>
+<td align="center">1/3</td>
+<td align="left">Asume riesgo</td>
+<td align="center">1/3</td>
+</tr>
+<tr class="odd">
+<td align="center">I4</td>
+<td align="left">Legislaciones</td>
+<td align="center">1/3</td>
+<td align="left">Asume riesgo</td>
+<td align="center">1/3</td>
+</tr>
+</tbody>
+</table>
+<p>Con las re-evaluaciones se colocan nuevamente en la matriz de impacto
+contra probabilidad.</p>
+<p><img src="figuras/c1/matrsk2.JPG" width="70%" style="display: block; margin: auto;" /></p>
+<p>Cada celda en la matriz recibe una ponderación reflejando el peso
+relativo de un impacto en esa celda.</p>
+<p><img src="figuras/c1/matrsk3.JPG" width="70%" style="display: block; margin: auto;" /></p>
+<p>El factor de riesgo del proyecto, se deriva del promedio ponderado de
+los riesgos identificados.</p>
+<p><span class="math display">\[\text{Promedio ponderado} =
+\frac{\sum\limits_{i=1}^5\sum\limits_{j=1}^5 n_{i,j}\cdot p_{i,j}}{N}=
+1.7,\]</span> donde <span class="math inline">\(N\)</span> es el número de riesgos considerados y <span class="math inline">\(n_{i,j}\)</span> los
+riesgos en la celda <span class="math inline">\(\{i,j\}\)</span> la cual tiene un peso <span class="math inline">\(p_{i,j}\)</span>.</p>
+<p>El nivel de riesgo se asocia tomando como referencia una tabla como la
+siguiente:</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="center">Riesgo del proyecto</th>
+<th align="center">Rango</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Muy bajo</td>
+<td align="center">0 a 0.49</td>
+</tr>
+<tr class="even">
+<td align="center">Bajo</td>
+<td align="center">0.5 a 1.49</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>Medio bajo</strong></td>
+<td align="center"><strong>1.5 a 3.99</strong></td>
+</tr>
+<tr class="even">
+<td align="center">Medio</td>
+<td align="center">4.0 a 5.99</td>
+</tr>
+<tr class="odd">
+<td align="center">Medio alto</td>
+<td align="center">6.0 a 7.49</td>
+</tr>
+<tr class="even">
+<td align="center">Alto</td>
+<td align="center">7.5 a 8.49</td>
+</tr>
+<tr class="odd">
+<td align="center">Muy alto</td>
+<td align="center">8.5 a 9.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--   \ -->
+<!--    -->
+<!-- ### Caso de estudio: Cuantificación del riesgo {-} -->
+<!-- El siguiente caso de estudio tiene por objeto mostrar cómo cuantificar -->
+<!-- el nivel de riesgo de un proyecto de redes. Se trata de un proyecto de -->
+<!-- integración de servicios entre las tres ciudades más importantes de la -->
+<!-- República Mexicana[^4]. -->
+<!-- [^4]: Johansson, R.; *Aplicación de metodologías de administración de proyectos para implantar un proyecto de red*; Tesina Ing. Telemática, ITAM, 2001. -->
+<!-- Cierta empresa con cobertura nacional cuenta con dos redes superpuestas: -->
+<!-- Enlaces Frame Relay en varios puntos de la República para transporte de -->
+<!-- datos, y enlaces privados TDM para transporte de voz y datos. -->
+<!-- La empresa desea migrar hacia una única red WAN multiservicios. En una -->
+<!-- primera fase, se diseña la red dorsal formada por un triángulo con -->
+<!-- puntos de presencia en México, Guadalajara y Monterrey (ver -->
+<!-- figura \@ref(fig:reddorsal). -->
+<!-- ```{r, reddorsal, echo=FALSE, fig.align='center', fig.cap='*Red dorsal multiservicio entre las tres principales ciudades del país*', out.width="350px",} -->
+<!-- knitr::include_graphics("figuras/c1/reddorsal.bmp") -->
+<!-- ``` -->
+<!-- Una vez definido el diseño básico de la red y el plan de actividades, se -->
+<!-- llevó a cabo una revisión detallada del proyecto tratando de identificar -->
+<!-- posibles riesgos y su impacto. En la planeación de riesgos se deciden -->
+<!-- las tácticas de manejo que se utilizarán para disminuir cada uno y -->
+<!-- posteriormente se evalúa el nuevo impacto que podrían tener, una vez -->
+<!-- aplicadas dichas tácticas. -->
+<!-- El análisis de impacto y la planeación de riesgos se realizó en grupo y -->
+<!-- con ayuda de expertos. Cada riesgo se evaluó según su probabilidad de -->
+<!-- ocurrencia y su impacto en el proyecto. Estos criterios fueron -->
+<!-- calificados de la siguiente manera: -->
+<!-- ::: center -->
+<!-- | Probabilidad de ocurrencia |                           | Impacto |          | -->
+<!-- |:--------------------------:|---------------------------|:-------:|----------| -->
+<!-- |             1              | Muy poco probable (0-20%) |    1    | Mínimo   | -->
+<!-- |             2              | Poco probable (20-40%)    |    2    | Poco     | -->
+<!-- |             3              | Puede ocurrir (40-60%)    |    3    | Moderado | -->
+<!-- |             4              | Probable (60-80%)         |    4    | Alto     | -->
+<!-- |             5              | Muy probable (80-100%)    |    5    | Extremo  | -->
+<!-- ::: -->
+<!-- Los riesgos asociados al proyecto y su evaluación se presentan en la -->
+<!-- siguiente tabla. -->
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- opts <- options(knitr.kable.NA = "") -->
+<!-- tab1 <- read.table('tablas/rskproy.csv', sep=",", header=TRUE) -->
+<!-- knitr::kable(tab1, align = "clc", col.names = c('Riesgo',  'Descripción',  'Probabilidad/Impacto')) -->
+<!-- ``` -->
+<!-- Los riesgos se colocan en una matriz de impacto contra probabilidad: -->
+<!-- ```{r, matrsk1, echo=FALSE, fig.align='center', out.width="70%"} -->
+<!-- knitr::include_graphics("figuras/c1/matrsk1.jpg") -->
+<!-- ``` -->
+<!-- Para cada riesgo, se propone un plan de manejo. El énfasis se concentra -->
+<!-- en aquellos riesgos colocados en el cuadrante superior derecho de la -->
+<!-- matriz anterior. Se tratará de eliminarlos o de llevarlos al cuadrante -->
+<!-- inferior izquierdo. -->
+<!-- Los riesgos asociados al proyecto, su evaluación, el plan de manejo y su -->
+<!-- nueva evaluación si se aplica el plan, se presentan en la siguiente -->
+<!-- tabla. -->
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- opts <- options(knitr.kable.NA = "") -->
+<!-- tab2 <- read.table('tablas/rskmodif.csv', sep=",", header=TRUE) -->
+<!-- knitr::kable(tab2, align = "clclc",col.names = c('Riesgo', 'Descripción',  'Prob./Impacto',    'Plan', 'Nva. Eval.')) -->
+<!-- ``` -->
+<!-- Con las re-evaluaciones se colocan nuevamente en la matriz de impacto -->
+<!-- contra probabilidad. -->
+<!-- ```{r, matrsk2, echo=FALSE, fig.align='center', out.width="70%"} -->
+<!-- knitr::include_graphics("figuras/c1/matrsk2.jpg") -->
+<!-- ``` -->
+<!-- Cada celda en la matriz recibe una ponderación reflejando el peso -->
+<!-- relativo de un impacto en esa celda. -->
+<!-- ```{r, matrsk3, echo=FALSE, fig.align='center', out.width="70%"} -->
+<!-- knitr::include_graphics("figuras/c1/matrsk3.jpg") -->
+<!-- ``` -->
+<!-- El factor de riesgo del proyecto, se deriva del promedio ponderado de -->
+<!-- los riesgos identificados. -->
+<!-- $$\text{Promedio ponderado} = -->
+<!-- \frac{\sum\limits_{i=1}^5\sum\limits_{j=1}^5 n_{i,j}\cdot p_{i,j}}{N}= -->
+<!-- 1.7,$$ donde $N$ es el número de riesgos considerados y $n_{i,j}$ los -->
+<!-- riesgos en la celda $\{i,j\}$ la cual tiene un peso $p_{i,j}$. -->
+<!-- El nivel de riesgo se asocia tomando como referencia una tabla como la -->
+<!-- siguiente: -->
+<!-- ::: center -->
+<!-- | Riesgo del proyecto |     Rango      | -->
+<!-- |:-------------------:|:--------------:| -->
+<!-- |      Muy bajo       |    0 a 0.49    | -->
+<!-- |        Bajo         |   0.5 a 1.49   | -->
+<!-- |   **Medio bajo**    | **1.5 a 3.99** | -->
+<!-- |        Medio        |   4.0 a 5.99   | -->
+<!-- |     Medio alto      |   6.0 a 7.49   | -->
+<!-- |        Alto         |   7.5 a 8.49   | -->
+<!-- |      Muy alto       |   8.5 a 9.0    | -->
+<!-- ::: -->
+</div>
+</div>
+<div id="problemas" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Problemas<a href="metodología-de-diseño-de-redes.html#problemas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:c11" class="exercise"><strong>Problema 1.1  </strong></span>Describa brevemente en qué consiste el método descendente de diseño de
+redes visto en clase.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c12" class="exercise"><strong>Problema 1.2  </strong></span>Mencione tres de las principales razones por las que un proyecto de
+tecnología de información puede fallar.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c13" class="exercise"><strong>Problema 1.3  </strong></span>De acuerdo a los reportes CHAOS de The Standish Group las principales
+causas de fracaso en los proyectos de TI no tienen que ver con aspectos
+técnicos o de ingeniería. Explique brevemente esta afirmación.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c14" class="exercise"><strong>Problema 1.4  </strong></span>¿Por qué es mejor realizar un proceso de diseño descendente y cuál es la
+condición esencial para iniciar el proceso?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c15" class="exercise"><strong>Problema 1.5  </strong></span>El modelo de proceso de MSF cuenta típicamente con cinco etapas:
+Visión, Planeación, Desarrollo, Estabilización y Despliegue ejecutadas
+en ese orden. Sin embargo, en la metodología presentada se siguieron
+únicamente cuatro de ellas. ¿Está usted de acuerdo con ello? ¿Por qué?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c16" class="exercise"><strong>Problema 1.6  </strong></span>¿En qué consisten las fases del modelo de proceso propuesto por MSF?
+¿Cuáles son los entregables en cada una de ellas?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c17" class="exercise"><strong>Problema 1.7  </strong></span>¿Por qué es importante tener una visión clara y compartida, así como
+objetivos SMART en un proyecto MSF?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c18" class="exercise"><strong>Problema 1.8  </strong></span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Nombre las etapas faltantes en el diagrama de ciclo de vida de un
+proyecto de red.</li>
+</ol>
+</div>
+<p><img src="figuras/c1/pregciclovida.jpg" width="60%" style="display: block; margin: auto;" /></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Mencione dónde entra cada una de estas etapas en el modelo de proceso de
+MSF.</li>
+</ol>
+<div class="exercise">
+<p><span id="exr:c19" class="exercise"><strong>Problema 1.9  </strong></span>De acuerdo al modelo de proceso de MSF, ¿Cuándo y dónde se determina
+el “qué, cómo y cuándo” de un proyecto de tecnología?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c110" class="exercise"><strong>Problema 1.10  </strong></span>Si varios requerimientos de diseño entraran en conflicto, ¿cómo se puede
+obtener una guía para definir el diseño de red más apropiado?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c111" class="exercise"><strong>Problema 1.11  </strong></span>Al proponer su modelo de proceso, Microsoft pretende integrar las
+mejores ideas de las populares metodologías “de cascada” y “espiral” de
+desarrollo de software. Explique brevemente en qué consiste esta
+afirmación.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c112" class="exercise"><strong>Problema 1.12  </strong></span>Se le contrata en una cadena de tiendas departamentales para desarrollar
+un proyecto cuyo objetivo es “reducir los tiempos de respuesta del
+sistema en cajas para reducir el tiempo que deben esperar los clientes
+al pagar”. De acuerdo a los lineamientos del modelo de proceso de
+MSF, ¿el planteamiento del objetivo es correcto? ¿Por qué?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c113" class="exercise"><strong>Problema 1.13  </strong></span>De acuerdo a la fase de desarrollo en el modelo de proceso de MSF,
+.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Qué es la prueba de concepto?</p></li>
+<li><p>¿Qué es el piloto?</p></li>
+<li><p>¿Qué consideraciones se deben tener en cuenta para pasar de la prueba de
+concepto al piloto?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c114" class="exercise"><strong>Problema 1.14  </strong></span>En las primeras etapas del modelo de proceso, se generan los borradores
+del plan maestro, del calendario maestro y de la especificación
+funcional.
+.</p>
+<ol style="list-style-type: lower-alpha">
+<li>¿Por qué son borradores?</li>
+<li>¿En cuáles se definen los objetivos SMART?</li>
+<li>¿Quién los realiza y quién los autoriza?</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c115" class="exercise"><strong>Problema 1.15  </strong></span>Investigue cuáles son los integrantes del modelo de equipo propuesto por
+MSF y mencione brevemente la función de cada uno de ellos.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c116" class="exercise"><strong>Problema 1.16  </strong></span>Para los proyectos <em>pushed by technology</em> (PT) y <em>pulled by demand</em>
+(PD), tambien llamados <em>market pulled</em>,</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Describa muy brevemente en qué consisten y roporcione un ejemplo de cada
+uno.</p></li>
+<li><p>¿Considera que debería modificarse de alguna manera la metodología vista
+en clase en función del tipo de proyecto (PT, PD)?</p></li>
+<li><p>¿Qué factores considera críticos para un análisis de retorno en función
+del tipo de proyecto?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c117" class="exercise"><strong>Problema 1.17  </strong></span>Suponga que la Comisión Federal de Comunicaciones (FCC) de los Estados
+Unidos decide reasignar las bandas de espectro para televisión UHF para
+acceso a internet con radios cognitivos, en el año X. Suponga una
+iniciativa similar en México para el año X+2. ¿Esta iniciativa sería
+pushed by technology, by demand, o simplemente una moda?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c118" class="exercise"><strong>Problema 1.18  </strong></span>Del documento NETWORK PLANNING AND DESIGN de R. Van Slyke<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>, lea las
+primeras dos secciones y el caso de estudio del anexo B, y responda las
+siguientes preguntas:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Suponiendo que en su empresa se va a desarrollar un gran proyecto de
+desarrollo de redes a lo largo del año, identifique 10 riesgos técnicos
+y 10 de factores externos que podrían presentarse. Posiciónelos en una
+matriz de probabilidad/impacto. Justifique su respuesta.</p></li>
+<li><p>¿Cuál es la estrategia organizacional para TI en su empresa? ¿Están
+claramente identificadas las políticas para desarrollo y actualización
+de tecnologías? Explique brevemente.</p></li>
+<li><p>Suponga que, similar a las tarjetas IAVE, la SCT desarrolla un sistema
+para pagar las casetas de cobro a través del teléfono celular. ¿Esta
+aplicación sería push-driven o pull-driven?</p></li>
+<li><p>¿La tecnología SMS exhibe un comportamiento de economía de escala o de
+economía de red? Explique brevemente. En este contexto, una empresa
+encuestadora orientada al segmento de jóvenes que utiliza SMS para sus
+evaluaciones, ¿sería push-driven o pull-driven?</p></li>
+<li><p>En la medida de lo posible, relacione los 12 puntos de la metodología
+propuesta en el documento con las cuatro fases del modelo de proceso
+MSF. ¿Cuáles son las principales diferencias entre ambos?</p></li>
+<li><p>Revise los portales de Amazon y Barnes and Noble y comente brevemente
+sobre la forma en que cada uno ha diversificado su oferta de productos
+desde la fecha en que fue escrito el documento.</p></li>
+<li><p>Responda las cuatro primeras preguntas el cuestionario del anexo B.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c119" class="exercise"><strong>Problema 1.19  </strong></span>Para el análisis de riesgos de un proyecto, se ha propuesto que los
+riesgos identificados se coloquen en una matriz.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Qué contienen los renglones y columnas de esta matriz?</p></li>
+<li><p>¿Para qué se asigna una ponderación a cada celda en la matriz?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c120" class="exercise"><strong>Problema 1.20  </strong></span>¿Qué diferencia hay entre mitigar un riesgo y hacer un plan de
+contingencia?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c121" class="exercise"><strong>Problema 1.21  </strong></span>Para cierto proyecto, se han identificado los riesgos que aparecen en la
+tabla siguiente. Suponiendo que tanto la probabilidad (Pr) de ocurrencia
+como su impacto (Im) pueden tomar valores de 1 a 3, complete la tabla y
+otorgue una calificación final al proyecto. Dada la vaguedad de la
+pregunta, debe justificar sólidamente los valores que asigne.</p>
+</div>
+<table>
+<colgroup>
+<col width="72%" />
+<col width="4%" />
+<col width="4%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Riesgo</th>
+<th align="center">Pr</th>
+<th align="center">Im</th>
+<th align="center">Justificación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Falta soporte Alta Dirección</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">Criterios de aceptación no claros</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="left">Tiempos largos de instalación en sitio</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">Cliente inmediato no tiene autoridad para tomar decisiones</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="left">Usuario no está involucrado</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">Solución con base en tecnologías no probadas o no conocidas</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="left">No se tienen estrategias de control de calidad</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">El proveedor de servicios (<em>carrier</em>) falla o quiebra</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="left">Hay una devaluación de la moneda</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">No hay líder de proyectos o no tiene experiencia</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Para algunos investigadores, las siglas pueden tener significados ligeramente distintos,
+por ejemplo: ’R’elevantes y ’T’angibles.<a href="metodología-de-diseño-de-redes.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>En el capítulo siguiente serán definidos con precisión algunos requerimientos técnicos<a href="metodología-de-diseño-de-redes.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Johansson, R.; <em>Aplicación de metodologías de administración de proyectos para implantar un proyecto de red</em>; Tesina Ing. Telemática, ITAM, 2001.<a href="metodología-de-diseño-de-redes.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p><a href="http://cis.poly.edu/rvslyke/ndr1.pdf" class="uri">http://cis.poly.edu/rvslyke/ndr1.pdf</a><a href="metodología-de-diseño-de-redes.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="requerimientos-técnicos.-compromisos-y-restricciones.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-Introduccion.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown_DisArqRedes.pdf", "bookdown_DisArqRedes.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

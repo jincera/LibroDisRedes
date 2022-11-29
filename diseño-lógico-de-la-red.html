@@ -1,0 +1,2556 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 4 Diseño lógico de la red | Diseño y Arquitectura de Redes</title>
+  <meta name="description" content="Primer intento para hacer las notas en html" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 4 Diseño lógico de la red | Diseño y Arquitectura de Redes" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/figuras/dar.jpg" />
+  <meta property="og:description" content="Primer intento para hacer las notas en html" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 4 Diseño lógico de la red | Diseño y Arquitectura de Redes" />
+  
+  <meta name="twitter:description" content="Primer intento para hacer las notas en html" />
+  <meta name="twitter:image" content="/figuras/dar.jpg" />
+
+<meta name="author" content="José Incera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"/>
+<link rel="next" href="administración-de-redes.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diseño y Arquitectura de Redes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html"><i class="fa fa-check"></i><b>1</b> Metodología de diseño de redes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#introducción"><i class="fa fa-check"></i><b>1.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#por-qué-una-empresa-desea-una-red"><i class="fa fa-check"></i>¿Por qué una empresa desea una red?</a></li>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#fracasos-en-proyectos-de-tecnología-de-información"><i class="fa fa-check"></i>Fracasos en proyectos de tecnología de información</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#diseño-descendente"><i class="fa fa-check"></i><b>1.2</b> Diseño descendente</a></li>
+<li class="chapter" data-level="1.3" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#microsoft-solutions-framework"><i class="fa fa-check"></i><b>1.3</b> Microsoft Solutions Framework</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#modelo-de-proceso"><i class="fa fa-check"></i><b>1.3.1</b> Modelo de proceso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#análisis-de-riesgos"><i class="fa fa-check"></i><b>1.4</b> Análisis de riesgos</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#manejo-de-riesgos"><i class="fa fa-check"></i><b>1.4.1</b> Manejo de Riesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#problemas"><i class="fa fa-check"></i><b>1.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html"><i class="fa fa-check"></i><b>2</b> Requerimientos técnicos. Compromisos y restricciones</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#escalabilidad"><i class="fa fa-check"></i><b>2.1</b> Escalabilidad</a></li>
+<li class="chapter" data-level="2.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#disponibilidad"><i class="fa fa-check"></i><b>2.2</b> Disponibilidad</a></li>
+<li class="chapter" data-level="2.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#confiabilidad"><i class="fa fa-check"></i><b>2.3</b> Confiabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#desempeño"><i class="fa fa-check"></i><b>2.4</b> Desempeño</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ancho-de-banda"><i class="fa fa-check"></i><b>2.4.1</b> Ancho de banda</a></li>
+<li class="chapter" data-level="2.4.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#utilización"><i class="fa fa-check"></i><b>2.4.2</b> Utilización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#rendimiento"><i class="fa fa-check"></i><b>2.4.3</b> Rendimiento</a></li>
+<li class="chapter" data-level="2.4.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#tasa-de-error"><i class="fa fa-check"></i><b>2.4.4</b> Tasa de error</a></li>
+<li class="chapter" data-level="2.4.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#eficiencia"><i class="fa fa-check"></i><b>2.4.5</b> Eficiencia</a></li>
+<li class="chapter" data-level="2.4.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#retardo-y-variabilidad"><i class="fa fa-check"></i><b>2.4.6</b> Retardo y variabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#seguridad"><i class="fa fa-check"></i><b>2.5</b> Seguridad</a></li>
+<li class="chapter" data-level="2.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#administración"><i class="fa fa-check"></i><b>2.6</b> Administración</a></li>
+<li class="chapter" data-level="2.7" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#facilidad-de-uso"><i class="fa fa-check"></i><b>2.7</b> Facilidad de uso</a></li>
+<li class="chapter" data-level="2.8" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#adaptabilidad"><i class="fa fa-check"></i><b>2.8</b> Adaptabilidad</a></li>
+<li class="chapter" data-level="2.9" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#costo-beneficio"><i class="fa fa-check"></i><b>2.9</b> Costo-beneficio</a></li>
+<li class="chapter" data-level="2.10" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#conflictos-entre-requerimientos"><i class="fa fa-check"></i><b>2.10</b> Conflictos entre requerimientos</a></li>
+<li class="chapter" data-level="2.11" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#otras-métricas-relevantes"><i class="fa fa-check"></i><b>2.11</b> Otras métricas relevantes</a></li>
+<li class="chapter" data-level="2.12" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#problemas-1"><i class="fa fa-check"></i><b>2.12</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><i class="fa fa-check"></i><b>3</b> Caracterización de la red y del tráfico generado por las aplicaciones</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-la-topología"><i class="fa fa-check"></i><b>3.1</b> Caracterización de la topología</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#mapa-de-la-red"><i class="fa fa-check"></i><b>3.1.1</b> Mapa de la red</a></li>
+<li class="chapter" data-level="3.1.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#asignación-de-nombres-y-direcciones"><i class="fa fa-check"></i><b>3.1.2</b> Asignación de nombres y direcciones</a></li>
+<li class="chapter" data-level="3.1.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-los-medios-de-transmisión"><i class="fa fa-check"></i><b>3.1.3</b> Caracterización de los medios de transmisión</a></li>
+<li class="chapter" data-level="3.1.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#restricciones-ambientales-y-arquitectónicas"><i class="fa fa-check"></i><b>3.1.4</b> Restricciones ambientales y arquitectónicas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#desempeño-de-la-red-actual"><i class="fa fa-check"></i><b>3.2</b> Desempeño de la red actual</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#herramientas-de-recolección"><i class="fa fa-check"></i><b>3.2.1</b> Herramientas de recolección</a></li>
+<li class="chapter" data-level="3.2.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#periodo-y-frecuencia-de-recolección"><i class="fa fa-check"></i><b>3.2.2</b> Periodo y frecuencia de recolección</a></li>
+<li class="chapter" data-level="3.2.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#algunas-métricas-de-desempeño"><i class="fa fa-check"></i><b>3.2.3</b> Algunas métricas de desempeño</a></li>
+<li class="chapter" data-level="3.2.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#presentación-de-resultados"><i class="fa fa-check"></i><b>3.2.4</b> Presentación de resultados</a></li>
+<li class="chapter" data-level="3.2.5" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#análisis-estadístico-de-redes"><i class="fa fa-check"></i><b>3.2.5</b> Análisis estadístico de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-flujo"><i class="fa fa-check"></i><b>3.3</b> Caracterización del flujo</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tipos-de-flujo-por-aplicación"><i class="fa fa-check"></i><b>3.3.1</b> Tipos de flujo por aplicación</a></li>
+<li class="chapter" data-level="3.3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-volumen-de-tráfico"><i class="fa fa-check"></i><b>3.3.2</b> Caracterización del volumen de tráfico</a></li>
+<li class="chapter" data-level="3.3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#requerimientos-de-calidad-de-servicio"><i class="fa fa-check"></i><b>3.3.3</b> Requerimientos de calidad de servicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#problemas-2"><i class="fa fa-check"></i><b>3.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html"><i class="fa fa-check"></i><b>4</b> Diseño lógico de la red</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología"><i class="fa fa-check"></i><b>4.1</b> Diseño de la topología</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-plana"><i class="fa fa-check"></i><b>4.1.1</b> Topología plana</a></li>
+<li class="chapter" data-level="4.1.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-jerárquico"><i class="fa fa-check"></i><b>4.1.2</b> Diseño jerárquico</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-capa-de-acceso"><i class="fa fa-check"></i><b>4.2</b> Diseño de la capa de acceso</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problema-de-localización-asignación"><i class="fa fa-check"></i><b>4.2.1</b> Problema de Localización-asignación</a></li>
+<li class="chapter" data-level="4.2.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#asignación-de-nodos-a-concentradores"><i class="fa fa-check"></i><b>4.2.2</b> Asignación de nodos a concentradores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-de-nodos-a-concentrador"><i class="fa fa-check"></i><b>4.2.3</b> Topología de nodos a concentrador</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#capa-de-distribución"><i class="fa fa-check"></i><b>4.3</b> Capa de distribución</a></li>
+<li class="chapter" data-level="4.4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-red-dorsal"><i class="fa fa-check"></i><b>4.4</b> Diseño de la red dorsal</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología-1"><i class="fa fa-check"></i><b>4.4.1</b> Diseño de la topología</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-basado-en-bloques-modulares"><i class="fa fa-check"></i><b>4.5</b> Diseño basado en bloques modulares</a></li>
+<li class="chapter" data-level="4.6" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#s:redundancia"><i class="fa fa-check"></i><b>4.6</b> Topologías con redundancia</a></li>
+<li class="chapter" data-level="4.7" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problemas-3"><i class="fa fa-check"></i><b>4.7</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="administración-de-redes.html"><a href="administración-de-redes.html"><i class="fa fa-check"></i><b>5</b> Administración de redes</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#evolución-de-administración-de-sistemas"><i class="fa fa-check"></i><b>5.1</b> Evolución de administración de sistemas</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-fallas"><i class="fa fa-check"></i><b>5.1.1</b> Gestión de fallas</a></li>
+<li class="chapter" data-level="5.1.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-configuración"><i class="fa fa-check"></i><b>5.1.2</b> Gestión de configuración</a></li>
+<li class="chapter" data-level="5.1.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-seguridad"><i class="fa fa-check"></i><b>5.1.3</b> Gestión de seguridad</a></li>
+<li class="chapter" data-level="5.1.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-rendimiento"><i class="fa fa-check"></i><b>5.1.4</b> Gestión de rendimiento</a></li>
+<li class="chapter" data-level="5.1.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#contabilidad-de-recursos"><i class="fa fa-check"></i><b>5.1.5</b> Contabilidad de recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#protocolos-de-administración"><i class="fa fa-check"></i><b>5.2</b> Protocolos de administración</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-administración-osi"><i class="fa fa-check"></i><b>5.2.1</b> Modelo de administración OSI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-gestión-ietf"><i class="fa fa-check"></i><b>5.2.2</b> Modelo de gestión IETF</a></li>
+<li class="chapter" data-level="5.2.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#simple-network-management-protocol"><i class="fa fa-check"></i><b>5.2.3</b> Simple Network Management Protocol</a></li>
+<li class="chapter" data-level="5.2.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#base-de-datos-de-información-de-administración-mib"><i class="fa fa-check"></i><b>5.2.4</b> Base de datos de información de administración (MIB)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#rmon"><i class="fa fa-check"></i><b>5.3</b> RMON</a></li>
+<li class="chapter" data-level="5.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#administración-de-sistemas-con-snmp"><i class="fa fa-check"></i><b>5.4</b> Administración de sistemas con SNMP</a></li>
+<li class="chapter" data-level="5.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#problemas-4"><i class="fa fa-check"></i><b>5.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html"><i class="fa fa-check"></i><b>6</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#cobertura-de-internet"><i class="fa fa-check"></i><b>6.1</b> Cobertura de Internet</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#red-de-acceso"><i class="fa fa-check"></i><b>6.1.1</b> Red de acceso</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#contexto-de-internet-y-servicios-de-banda-ancha-en-méxico"><i class="fa fa-check"></i><b>6.1.2</b> Contexto de Internet y servicios de Banda Ancha en México</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#banda-ancha"><i class="fa fa-check"></i><b>6.1.3</b> Banda Ancha</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-1"><i class="fa fa-check"></i><b>6.2</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-cableadas"><i class="fa fa-check"></i><b>6.2.1</b> Tecnologías de acceso cableadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-inalámbricas"><i class="fa fa-check"></i><b>6.3</b> Tecnologías de acceso inalámbricas</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#telefonía-celular"><i class="fa fa-check"></i><b>6.3.1</b> Telefonía celular</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#problemas-5"><i class="fa fa-check"></i><b>6.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html"><i class="fa fa-check"></i><b>7</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#introducción-1"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#métricas-financieras"><i class="fa fa-check"></i><b>7.2</b> Métricas financieras</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#costo-total-de-propiedad"><i class="fa fa-check"></i><b>7.2.1</b> Costo total de propiedad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#retorno-de-inversión"><i class="fa fa-check"></i><b>7.2.2</b> Retorno de inversión</a></li>
+<li class="chapter" data-level="7.2.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#valor-presente-neto"><i class="fa fa-check"></i><b>7.2.3</b> Valor Presente Neto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-tecno-económico-1"><i class="fa fa-check"></i><b>7.3</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-de-rentabilidad"><i class="fa fa-check"></i><b>7.3.1</b> Análisis de rentabilidad</a></li>
+<li class="chapter" data-level="7.3.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#despliegue-y-operación-de-la-red"><i class="fa fa-check"></i><b>7.3.2</b> Despliegue y operación de la red</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html"><i class="fa fa-check"></i><b>8</b> Respuestas a problemas seleccionados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#S:Metod"><i class="fa fa-check"></i><b>8.1</b> Metodología de diseño de redes</a></li>
+<li class="chapter" data-level="8.2" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:ReqTec"><i class="fa fa-check"></i><b>8.2</b> Requerimientos técnicos</a></li>
+<li class="chapter" data-level="8.3" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:CaracRed"><i class="fa fa-check"></i><b>8.3</b> Caracterización de la red</a></li>
+<li class="chapter" data-level="8.4" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:DisLog"><i class="fa fa-check"></i><b>8.4</b> Diseño lógico</a></li>
+<li class="chapter" data-level="8.5" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:Admon"><i class="fa fa-check"></i><b>8.5</b> Administración de Redes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diseño y Arquitectura de Redes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="diseño-lógico-de-la-red" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> Diseño lógico de la red<a href="diseño-lógico-de-la-red.html#diseño-lógico-de-la-red" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>El diseño lógico de la red consiste no solamente en definir la topología
+de interconexión entre los distintos componentes que la conforman. En
+esta etapa también se determinan las tecnologías para llevar a cabo
+dicha interconexión. También se establecen las políticas de asignación
+de direcciones y de nombres, las de seguridad y las de administración de
+la red. Todos estos elementos serán críticos para que la red cumpla de
+manera eficiente con los objetivos de diseño establecidos.</p>
+<div style="color: blue;">
+<p><em>El diseño de la red se asemeja más a un arte que a una ciencia: No
+hay absolutos, no hay fórmulas exactas que puedan utilizarse ciegamente en todos los casos. Sin embargo, hay un conjunto de </em>mejores prácticas* a partir de las cuales se podrán tomar decisiones más informadas durante
+el proceso de diseño.*</p>
+</div>
+<div id="diseño-de-la-topología" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Diseño de la topología<a href="diseño-lógico-de-la-red.html#diseño-de-la-topología" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En la metodología descendente, el primer paso del diseño lógico es el
+diseño de la topología de la red. La topología es un mapa en el que se
+identifican segmentos, puntos de interconexión y comunidades de
+usuarios. Con esta información se puede tener una primera apreciación de
+las capacidades de los dispositivos y enlaces pero no se pueden elegir
+aún los dispositivos específicos con los que se construira la red.</p>
+<p>En redes de comunicaciones, básicamente es posible identificar tres
+tipos de topología:</p>
+<dl>
+<dt>Plana.-</dt>
+<dd>
+<p>Topología convencional en la que todos los dispositivos de
+conmutación tienen la misma funcionalidad.</p>
+</dd>
+<dt>Amorfa.-</dt>
+<dd>
+<p>También conocida como de spaghetti, es una anarquía; la
+interconexión entre nodos se hace sin orden ni planeación. Es el
+efecto directo de un crecimiento reactivo y no planeado. Tarde o
+temprano ocasiona serios problemas para la gestión de la red, el
+dimensionamiento de enlaces, la implementación de políticas de
+enrutamiento, etc.</p>
+</dd>
+<dt>Jerárquica.-</dt>
+<dd>
+<p>Agrupamiento ordenado de nodos y enlaces. El tráfico con destinos
+comunes se va agrupando y fluye por enlaces principales para llegar
+lo más cerca de su destino y ahí proceder a la desagregación.</p>
+</dd>
+</dl>
+<div id="topología-plana" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Topología plana<a href="diseño-lógico-de-la-red.html#topología-plana" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Algunos ejemplos de topologías planas bien conocidas se muestran en la figura <a href="diseño-lógico-de-la-red.html#fig:topoplanas">4.1</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:topoplanas"></span>
+<img src="figuras/c4/topoplanas.bmp" alt="*Ejemplos clásicos de topologías planas de redes*" width="50%" />
+<p class="caption">
+Figura 4.1: <em>Ejemplos clásicos de topologías planas de redes</em>
+</p>
+</div>
+<p>Las topologías planas son sencillas de diseñar e implementar. Tambíen
+son fáciles de administrar en redes pequeñas, por lo que se encuentran
+comúnmente en redes con pocos dispositivos. Una de las principales
+limitantes de estas topologías es su falta de escalabilidad. En la
+topología de anillo, está limitada por el número de saltos que habría
+que dar para llegar de un extremo a otro, lo que provoca una latencia
+variable entre dos nodos cualesquiera que deseen comunicarse, y muy
+grande para la comunicación entre los extremos.</p>
+<p>En la estrella, también llamada <em>hub and spoke</em>, la escalabilidad queda
+limitada por el número de puertos en el nodo central. Además, hay un
+punto único de falla y un potencial cuello de botella de procesamiento.
+Por otro lado, al tener un punto central donde fluye la información,
+esta topología es muy útil para gestionar la red y controlar la
+seguridad.</p>
+<p>Las topologías de malla parcial o total son sumamente costosas. En la
+malla total, en particular, es muy difícil agregar un nuevo nodo.
+Además, el desempeño estará en función del número de vecinos que tiene
+un nodo enrutador: se debe recordar que la actualización de las tablas
+de ruteo requiere de la atención de mensajes de difusión, lo cual
+consume recursos de CPU en la mayoría de los enrutadores. Entre más
+vecinos enrutadores haya, peor será el desempeño.</p>
+<p>Por otra parte, es muy complicado establecer el enrutamiento en este
+tipo de configuración. También se dificulta el mantenimiento y
+actualización por la falta de modularidad. Como se ha mencionado,
+algunos de estos problemas también se detectan en las topologías de
+spaghetti.</p>
+</div>
+<div id="diseño-jerárquico" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Diseño jerárquico<a href="diseño-lógico-de-la-red.html#diseño-jerárquico" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div style="color: blue;">
+<p><em>El diseño jerárquico proporciona un enfoque estructurado que busca
+obtener una red más fácil de entender, administrar, planear y escalar.
+Consiste en dividir la red en capas, cada una responsable de realizar
+una función específica.</em></p>
+</div>
+<p>En los primeros diseños jerárquicos se definían dos capas: la red de
+<em>acceso</em>, encargada de ofrecer conectividad a los usuarios finales, y el
+<em>núcleo</em>, cuyo objetivo central es proporcionar interconexión eficiente
+entre los distintos sitios.</p>
+<p>Conforme han evolucionado las redes, se ha propuesto incluir una tercera
+capa: la de <em>distribución</em>, encargada de ofrecer los servicios del
+núcleo a la capa de acceso definiendo las políticas necesarias. Por
+ejemplo, en esta capa se puede llevar a cabo la agregación de rutas, la
+traducción de direcciones y la implementación y monitoreo de las
+políticas de seguridad establecidas.</p>
+<p>La figura <a href="diseño-lógico-de-la-red.html#fig:jerarquia">4.2</a> representa esquemáticamente las tres capas de
+un diseño jerárquico. En el modelo de la derecha se incluyen enlaces
+redundantes entre la capa de acceso y la de distribución. Estos enlaces
+mejoran el desempeño y aumentan la disponibilidad de la red, como se
+verá en la sección <a href="diseño-lógico-de-la-red.html#s:redundancia" reference-type="ref" reference="s:redundancia">4.6</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:jerarquia"></span>
+<img src="figuras/c4/jerarquia.bmp" alt="*Diseño jerárquico de tres capas*" width="45%" /><img src="figuras/c4/jerarquia2.bmp" alt="*Diseño jerárquico de tres capas*" width="45%" />
+<p class="caption">
+Figura 4.2: <em>Diseño jerárquico de tres capas</em>
+</p>
+</div>
+<p>Dependiendo de las características de la red, los nodos en cada capa
+pueden ser enrutadores, conmutadores, concentradores o puede haber una
+combinación de dispositivos, como se muestra en la
+figura <a href="diseño-lógico-de-la-red.html#fig:jerarquia">4.2</a>. Por ejemplo, en una LAN, la capa de acceso
+podría estar formada por concentradores y conmutadores para conectar
+usuarios finales. En cambio, en una red WAN la capa de acceso podría
+consistir en los enrutadores de salida de las redes locales.</p>
+<p>El diseño jerárquico en capas ha adquirido una creciente atención debido
+a las múltiples ventajas que ofrece, entre las que cabe destacar las
+siguientes:</p>
+<ul>
+<li><p>Permite reducir costos al utilizar equipo especializado en cada
+nivel. Por ejemplo, los dispositivos en la capa de acceso pueden
+necesitar una gran densidad de puertos de bajo costo, mientras que
+los dispositivos en el núcleo tendrán pocos puertos de alta
+velocidad y su prioridad será una muy alta tasa de conmutación;</p></li>
+<li><p>al elegir los dispositivos apropiados en cada capa, permite aislar
+los dominios de difusión, mejorando así el desempeño de los
+enrutadores y estaciones de trabajo;</p></li>
+<li><p>permite una mejor planeación de capacidad, y en consecuencia, un
+mayor escalamiento;</p></li>
+<li><p>permite una administración sencilla pues se cuenta con una red con
+una estructura lógica coherente. También simplifica la evolución
+gradual de la red;</p></li>
+<li><p>simplifica el aislamiento de fallas, lo que facilita un diseño que
+contemple la continuidad del negocio;</p></li>
+<li><p>simplifica la planeación de agregación de rutas, lo que se traduce
+en un menor uso de ancho de banda para anunciar rutas y un menor
+consumo de CPU en los enrutadores.</p></li>
+</ul>
+<p>La mayoría de los protocolos de enrutamiento de convergencia rápida en
+uso actualmente, como OSPF (<em>Open Shortest Path First</em>), IS-IS
+(<em>Intermediate System to Intermediate System</em>), BGP (<em>Border Gateway
+Protocol</em>) y EIGRP (<em>Enhanced Interior Gateway Protocol</em>) fueron
+diseñados para emplearse en redes jerárquicas.</p>
+<p>Al optar por un diseño jerárquico, hay ciertas recomendaciones que deben
+seguirse con el fin de explotar al máximo las ventajas de esta
+metodología, entre las que destacan:</p>
+<ol style="list-style-type: decimal">
+<li><p>Se debe limitar el número de capas (llamado diámetro) para mantener
+la latencia baja y predecible. Esto también permite estimar las
+trayectorias de enrutamiento y los flujos de tráfico, para
+planificar adecuadamente la capacidad de los enlaces.</p></li>
+<li><p>El diseño de la red comienza con la capa de acceso y de ahí se mueve
+hacia adentro. Empezar en la capa de acceso permite una mejor
+planeación de la capacidad que se requerirá en las capas superiores.
+También se empieza a pensar en las posibles tecnologías y
+optimizaciones que se podrían aplicar a esos niveles tomando en
+consideración que en cada nivel se debe mantener el diseño lo más
+modular posible.</p></li>
+<li><p>Se debe mantener un estricto control de la capa de acceso, que es la
+más vulnerable. A través de un reforzamiento de las políticas de la
+empresa, se debe evitar que los administradores locales establezcan
+enlaces directos entre oficinas regionales (llamados cadenas), lo
+cual en términos prácticos representa la creación de una cuarta
+capa. También se deben evitar "puertas traseras", es decir,
+enrutadores que conectan entre sí dos redes en una misma oficina
+regional. Esto introducirá una serie de problemas de ruteo muy
+difíciles de identificar y corregir. Además, la seguridad de la red
+está en juego pues las políticas de seguridad están implementadas en
+la capa de distribución.</p>
+<p>A veces las cadenas son necesarias, por ejemplo para agregar una
+nueva ciudad que solo tiene conectividad con otra. Por su parte, se
+tiende a meter una puerta trasera para aumentar el desempeño o por
+redundancia. En ambos casos, se puede encontrar generalmente una
+configuración que no viole el diseño jerárquico.</p></li>
+</ol>
+</div>
+</div>
+<div id="diseño-de-la-capa-de-acceso" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Diseño de la capa de acceso<a href="diseño-lógico-de-la-red.html#diseño-de-la-capa-de-acceso" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La función principal de esta capa es proporcionar acceso a la red de la
+empresa a grupos de usuarios locales. Una LAN generalmente está
+conformada por concentradores y conmutadores, pero puede incluir los
+enrutadores que están en el límite exterior de un campus. En el caso de
+redes WAN la capa de acceso determina la conectividad de los nodos y
+usuarios en una misma región geográfica, por ejemplo, una ciudad.</p>
+<p>En grandes redes, esta capa debe dar acceso a cientos o miles de
+usuarios, por lo que resulta prioritario encontrar una solución a costo
+mínimo.</p>
+<div style="color: blue;">
+<p><em>El objetivo central de diseño en la capa de acceso es maximizar el
+desempeño a un costo mínimo cumpliendo los requerimientos fijados.</em></p>
+</div>
+<p>Para reducir los costos, en la capa de acceso se busca típicamente
+agrupar el tráfico de varios usuarios (también llamados <em>terminales</em>) en
+nodos <em>concentradores</em> y establecer una topología de interconexión. Así,
+el problema de diseño en la capa de acceso puede dividirse en tres
+sub-problemas:</p>
+<ol style="list-style-type: decimal">
+<li><p>Seleccionar los mejores candidatos para concentrar en ellos el
+tráfico de los usuarios.</p></li>
+<li><p>Seleccionar qué usuarios se conectan a qué concentradores.</p></li>
+<li><p>Definir la topología de interconexión en cada caso.</p></li>
+</ol>
+<p>Estos problemas pertenecen a una categoría que se conoce genéricamente
+como <em>Facility loaction problem</em>. Se ha demostrado que en el caso
+general estos problemas son NP-Completos<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>, por lo que se han
+propuesto diversas heurísticas para resolverlos. En las secciones
+siguientes se presentan algunas de ellas.</p>
+<p>Aunque las heurísticas mostradas tienen muchos años de ser conocidas
+(por ejemplo, el método de Kruskal data de 1956), variantes de estas
+técnicas tienen muchas aplicaciones en las redes actuales. Por ejemplo,
+para establecer una primera aproximación a la ubicación de radiobases y
+puntos de acceso en redes inalámbricas; para ubicar multiplexores en
+anillos ópticos; para seleccionar puntos de presencia (PoP) de
+operadores; etc.</p>
+<div id="problema-de-localización-asignación" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Problema de Localización-asignación<a href="diseño-lógico-de-la-red.html#problema-de-localización-asignación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El diseño de la red de acceso inicia estableciendo cuántos
+concentradores se necesitan para una determinada población de usuarios
+(o terminales) y dónde conviene colocarlos.</p>
+<p>Las localidades donde conviene concentrar el tráfico de los usuarios
+suelen ser un subconjunto de los sitios donde éstos se encuentran. La
+selección específica de localidades dependerá del número de puertos
+disponibles, de la capacidad de los enlaces y del tráfico esperado. Sin
+embargo, resulta apropiado partir de una primera selección de
+candidatos, por lo que se presenta en primer término un algoritmo sin
+restricciones, es decir, se asociará un costo a los enlaces (que puede
+ser distancia, número de saltos, retraso, etc.) pero no se tomarán en
+cuenta limitaciones en ancho de banda de los enlaces ni capacidades de
+los equipos.</p>
+<div id="algoritmo-de-dysart-georganas" class="section level4 unnumbered hasAnchor">
+<h4>Algoritmo de Dysart-Georganas<a href="diseño-lógico-de-la-red.html#algoritmo-de-dysart-georganas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El algoritmo de Dysart-Georganas permite identificar los mejores
+candidatos para ser nodos concentradores utilizando como criterio el
+grado de vecindad, o número de nodos vecinos cercanos. Utiliza un
+parámetro <span class="math inline">\(K\)</span> que representa el número de nodos vecinos que un
+concentrador puede interconectar. Sea <span class="math inline">\(N\)</span> el número de nodos en la red.
+El algoritmo es el siguiente:</p>
+<ol style="list-style-type: decimal">
+<li><p>Se genera una lista de nodos con sus <span class="math inline">\(K\)</span> vecinos más cercanos.</p></li>
+<li><p>Se obtiene una tabla con la frecuencia <span class="math inline">\(j\)</span> con que aparece cada nodo
+en la lista de vecinos.</p></li>
+<li><p>Se calcula el número promedio de vecinos a partir de la tabla de
+frecuencias:</p>
+<p><span class="math display">\[\bar v = \Big\lfloor\frac{\underset{j=1}{\overset{F}\Sigma}%
+S_j\times j}{N}\Big\rfloor+1\]</span></p></li>
+<li><p>Los candidatos idóneos son aquellos nodos con un número de vecinos
+superior al promedio <span class="math inline">\(\bar v\)</span>.</p></li>
+</ol>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-24" class="example"><strong>Ejemplo 4.1  </strong></span>Considere la red de la figura <a href="diseño-lógico-de-la-red.html#fig:ejdysart">4.3</a>. Las líneas entre los nodos representan enlaces potenciales con el costo indicado en cada una. Se busca elegir a los mejores candidatos para un valor de <span class="math inline">\(K=3\)</span>.</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ejdysart"></span>
+<img src="figuras/c4/ejdysart.jpg" alt="*Topología de una red con diez nodos*" width="70%" />
+<p class="caption">
+Figura 4.3: <em>Topología de una red con diez nodos</em>
+</p>
+</div>
+<p>Se construye una <em>tabla de vecindades</em> con los <span class="math inline">\(K=3\)</span> vecinos más
+cercanos (es decir, con la métrica menor), para cada nodo. Por ejemplo, para el nodo 5 se eligen los tres vecinos con un costo de una unidad.</p>
+<p>En la tabla de vecindades del ejemplo, la segunda columna muestra los
+vecinos más cercanos. La columna de frecuencia representa el número de ocurrencias de cada nodo (incluyéndose a sí mismo) en la lista de
+vecindades. Por ejemplo, el nodo 5 aparece como vecino cercano de 5
+nodos (los nodos 1, 2, 3, 4 y 6) más él mismo, lo que da una frecuencia de 6.</p>
+<table class="kable_wrapper">
+<caption>
+<span id="tab:unnamed-chunk-25">Tabla 4.1: </span>Tablas de vecindades y de frecuencias
+</caption>
+<tbody>
+<tr>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Nodo</th>
+<th align="center">Vecinos</th>
+<th align="center">Frecuencia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">2, 5, 6</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">3, 4, 5</td>
+<td align="center">5</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">2, 4, 5</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">2, 3, 5</td>
+<td align="center">6</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">2, 4, 6</td>
+<td align="center">6</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">4, 5, 7</td>
+<td align="center">5</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">6, 8, 10</td>
+<td align="center">5</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">4, 6, 7</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="center">7, 8, 10</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="center">7, 8, 9</td>
+<td align="center">3</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th align="center">J</th>
+<th align="center">SJ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>De la tabla de vecindades se obtiene una tabla de frecuencias que será utilizada para calcular el promedio ponderado de vecindades.</p>
+<p>La tabla de frecuencias contiene las frecuencias <span class="math inline">\(J\)</span> observadas en la tabla de vecindades y el número de veces, <span class="math inline">\(S_j\)</span>, en que se observó ese valor de frecuencia. El promedio ponderado se calcula directamente a partir de la tabla:</p>
+<p><span class="math display">\[\bar v = \Bigg\lfloor\frac{1\times 1+2\times 1+3\times 2+4\times %
+1+5\times 3+6\times 2}{10}\Bigg\rfloor +1=5\]</span></p>
+<p>Los candidatos potenciales son aquellos con un número de vecinos mayor o igual a 5, es decir, los nodos 2, 6, 7, 4 y 5.</p>
+<hr />
+<p>Si se encuentra que algunos concentradores están demasiado cerca o si
+hay sobrecarga al agregar el análisis de tráfico, a partir de este
+diseño de base se pueden hacer reconfiguraciones.</p>
+</div>
+</div>
+<div id="asignación-de-nodos-a-concentradores" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Asignación de nodos a concentradores<a href="diseño-lógico-de-la-red.html#asignación-de-nodos-a-concentradores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una vez identificada la localización de los concentradores potenciales,
+deberá decidirse cómo interconectar los nodos terminales con estos
+concentradores. Dado que en general se da prioridad a minimizar el costo
+debido a la potencialmente gran cantidad de usuarios (o nodos) que deben
+interconectarse, se busca que cada nodo se conecte a uno y solamente un
+concentrador, ignorando enlaces redundantes.</p>
+<p>Básicamente, se evalúa la conveniencia de cada concentrador potencial
+calculando el costo o la reducción que se tiene eliminando cada uno de
+ellos. Para esto, se han propuesto varias heurísticas, entre las más
+populares están:</p>
+<ul>
+<li><p><em>Greedy</em>. Cada terminal se conecta a su concentrador más cercano. Si
+ya no tiene capacidad (en nuestro caso, si ha alcanzado la
+conectividad <span class="math inline">\(K\)</span>), la terminal se conecta al mejor disponible.</p></li>
+<li><p>Add o de construcción. Todos los nodos se conectan a un solo
+concentrador. Se van agregando concentradores que prometan ahorros
+en costo de conectividad y se conectan terminales a ellos hasta que
+no se justifique agregar más.</p></li>
+<li><p>Drop o de eliminación. Se inicia con cada nodo conectado al
+concentrador que minimiza el costo de la conexión. Se eliminan
+concentradores hasta que ninguno pueda eliminarse.</p></li>
+</ul>
+</div>
+<div id="topología-de-nodos-a-concentrador" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Topología de nodos a concentrador<a href="diseño-lógico-de-la-red.html#topología-de-nodos-a-concentrador" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ya se ha decidido qué concentradores se retienen y qué nodos deben
+conectarse a cada uno. Solo falta decidir cómo deben conectarse los
+nodos terminales al concentrador. La topología más sencilla es la
+estrella, pero puede no ser la configuración más eficiente, por lo que
+deben investigarse alternativas en las que algunos enlaces pueden
+compartirse transportando el tráfico de varios nodos.</p>
+<p>Este tipo de problemas para obtener las trayectorias mínimas entre un
+conjunto de nodos es bien conocido en redes de comunicaciones y en
+logística. Sus soluciones consisten en encontrar un árbol de expansión
+mínimo (<em>minimum spanning tree, MST</em>), es decir, aquél en el que la suma
+de los brazos es mínima. A continuación se presentarán dos ejemplos de
+estos algoritmos. Ellos dan una solución mínima cuando se trabaja sin
+restricciones, es decir, sin considerar las capacidades de los enlaces.
+Al incluir esta restricción, los métodos pueden proporcionar resultados
+ligeramente distintos.</p>
+<p>Con el fin de ejemplificar los dos algoritmos, se considerará una red
+que tiene ocho nodos, de los cuales el primero es es concentrador. Los
+“costos” de conexión entre los distintos nodos, son los que se muestran
+en la matriz de costos.</p>
+<p>El costo aquí puede ser cualquier métrica: costo de instalación,
+longitud de cableado, etc. Las métricas de desempeño y de número de
+saltos son costos más relevantes en redes WAN.</p>
+<div class="center">
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Matriz de costos <span class="math inline">\(c_{ij}\)</span></strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td>0</td>
+<td>2</td>
+<td>52</td>
+<td>13</td>
+<td>45</td>
+<td>15</td>
+<td>58</td>
+<td>59</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td>2</td>
+<td>0</td>
+<td>52</td>
+<td>14</td>
+<td>43</td>
+<td>16</td>
+<td>58</td>
+<td>62</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td>52</td>
+<td>52</td>
+<td>0</td>
+<td>60</td>
+<td>85</td>
+<td>41</td>
+<td>23</td>
+<td>55</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td>13</td>
+<td>14</td>
+<td>60</td>
+<td>0</td>
+<td>50</td>
+<td>18</td>
+<td>72</td>
+<td>50</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td>45</td>
+<td>43</td>
+<td>85</td>
+<td>50</td>
+<td>0</td>
+<td>59</td>
+<td>81</td>
+<td>95</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td>15</td>
+<td>16</td>
+<td>41</td>
+<td>18</td>
+<td>59</td>
+<td>0</td>
+<td>55</td>
+<td>42</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td>58</td>
+<td>58</td>
+<td>23</td>
+<td>72</td>
+<td>81</td>
+<td>55</td>
+<td>0</td>
+<td>78</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td>59</td>
+<td>62</td>
+<td>55</td>
+<td>50</td>
+<td>95</td>
+<td>42</td>
+<td>78</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="algoritmo-de-esau-williams" class="section level4 unnumbered hasAnchor">
+<h4>Algoritmo de Esau-Williams<a href="diseño-lógico-de-la-red.html#algoritmo-de-esau-williams" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El método de Esau-Willimas da muy buenos resultados aún para redes de
+gran tamaño y ha sido la base de muchas estrategias contemporáneas.
+Consiste en los pasos:</p>
+<ol style="list-style-type: decimal">
+<li><p>Se inicia con todos los nodos conectados en estrella con el
+concentrador.</p></li>
+<li><p>Se calcula una matriz de diferencias <span class="math inline">\(d_{ij} = c_{ij} - c_{i1}\)</span>, es
+decir, la diferencia resultante de conectar el nodo <span class="math inline">\(i\)</span> al nodo <span class="math inline">\(j\)</span>
+en vez de conectarlo al concentrador (nodo 1).</p></li>
+<li><p>Las entradas con valores negativos indican conexiones alternativas
+más económicas para esos concentradores.</p></li>
+<li><p>Se empieza por seleccionar los valores más negativos y se continúa hasta agotarlos.</p></li>
+</ol>
+<hr />
+<div class="example">
+<p><span id="exm:ejew" class="example"><strong>Ejemplo 4.2  </strong></span>A partir de la matriz de costos se calcula la
+matriz de diferencias de la siguiente manera: <span class="math display">\[\begin{aligned}
+d_{2-3}=c_{2-3}-c_{2-1}=52-2=50;&amp;\quad
+d_{2-4}=c_{2-4}-c_{2-1}=14-2=12; \ldots\\
+d_{3-2}=c_{3-2}-c_{3-1}=52-52=0;&amp;\quad
+d_{3-4}=c_{3-4}-c_{3-1}=60-52=8;\ldots
+\end{aligned}\]</span></p>
+<p>La matriz de diferencias resultante para la configuración de referencia
+en esta sección es:</p>
+</div>
+<p><img src="figuras/c4/matdif.jpg" width="60%" style="display: block; margin: auto;" /></p>
+<p>El proceso inicia conectando todos los nodos al concentrador, como se
+muestra en el Paso 0 de la
+figura <a href="diseño-lógico-de-la-red.html#fig:essaup13">4.4</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:essaup13"></span>
+<img src="figuras/c4/Essaup13.jpg" alt="*Algoritmo Esau-Williams. Pasos 0 a 2 del ejemplo*" width="65%" />
+<p class="caption">
+Figura 4.4: <em>Algoritmo Esau-Williams. Pasos 0 a 2 del ejemplo</em>
+</p>
+</div>
+<p>En la matriz de diferencias se busca el enlace con el valor más
+negativo, es decir, aquél que representa el mayor ahorro. Se trata del enlace
+<span class="math inline">\(7\leftrightarrow 3\)</span> con un “ahorro” de 35. Conectar el
+nodo 7 al 3 en vez de conectarlo directamente al concentrador genera un
+ahorro de 35 unidades, por lo que se modifica la topología como aparece
+en el Paso 1 de la figura <a href="diseño-lógico-de-la-red.html#fig:essaup13">4.4</a>.</p>
+<p>Se consulta nuevamente la matriz de diferencias. El siguiente número más negativo
+es el que corresponde al enlace <span class="math inline">\(3\leftrightarrow 7\)</span> con un valor de 29.
+Este enlace no se toma en cuenta pues ya están conectados los nodos 7 y 3.</p>
+<p>Al buscar el siguiente enlace, se selecciona el <span class="math inline">\(6\leftrightarrow 8\)</span> con un valor de 17,
+modificando la topología como aparece en el Paso 2 de la
+figura <a href="diseño-lógico-de-la-red.html#fig:essaup13">4.4</a>.</p>
+<p>En el paso 3, la matriz de diferencias indica conectar el nodos 3 al 6 y
+finalmente, el 5 al 2, dejando como resultado la topología que aparece a
+la derecha de la figura <a href="diseño-lógico-de-la-red.html#fig:essaup45">4.5</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:essaup45"></span>
+<img src="figuras/c4/Essaup45.jpg" alt="*Algoritmo Esau-Williams. Pasos 3 y 4 del ejemplo*" width="65%" />
+<p class="caption">
+Figura 4.5: <em>Algoritmo Esau-Williams. Pasos 3 y 4 del ejemplo</em>
+</p>
+</div>
+<p>El costo de la topología de estrella era de <strong>244 unidades</strong>; el costo de la
+topología final es de <strong>179 unidades</strong>.</p>
+<hr />
+</div>
+<div id="algoritmo-de-kruskal" class="section level4 unnumbered hasAnchor">
+<h4>Algoritmo de Kruskal<a href="diseño-lógico-de-la-red.html#algoritmo-de-kruskal" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El método de Kruskal es bastante sencillo pero se ha observado que para
+grandes redes con restricciones, las soluciones a las que se llega
+suelen estar alejadas de la topología óptima. Este método comienza con
+todos los nodos desconectados y consiste en:</p>
+<ol style="list-style-type: decimal">
+<li><p>Se ordenan los enlaces de la matriz según su costo.</p></li>
+<li><p>Se seleccionan los enlaces de menor a mayor costo y se van trazando
+en el diagrama. Si la utilización de un enlace genera un lazo, éste se rechaza.</p></li>
+<li><p>Se continua seleccionando enlaces hasta que todos los nodos estén conectados.</p></li>
+</ol>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-26" class="example"><strong>Ejemplo 4.3  </strong></span>A partir de la matriz de costos que se presentó en el ejemplo <a href="diseño-lógico-de-la-red.html#exm:ejew">4.2</a>, la relación de enlaces ordenados por costo es la siguiente:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Enlace</th>
+<th align="center">Costo</th>
+<th></th>
+<th align="center">Enlace</th>
+<th align="center">Costo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(1 \leftrightarrow 2\)</span></td>
+<td align="center">2</td>
+<td></td>
+<td align="center"><span class="math inline">\(6 \leftrightarrow 4\)</span></td>
+<td align="center">18</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(1 \leftrightarrow 4\)</span></td>
+<td align="center">13</td>
+<td></td>
+<td align="center"><span class="math inline">\(3 \leftrightarrow 7\)</span></td>
+<td align="center">23</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(2 \leftrightarrow 4\)</span></td>
+<td align="center">14</td>
+<td></td>
+<td align="center"><span class="math inline">\(3 \leftrightarrow 6\)</span></td>
+<td align="center">41</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(1 \leftrightarrow 6\)</span></td>
+<td align="center">15</td>
+<td></td>
+<td align="center"><span class="math inline">\(6 \leftrightarrow 8\)</span></td>
+<td align="center">42</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(2 \leftrightarrow 6\)</span></td>
+<td align="center">16</td>
+<td></td>
+<td align="center"><span class="math inline">\(2 \leftrightarrow 5\)</span></td>
+<td align="center">43</td>
+</tr>
+</tbody>
+</table>
+<p>Se selecciona el primer enlace y se conecta el nodo 2 al concentrador.
+De igual forma, en el siguiente paso se conecta el nodo 4 al
+concentrador. El siguiente enlace a considerar sería entre los nodos 2 y 4 pero esto generaría un lazo, por lo que se ignora; se toma el enlace conectando el nodo 6 al concentrador como se muestra en la
+figura <a href="diseño-lógico-de-la-red.html#fig:k13">4.6</a>.</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:k13"></span>
+<img src="figuras/c4/kruskp13.jpg" alt="*Algoritmo de Kruskal. Pasos 1 a 3 del ejemplo*" width="65%" />
+<p class="caption">
+Figura 4.6: <em>Algoritmo de Kruskal. Pasos 1 a 3 del ejemplo</em>
+</p>
+</div>
+<p>Los enlaces <span class="math inline">\(2\leftrightarrow 6\)</span>, y <span class="math inline">\(6\leftrightarrow 4\)</span> también
+formarían un lazo y no son tomados en cuenta. Siguiendo con la tabla, se
+conectan los enlaces <span class="math inline">\(3\leftrightarrow 7\)</span>, <span class="math inline">\(3\leftrightarrow 6\)</span>,
+<span class="math inline">\(6\leftrightarrow 8\)</span> y <span class="math inline">\(5\leftrightarrow 2\)</span>. Con esto se han conectado
+todos los nodos, como se muestra en la
+figura (fig:k47), que –en esta ocasión– coincide con la topología de la figura <a href="diseño-lógico-de-la-red.html#fig:essaup45">4.5</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:k47"></span>
+<img src="figuras/c4/kruskp47.jpg" alt="*Algoritmo de Kruskal. Pasos 4, 5 y 7 del ejemplo*" width="65%" />
+<p class="caption">
+Figura 4.7: <em>Algoritmo de Kruskal. Pasos 4, 5 y 7 del ejemplo</em>
+</p>
+</div>
+<hr />
+</div>
+<div id="consideraciones-de-tráfico" class="section level4 unnumbered hasAnchor">
+<h4>Consideraciones de tráfico<a href="diseño-lógico-de-la-red.html#consideraciones-de-tráfico" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En los ejemplos de los algoritmos anteriores no se tomaron en cuenta
+restricciones. En situaciones más reales hay que tomar en cuenta varias
+restricciones, como el hecho de que no siempre están disponibles las
+conexiones entre dos nodos cualesquiera. Una restricción más importante
+consiste en reconocer que no se pueden agregar nodos indefinidamente en
+un enlace multilínea sin tomar en cuenta la carga que cada nodo irá
+agregando a la red. Eventualmente la capacidad del enlace se verá
+rebasada.</p>
+<p>Si ese fuera el caso, al aplicar las heurísticas de Esau-Williams o de
+Kruskal, la conexión que violara la restricción de capacidad tendría que ser ignorada y se pasaría al siguiente punto.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-27" class="example"><strong>Ejemplo 4.4  </strong></span>Retomando el ejemplo <a href="diseño-lógico-de-la-red.html#exm:ejew">4.2</a> del algoritmo Esau-Williams, se considerará que la capacidad máxima de cualquier enlace es de 19 unidades (paquetes, tramas, kBytes, …) y que cada nodo contribuye con la carga que se indica en la tabla. Al querer agregar el tráfico de los nodos 7 y 3 al nodo 6 (paso 3 en la figura <a href="diseño-lógico-de-la-red.html#fig:essaup13">4.4</a>, la capacidad del enlace <span class="math inline">\(6\leftrightarrow 1\)</span> se rebasaría, por lo que la conexión <span class="math inline">\(3\leftrightarrow 6\)</span> no se realiza. La topología resultante se muestra en la figura <a href="diseño-lógico-de-la-red.html#fig:toporest">4.8</a>.</p>
+<div class="center">
+<table style="width:56%;">
+<colgroup>
+<col width="16%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Nodo</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Tráfico</strong></td>
+<td align="center">14</td>
+<td align="center">12</td>
+<td align="center">13</td>
+<td align="center">6</td>
+<td align="center">7</td>
+<td align="center">6</td>
+<td align="center">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:toporest"></span>
+<img src="figuras/c4/toporestr.jpg" alt="*Algoritmo con restricciones de tráfico. Configuración resultante*" width="30%" />
+<p class="caption">
+Figura 4.8: <em>Algoritmo con restricciones de tráfico. Configuración resultante</em>
+</p>
+</div>
+<hr />
+</div>
+</div>
+</div>
+<div id="capa-de-distribución" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Capa de distribución<a href="diseño-lógico-de-la-red.html#capa-de-distribución" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La capa de acceso y el núcleo de la red tienen objetivos muy distintos.
+La primera da conectividad a los equipos terminales de los usuarios al
+menor costo posible. Por su parte, el núcleo de la red tiene por objeto
+encaminar los paquetes con la mayor eficiencia posible.</p>
+<p>La capa de distribución funciona como un punto de demarcación entre
+estas dos. Su principal tarea es ofrecer los servicios de conectividad
+del núcleo a la red de acceso, con base en las <em>políticas de la
+organización</em>.</p>
+<p>Los dispositivos en esta capa son los mejores candidatos para aplicar
+las políticas de la organización, pues en ella se interconectan las
+redes locales, concentrando el tráfico de los usuarios, y se libera a
+los dispositivos en el núcleo de realizar funciones ajenas a la
+conmutación eficiente de paquetes.</p>
+<p>Los requerimientos de disponibilidad en la capa de distribución empiezan
+a cobrar importancia, pues el fallo de un equipo en esta capa puede
+aislar una sección muy grande de la red. Frecuentemente se usan equipos
+redundantes y los nodos de acceso se conectan a ambos como se muestra en
+la figura <a href="#f:jerarquia" reference-type="ref" reference="f:jerarquia">4.3</a>.</p>
+<p>Las funciones específicas que realiza la capa de distribución dependen,
+desde luego, del tamaño y complejidad de la red, así como de la
+estrategia de la organización. La lista que se muestra a continuación
+ejemplifica algunas de estas funciones, muchas de las cuales serán
+descritas con mayor detalle en capítulos subsecuentes.</p>
+<dl>
+<dt>Enrutamiento entre VLANs</dt>
+<dd>
+<p>. Si en la empresa se utilizan redes locales virtuales, la capa de
+distribución es un punto natural de interconexión, y de enrutamiento
+entre ellas.</p>
+</dd>
+<dt>Servidores de configuración</dt>
+<dd>
+<p>. En redes de tamaño pequeño y mediano, en las que en la capa de
+acceso hay unas cuantas redes locales, servidores de configuración
+como DHCP, WINS, LDAP pueden colocarse en esta capa.</p>
+</dd>
+<dt>Adaptación de protocolos de enrutamiento</dt>
+<dd>
+<p>. Frecuentemente los enrutadores en la capa de distribución deben
+seguir dos esquemas distintos de protocolos de enrutamiento: uno
+hacia la red de acceso y otro hacia el núcleo. En redes pequeñas, en
+la red de acceso suele seguirse un enrutamiento estático y en el
+núcleo uno dinámico interno (por ejemplo, OSPF). En redes medianas y
+grandes, la red de acceso suele tener enrutamiento dinámico interno
+y hacia el núcleo puede utilizarse un protocolo de enrutamiento
+externo (por ejemplo, BGP).</p>
+</dd>
+<dt>Control de desempeño</dt>
+<dd>
+<p>. En redes pequeñas, esta capa rompe los dominios de difusión de las
+redes locales, limitando el tráfico entre ellas.</p>
+<p>A través de la configuración de las tablas y políticas de
+enrutamiento, se controla el flujo de tráfico desde y hacia el
+núcleo de la red. Además, si la política de direccionamiento lo
+permite, es en esta capa en la que se puede realizar la sumarización
+de rutas para disminuir el tamaño de las tablas de enrutamiento en
+los dispositivos del núcleo.</p>
+<p>Por otra parte, los dispositivos en esta capa pueden implementar
+mecanismos diferenciados de asignación de ancho de banda por
+prioridades y conformado de tráfico (<em>traffic shaping</em>) para cumplir
+con los acuerdos de servicio y no rebasar las capacidades del
+núcleo.</p>
+</dd>
+<dt>Seguridad y auditoría</dt>
+<dd>
+<p>. Los dispositvos en la capa de distribución pueden filtrar el
+tráfico entre las capas de acceso y el núcleo para aplicar las
+políticas de seguridad de la organización. También es en este nivel
+el que se puede realizar la traducción de direcciones entre las
+redes internas (en la capa de acceso) y el núcleo.</p>
+<p>Así mismo, la capa de distribución es un punto ideal para
+monitorear, auditar y contabilizar el tráfico que fluye por la red.</p>
+</dd>
+</dl>
+</div>
+<div id="diseño-de-la-red-dorsal" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Diseño de la red dorsal<a href="diseño-lógico-de-la-red.html#diseño-de-la-red-dorsal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La función principal de red dorsal es interconectar eficientemente los
+sitios (es decir, las distintas redes de acceso) de la organización.</p>
+<div style="color: blue;">
+<p><em>A diferencia de la red de acceso, en esta capa todos los “nodos”
+(es decir, los sitios) pueden intercambiar tráfico entre sí, por lo que los dos criterios fundamentales de diseño para la red dorsal son la eficiencia y la tolerancia a fallos.</em></p>
+</div>
+<p>Por ello, todas las funciones lógicas relacionadas con las políticas de la organización han sido relegadas a la capa de distribución. Los
+dispositivos a seleccionar para el núcleo de la red deben tener una muy alta disponibilidad y capacidad de conmutación de paquetes.</p>
+<p>Un fallo en la red dorsal afecta a una gran parte de los usuarios, por
+lo que se busca diseñar una topología redundante (ver
+figura <a href="diseño-lógico-de-la-red.html#fig:redbb">4.9</a>) capaz de soportar un cierto número de fallos y de adaptarse a los cambios rápidamente.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:redbb"></span>
+<img src="figuras/c4/redbb.bmp" alt="*Diseño de la red dorsal*" width="40%" />
+<p class="caption">
+Figura 4.9: <em>Diseño de la red dorsal</em>
+</p>
+</div>
+<p>Se debe tratar limitar el tamaño y mantener la consistencia del núcleo
+de la red. Esto permitirá predecir el desempeño, detectar rápidamente
+fallos y en general, simplificar la administración.</p>
+<p>En un campus, el núcleo de la red interconecta las redes LAN que ya han
+sido agregadas en la capa de distribución. En una red WAN, esta capa
+típicamente utiliza los servicios de un proveedor de transporte para
+interconectar los sitios entre sí.</p>
+<p>Entre los servicios propuestos por los operadores en la actualidad para
+diseñar la red dorsal se encuentran:</p>
+<ul>
+<li><p>X.25</p></li>
+<li><p>Frame Relay</p></li>
+<li><p>ATM</p></li>
+<li><p>MPLS</p></li>
+<li><p>Enlaces dedicados</p></li>
+<li><p>Redes virtuales privadas en Internet (VPN)</p></li>
+</ul>
+<p>La selección del servicio particular dependerá de su disponibilidad en
+todas las zonas que deban interconectarse así como de los requerimientos
+de diseño (desempeño, seguridad, costo, etc.). En la actualidad en
+México, como en muchas partes del mundo, prácticamente han desaparecido
+los servicios de X.25 y ATM y han sido sustituidos por Frame Relay (se
+estima que en 2003, el 80% de los enlaces WAN eran Frame Relay) y más
+recientemente, por MPLS y por VPNs, que se estudiarán con mayor detalle
+en capítulos posteriores. Salvo casos muy particulares, los enlaces
+privados también han perdido popularidad debido a su alto costo.</p>
+<p>Para redes pequeñas, las topologías de malla, de estrella y
+combinaciones de éstas se han utilizado con regularidad. Sin embargo, ya
+se ha mencionado que estas topologías no podrían satisfacer algunos
+requerimientos críticos para redes grandes.</p>
+<div id="diseño-de-la-topología-1" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Diseño de la topología<a href="diseño-lógico-de-la-red.html#diseño-de-la-topología-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Típicamente, diseñar la topología del núcleo implica encontrar un punto
+de equilibrio entre los requerimientos de costo, disponibilidad y
+desempeño de la red. Nuevamente, se ha encontrado que este es un
+problema de gran complejidad para el que se han propuesto algunas
+heurísticas iterativas de diseño. Un ejemplo clásico sería el siguiente:</p>
+<ol style="list-style-type: decimal">
+<li><p>Se calcula una matriz de tráfico entre los distintos sitios;</p></li>
+<li><p>se propone una topología inicial (con algún algoritmo);</p></li>
+<li><p>a partir de la matriz de tráfico, se asigna tráfico a los enlaces;</p></li>
+<li><p>se determina la capacidad de los enlaces y se les asigna un costo;</p></li>
+<li><p>se introduce una perturbación que altere la topología y se regresa
+al punto 3.</p></li>
+<li><p>Cuando se han evaluado todas las posibilidades (o tras un
+determinado número de iteraciones, se retiene la topología con el
+costo menor.</p></li>
+</ol>
+<p>Topológicamente, el diseño de la red dorsal debe cumplir con los
+requerimientos de disponibilidad. Esto implica que la topología debe
+tener <span class="math inline">\(k\)</span> trayectorias disjuntas entre dos nodos cualesquiera si se
+desea que la red tolere <span class="math inline">\(k-1\)</span> fallos y siga conectada <a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>.</p>
+<div id="heurística-de-steiglitz-weiner-kleitman" class="section level4 unnumbered hasAnchor">
+<h4>Heurística de Steiglitz-Weiner-Kleitman<a href="diseño-lógico-de-la-red.html#heurística-de-steiglitz-weiner-kleitman" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El problema de encontrar una red k-conectada de costo mínimo es conocido
+como el problema de diseño de redes sobrevientes o como el problema
+generalizado de los árboles de Steiner. La heurística de Steiglitz,
+Weiner y Kleitman permite encontrar una solución local para este
+problema.</p>
+<p>La heurística está basada en el teorema de Whitney:</p>
+<blockquote>
+<p><em>Una condición necesaria para que una red sea k-conectada, es que el
+grado de sus nodos (el número de interfaces en nuestro caso), sea
+mayor o igual a <span class="math inline">\(k\)</span>.</em></p>
+</blockquote>
+<p>Funciona de la siguiente manera:</p>
+<ol style="list-style-type: decimal">
+<li><p>Se enumeran los nodos de manera aleatoria. Asignar identificadores
+aleatorios permitirá crear fácilmente nuevas topologías al tratar de
+hallar soluciones con costo menor.</p></li>
+<li><p>Se asigna a todos los nodos un <em>déficit</em> igual al grado <span class="math inline">\(k\)</span> deseado.
+Este déficit es el número de interfaces que no han sido asignadas a
+enlaces hacia otros nodos.</p></li>
+<li><p>Se selecciona el nodo con el déficit más alto. Si hay varios
+candidatos, se selecciona el que tiene el menor identificador.</p></li>
+<li><p>Se enlaza este nodo con el nodo con el mayor déficit entre los no
+adyacentes. Si hay varios candidatos, se selecciona el más cercano
+(menor costo). Si hay varios candidatos, se selecciona el que tiene
+el identificador menor. Al hacer el enlace, se decrementa el déficit
+en cada uno de estos nodos.</p></li>
+<li><p>Se continúa desde el punto 3 hasta que todos los nodos tengan un
+déficit menor o igual a cero. Algunos nodos pueden tener un déficit negativo, lo que se ajustará posteriormente.</p></li>
+</ol>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-28" class="example"><strong>Ejemplo 4.5  </strong></span>En la figura <a href="diseño-lógico-de-la-red.html#fig:eswk">4.10</a> se presenta paso a paso la heurística de
+Stieglitz-Weiner-Kleitman para una red de 5 nodos con una tolerancia a 2 fallos (3-conectada).</p>
+<p><strong>Los números al interior de los nodos representan su déficit. Los
+números en el exterior representan su identificador aleatorio.</strong> En este caso, se ha supuesto que el costo de los enlaces es el mismo para
+cualquier par de nodos.</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:eswk"></span>
+<img src="figuras/c4/ejswk.jpg" alt="*Algoritmo Stieglitz-Weiner-Kleitman*" width="80%" />
+<p class="caption">
+Figura 4.10: <em>Algoritmo Stieglitz-Weiner-Kleitman</em>
+</p>
+</div>
+<hr />
+</div>
+<div id="asignación-de-capacidad" class="section level4 unnumbered hasAnchor">
+<h4>Asignación de capacidad<a href="diseño-lógico-de-la-red.html#asignación-de-capacidad" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Si bien la asignación de capacidad de los enlaces es una actividad
+relacionada con el diseño físico de la red, en la red dorsal éste es un
+proceso complejo e iterativo que influye en la topología final, por lo
+que en esta sección se introducen los conceptos básicos de asignación de
+capacidad.</p>
+<p>El punto de partida para dimensionar los enlaces de la red dorsal
+consiste en estimar la cantidad de tráfico que cada nodo inyectará hacia
+el núcleo. Para ello, es necesario identificar qué porcentaje del
+tráfico generado en las redes de acceso de cada nodo es local y qué
+porcentaje viaja hacia otros nodos (hacia otras redes de acceso). Esta
+información permite crear una matriz de tráfico con una aproximación del
+volumen de tráfico intercambiado entre nodos.</p>
+<p>Una vez conocidos los volumenes de tráfico, es necesario identificar las
+trayectorias que recorrerán los flujos en la topología obtenida. En
+general, estas trayectorias estarán determinadas por las políticas y los
+protocolos de enrutamiento, y por la dinámica de la red. Si el número de
+conexiones es relativamente alto, y los enlaces tienen una métrica de
+costo similar, es posible suponer que las rutas seleccionadas serán las
+de menor costo.</p>
+<p>Sin embargo, por razones que serán explicadas en capítulos posteriores,
+en redes de mediana complejidad la selección de rutas se establece con
+anterioridad mediante un proceso de Ingeniería de Tráfico en el que se
+configura una red superpuesta sobre la que se tiene un mejor control del
+tráfico en el núcleo de la red.</p>
+<p>Finalmente, debe tomarse en cuenta que, si el criterio central de diseño
+es la tolerancia a fallas, entonces deberá asignarse un factor de
+sobrecarga que permita soportar el tráfico excedente en caso de que un
+enlace (una trayectoria) falle y su carga sea repartida entre los demás.
+Para soportar una falla, el factor de sobrecarga es:
+<span class="math display">\[L_f = U -\frac{U}{N},\]</span> donde <span class="math inline">\(N\)</span> es el número de enlaces y <span class="math inline">\(U\)</span> es la
+utilización máxima deseable con la que se dimensionan los enlaces.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Ejemplo 4.6  </strong></span>Para una red de grado 4, en la que se desea dejar libre un 20% de la
+capacidad de los enlaces en el caso de una falla, el dimensionamiento de los flujos no debe rebasar el 60% de utilización:
+<span class="math display">\[L_f = 80\%-\frac{80\%}{4} = 60\%\]</span></p>
+</div>
+<hr />
+<p>En algunas ocasiones se tiene una idea general de los volúmenes de
+información generados en las redes de acceso pero se desconocen los
+patrones de tráfico detallados. En estos casos, no queda más remedio que
+recurrir a generalizaciones y suponer que los volúmenes de tráfico se
+concentrarán en los repositorios de información, o que se distribuirán
+uniformemente entre las redes de acceso.</p>
+<p>Para apoyar el diseño de la red en estas circunstancias, se puede
+utilizar la siguiente fórmula de equilibrio de tráfico. El tráfico que
+entra a un nodo del núcleo debe ser igual a la cantidad de tráfico que
+sale del mismo: <span class="math display">\[\Sigma_{i=1}^{N_a} v_a^i\times U_a^i =
+\Sigma_{j=1}^{k_b} v_b^j\times U_b^j,\]</span> donde <span class="math inline">\(N_a\)</span> es el número de
+redes de acceso que llegan a un nodo, <span class="math inline">\(v_a^i\)</span> es la capacidad del enlace
+de la i-ésima red con una utilización media de <span class="math inline">\(U_a^i\)</span>, <span class="math inline">\(k_b\)</span> es el
+grado del nodo en el núcleo y <span class="math inline">\(v_b^j\)</span> la capacidad del j-ésimo enlace
+con una utilización media de <span class="math inline">\(U_b^j\)</span>.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-30" class="example"><strong>Ejemplo 4.7  </strong></span>Considere una red nacional que tiene 1,000 sitios (o redes de acceso).
+Los usuarios generan en promedio <span class="math inline">\(950\,GB\)</span> de datos por día hacia los
+demás sitios. No hay elementos para determinar cómo se distribuye este
+volumen de tráfico entre las distintas redes de acceso. Lo que sí se ha
+estimado, es que el 20% de este volumen se genera durante la hora de
+mayor actividad (la hora pico).</p>
+<p>Todos los sitios se conectan a nodos en el núcleo por medio de enlaces
+<span class="math inline">\(E1\)</span>. Por políticas de la empresa, los enlaces en el núcleo también son
+<span class="math inline">\(E1\)</span> y como criterio de diseño, estos enlaces no deben rebasar el 50% de
+utilización en condiciones normales de operación (es decir, sin tomar en
+cuenta fallos en la red). Se busca una red dorsal de grado 4. ¿Cuántos
+nodos en el núcleo deben considerarse?</p>
+<p>En primer término, hay que determinar cuál es la utilización de los
+enlaces de acceso:</p>
+<p><span class="math display">\[U_a = \frac{0.2(950\,GB/dia)}{1,000}\times
+\frac{8\,b}{3,600\,s}\times\frac{1}{2.048\,Mb/s}
+= 20.6\%\]</span></p>
+<p>Ahora se puede estimar el número de enlaces por nodo: <span class="math display">\[\begin{aligned}
+N_a\times v_a\times U_a &amp;=k_b\times v_b\times U_b\\
+N_a &amp;=  \frac{4\times 2.048\,MB/s\times 0.5}{2.048\,Mb/s\times 0.206}\\
+&amp;= 9.7 \Rightarrow 9
+\end{aligned}\]</span></p>
+<p>Por consiguiente, se necesitarán <span class="math inline">\(1000/9\approx 112\)</span> nodos.</p>
+</div>
+<hr />
+</div>
+<div id="perturbación-de-la-topología" class="section level4 unnumbered hasAnchor">
+<h4>Perturbación de la topología<a href="diseño-lógico-de-la-red.html#perturbación-de-la-topología" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La topología obtenida puede no ser la mejor aún si cumple con los
+criterios de costo y desempeño. Para generar otras topologías, se repite
+el proceso introduciendo perturbaciones controladas generando nuevos
+identificadores para los nodos.</p>
+<p>Más importante aún, la topología inicial fue diseñada respondiendo a
+criterios de conectividad sin tomar en cuenta el tráfico en la red. Si
+se tiene un conocimiento general de los flujos, la topología resultante
+puede modificarse atendiendo a criterios como los siguientes:</p>
+<ul>
+<li><p>Nodos que intercambien altos volúmenes de información deben tener
+enlaces conectados directamente.</p></li>
+<li><p>Enlaces con muy poca utilización pueden ser eliminados y su tráfico
+asignado a enlaces cercanos.</p></li>
+<li><p>Enlaces con tecnologías muy costosas también pueden ser eliminados.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="diseño-basado-en-bloques-modulares" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Diseño basado en bloques modulares<a href="diseño-lógico-de-la-red.html#diseño-basado-en-bloques-modulares" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En las secciones anteriores se han presentado los conceptos y los
+beneficios de contar con un diseño jerárquico de tres capas y se han
+mostrado algunos algoritmos para satisfacer los requerimientos de diseño
+en las capas de acceso y dorsal.</p>
+<p>Otra característica que un buen diseño de redes debe cumplir es su
+modularidad. Sobre todo en redes medianas y grandes, un diseño modular
+simplifica las etapas de desarrollo y despliegue, facilita el
+mantenimiento de la red, reduce la probabilidad de dejar pasar errores
+no detectados, ofrece un buen rendimiento, y asegura la escalabilidad de
+la solución.</p>
+<p>El diseño modular consiste en contar con bloques básicos de módulos (o
+componentes) típicos en la red de una organización, por ejemplo, bloques
+de granjas de servidores, de redes SAN, de redes locales, de acceso al
+núcleo, etc. Sobre esos bloques básicos, se harán pequeñas
+modificaciones para satisfacer los requerimientos específicos de diseño,
+y se interconectarán para integrar la red.</p>
+<p>Dada su gran popularidad, en los siguientes párrafos se presentará el
+enfoque de diseño modular para una red de campus de tamaño medio.</p>
+<div id="bloque-básico-de-acceso" class="section level5 unnumbered hasAnchor">
+<h5>Bloque básico de acceso<a href="diseño-lógico-de-la-red.html#bloque-básico-de-acceso" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Excepto en redes locales inalámbricas y en algunos nichos muy
+específicos, el uso de concentradores en las redes locales ha disminuido dramáticamente. Las ventajas de seguridad y de mayor desempeño, aunado a una gran reducción en el costo por puerto de los conmutadores, han hecho que estos dispositivos sean los más utilizados en la actualidad, como se muestra en la figura <a href="diseño-lógico-de-la-red.html#fig:blacceso">4.11</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blacceso"></span>
+<img src="figuras/c4/blacceso.bmp" alt="*Diseño modular. Bloque básico de acceso*" width="40%" />
+<p class="caption">
+Figura 4.11: <em>Diseño modular. Bloque básico de acceso</em>
+</p>
+</div>
+</div>
+<div id="bloque-básico-de-distribución" class="section level5 unnumbered hasAnchor">
+<h5>Bloque básico de distribución<a href="diseño-lógico-de-la-red.html#bloque-básico-de-distribución" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>En la figura <a href="diseño-lógico-de-la-red.html#fig:bldist">4.12</a> se muestra un bloque genérico de la capa de distribución. Dependiendo de
+las funcionalidades deseadas, y del tamaño de la red, en el bloque de
+distribución pueden encontrarse conmutadores, enrutadores o ambos. En la
+figura mostrada, se observan conmutadores a los que se conectan los
+conmutadores de la red de acceso. Las funcionalidades de la capa de
+distribución se ejecutan en los enrutadores.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bldist"></span>
+<img src="figuras/c4/bldist.bmp" alt="*Diseño modular. Bloque básico de distribución*" width="40%" />
+<p class="caption">
+Figura 4.12: <em>Diseño modular. Bloque básico de distribución</em>
+</p>
+</div>
+</div>
+<div id="bloque-básico-de-red-dorsal" class="section level5 unnumbered hasAnchor">
+<h5>Bloque básico de red dorsal<a href="diseño-lógico-de-la-red.html#bloque-básico-de-red-dorsal" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>En un campus, como en una red local grande, el núcleo de la red estará
+conformado por conmutadores de alto desempeño, como se muestra en la
+figura <a href="diseño-lógico-de-la-red.html#fig:blbb">4.13</a>. En este
+caso particular, ni siquiera las funciones de enrutamiento se efectúan
+en el núcleo. Estas fueron delegadas a la capa de distribución.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blbb"></span>
+<img src="figuras/c4/blbb.bmp" alt="*Diseño modular. Bloque básico de la red dorsal*" width="40%" />
+<p class="caption">
+Figura 4.13: <em>Diseño modular. Bloque básico de la red dorsal</em>
+</p>
+</div>
+<p>Con el diseño modular, construir una solución para una red consiste en
+interconectar los bloques básicos. Por ejemplo, en la figura <a href="diseño-lógico-de-la-red.html#fig:redgen">4.14</a> se muestra del lado izquierdo una solución para una red de campus genérica. Para satisfacer los requerimientos de disponibilidad, esta misma red puede robustecerse como se muestra en el diagrama de la derecha. La siguiente sección presenta algunos conceptos de topologías redundantes.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:redgen"></span>
+<img src="figuras/c4/redgenerica.bmp" alt="*Red genérica modular sin y con enlaces redundantes*" width="48%" /><img src="figuras/c4/redgenredun.bmp" alt="*Red genérica modular sin y con enlaces redundantes*" width="48%" />
+<p class="caption">
+Figura 4.14: <em>Red genérica modular sin y con enlaces redundantes</em>
+</p>
+</div>
+</div>
+</div>
+<div id="s:redundancia" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Topologías con redundancia<a href="diseño-lógico-de-la-red.html#s:redundancia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Con el fin de satisfacer los requerimientos de disponibilidad, el diseño de la red debe contar un cierto número de componentes redundantes que permitan asegurar, al menos, la continuidad de las operaciones de misión crítica de la organización.</p>
+<p>En las secciones anteriores ya se han introducido enlaces redundantes para tolerar fallos sobre todo en el núcleo de la red. Sin embargo, para que la infraestructura continúe operando, el diseño de la red también debe incluir redundancia en servidores, en enrutadores y nodos de conmutación, en los accesos a internet, y hasta en los sistemas de alimentación de energía eléctrica.</p>
+<p>La redundancia en equipos y enlaces incide directamente en el costo de la infraestructura; además, genera una red mucho más compleja de administrar, sobre todo en la configuración de políticas de enrutamiento y en la gestión y asignación de direcciones.</p>
+<div style="color: blue;">
+<p><em>El nivel de redundancia deseado debe elegirse con cuidado poniendo énfasis en el soporte a operaciones de misión crítica.</em></p>
+<p>Por otra parte, una duplicación cuidadosa de componentes en la
+infraestructura de red en general permite realizar un balanceo de cargas aumentando así el desempeño total de la red.</p>
+</div>
+<p>Si los dispositivos redundantes no forman parte de la operación
+cotidiana de la red, resulta primordial garantizar que:</p>
+<ul>
+<li><p>está definido y funciona apropiadamente el mecanismo para conmutar a los equipos de respaldo;</p></li>
+<li><p>el tiempo de conmutación (llamado también tiempo de convergencia) a los equipos de respaldo está dentro de los parámetros aceptables para evitar caídas de las aplicaciones y servicios;</p></li>
+<li><p>la capacidad de operación en el respaldo es suficiente para soportar los servicios principales. En este caso, se debe contar con mecanismos que filtren el tráfico para dar prioridad a los flujos de misión crítica;</p></li>
+<li><p>los equipos y enlaces de respaldo son, efectivamente, independientes de la red en operación;</p></li>
+<li><p>la red de respaldo es probada periódicamente para asegurar su funcionamiento. Se recomienda que por lo menos dos veces al año se realicen simulacros de fallos en los que se activen los dispositivos de respaldo.</p></li>
+</ul>
+<div class="greybox">
+<p><strong>Caso de estudio: Enlaces POTS de respaldo</strong></p>
+<p>Como muchas organizaciones, una empresa del sector financiero contaba
+con enlaces de microondas para interconectar sus sucursales con el
+centro de cómputo en la oficina matriz. Como respaldo, cada sucursal
+tenía una línea telefónica con un módem de 14.4 a 33 kb/s. Esta
+configuración funcionaba adecuadamente cuando los sistemas de la empresa tenían un modelo centralizado en el que las sucursales sólo ejecutaban
+aplicaciones de terminal virtual y a través de los enlaces se
+intercambiaban pantallas de texto únicamente.</p>
+<p>En un momento determinado, el área informática, la cual estaba
+completamente desvinculada del área de telecomunicaciones, decidió
+actualizar sus sistemas y migrar a un modelo de varias capas. Ahora las
+aplicaciones en las sucursales ejecutaban clientes robustos con
+interfaces gráficas y contenidos más complejos.</p>
+<p>Con el cambio, el volumen de tráfico entre el centro de datos y las
+sucursales aumentó sustancialmente. Este cambio sí fue notificado al
+área de telecomunicaciones y se aumentó la capacidad de los enlaces de
+microondas. En cambio, jamás se consideró la actualización en los
+enlaces de respaldo. El primer incidente posterior a la migración
+resultó caótico, pues el respaldo telefónico era totalmente insuficiente
+hasta para soportar las aplicaciones más esenciales.</p>
+<p>Fue necesario activar un plan de emergencia adquiriendo enlaces de banda ancha o enlaces privados –que no estaban contemplados en el presupuesto original– y hacer profundas adecuaciones a la infraestructura de red para soportar la nueva topología.</p>
+</div>
+<div id="servidores-y-nodos" class="section level4 unnumbered hasAnchor">
+<h4>Servidores y nodos<a href="diseño-lógico-de-la-red.html#servidores-y-nodos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Existen algunos servicios, como el Servidor de Nombres de Dominio (DNS),
+diseñados específicamente para trabajar con servidores redundantes.
+Desgraciadamente ésta es la excepción, y en general, el balanceo de
+cargas no es una tarea trivial: en los servidores se requiere de reglas
+especiales y de un cierto nivel de sofisticación para llevarlo a cabo
+exitosamente.</p>
+<p>Si la duplicación de servidores de aplicaciones, de archivos, de bases
+de datos, etc. resulta muy costosa, al menos se debe tratar de que estos
+servidores cuenten con discos RAID (<em>Redundant Array of Inexpensive
+Disks</em>) con el nivel de redundancia apropiado.</p>
+<p>En los nodos de conmutación, uno de los componentes que más fallos
+presenta es la fuente de alimentación, muchas veces debido a problemas
+en el sistema de suministro. Por ello, es común que los conmutadores y
+enrutadores de alto desempeño cuenten con fuentes de alimentación
+redundantes, las cuales deben estar conectadas a una línea de
+alimentación distinta.</p>
+</div>
+<div id="enlaces" class="section level4 unnumbered hasAnchor">
+<h4>Enlaces<a href="diseño-lógico-de-la-red.html#enlaces" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Aunque los enrutadores conozcan varias trayectorias hacia un mismo
+destino, normalmente no distribuyen el tráfico entre ellas a menos que
+todas las trayectorias cuenten con la misma métrica. De no ser así, los
+enrutadores deben configurarse específicamente para permitir el balanceo
+de cargas.</p>
+<p>En las redes locales, el mecanismo de <em>spanning tree</em> en los
+conmutadores bloquea el balanceo de cargas al inhibir la existencia de
+varias trayectorias entre dos dispositivos.</p>
+</div>
+<div id="gateway-por-omisión" class="section level4 unnumbered hasAnchor">
+<h4><em>Gateway</em> por omisión<a href="diseño-lógico-de-la-red.html#gateway-por-omisión" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Cuando un dispositivo desea establecer una comunicación fuera de su red
+local, manda sus paquetes a un enrutador quien los redirige hacia la
+trayectoria que los conducirá al destino final. Este enrutador se conoce
+como el <em>gateway</em> por omisión y, típicamente, su dirección está
+configurada en las computadoras de la red local.</p>
+<p>Este <em>gateway</em> es un punto vulnerable: si falla, todos los dispositivos
+en la red local pierden conexión con el exterior. Si se agrega un
+segundo enrutador como respaldo, en caso de detectar una falla todos los
+equipos en la red local deberán reconfigurarse con la dirección del
+enrutador de respaldo, lo cual es inaceptable en redes de mediano
+tamaño.</p>
+<p>Se han propuesto varias soluciones a este problema. En primer lugar, los
+dispositivos podrían ejecutar un protocolo de enrutamiento interno (como
+RIP u OSPF) y recibir así los anuncios del <em>gateway</em> por omisión y del
+respaldo. En este caso, el protocolo en las estaciones debe ejecutarse
+en modo pasivo, es decir, atendiendo únicamente a los anuncios recibidos
+pero sin publicar sus tablas de ruteo para reducir el tráfico en la red.
+Desgraciadamente esta solución presenta varios problemas:</p>
+<ul>
+<li><p>aumenta la complejidad para administrar los dispositivos;</p></li>
+<li><p>los protocolos de ruteo consumen recursos;</p></li>
+<li><p>el tiempo para reconfigurar un dispositivo depende de la frecuencia
+con la que se anuncien las tablas en la red, el cual depende del
+protocolo utilizado. Este tiempo puede ser lo bastante grande como
+para no pasar desapercibido;</p></li>
+<li><p>se presta a ataques de seguridad pues un intruso o una máquina
+comprometida puede anunciarse como enrutador por omisión.</p></li>
+</ul>
+<p><em>Router Discovery Protocol</em>, RDP, es otra solución basada en la difusión
+periódica de mensajes ICMP especiales por parte de los enrutadores. Si
+un dispositivo detecta que un mensaje no ha sido recibido, supone que el
+<em>gateway</em> ha fallado y puede enviar inmediatamente otro mensaje ICMP
+solicitando que un (posiblemente nuevo) enrutador se anuncie. Esta
+solución reduce algunos de los problemas anteriores, pero sigue siendo
+vulnerable a los ataques de seguridad, por lo que ha sido muy poco
+implementada. De hecho, hoy se recomienda fuertemente ignorar los
+mensajes ICMP relacionados con este protocolo.</p>
+<p>La solución más recomendada en la actualidad para ofrecer redundancia en
+el <em>gateway</em> por omisión es el protocolo VRRP (<em>Virtual Router
+Redundancy Protocol</em>), también conocido como enrutador fantasma, o la
+variante de Cisco: HSRP (<em>Hot Standby Router Protocol</em>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vrrp"></span>
+<img src="figuras/c4/vrrp.bmp" alt="*Configuración de enrutador fantasma*" width="40%" />
+<p class="caption">
+Figura 4.15: <em>Configuración de enrutador fantasma</em>
+</p>
+</div>
+<p>Observe la figura <a href="diseño-lógico-de-la-red.html#fig:vrrp">4.15</a>. Se define un enrutador virtual con una dirección
+MAC y una dirección IP determinadas. El <em>gateway</em> por omisión responde a
+los mensajes enviados a estas direcciones virtuales y también envía al
+enrutador de respaldo mensajes periódicamente indicando que se encuentra
+activo. Si el enrutador de respaldo detecta que estos mensajes han
+dejado de enviarse, inmediatamente toma el papel del enrutador virtual,
+sin que los dispositivos en la red detecten el cambio.</p>
+<p>El único problema con esta solución es que el enrutador de respaldo no
+puede ser utilizado para balancear la carga en la red local, aunque hay
+protocolos propietarios que lo permiten.</p>
+</div>
+<div id="salida-a-internet" class="section level4 unnumbered hasAnchor">
+<h4>Salida a internet<a href="diseño-lógico-de-la-red.html#salida-a-internet" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Al definir trayectorias redundantes, hay que poner especial atención al
+enlace entre la empresa y el punto de presencia (PoP) del proveedor de
+acceso (ISP). Esta liga es normalmente la más débil de la red.</p>
+<p>Dada la creciente importancia que han adquirido los accesos a Internet,
+una organización puede optar por alguna de las opciones que se muestran
+en la figura <a href="diseño-lógico-de-la-red.html#fig:ipredun">4.16</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ipredun"></span>
+<img src="figuras/c4/ipredun.bmp" alt="*Configuraciones redundantes para acceso a Internet*" width="50%" />
+<p class="caption">
+Figura 4.16: <em>Configuraciones redundantes para acceso a Internet</em>
+</p>
+</div>
+<p>Los principales elementos a considerar en estas configuraciones son la
+seguridad adicional de contar con más de un proveedor de acceso contra
+la complejidad que esto implica pues en general no es trivial definir,
+negociar y verificar un contrato de servicio para redes de tamaño medio.</p>
+<p>En las primeras dos opciones se tiene la ventaja de trabajar con un solo
+proveedor, con lo que se podrían obtener, además, tarifas preferentes.
+Sin embargo, se establece una relación de dependencia con la
+infraestructura del único ISP.</p>
+<p>La primera opción supone que el ISP cuenta con dos PoP relativamente
+cercanos entre sí, lo cual no siempre es el caso, sobre todo en ciudades
+pequeñas. Las opciones 2 y 4 se recomiendan para redes geográficamente
+muy dispersas, por ejemplo redes continentales o intercontinentales.</p>
+<p>Con las opciones 3 y 4 se consigue, en principio, redundancia del
+proveedor de acceso, pero ésto debe tratar de verificarse con los ISPs
+pues con frecuencia no existe realmente independencia de circuitos. Los
+grandes ISPs suelen tener contratos entre ellos o con el proveedor de
+transporte dominante, para compartir circuitos, por lo que si éstos
+fallan, los dos ISPs dejarían de operar.</p>
+<p>En todas las opciones, pero principalmente en las últimas dos, se deben
+definir e implmentar políticas especiales de enrutamiento para evitar
+que la red de la organización se vuelva una red de tránsito por el que
+los ISP intercambian tráfico entre ellos.</p>
+</div>
+</div>
+<div id="problemas-3" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Problemas<a href="diseño-lógico-de-la-red.html#problemas-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:c41" class="exercise"><strong>Problema 4.1  </strong></span>¿De qué manera la metodología de diseño jerárquico
+mejora el desempeño, la disponibilidad y la escalabilidad de la red?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c42" class="exercise"><strong>Problema 4.2  </strong></span>¿En dónde (red de acceso, distribución, núcleo)
+colocaría:</p>
+<ul>
+<li>Un firewall</li>
+<li>un switch que permita configurar VLANs</li>
+<li>un mecanismo de despacho de colas para ofrecer QoS?</li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:c43" class="exercise"><strong>Problema 4.3  </strong></span>¿Qué tipo de interfaces (100BaseT en par trenzado,
+serial E1, fibra óptica alta velocidad, …) esperaría encontrar en los enrutadores de acceso, de distribución y de núcleo? ¿Cuántas?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c44" class="exercise"><strong>Problema 4.4  </strong></span>Discuta brevemente qué tipo de topología (malla total, malla parcial, hub and spoke) utilizaría para interconectar:</p>
+<ul>
+<li>Un núcleo con 5 nodos;</li>
+<li>un núcleo con 20 nodos;</li>
+<li>una red de acceso para 5 nodos;</li>
+<li>una red de acceso para 20 nodos.</li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:c45" class="exercise"><strong>Problema 4.5  </strong></span>A partir de la siguiente matriz de costos, y
+considerando un valor de <span class="math inline">\(K=3\)</span>, obtenga los mejores candidatos para
+poner los concentradores de acuerdo al algoritmo de Dysart-Georganas.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>2</strong></th>
+<th align="center"><strong>3</strong></th>
+<th align="center"><strong>4</strong></th>
+<th align="center"><strong>5</strong></th>
+<th align="center"><strong>6</strong></th>
+<th align="center"><strong>7</strong></th>
+<th align="center"><strong>8</strong></th>
+<th align="center"><strong>9</strong></th>
+<th align="center"><strong>10</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td align="center">3</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">7</td>
+<td align="center">7.5</td>
+<td align="center">12</td>
+<td align="center">11.5</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td align="center"></td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">2.5</td>
+<td align="center">7</td>
+<td align="center">5</td>
+<td align="center">9</td>
+<td align="center">11</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">3.5</td>
+<td align="center">7</td>
+<td align="center">5</td>
+<td align="center">9</td>
+<td align="center">11</td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center">2.5</td>
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">7</td>
+<td align="center">9</td>
+</tr>
+<tr class="odd">
+<td><strong>5</strong></td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center">1.5</td>
+<td align="center">4.5</td>
+<td align="center">4</td>
+<td align="center">8</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td><strong>6</strong></td>
+<td align="center">2.5</td>
+<td align="center">3.5</td>
+<td align="center">2.5</td>
+<td align="center">1.5</td>
+<td align="center"></td>
+<td align="center">3</td>
+<td align="center">3.5</td>
+<td align="center">7.5</td>
+<td align="center">7.5</td>
+</tr>
+<tr class="odd">
+<td><strong>7</strong></td>
+<td align="center">7</td>
+<td align="center">7</td>
+<td align="center">5</td>
+<td align="center">4.5</td>
+<td align="center">3</td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center">5</td>
+<td align="center">45</td>
+</tr>
+<tr class="even">
+<td><strong>8</strong></td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">3.5</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center">4</td>
+<td align="center">6</td>
+</tr>
+<tr class="odd">
+<td><strong>9</strong></td>
+<td align="center">9</td>
+<td align="center">9</td>
+<td align="center">7</td>
+<td align="center">8</td>
+<td align="center">7.5</td>
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center"></td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td><strong>10</strong></td>
+<td align="center">11</td>
+<td align="center">11</td>
+<td align="center">9</td>
+<td align="center">10</td>
+<td align="center">7.5</td>
+<td align="center">4.5</td>
+<td align="center">6</td>
+<td align="center">2</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="exercise">
+<p><span id="exr:c46" class="exercise"><strong>Problema 4.6  </strong></span>Considere la distribución de nodos en la figura y el tráfico introducido en cada nodo. Los valores entre nodos representan
+distancias en km. El tamaño de los paquetes es de <span class="math inline">\(6,000\, bits\)</span>. Considerando que los enlaces entre ciudades son E0,</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Obtenga mediante el algoritmo de Kruskal la topología de árbol mínimo.</p></li>
+<li><p>Obtenga la topología de menor costo considerando que el retraso por segundo es de <span class="math inline">\(\$1,000.00\)</span>. Suponga que el nodo inferior derecho es elconcentrador y que el costo de los enlaces es de <span class="math inline">\(\$40.00/km\)</span>.</p></li>
+</ol>
+</div>
+<p><img src="figuras/c4/pbmRestric.jpg" width="40%" style="display: block; margin: auto;" /></p>
+<div class="exercise">
+<p><span id="exr:c47" class="exercise"><strong>Problema 4.7  </strong></span>Se desea diseñar una red para interconectar las Alcaldías de la Ciudad de Mëxico con las siguientes consideraciones:</p>
+<ul>
+<li><p>Dado que las Alcaldías Milpa Alta (MA), Xochimilco (XO) y Tláhuac
+(TL) están muy alejadas de las demás, éstas se conectarán entre sí
+en un anillo doble.</p></li>
+<li><p>La Alcaldía XO servirá de conexión entre MA y TL con las demás
+Alcaldías. Tendrá dos conexiones a la red de Alcaldías (es
+decir, su grado total será K=4).</p></li>
+<li><p>Las Alcaldías Miguel Hidalgo (MH), Cuauhtémoc (CU), Benito Juárez
+(BJ), Álvaro Obregón (AO) y Coyoacán (CO) tendrán tres enlaces
+redundantes (K=3).</p></li>
+<li><p>Las demás Alcaldías tendrán dos enlaces (K=2). Son Azcapotzalco
+(AZ), Cuajimalpa (CJ), Gustavo A. Madero (GM), Iztacalpo (IC),
+Iztapalapa (IP), Magdalena Contreras (MC), Tlalpan (TP) y Venustiano
+Carranza (VC).</p></li>
+<li><p>La tabla de distancias (equivalente al costo) se muestra a
+continuación, junto con el identificador de cada Alcaldía y el
+grado inicial de los dispositivos de interconexión.</p></li>
+</ul>
+<p>Muestre el diagrama de la red enumerando los enlaces conforme los va
+definiendo.</p>
+</div>
+<p><img src="figuras/c4/DelegDF.jpg" width="50%" style="display: block; margin: auto;" /></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Id</th>
+<th></th>
+<th align="center">K</th>
+<th align="center">AO</th>
+<th align="center">AZ</th>
+<th align="center">BJ</th>
+<th align="center">CO</th>
+<th align="center">CJ</th>
+<th align="center">CU</th>
+<th align="center">GM</th>
+<th align="center">IZ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>4</strong></td>
+<td>AO</td>
+<td align="center">3</td>
+<td align="center"></td>
+<td align="center">10.56</td>
+<td align="center">4.40</td>
+<td align="center">5.50</td>
+<td align="center">11.55</td>
+<td align="center">7.32</td>
+<td align="center">13.06</td>
+<td align="center">10.17</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>9</strong></td>
+<td>AZ</td>
+<td align="center">2</td>
+<td align="center">10.56</td>
+<td align="center"></td>
+<td align="center">12.90</td>
+<td align="center">15.08</td>
+<td align="center">18.54</td>
+<td align="center">5.86</td>
+<td align="center">7.55</td>
+<td align="center">12.10</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>8</strong></td>
+<td>BJ</td>
+<td align="center">3</td>
+<td align="center">4.40</td>
+<td align="center">12.90</td>
+<td align="center"></td>
+<td align="center">2.37</td>
+<td align="center">14.94</td>
+<td align="center">7.88</td>
+<td align="center">12.80</td>
+<td align="center">6.85</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>1</strong></td>
+<td>CO</td>
+<td align="center">3</td>
+<td align="center">5.50</td>
+<td align="center">15.08</td>
+<td align="center">2.37</td>
+<td align="center"></td>
+<td align="center">14.43</td>
+<td align="center">10.20</td>
+<td align="center">15.11</td>
+<td align="center">8.41</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>13</strong></td>
+<td>CJ</td>
+<td align="center">2</td>
+<td align="center">11.55</td>
+<td align="center">18.54</td>
+<td align="center">14.94</td>
+<td align="center">14.43</td>
+<td align="center"></td>
+<td align="center">18.06</td>
+<td align="center">23.70</td>
+<td align="center">21.55</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>2</strong></td>
+<td>CU</td>
+<td align="center">3</td>
+<td align="center">7.32</td>
+<td align="center">5.86</td>
+<td align="center">7.88</td>
+<td align="center">10.20</td>
+<td align="center">18.06</td>
+<td align="center"></td>
+<td align="center">5.77</td>
+<td align="center">7.62</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>10</strong></td>
+<td>GM</td>
+<td align="center">2</td>
+<td align="center">13.06</td>
+<td align="center">7.55</td>
+<td align="center">12.80</td>
+<td align="center">15.11</td>
+<td align="center">23.70</td>
+<td align="center">5.77</td>
+<td align="center"></td>
+<td align="center">9.28</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>11</strong></td>
+<td>IZ</td>
+<td align="center">2</td>
+<td align="center">10.17</td>
+<td align="center">12.10</td>
+<td align="center">6.85</td>
+<td align="center">8.41</td>
+<td align="center">21.55</td>
+<td align="center">7.62</td>
+<td align="center">9.28</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>15</strong></td>
+<td>IP</td>
+<td align="center">2</td>
+<td align="center">11.30</td>
+<td align="center">16.96</td>
+<td align="center">7.03</td>
+<td align="center">7.44</td>
+<td align="center">21.79</td>
+<td align="center">11.11</td>
+<td align="center">13.38</td>
+<td align="center">4.10</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>3</strong></td>
+<td>MC</td>
+<td align="center">2</td>
+<td align="center">10.63</td>
+<td align="center">20.85</td>
+<td align="center">11.46</td>
+<td align="center">9.74</td>
+<td align="center">8.49</td>
+<td align="center">17.88</td>
+<td align="center">23.52</td>
+<td align="center">18.13</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>14</strong></td>
+<td>MH</td>
+<td align="center">3</td>
+<td align="center">1.81</td>
+<td align="center">8.85</td>
+<td align="center">4.91</td>
+<td align="center">6.64</td>
+<td align="center">12.79</td>
+<td align="center">5.61</td>
+<td align="center">11.36</td>
+<td align="center">9.50</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>16</strong></td>
+<td>MP</td>
+<td align="center">2</td>
+<td align="center">29.89</td>
+<td align="center">37.77</td>
+<td align="center">25.78</td>
+<td align="center">24.38</td>
+<td align="center">36.30</td>
+<td align="center">31.93</td>
+<td align="center">33.89</td>
+<td align="center">24.82</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>5</strong></td>
+<td>TL</td>
+<td align="center">2</td>
+<td align="center">23.96</td>
+<td align="center">30.38</td>
+<td align="center">19.59</td>
+<td align="center">18.79</td>
+<td align="center">32.45</td>
+<td align="center">24.53</td>
+<td align="center">25.73</td>
+<td align="center">17.04</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>6</strong></td>
+<td>TP</td>
+<td align="center">2</td>
+<td align="center">11.61</td>
+<td align="center">21.83</td>
+<td align="center">9.21</td>
+<td align="center">6.89</td>
+<td align="center">15.85</td>
+<td align="center">17.08</td>
+<td align="center">21.82</td>
+<td align="center">13.96</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>7</strong></td>
+<td>VC</td>
+<td align="center">2</td>
+<td align="center">7.60</td>
+<td align="center">10.39</td>
+<td align="center">7.12</td>
+<td align="center">9.22</td>
+<td align="center">19.55</td>
+<td align="center">4.75</td>
+<td align="center">6.52</td>
+<td align="center">3.08</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>12</strong></td>
+<td>XO</td>
+<td align="center">2</td>
+<td align="center">16.41</td>
+<td align="center">26.47</td>
+<td align="center">13.65</td>
+<td align="center">11.77</td>
+<td align="center">22.93</td>
+<td align="center">20.99</td>
+<td align="center">24.55</td>
+<td align="center">15.43</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Id</th>
+<th></th>
+<th align="center">K</th>
+<th align="center">IP</th>
+<th align="center">MC</th>
+<th align="center">MH</th>
+<th align="center">MA</th>
+<th align="center">TL</th>
+<th align="center">TP</th>
+<th align="center">VC</th>
+<th align="center">X0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>4</strong></td>
+<td>AO</td>
+<td align="center">3</td>
+<td align="center">11.30</td>
+<td align="center">10.63</td>
+<td align="center">1.81</td>
+<td align="center">29.89</td>
+<td align="center">23.96</td>
+<td align="center">11.61</td>
+<td align="center">7.60</td>
+<td align="center">16.41</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>9</strong></td>
+<td>AZ</td>
+<td align="center">2</td>
+<td align="center">16.96</td>
+<td align="center">20.85</td>
+<td align="center">8.85</td>
+<td align="center">37.77</td>
+<td align="center">30.38</td>
+<td align="center">21.83</td>
+<td align="center">10.39</td>
+<td align="center">26.47</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>8</strong></td>
+<td>BJ</td>
+<td align="center">3</td>
+<td align="center">7.03</td>
+<td align="center">11.46</td>
+<td align="center">4.91</td>
+<td align="center">25.78</td>
+<td align="center">19.59</td>
+<td align="center">9.21</td>
+<td align="center">7.12</td>
+<td align="center">13.65</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>1</strong></td>
+<td>CO</td>
+<td align="center">3</td>
+<td align="center">7.44</td>
+<td align="center">9.74</td>
+<td align="center">6.64</td>
+<td align="center">24.38</td>
+<td align="center">18.79</td>
+<td align="center">6.89</td>
+<td align="center">9.22</td>
+<td align="center">11.77</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>13</strong></td>
+<td>CJ</td>
+<td align="center">2</td>
+<td align="center">21.79</td>
+<td align="center">8.49</td>
+<td align="center">12.79</td>
+<td align="center">36.30</td>
+<td align="center">32.45</td>
+<td align="center">15.85</td>
+<td align="center">19.55</td>
+<td align="center">22.93</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>2</strong></td>
+<td>CU</td>
+<td align="center">3</td>
+<td align="center">11.11</td>
+<td align="center">17.88</td>
+<td align="center">5.61</td>
+<td align="center">31.93</td>
+<td align="center">24.53</td>
+<td align="center">17.08</td>
+<td align="center">4.75</td>
+<td align="center">20.99</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>10</strong></td>
+<td>GM</td>
+<td align="center">2</td>
+<td align="center">13.38</td>
+<td align="center">23.52</td>
+<td align="center">11.36</td>
+<td align="center">33.89</td>
+<td align="center">25.73</td>
+<td align="center">21.82</td>
+<td align="center">6.52</td>
+<td align="center">24.55</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>11</strong></td>
+<td>IZ</td>
+<td align="center">2</td>
+<td align="center">4.10</td>
+<td align="center">18.13</td>
+<td align="center">9.50</td>
+<td align="center">24.82</td>
+<td align="center">17.04</td>
+<td align="center">13.96</td>
+<td align="center">3.08</td>
+<td align="center">15.43</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>15</strong></td>
+<td>IP</td>
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center">16.82</td>
+<td align="center">11.28</td>
+<td align="center">20.89</td>
+<td align="center">13.48</td>
+<td align="center">11.21</td>
+<td align="center">7.04</td>
+<td align="center">11.48</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>3</strong></td>
+<td>MC</td>
+<td align="center">2</td>
+<td align="center">16.82</td>
+<td align="center"></td>
+<td align="center">12.43</td>
+<td align="center">28.11</td>
+<td align="center">25.15</td>
+<td align="center">7.97</td>
+<td align="center">18.52</td>
+<td align="center">14.89</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>14</strong></td>
+<td>MH</td>
+<td align="center">3</td>
+<td align="center">11.28</td>
+<td align="center">12.43</td>
+<td align="center"></td>
+<td align="center">30.69</td>
+<td align="center">24.37</td>
+<td align="center">13.07</td>
+<td align="center">8.01</td>
+<td align="center">18.37</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>16</strong></td>
+<td>MP</td>
+<td align="center">2</td>
+<td align="center">20.89</td>
+<td align="center">28.11</td>
+<td align="center">30.69</td>
+<td align="center"></td>
+<td align="center">8.75</td>
+<td align="center">20.44</td>
+<td align="center">27.87</td>
+<td align="center">13.37</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>5</strong></td>
+<td>TL</td>
+<td align="center">2</td>
+<td align="center">13.48</td>
+<td align="center">25.15</td>
+<td align="center">24.37</td>
+<td align="center">8.75</td>
+<td align="center"></td>
+<td align="center">17.22</td>
+<td align="center">20.11</td>
+<td align="center">11.04</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>6</strong></td>
+<td>TP</td>
+<td align="center">2</td>
+<td align="center">11.21</td>
+<td align="center">7.97</td>
+<td align="center">13.07</td>
+<td align="center">20.44</td>
+<td align="center">17.22</td>
+<td align="center"></td>
+<td align="center">15.60</td>
+<td align="center">7.08</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>7</strong></td>
+<td>VC</td>
+<td align="center">2</td>
+<td align="center">7.04</td>
+<td align="center">18.52</td>
+<td align="center">8.01</td>
+<td align="center">27.87</td>
+<td align="center">20.11</td>
+<td align="center">15.60</td>
+<td align="center"></td>
+<td align="center">18.03</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>12</strong></td>
+<td>XO</td>
+<td align="center">2</td>
+<td align="center">11.48</td>
+<td align="center">14.89</td>
+<td align="center">18.37</td>
+<td align="center">13.37</td>
+<td align="center">11.04</td>
+<td align="center">7.08</td>
+<td align="center">18.03</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<div class="exercise">
+<p><span id="exr:c48" class="exercise"><strong>Problema 4.8  </strong></span>Mediante el método de Stieglitz-Weiner-Kleitman,
+interconecte los nodos siguientes con un nivel de redundancia = 2.
+Considere que no está permitida la conexión entre los nodos 1 y 5.
+<strong>Enumere los nodos conforme los vaya definiendo</strong>.</p>
+</div>
+<p><img src="figuras/c4/Stieg5.jpg" width="35%" style="display: block; margin: auto;" /></p>
+<div class="exercise">
+<p><span id="exr:c49" class="exercise"><strong>Problema 4.9  </strong></span>Diseñe la topología de costo mínimo con el método
+de Esau-Williams para una red cuya matriz de costos es la siguiente.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>2</strong></th>
+<th align="center"><strong>3</strong></th>
+<th align="center"><strong>4</strong></th>
+<th align="center"><strong>5</strong></th>
+<th align="center"><strong>6</strong></th>
+<th align="center"><strong>7</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">7</td>
+<td align="center">9</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="center"></td>
+<td align="center">2</td>
+<td align="center">6</td>
+<td align="center">9</td>
+<td align="center">3</td>
+<td align="center">5</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">4</td>
+<td align="center">7</td>
+<td align="center">1</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">9</td>
+<td align="center">6</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">3</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">7</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Estime el costo inicial y final.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c410" class="exercise"><strong>Problema 4.10  </strong></span>Para la siguiente matriz de costos, utilice el
+método de Kruskal para obtener la topología óptima:</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>1</strong></th>
+<th align="center"><strong>2</strong></th>
+<th align="center"><strong>3</strong></th>
+<th align="center"><strong>4</strong></th>
+<th align="center"><strong>5</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td align="center">–</td>
+<td align="center">6</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">5</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td align="center">6</td>
+<td align="center">-</td>
+<td align="center">3</td>
+<td align="center">5</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">-</td>
+<td align="center">4</td>
+<td align="center">5</td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td align="center">3</td>
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center">-</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td><strong>5</strong></td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:c411" class="exercise"><strong>Problema 4.11  </strong></span>Diseñe la topología del núcleo de red que se
+muestra en la figura mediante el método de Stieglitz-Weiner-Kleitman. Se
+desea que la red pueda subsistir a dos fallos por lo menos. Los enlaces
+que se muestran en la figura ya están establecidos y no pueden
+eliminarse. Las líneas punteadas en la figura sirven únicamente como
+referencia.</p>
+</div>
+<p><img src="figuras/c4/nucleo12.jpg" width="50%" style="display: block; margin: auto;" /></p>
+<div class="exercise">
+<p><span id="exr:c412" class="exercise"><strong>Problema 4.12  </strong></span>Explique brevemente para qué se utiliza la
+siguiente fórmula y qué signifca cada uno de sus términos.
+<span class="math display">\[\bar v = \Big\lfloor\frac{\underset{j=1}{\overset{F}\Sigma} S_j\times
+j}{N}\Big\rfloor+1\]</span></p>
+</div>
+<div class="exercise">
+<p><span id="exr:c413" class="exercise"><strong>Problema 4.13  </strong></span>La siguiente es una matriz de tráfico en paquetes
+por segundo en la hora pico para la red de la figura. Los enlaces deben
+dimensionarse con una capacidad tal que la utilización durante la hora
+pico sea de 80%.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>A</strong></th>
+<th align="center"><strong>B</strong></th>
+<th align="center"><strong>C</strong></th>
+<th align="center"><strong>D</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A</strong></td>
+<td align="center"><span class="math inline">\(11,000\)</span></td>
+<td align="center"><span class="math inline">\(900\)</span></td>
+<td align="center"><span class="math inline">\(750\)</span></td>
+<td align="center"><span class="math inline">\(10\,500\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>B</strong></td>
+<td align="center"><span class="math inline">\(14,000\)</span></td>
+<td align="center"><span class="math inline">\(10,000\)</span></td>
+<td align="center"><span class="math inline">\(2,000\)</span></td>
+<td align="center"><span class="math inline">\(1\,300\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>C</strong></td>
+<td align="center"><span class="math inline">\(9\,500\)</span></td>
+<td align="center"><span class="math inline">\(1\,800\)</span></td>
+<td align="center"><span class="math inline">\(4\,200\)</span></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td><strong>D</strong></td>
+<td align="center"><span class="math inline">\(18\,700\)</span></td>
+<td align="center"><span class="math inline">\(550\)</span></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(3\,150\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figuras/c4/pbmDistTfc.jpg" width="50%" style="display: block; margin: auto;" /></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Dimensione todos los enlaces.</p></li>
+<li><p>Considere que <span class="math inline">\(A-C\)</span> y <span class="math inline">\(A-D\)</span> deben repartirse equitativamente la carga de <span class="math inline">\(A-B\)</span> si este enlace falla. ¿Con qué capacidad deben dimensionarse estos enlaces?</p></li>
+</ol>
+<div class="exercise">
+<p><span id="exr:c414" class="exercise"><strong>Problema 4.14  </strong></span>Un concentrador hacia el núcleo recibe 25 enlaces como se muestra en la tabla. El núcleo está diseñado con una redundancia de K=3 y los enlaces (las troncales) no deben exceder 50% de
+utilización. ¿De qué capacidad deben ser estos enlaces?</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="left">No. enlaces</th>
+<th align="left">Capacidad</th>
+<th align="left">Utilización</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">E1</td>
+<td align="left">37%</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="left">1Mb/s</td>
+<td align="left">57%</td>
+</tr>
+<tr class="odd">
+<td align="left">10</td>
+<td align="left">E0</td>
+<td align="left">75%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:c415" class="exercise"><strong>Problema 4.15  </strong></span>De acuerdo al método de diseño con bloques
+funcionales, dibuje un bloque básico de red de acceso para una LAN.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c416" class="exercise"><strong>Problema 4.16  </strong></span>Mencione algunas de las consideraciones
+principales a tomar en cuenta cuando se decide contratar accesos a
+internet a través de dos proveedores de servicio distintos.</p>
+</div>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p>Para un problema NP-Completo no se tienen algoritmos que proporcionen soluciones en tiempo polinómico, es decir, el tiempo esperado para resolverlo es el que tardaría una búsqueda exhaustiva de todas las posibilidades.<a href="diseño-lógico-de-la-red.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>Una red está conectada si existe una trayectoria entre cualquier par de nodos. Se dice que la red es
+de grado k o está k-conectada si existen k trayectorias disjuntas entre cualquier par de nodos, donde dos
+trayectorias son disjuntas si no tienen ningún enlace o nodo en común.<a href="diseño-lógico-de-la-red.html#fnref12" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="administración-de-redes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-DisLogico.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown_DisArqRedes.pdf", "bookdown_DisArqRedes.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

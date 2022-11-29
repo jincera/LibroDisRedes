@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Requerimientos técnicos. Compromisos y restricciones | Diseño y Arquitectura de Redes</title>
+  <meta name="description" content="Primer intento para hacer las notas en html" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Requerimientos técnicos. Compromisos y restricciones | Diseño y Arquitectura de Redes" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/figuras/dar.jpg" />
+  <meta property="og:description" content="Primer intento para hacer las notas en html" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Requerimientos técnicos. Compromisos y restricciones | Diseño y Arquitectura de Redes" />
+  
+  <meta name="twitter:description" content="Primer intento para hacer las notas en html" />
+  <meta name="twitter:image" content="/figuras/dar.jpg" />
+
+<meta name="author" content="José Incera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="metodología-de-diseño-de-redes.html"/>
+<link rel="next" href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diseño y Arquitectura de Redes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html"><i class="fa fa-check"></i><b>1</b> Metodología de diseño de redes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#introducción"><i class="fa fa-check"></i><b>1.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#por-qué-una-empresa-desea-una-red"><i class="fa fa-check"></i>¿Por qué una empresa desea una red?</a></li>
+<li class="chapter" data-level="" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#fracasos-en-proyectos-de-tecnología-de-información"><i class="fa fa-check"></i>Fracasos en proyectos de tecnología de información</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#diseño-descendente"><i class="fa fa-check"></i><b>1.2</b> Diseño descendente</a></li>
+<li class="chapter" data-level="1.3" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#microsoft-solutions-framework"><i class="fa fa-check"></i><b>1.3</b> Microsoft Solutions Framework</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#modelo-de-proceso"><i class="fa fa-check"></i><b>1.3.1</b> Modelo de proceso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#análisis-de-riesgos"><i class="fa fa-check"></i><b>1.4</b> Análisis de riesgos</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#manejo-de-riesgos"><i class="fa fa-check"></i><b>1.4.1</b> Manejo de Riesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="metodología-de-diseño-de-redes.html"><a href="metodología-de-diseño-de-redes.html#problemas"><i class="fa fa-check"></i><b>1.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html"><i class="fa fa-check"></i><b>2</b> Requerimientos técnicos. Compromisos y restricciones</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#escalabilidad"><i class="fa fa-check"></i><b>2.1</b> Escalabilidad</a></li>
+<li class="chapter" data-level="2.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#disponibilidad"><i class="fa fa-check"></i><b>2.2</b> Disponibilidad</a></li>
+<li class="chapter" data-level="2.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#confiabilidad"><i class="fa fa-check"></i><b>2.3</b> Confiabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#desempeño"><i class="fa fa-check"></i><b>2.4</b> Desempeño</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ancho-de-banda"><i class="fa fa-check"></i><b>2.4.1</b> Ancho de banda</a></li>
+<li class="chapter" data-level="2.4.2" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#utilización"><i class="fa fa-check"></i><b>2.4.2</b> Utilización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#rendimiento"><i class="fa fa-check"></i><b>2.4.3</b> Rendimiento</a></li>
+<li class="chapter" data-level="2.4.4" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#tasa-de-error"><i class="fa fa-check"></i><b>2.4.4</b> Tasa de error</a></li>
+<li class="chapter" data-level="2.4.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#eficiencia"><i class="fa fa-check"></i><b>2.4.5</b> Eficiencia</a></li>
+<li class="chapter" data-level="2.4.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#retardo-y-variabilidad"><i class="fa fa-check"></i><b>2.4.6</b> Retardo y variabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#seguridad"><i class="fa fa-check"></i><b>2.5</b> Seguridad</a></li>
+<li class="chapter" data-level="2.6" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#administración"><i class="fa fa-check"></i><b>2.6</b> Administración</a></li>
+<li class="chapter" data-level="2.7" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#facilidad-de-uso"><i class="fa fa-check"></i><b>2.7</b> Facilidad de uso</a></li>
+<li class="chapter" data-level="2.8" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#adaptabilidad"><i class="fa fa-check"></i><b>2.8</b> Adaptabilidad</a></li>
+<li class="chapter" data-level="2.9" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#costo-beneficio"><i class="fa fa-check"></i><b>2.9</b> Costo-beneficio</a></li>
+<li class="chapter" data-level="2.10" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#conflictos-entre-requerimientos"><i class="fa fa-check"></i><b>2.10</b> Conflictos entre requerimientos</a></li>
+<li class="chapter" data-level="2.11" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#otras-métricas-relevantes"><i class="fa fa-check"></i><b>2.11</b> Otras métricas relevantes</a></li>
+<li class="chapter" data-level="2.12" data-path="requerimientos-técnicos.-compromisos-y-restricciones.html"><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#problemas-1"><i class="fa fa-check"></i><b>2.12</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><i class="fa fa-check"></i><b>3</b> Caracterización de la red y del tráfico generado por las aplicaciones</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-la-topología"><i class="fa fa-check"></i><b>3.1</b> Caracterización de la topología</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#mapa-de-la-red"><i class="fa fa-check"></i><b>3.1.1</b> Mapa de la red</a></li>
+<li class="chapter" data-level="3.1.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#asignación-de-nombres-y-direcciones"><i class="fa fa-check"></i><b>3.1.2</b> Asignación de nombres y direcciones</a></li>
+<li class="chapter" data-level="3.1.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-de-los-medios-de-transmisión"><i class="fa fa-check"></i><b>3.1.3</b> Caracterización de los medios de transmisión</a></li>
+<li class="chapter" data-level="3.1.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#restricciones-ambientales-y-arquitectónicas"><i class="fa fa-check"></i><b>3.1.4</b> Restricciones ambientales y arquitectónicas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#desempeño-de-la-red-actual"><i class="fa fa-check"></i><b>3.2</b> Desempeño de la red actual</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#herramientas-de-recolección"><i class="fa fa-check"></i><b>3.2.1</b> Herramientas de recolección</a></li>
+<li class="chapter" data-level="3.2.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#periodo-y-frecuencia-de-recolección"><i class="fa fa-check"></i><b>3.2.2</b> Periodo y frecuencia de recolección</a></li>
+<li class="chapter" data-level="3.2.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#algunas-métricas-de-desempeño"><i class="fa fa-check"></i><b>3.2.3</b> Algunas métricas de desempeño</a></li>
+<li class="chapter" data-level="3.2.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#presentación-de-resultados"><i class="fa fa-check"></i><b>3.2.4</b> Presentación de resultados</a></li>
+<li class="chapter" data-level="3.2.5" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#análisis-estadístico-de-redes"><i class="fa fa-check"></i><b>3.2.5</b> Análisis estadístico de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-flujo"><i class="fa fa-check"></i><b>3.3</b> Caracterización del flujo</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#tipos-de-flujo-por-aplicación"><i class="fa fa-check"></i><b>3.3.1</b> Tipos de flujo por aplicación</a></li>
+<li class="chapter" data-level="3.3.2" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#caracterización-del-volumen-de-tráfico"><i class="fa fa-check"></i><b>3.3.2</b> Caracterización del volumen de tráfico</a></li>
+<li class="chapter" data-level="3.3.3" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#requerimientos-de-calidad-de-servicio"><i class="fa fa-check"></i><b>3.3.3</b> Requerimientos de calidad de servicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html"><a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html#problemas-2"><i class="fa fa-check"></i><b>3.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html"><i class="fa fa-check"></i><b>4</b> Diseño lógico de la red</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología"><i class="fa fa-check"></i><b>4.1</b> Diseño de la topología</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-plana"><i class="fa fa-check"></i><b>4.1.1</b> Topología plana</a></li>
+<li class="chapter" data-level="4.1.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-jerárquico"><i class="fa fa-check"></i><b>4.1.2</b> Diseño jerárquico</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-capa-de-acceso"><i class="fa fa-check"></i><b>4.2</b> Diseño de la capa de acceso</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problema-de-localización-asignación"><i class="fa fa-check"></i><b>4.2.1</b> Problema de Localización-asignación</a></li>
+<li class="chapter" data-level="4.2.2" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#asignación-de-nodos-a-concentradores"><i class="fa fa-check"></i><b>4.2.2</b> Asignación de nodos a concentradores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#topología-de-nodos-a-concentrador"><i class="fa fa-check"></i><b>4.2.3</b> Topología de nodos a concentrador</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#capa-de-distribución"><i class="fa fa-check"></i><b>4.3</b> Capa de distribución</a></li>
+<li class="chapter" data-level="4.4" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-red-dorsal"><i class="fa fa-check"></i><b>4.4</b> Diseño de la red dorsal</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-de-la-topología-1"><i class="fa fa-check"></i><b>4.4.1</b> Diseño de la topología</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#diseño-basado-en-bloques-modulares"><i class="fa fa-check"></i><b>4.5</b> Diseño basado en bloques modulares</a></li>
+<li class="chapter" data-level="4.6" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#s:redundancia"><i class="fa fa-check"></i><b>4.6</b> Topologías con redundancia</a></li>
+<li class="chapter" data-level="4.7" data-path="diseño-lógico-de-la-red.html"><a href="diseño-lógico-de-la-red.html#problemas-3"><i class="fa fa-check"></i><b>4.7</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="administración-de-redes.html"><a href="administración-de-redes.html"><i class="fa fa-check"></i><b>5</b> Administración de redes</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#evolución-de-administración-de-sistemas"><i class="fa fa-check"></i><b>5.1</b> Evolución de administración de sistemas</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-fallas"><i class="fa fa-check"></i><b>5.1.1</b> Gestión de fallas</a></li>
+<li class="chapter" data-level="5.1.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-configuración"><i class="fa fa-check"></i><b>5.1.2</b> Gestión de configuración</a></li>
+<li class="chapter" data-level="5.1.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-seguridad"><i class="fa fa-check"></i><b>5.1.3</b> Gestión de seguridad</a></li>
+<li class="chapter" data-level="5.1.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#gestión-de-rendimiento"><i class="fa fa-check"></i><b>5.1.4</b> Gestión de rendimiento</a></li>
+<li class="chapter" data-level="5.1.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#contabilidad-de-recursos"><i class="fa fa-check"></i><b>5.1.5</b> Contabilidad de recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#protocolos-de-administración"><i class="fa fa-check"></i><b>5.2</b> Protocolos de administración</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-administración-osi"><i class="fa fa-check"></i><b>5.2.1</b> Modelo de administración OSI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="administración-de-redes.html"><a href="administración-de-redes.html#modelo-de-gestión-ietf"><i class="fa fa-check"></i><b>5.2.2</b> Modelo de gestión IETF</a></li>
+<li class="chapter" data-level="5.2.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#simple-network-management-protocol"><i class="fa fa-check"></i><b>5.2.3</b> Simple Network Management Protocol</a></li>
+<li class="chapter" data-level="5.2.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#base-de-datos-de-información-de-administración-mib"><i class="fa fa-check"></i><b>5.2.4</b> Base de datos de información de administración (MIB)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="administración-de-redes.html"><a href="administración-de-redes.html#rmon"><i class="fa fa-check"></i><b>5.3</b> RMON</a></li>
+<li class="chapter" data-level="5.4" data-path="administración-de-redes.html"><a href="administración-de-redes.html#administración-de-sistemas-con-snmp"><i class="fa fa-check"></i><b>5.4</b> Administración de sistemas con SNMP</a></li>
+<li class="chapter" data-level="5.5" data-path="administración-de-redes.html"><a href="administración-de-redes.html#problemas-4"><i class="fa fa-check"></i><b>5.5</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html"><i class="fa fa-check"></i><b>6</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#cobertura-de-internet"><i class="fa fa-check"></i><b>6.1</b> Cobertura de Internet</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#red-de-acceso"><i class="fa fa-check"></i><b>6.1.1</b> Red de acceso</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#contexto-de-internet-y-servicios-de-banda-ancha-en-méxico"><i class="fa fa-check"></i><b>6.1.2</b> Contexto de Internet y servicios de Banda Ancha en México</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#banda-ancha"><i class="fa fa-check"></i><b>6.1.3</b> Banda Ancha</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-1"><i class="fa fa-check"></i><b>6.2</b> Tecnologías de acceso</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-cableadas"><i class="fa fa-check"></i><b>6.2.1</b> Tecnologías de acceso cableadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#tecnologías-de-acceso-inalámbricas"><i class="fa fa-check"></i><b>6.3</b> Tecnologías de acceso inalámbricas</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#telefonía-celular"><i class="fa fa-check"></i><b>6.3.1</b> Telefonía celular</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tecnologías-de-acceso.html"><a href="tecnologías-de-acceso.html#problemas-5"><i class="fa fa-check"></i><b>6.4</b> Problemas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html"><i class="fa fa-check"></i><b>7</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#introducción-1"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#métricas-financieras"><i class="fa fa-check"></i><b>7.2</b> Métricas financieras</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#costo-total-de-propiedad"><i class="fa fa-check"></i><b>7.2.1</b> Costo total de propiedad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#retorno-de-inversión"><i class="fa fa-check"></i><b>7.2.2</b> Retorno de inversión</a></li>
+<li class="chapter" data-level="7.2.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#valor-presente-neto"><i class="fa fa-check"></i><b>7.2.3</b> Valor Presente Neto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-tecno-económico-1"><i class="fa fa-check"></i><b>7.3</b> Análisis tecno-económico</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#análisis-de-rentabilidad"><i class="fa fa-check"></i><b>7.3.1</b> Análisis de rentabilidad</a></li>
+<li class="chapter" data-level="7.3.2" data-path="análisis-tecno-económico.html"><a href="análisis-tecno-económico.html#despliegue-y-operación-de-la-red"><i class="fa fa-check"></i><b>7.3.2</b> Despliegue y operación de la red</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html"><i class="fa fa-check"></i><b>8</b> Respuestas a problemas seleccionados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#S:Metod"><i class="fa fa-check"></i><b>8.1</b> Metodología de diseño de redes</a></li>
+<li class="chapter" data-level="8.2" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:ReqTec"><i class="fa fa-check"></i><b>8.2</b> Requerimientos técnicos</a></li>
+<li class="chapter" data-level="8.3" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:CaracRed"><i class="fa fa-check"></i><b>8.3</b> Caracterización de la red</a></li>
+<li class="chapter" data-level="8.4" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:DisLog"><i class="fa fa-check"></i><b>8.4</b> Diseño lógico</a></li>
+<li class="chapter" data-level="8.5" data-path="respuestas-a-problemas-seleccionados.html"><a href="respuestas-a-problemas-seleccionados.html#s:Admon"><i class="fa fa-check"></i><b>8.5</b> Administración de Redes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diseño y Arquitectura de Redes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="requerimientos-técnicos.-compromisos-y-restricciones" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Requerimientos técnicos. Compromisos y restricciones<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#requerimientos-técnicos.-compromisos-y-restricciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Durante la fase de visión y alcance se identificaron las necesidades de negocio, el entorno de trabajo y se empezó a reconocer el tipo de aplicaciones que soportarán los objetivos del proyecto. Para el diseño de la red, los requerimientos de negocio se traducen en requerimientos técnicos.</p>
+<p>Como se mencionó en el capítulo anterior, los objetivos del proyecto deben ser SMART, por lo que los requerimientos técnicos deben ser cuantificables y especificarse en términos concretos. En este capítulo se introducirán brevemente algunos de los requerimientos técnicos encontrados más frecuentemente en redes de comunicaciones. Específicamente, se presentan los requerimientos de:</p>
+<p>  <br />
+</p>
+<ul>
+<li><p>Escalabilidad</p></li>
+<li><p>Desempeño</p></li>
+<li><p>Administración</p></li>
+<li><p>Adaptabilidad</p></li>
+<li><p>Disponibilidad</p></li>
+<li><p>Seguridad</p></li>
+<li><p>Facilidad de uso</p></li>
+<li><p>Costo-beneficio</p></li>
+</ul>
+<p>Algunos de estos requerimientos son mutuamente exclusivos, por lo que se requiere de compromisos entre ellos. Estos compromisos deben estar claramente alineados con los objetivos del proyecto.</p>
+<div id="escalabilidad" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Escalabilidad<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#escalabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El requerimiento de escalabilidad (<em>scalability</em>) se refiere básicamente a la capacidad de crecimiento de la red y puede llegar a ser uno de los objetivos centrales para medianas y grandes empresas inmersas en una estrategia de adquisiciones, fusiones, y/o crecimiento acelerado.</p>
+<p>En este contexto, “crecimiento” abarca varias dimensiones. Se debe discutir claramente con el cliente cuáles son sus planes a corto (un año), mediano (dos años) y largo plazo (cinco años) para agregar nuevos usuarios, equipos y aplicaciones de negocio. También deberá discutirse si se tienen planeados cambios en las políticas de operación (por ejemplo, comercio electrónico) y/o en las principales líneas de negocio.</p>
+<p>Esto es muy importante pues escalar una red puede llegar a ser sumamente difícil si no se planea desde el principio. Por ejemplo, algunas tecnologías son inherentemente no escalables, como ocurre con redes planas basadas en equipos de conmutación y que utilizan protocolos que generan muchas tramas de difusión.</p>
+<p>La escalabilidad será confrontada con el tiempo de vida promedio de las tecnologías en que se basa el diseño propuesto. Es común considerar que la infraestructura de base (cableado, enlaces) tiene un tiempo de vida útil de 10 a 15 años. Sin embargo, en los últimos años se ha observado un cambio dramático en la tasa de rotación de infraestructura.</p>
+<div style="color: blue;">
+<p><em>A partir de finales del siglo XX se observó un tiempo de obsolescencia de la infraestructura de cableado de únicamente seis años, sobre todo en el núcleo de la red, debido a las continuas mejoras tecnológicas y a la reducción de costos en este rubro (en particular, en fibra óptica). Este tiempo de obsolescencia sigue siendo vigente en redes que no han desplegado fibra óptica monomodal.</em></p>
+<p><em>Para los equipos de conmutación (enrutadores, conmutadores, concentradores), el tiempo de vida actual oscila entre los tres y los cinco años.</em></p>
+</div>
+<p>Otro aspecto que debe tomarse en consideración al evaluar la
+escalabilidad necesaria en la red, es que los paradigmas clásicos de dimensionamiento de redes están perdiendo fuerza. Tradicionalmente, la planeación de capacidad para redes empresariales se hacía basándose en una distribución Pareto: 80% del tráfico queda en la red local departamental y 20% va a otros lados. Este paradigma ha sido cada vez más cuestionado en la actualidad. De hecho, se observa que la relación se está invirtiendo debido, entre otros factores, a:</p>
+<ul>
+<li><p>El uso creciente de granjas de servidores (<em>clusters, blade
+servers</em>) y de servidores de aplicaciones;</p></li>
+<li><p>el modelo de hospedaje externo de servidores (<em>hosting</em>);</p></li>
+<li><p>la concentración de información en infraestructura especializada (<em>SANs, NAS</em>);</p></li>
+<li><p>la difusión de información corporativa en intranets;</p></li>
+<li><p>el creciente modelo de comunicaciones inter-empresas (<em>extranets</em>).</p></li>
+</ul>
+</div>
+<div id="disponibilidad" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Disponibilidad<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#disponibilidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La disponibilidad (<em>availability</em>) indica cuánto tiempo la red está en operación en un determinado intervalo de tiempo (año, mes, día, hora, …). Generalmente se representa como un porcentaje del período evaluado.</p>
+<p><span class="math display">\[\text{Disponibilidad}=\frac{\text{Tiempo en operación}}{%
+\text{Período evaluado}}\]</span></p>
+<p>De acuerdo a su disponibilidad, los sistemas pueden clasificarse de la siguiente manera:</p>
+<div class="center">
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">No administrado</td>
+<td align="left">90%</td>
+</tr>
+<tr class="even">
+<td align="left">Administrado</td>
+<td align="left">99%</td>
+</tr>
+<tr class="odd">
+<td align="left">Bien administrado</td>
+<td align="left">99.9%</td>
+</tr>
+<tr class="even">
+<td align="left">Tolerante a fallos</td>
+<td align="left">99.99%</td>
+</tr>
+<tr class="odd">
+<td align="left">Alta disponibilidad</td>
+<td align="left">99.999%</td>
+</tr>
+<tr class="even">
+<td align="left">Muy alta disponibilidad</td>
+<td align="left">99.9999%</td>
+</tr>
+<tr class="odd">
+<td align="left">Ultra alta disponibilidad</td>
+<td align="left">99.99999%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La disponibilidad necesaria debe definirse con precisión, pues cada “9” adicional, si bien aumenta en un orden de magnitud la fiabilidad del sistema, puede resultar sumamente costoso. Para saber cuánto invertir en este requerimiento, debe partirse por evaluar el costo para la empresa de que una aplicación de misión crítica deje de operar.</p>
+<div style="color: blue;">
+<p><em>Las aplicaciones de misión crítica son todos aquellos procesos en los que se basa el núcleo de negocio de la empresa. Un fallo en una aplicación crítica deja a la empresa sin poder operar. Un requerimiento de disponibilidad típico para aplicaciones de misión crítica es de 99.98%.</em></p>
+</div>
+<p>La disponibilidad se puede determinar más fácilmente a partir de los valores de tiempo medio entre fallos (<em>mean time between failures</em>, <code>MTBF</code>) y tiempo medio de reparación (<em>mean time to repair</em>, <code>MTTR</code>).</p>
+<p><span class="math display">\[\text{Disponibilidad}= A = \frac{\texttt{MTBF}}{\texttt{MTBF}+ \texttt{MTTR}}\]</span></p>
+<p>Se prefiere esta métrica pues puede ocurrir que muchas fallas de muy corta duración den un valor de disponibilidad adecuado aunque en la práctica no se pueda trabajar con el sistema.</p>
+<p><code>MTBF</code> y <code>MTTR</code> son cifras para componentes y equipos. Como la red da un servicio, algunos autores prefieren los términos <code>MTBSO</code> (<em>Mean time between service outages</em>) y <code>MTTSR</code> (<em>Mean time to service repair</em>).</p>
+<p>Es muy importante considerar que los valores de <code>MTBF</code> y <code>MTTR</code> son valores promedio en los que puede haber una gran variabilidad. Esto es particularmente cierto para el <code>MTTR</code>, en el cual se engloban muchos factores muy variados como el tiempo en que se detecta la falla, el necesario para aislar el equipo, para repararlo, y el tiempo necesario para restablecer el equipo e integrarlo a la infraestructura de producción.</p>
+<p>Para un equipo de red, un <code>MTBF</code> deseable es del orden de decenas de miles de horas. Para un sistema completo, es de miles de horas, pues la disponibilidad de un sistema depende de la manera en la que sus componentes están interconectados:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dispo"></span>
+<img src="figuras/c2/dispo.jpg" alt="*Disponibilidad de sistemas con componentes en serie y en paralelo*" width="60%" />
+<p class="caption">
+Figura 2.1: <em>Disponibilidad de sistemas con componentes en serie y en paralelo</em>
+</p>
+</div>
+<p>Dado que <span class="math inline">\(0\leq A_i\leq 1\)</span>, de la figura <a href="requerimientos-técnicos.-compromisos-y-restricciones.html#fig:dispo">2.1</a> se
+confirma que con un mayor número de dispositivos o sub-sistemas en serie, la disponibilidad disminuye (es decir, aumenta la probabilidad de fallos en el sistema). A mayor número de dispositivos –con la misma funcionalidad– en paralelo, la disponibilidad aumenta. Es evidente que el uso de equipos redundantes aumenta la disponibilidad del sistema.</p>
+<p>Para sistemas similares que no están directamente relacionados entre sí, los <code>MTBF</code> (y en cierta medida, la disponibilidad) de cada uno suelen considerarse como variables aleatorias independientes idénticamente distribuidas.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-6" class="example"><strong>Ejemplo 2.1  </strong></span>Considere una empresa que tiene <span class="math inline">\(N=500\)</span> computadoras personales con un
+<code>MTBF</code> de <span class="math inline">\(10,000\,\text{hr}\)</span>. El número de incidentes por fallos
+esperado por día es de:
+<span class="math display">\[X = N\times\frac{t}{\texttt{MTBF}+\texttt{MTTR}}\approx N\times\frac{t}{\texttt{MTBF}}%
+= 500\times \frac{8760}{365\times 10000}=1.2\,\text{fallos/dia}\]</span> Tal
+vez se justifique una persona dedicada a dar mantenimiento a las
+computadoras. Si se adquirieran equipos con un <code>MTBF</code> de
+<span class="math inline">\(40,000\,\text{hr}\)</span>, entonces se tendrían 9 fallos por mes.</p>
+</div>
+<hr />
+</div>
+<div id="confiabilidad" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Confiabilidad<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#confiabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La confiabilidad (<em>reliability</em>) se refiere a las características
+aleatorias de los fallos. Se define como la probabilidad de que el
+sistema no falle antes de <span class="math inline">\(t\)</span> horas de operación y se especifica en
+términos del <code>MTBF</code> de los componentes.</p>
+<p>Frecuentemente se considera que las fallas obedecen a un proceso de
+Poisson, por lo que el intervalo entre fallos tiene una distribución
+exponencial. Por lo tanto,</p>
+<p><span class="math display">\[R=e^{-\frac{t}{\texttt{MTBF}}}\]</span></p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-7" class="example"><strong>Ejemplo 2.2  </strong></span>Considere un equipo con un <span class="math inline">\(\texttt{MTBF}=10,000\,\text{horas}\)</span>. Su
+confiabilidad para un año será de <span class="math inline">\(R = 41.64\%\)</span>. Si el <code>MTBF</code>aumenta a
+<span class="math inline">\(20,000\,\text{horas}\)</span>, la confiabilidad únicamente crece a
+<span class="math inline">\(R =64.53\%\)</span>.</p>
+</div>
+<hr />
+<p>Como fue el caso para el requerimiento de disponibilidad, la
+confiabilidad de un sistema depende de la interconexión entre sus
+componentes. Para una topología en serie, la confiabilidad se calcula
+así:
+<span class="math display">\[R_s = e^{-t\bigl(\frac{1}{\texttt{MTBF}_1}+\frac{1}{\texttt{MTBF}_2}%
++\cdots+\frac{1}{\texttt{MTBF}_n}\bigr)},\]</span> mientras que para un sistema
+con componentes similares en paralelo, la confiabilidad se determina
+por: <span class="math display">\[R_p=1-(1-R_1)\times(1-R_2)\times \cdots\times (1-R_n).\]</span></p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-8" class="example"><strong>Ejemplo 2.3  </strong></span>Considere un sistema con tres componentes en serie cuyos <code>MTBF</code> son
+respectivamente de <span class="math inline">\(20\,k\)</span>, <span class="math inline">\(25\,k\)</span> y <span class="math inline">\(30\,k\)</span> horas. Para un año, la
+confiabilidad del sistema es: <span class="math inline">\(R = 34\%\)</span>.</p>
+</div>
+<hr />
+</div>
+<div id="desempeño" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Desempeño<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#desempeño" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los requerimientos de desempeño de la red (<em>network performance</em>)
+también llamados “prestaciones de la red”, se definen con base en un
+conjunto de métricas cuantitativas sobre el comportamiento de la red,
+como el ancho de banda, la utilización, el rendimiento, la carga
+ofrecida, la tasa de error, la eficiencia, el retardo y su variabilidad
+(<em>jitter</em>).</p>
+<p>Es importante identificar las expectativas que el usuario tiene sobre el
+desempeño de la red. Estas expectativas están fuertemente ligadas a las
+características de la red existente y a los planes de crecimiento de la
+misma.</p>
+<div id="ancho-de-banda" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Ancho de banda<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ancho-de-banda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Técnicamente, el ancho de banda es una medida del rango de frecuencias
+que conforman una señal analógica (o la mayor parte de su potencia) y
+está medida en <em>Hertz</em>. En los sistemas digitales, representa el número
+de <em>símbolos por segundo</em> o baudios que pueden ser transmitidos por un
+sistema de comunicaciones.</p>
+<p>Dependiendo de la técnica de codificación, cada baudio puede representar
+uno o más bits, por lo que el ancho de banda también se emplea
+informalmente como una medida de la capacidad del canal de comunicación.
+Esa es la definición que se seguirá en este documento: Es la cantidad
+nominal (o teórica) de información que puede ser transportada por unidad
+de tiempo. Generalmente se expresa en bits/s.</p>
+</div>
+<div id="utilización" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Utilización<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#utilización" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Es una medida de la cantidad de tráfico transportada en relación con la
+capacidad total. En primera instancia se podría pensar que el objetivo
+de utilización debería ser cercano al 100% pero en realidad esto no es
+así:</p>
+<ul>
+<li><p>En las redes informáticas los paquetes suelen llegar en ráfagas y se
+debe dejar un margen para poder absorber esas ráfagas sin que haya
+pérdidas.</p></li>
+<li><p>En redes que tienen un control de acceso por contención (por
+ejemplo, ethernet), la eficiencia (ver más adelante) disminuye
+rápidamente conforme aumenta la utilización.</p></li>
+<li><p>Los procesos de llegada y de salida de paquetes son procesos
+aleatorios. En la mayoría de los casos, la dinámica de estos
+procesos requiere que, para una tasa de pérdida determinada, el
+tamaño de los buffers (y por consiguiente, el tiempo de espera)
+aumente exponencialmente conforme la utilización se acerca al 100%.</p></li>
+</ul>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-9" class="example"><strong>Ejemplo 2.4  </strong></span>Un modelo de la teoría de colas muy común para evaluar métricas de
+desempeño en redes de conmutación de paquetes, es la cola <span class="math inline">\(M/M/1\)</span> <a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.
+La cola <span class="math inline">\(M/M/1\)</span> supone que la llegada de los paquetes es un proceso de Poisson (el intervalo entre paquetes tiene una distribución aleatoria exponencial) y que la tasa de servicio (la longitud del paquete) también es exponencial.</p>
+<p>En este modelo, la utilización es el cociente entre la tasa de llegadas y la tasa de servicio y se representa por <span class="math inline">\(\rho\)</span>. El valor esperado para el tamaño de la cola se calcula como:</p>
+<p><span class="math display">\[E[N]=\frac{\rho}{1-\rho}\]</span></p>
+<p>Suponga que cinco usuarios generan tráfico con una tasa media de 10 paquetes por segundo cada uno y que el tamaño medio de paquete es de 1,024 bits. Los cinco usuarios comparten un enlace E0<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>. Modelando este escenario como una cola <span class="math inline">\(M/M/1\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}
+\rho = \frac{5\times 10\times 1,024}{64,000}&amp;=0.8\\
+E[N] = \frac{0.8}{0.2}&amp;=4
+\end{aligned}\]</span></p>
+<p>El número medio de paquetes encolados es de cuatro. Sin embargo, si se
+agrega solamente un usuario más al sistema, entonces <span class="math inline">\(\rho= 0.96\)</span> y
+<span class="math inline">\(E[N]= 24\)</span>.</p>
+</div>
+<hr />
+<p>Los parámetros típicos para dimensionar una red informática son los
+siguientes:</p>
+<ul>
+<li><p>Enlaces punto a punto y redes con control de acceso arbitrado:
+<span class="math inline">\(U\approx 70\%\)</span></p></li>
+<li><p>Redes ethernet: <span class="math inline">\(U\approx 37\%\)</span></p></li>
+</ul>
+<p>Los mecanismos de contención utilizados en ethernet, y derivados de la
+red Aloha, hacen que cuando la red empieza a rebasar este valor, el
+número de colisiones para acceder al medio crezca demasiado. Sin
+embargo, se debe tener presente que esto no aplica a ethernet conmutado,
+la tecnología dominante en la actualidad. Si en el puerto de un
+conmutador ethernet se tiene conectado un solo equipo, se trata de un
+enlace punto a punto y la utilización puede crecer hasta el 70%.</p>
+</div>
+<div id="rendimiento" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Rendimiento<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#rendimiento" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En este trabajo, rendimiento (<em>throughput</em>) se define como la cantidad
+de información transmitida sin error por unidad de tiempo. Idealmente,
+el rendimiento aumenta linealmente con la carga ofrecida a la red. Esto
+se cumple sólo hasta un cierto punto tras el cual se degrada debido a
+factores como la tasa de errores, la dinámica de protocolos, el
+desempeño de los equipos intermedios y el modo de acceso.</p>
+<p>El rendimiento puede ser calculado para toda la red, para una
+trayectoria, para un enlace o para un dispositivo de conmutación. En
+este último caso, el rendimiento se define como la tasa a la que el
+dispositivo puede conmutar paquetes, y puede variar de acuerdo al tamaño
+medio del paquete. La tasa máxima de conmutación se conoce como wire
+speed y es igual a:</p>
+<p><span class="math display">\[\text{Wire speed}=\frac{\text{Ancho de banda}}{\text{Tamaño de paquete}}\]</span></p>
+<hr />
+<div class="example">
+<p><span id="exm:thp" class="example"><strong>Ejemplo 2.5  </strong></span>Para una red 10baseT, considerando tramas de
+tamaño mínimo, la tasa máxima de conmutación de paquetes es:
+<span class="math display">\[\frac{10\times 10^6}{(64+20)\times 8}=14,480\,\text{p/s},\]</span> donde los
+20 octetos en el denominador corresponden a 8 de preámbulo y 12 del
+intervalo entre tramas.</p>
+<p>Si se hace el mismo cálculo para un tamaño de trama de 1,500 bytes,
+entonces el rendimiento sería de <span class="math inline">\(822\,\text{p/s}\)</span>.</p>
+</div>
+<hr />
+<p>Desde el punto de vista del usuario, la métrica de rendimiento de
+interés es la tasa de información percibida en la capa de aplicación del
+modelo de referencia para la interconexión de sistemas abiertos (OSI,
+<em>Open Systems Interconnection</em>). Esta métrica es informalmente conocida
+como <em>goodput</em>.</p>
+<p>Por ejemplo, en una red de baja velocidad se podría eliminar cualquier
+mecanismo de compresión. En ese caso, tal vez el rendimiento a nivel
+enlace aumente pero ciertamente el <em>goodput</em> se vería penalizado. Un
+caso similar ocurriría si la mayoría de los paquetes que circulan por la
+red fueran retransmisiones debidas a algún equipo que no esté trabajando
+correctamente.</p>
+<p>También conviene recordar que no todas las aplicaciones necesitan –o
+pueden generar– un <em>goodput</em> elevado. Considere, por ejemplo, una
+sesión interactiva de terminal virtual, sobre todo, con una interfaz de
+texto.</p>
+</div>
+<div id="tasa-de-error" class="section level3 hasAnchor" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> Tasa de error<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#tasa-de-error" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Evidentemente, los datos recibidos deben ser iguales a los transmitidos.
+De no ser así, la trama debe ser emitida nuevamente, disminuyendo el
+rendimiento de la red. La tasa de error es una medida del número de
+errores detectados. En medios físicos y redes WAN generalmente se
+expresa en bits afectados (<em>bit error rate</em>) mientras que en redes LAN
+se habla de tasa de tramas afectadas (<em>frame error rate</em>).</p>
+<p>Antiguamente la tasa de error en los medios físicos era relativamente
+elevada. Esto ha cambiado radicalmente en la actualidad, sobre todo con
+la aparición de la fibra óptica, aunque también ha habido mejoras en las
+demás tecnologías. Algunas fuentes típicas de error son la siguientes:</p>
+<ul>
+<li><p>Interferencia electromagnética (cable no blindado);</p></li>
+<li><p>picos de corriente (medios cableados);</p></li>
+<li><p>factores ambientales (microondas y satélites);</p></li>
+<li><p>impedancias no acopladas (redes locales);</p></li>
+<li><p>fallas de equipo (todos los casos).</p></li>
+</ul>
+<p>Dada la penetración de los sistemas digitales en la actualidad, llama la
+atención que en la lista anterior no se consideren errores de software
+en los equipos terminales y dispositivos de red. En realidad, este tipo
+de error suele detectarse rápidamente en las etapas de validación del
+equipo; es relativamente poco frecuente que un equipo en producción
+presente fallas de programación.</p>
+<p>Algunas cifras típicas de tasa de error son las siguientes:</p>
+<ul>
+<li><p>Alambre de cobre: <span class="math inline">\(BER\approx 10^{-6}\)</span></p></li>
+<li><p>Fibra óptica: <span class="math inline">\(BER\approx 10^{-12}\)</span></p></li>
+<li><p>Enlaces satelitales: <span class="math inline">\(BER\approx 10^{-5}\)</span>. La tasa de error de los
+enlaces satelitales depende en gran medida de la banda (frecuencia)
+que se utilice y de las condiciones atmosféricas. La cifra anterior
+no considera la corrección automática de errores por el receptor
+(<em>forward error correction, FEC</em>), una técnica muy popular basada en
+transmisión de información redundante, lo cual permite reducir
+sustancialmente la tasa efectiva de error.</p></li>
+<li><p>Para redes LAN, una tasa de error considerada aceptable es detectar,
+en promedio, una trama errónea por cada <span class="math inline">\(10^6\)</span> bytes transmitidos.
+Aunque se habla de tramas erróneas, la cifra se expresa en función
+del número de octetos para evitar el tener que tomar en cuenta el
+tamaño de las tramas.</p></li>
+<li><p>En redes tipo ethernet, se deben detectar menos de 0.1% de tramas en
+colisión. En primera instancia, esta cifra puede parecer demasiado
+baja pues las colisiones son un fenómeno “natural” de competencia en
+este tipo de redes. Sin embargo, se debe recordar que la mayoría de
+las colisiones se presentan durante la transmisión del preámbulo,
+antes de iniciar propiamente la transmisión de una trama y por lo
+tanto, no son tomadas en cuenta.</p></li>
+</ul>
+</div>
+<div id="eficiencia" class="section level3 hasAnchor" number="2.4.5">
+<h3><span class="header-section-number">2.4.5</span> Eficiencia<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#eficiencia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La eficiencia es una medida de la sobrecarga o trabajo extra necesario
+para la transmisión de información en relación con la capacidad total
+del medio. También puede representar la cantidad útil de información en
+relación con la cantidad transmitida. Se ve afectada directamente por
+las características de los protocolos utilizados: tamaño de los
+encabezados, acuses de recibo, paso de estafetas (<em>token</em>); etc.</p>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Ejemplo 2.6  </strong></span>Del ejemplo <a href="requerimientos-técnicos.-compromisos-y-restricciones.html#exm:thp">2.5</a> se obtuvo que en ethernet a <span class="math inline">\(10\,Mb/s\)</span> se pueden
+enviar <span class="math inline">\(14,480\)</span> tramas de <span class="math inline">\(64\)</span> bytes. Considerando únicamente la
+sobrecarga del encabezado MAC, en la trama sólo hay <span class="math inline">\(64 - 18 = 46\)</span> bytes de carga útil, por lo que la eficiencia es:</p>
+<p><span class="math display">\[\mathcal{E} = \frac{46\times 14,480\times 8}{10\times 10^6}\times
+100\%=53.20\%.\]</span></p>
+<p>Si el tamaño de las tramas cambia a 1,500 bytes, la eficiencia aumenta
+a: <span class="math display">\[\mathcal{E} = \frac{1,482\times 812\times 8}{10\times 10^6}\times
+100\%=96.20\%.\]</span></p>
+</div>
+<hr />
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-11" class="example"><strong>Ejemplo 2.7  </strong></span>En transmisiones de voz sobre IP, cada paquete transporta un cierto
+intervalo de muestras (típicamente, <span class="math inline">\(10\)</span>, <span class="math inline">\(20\)</span> o <span class="math inline">\(40\,ms\)</span>) cuyo tamaño
+depende del tipo de códec utilizado. Los paquetes suelen contener
+encabezados de tres protocolos que contribuyen en 40 bytes al tamaño
+final del paquete: <code>RTP</code>(12 bytes), <code>UDP</code>(8 bytes) e <code>IP</code>(Ver. 4 sin
+opciones: 20 bytes). Ignorando por ahora el encabezado MAC y suponiendo
+un códec <code>PCM</code> a <span class="math inline">\(64\,kb/s\)</span> (G.711), si el paquete transporta <span class="math inline">\(20\,ms\)</span>
+de información, su eficiencia es la siguiente:</p>
+<p>Se generan <span class="math inline">\(1/20\,ms = 50\,\text{p/s}\)</span>. Cada paquete tiene su propio
+encabezado por lo que se genera una sobrecarga de
+<span class="math inline">\(50\times 40\times 8 =16\,kb/s\)</span>. El ancho de banda necesario para
+transportar la información es entonces de
+<span class="math inline">\(16\,kb/s + 64\,kb/s = 80\,kb/s\)</span> y la eficiencia es:
+<span class="math display">\[\mathcal{E}=\frac{64,000}{80,000}\times 100\%=80\%.\]</span></p>
+</div>
+<hr />
+<p>Es claro que una manera de aumentar la eficiencia es aumentando la carga
+útil (<em>payload</em>) por paquete para “prorratear” mejor el costo de los
+encabezados. Sin embargo, paquetes de mayor tamaño tienen una mayor
+probabilidad de error y –sobre todo en redes de baja velocidad– pueden
+introducir retardo y <em>jitter</em> en flujos concurrentes.</p>
+</div>
+<div id="retardo-y-variabilidad" class="section level3 hasAnchor" number="2.4.6">
+<h3><span class="header-section-number">2.4.6</span> Retardo y variabilidad<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#retardo-y-variabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Retardo (latencia) es el tiempo transcurrido entre la emisión de un
+paquete y su llegada al extremo opuesto (retardo en una dirección), o
+bien, el arribo de su respuesta (retardo de ida y vuelta, <code>RTT</code>). Afecta
+a las aplicaciones interactivas: Estudios recientes indican que la
+mayoría de los usuarios esperan que algo ocurra en la pantalla tras una
+décima de segundo. La variabilidad en el retardo, el <em>jitter</em>, es un
+fenómeno que afecta principalmente a las aplicaciones multimedia.</p>
+<p>Tanto el retardo como el <em>jitter</em>  dependen de factores como el nivel de
+congestión, la típica emisión en ráfagas de las aplicaciones
+tradicionales y el desempeño de los enrutadores (por ejemplo, durante la
+actualización de tablas de ruteo; tiempo de convergencia tras una falla;
+etc.).</p>
+<div id="jitter" class="section level4 unnumbered hasAnchor">
+<h4>Jitter<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#jitter" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Se genera principalmente debido al tiempo de espera en las colas de los
+dispositivos de red. Como se ha señalado, el tiempo de espera aumenta
+exponencialmente con la utilización (en una disciplina de servicio
+FIFO).</p>
+<p>Afecta a las aplicaciones multimedia pues las muestras transportadas por
+la red deben ser “liberadas” exactamente con las mismas características
+temporales (cadencia e intervalo entre muestras) con las que fueron
+tomadas. Una práctica común para compensar las variaciones sufridas en
+la red, es agregar un sello de tiempo a las muestras y utilizar un
+buffer de reproducción en el receptor en el que se almacenan (y
+retrasan) temporalmente los paquetes recibidos.</p>
+<p>En principio, este buffer debe poder almacenar tantas muestras como para
+absorber la variabilidad más grande esperada, pero en aplicaciones
+interactivas no puede ser demasiado grande pues se pierde la sensación
+de continuidad necesaria en estos casos.</p>
+<p>Cuando se desconocen los requerimientos reales de <em>jitter</em>, una práctica
+común es recomendar que éste no exceda el 2% del valor de latencia
+especificado.</p>
+</div>
+<div id="elementos-de-retardo" class="section level4 unnumbered hasAnchor">
+<h4>Elementos de retardo<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#elementos-de-retardo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Los principales elementos de retardo en una red se muestran en la
+figura <a href="requerimientos-técnicos.-compromisos-y-restricciones.html#fig:delay">2.2</a>:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:delay"></span>
+<img src="figuras/c2/delay.bmp" alt="*Principales elementos de retardo en una red*" width="60%" />
+<p class="caption">
+Figura 2.2: <em>Principales elementos de retardo en una red</em>
+</p>
+</div>
+<dl>
+<dt>Tiempo de procesamiento: <span class="math inline">\(t_{pr}\)</span>.</dt>
+<dd>
+<p>En los equipos terminales, está relacionado con el tratamiento del
+paquete en la pila de protocolos y en el mecanismo de manejo de
+interrupciones. Para sistemas de muy alto desempeño, se deben buscar
+implementaciones que minimicen el número de transferencias a memoria
+durante el procesamiento del paquete por los distintos procesos que
+intervienen en su manejo (<em>zero copy stacks</em>).</p>
+<p>En los nodos de conmutación está relacionado con la arquitectura
+interna del dispositivo para seleccionar la interfaz de salida y
+llevar el paquete hacia ella. Un valor típico para equipos de no muy
+alto desempeño es de entre <span class="math inline">\(10\)</span> y <span class="math inline">\(50\,\mu s\)</span>. Para algunas
+arquitecturas, este valor está en función del tamaño del paquete. El
+<span class="math inline">\(t_{pr}\)</span> también puede incluir el tiempo medio de espera en los
+buffers del dispositivo.</p>
+</dd>
+<dt>Tiempo de acceso al medio: <span class="math inline">\(t_a\)</span>.</dt>
+<dd>
+<p>Es el intervalo de espera para poder iniciar la transmisión y
+depende del protocolo de acceso al medio particular (contención,
+espera de autorización, de la ranura de tiempo, etc.).</p>
+</dd>
+<dt>Tiempo de transmisión: <span class="math inline">\(t_t\)</span>.</dt>
+<dd>
+<p>También llamado de serialización, indica el tiempo requerido para
+“colocar” el paquete en el medio y es igual a la longitud del
+paquete dividida entre la velocidad de transmisión.</p>
+</dd>
+<dt>Tiempo de propagación: <span class="math inline">\(t_p\)</span>.</dt>
+<dd>
+<p>Es el tiempo que se requiere para propagar la energía (en cualquier
+formato) de un punto a otro. Se calcula como la distancia del medio
+dividida entre la velocidad de propagación. La velocidad de
+propagación de las ondas electromagnéticas es la velocidad de la
+luz: <span class="math inline">\(c \approx 3\times 10^8\,m/s\)</span><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>. La velocidad de propagación
+tanto en cobre como en fibra óptica suele ser tomada como
+<span class="math inline">\(\frac{2}{3} c\)</span>, aunque los valores más exactos que se tienen hasta
+el año de 2002 son de <span class="math inline">\(224,844\,km/s\)</span> en un alambre de cobre y de
+<span class="math inline">\(194,865\,km/s\)</span> en una fibra óptica multimodal.</p>
+</dd>
+</dl>
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-12" class="example"><strong>Ejemplo 2.8  </strong></span>Considere la red de la figura <a href="requerimientos-técnicos.-compromisos-y-restricciones.html#fig:delay">2.2</a> con las siguientes características:</p>
+<ul>
+<li><p> La red LAN en el origen es 10BaseT;</p></li>
+<li><p> la red LAN en el destino es 100BaseT;</p></li>
+<li><p> las entidades se encuentran a <span class="math inline">\(900\,km\)</span> de distancia y están
+interconectadas con un enlace <span class="math inline">\(E0\)</span>;</p></li>
+<li><p> el origen envía una trama de <span class="math inline">\(1\,kB\)</span> y espera el acuse de recibo de
+<span class="math inline">\(64\)</span> bytes.</p></li>
+</ul>
+<p>Para calcular el <code>RTT</code>, se tomarán en cuenta las siguientes
+consideraciones:</p>
+<ul>
+<li><p> El tiempo de procesamiento en el origen y el destino se ignora;</p></li>
+<li><p> el retardo de propagación en las redes locales se ignora;</p></li>
+<li><p> el tiempo de procesamiento en los enrutadores es de <span class="math inline">\(10\,\mu s\)</span>;</p></li>
+<li><p> <span class="math inline">\(t_{to},~t_{td}~\text{y}~t_{tw}\)</span> son los tiempos de serialización
+de las dos tramas en el origen, en el destino y en el enlace WAN,
+respectivamente.</p></li>
+</ul>
+<p><span class="math display">\[\begin{aligned}
+t_{to} &amp;=\frac{(1,024+64)\times 8}{10^6}=0.87\,ms\\
+t_{td} &amp;=\frac{(1,024+64)\times 8}{10^7}=0.087\,ms\\
+t_{tw} &amp;=\frac{(1,024+64)\times 8}{64,000}=136\,ms\\
+t_{pr} &amp;=0.04\,ms\\
+t_p&amp;=2\times\frac{900}{240,000}=7.5\,ms\\
+\texttt{RTT}&amp;= t_{to}+t_{td}+t_{tw}+t_{pr}+t_p=144.49\,ms
+\end{aligned}\]</span></p>
+<p>El principal elemento de retardo es el tiempo de serialización en el
+enlace WAN. Este es el cuello de botella. Se dice que esta red está
+<strong>limitada en ancho de banda</strong>.</p>
+</div>
+<hr />
+<hr />
+<div class="example">
+<p><span id="exm:unnamed-chunk-13" class="example"><strong>Ejemplo 2.9  </strong></span>Se retoman las condiciones del ejemplo anterior, pero el enlace de fibra
+óptica se sustituye por un enlace satelital:</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:delaysat"></span>
+<img src="figuras/c2/delaysat.bmp" alt="*Principales elementos de retardo en una red satelital*" width="60%" />
+<p class="caption">
+Figura 2.3: <em>Principales elementos de retardo en una red satelital</em>
+</p>
+</div>
+<p>Todos los valores quedan igual excepto el retardo de propagación. El
+valor actualizado de <span class="math inline">\(t_p\)</span>. y el <code>RTT</code> resultante son de:
+<span class="math display">\[\begin{aligned}
+t_p&amp;=2\times\frac{2\times 36,000}{300,000}=480\,ms\\
+\texttt{RTT}&amp;= t_{to}+t_{td}+t_{tw}+t_{pr}+t_p=616.99\,ms
+\end{aligned}\]</span></p>
+<p>El principal elemento de retardo es el retardo de propagación en el
+enlace WAN. <strong>Esta red está limitada en latencia</strong>. Hay muy poco que la tecnología pueda hacer para reducir el <code>RTT</code> en este tipo de red.</p>
+<hr />
+<div class="greybox">
+<p><strong>Caso de estudio: Evaluación de retardo</strong></p>
+<p>Los ejemplos anteriores proporcionan un límite inferior del retardo de
+ida y vuelta apreciado entre dos sitios separados una distancia de
+<span class="math inline">\(900\,km\)</span>. En el presente caso se muestra un estudio real sobre
+mediciones del retardo observado al consultar un servidor de base de
+datos a través de distintas redes: LAN, WAN terrestre, satelital
+dedicado y satelital compartido.</p>
+<p>Las mediciones se hacen con un analizador de protocolos del lado del
+cliente en una configuración como la mostrada en la
+figura <a href="requerimientos-técnicos.-compromisos-y-restricciones.html#fig:evaldelay">2.4</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:evaldelay"></span>
+<img src="figuras/c2/evaldelay.bmp" alt="*Configuración recomendada para evaluar el retardo de ida y vuelta*" width="60%" />
+<p class="caption">
+Figura 2.4: <em>Configuración recomendada para evaluar el retardo de ida y vuelta</em>
+</p>
+</div>
+<p>Como puede observarse, para este tipo de estudios el <code>RTT</code> se mide en el
+extremo del cliente (el que iniciará la solicitud). Es importante
+activar filtros en el analizador de manera que solamente se observe el
+tráfico entre los equipos involucrados.</p>
+<div id="ambiente-de-red-local" class="section level4 unnumbered hasAnchor">
+<h4>Ambiente de red local<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ambiente-de-red-local" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En la primera evaluación, se colocan cliente y servidor en la misma red
+local. Esto permite configurar y probar la maqueta así como obtener un
+límite inferior para el tiempo de respuesta. La conversación capturada
+se muestra en la tabla siguiente. La columna del intervalo de tiempo
+despliega la diferencia entre tramas consecutivas.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>No.</strong></th>
+<th align="center"><strong>Tamaño</strong></th>
+<th align="center"><strong>Tiempo</strong></th>
+<th align="center"><strong>Dirección</strong></th>
+<th align="center"><strong>Banderas</strong></th>
+<th align="left"><strong>Contenido</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">76</td>
+<td align="center">0.000</td>
+<td align="center"><span class="math inline">\(C\rightarrow S\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">74</td>
+<td align="center">0.010</td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">SELECT COUNT (COD CLIENTE) FROM (MG CLIENTES) WHERE (COD CLIENTE) = x</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">139</td>
+<td align="center">0.000</td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">79</td>
+<td align="center">0.000</td>
+<td align="center"><span class="math inline">\(C\rightarrow S\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">140</td>
+<td align="center">0.000</td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">RA-01403 no data found</td>
+</tr>
+</tbody>
+</table>
+<p> <br />
+</p>
+<p>Si bien desde el punto de vista de la aplicación solamente se está
+realizando una operación sencilla, seis paquetes han sido intercambiados
+en la consulta.</p>
+<p>Con el primer paquete el cliente envía información de control al
+servidor; <span class="math inline">\(10\,ms\)</span> después, el servidor responde. Este retraso puede
+deberse, por ejemplo, al cambio de contexto en el equipo destino para
+activar la tarea correspondiente del manejador de base de datos. En el
+paquete 3, el cliente está enviando los datos correspondientes a la
+consulta; muy probablemente los paquetes 4 y 5 son acuses de recibo del
+protocolo de control. Finalmente, la respuesta llega en el paquete 6.</p>
+<p>Los intervalos entre todos los demás paquetes son demasiado pequeños
+para ser capturados por el analizador de protocolos. Toda la transacción
+toma alrededor de <span class="math inline">\(10\,ms\)</span>.</p>
+</div>
+<div id="ambiente-wan-terrestre" class="section level4 unnumbered hasAnchor">
+<h4>Ambiente WAN terrestre<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ambiente-wan-terrestre" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Esta vez, el servidor se encuentra a <span class="math inline">\(900\,km\)</span> de distancia del cliente
+y los dos sitios se interconectan por medio de un enlace <span class="math inline">\(E0\)</span> terrestre
+basado en fibra óptica. Los resultados son los siguientes:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>No.</strong></th>
+<th align="center"><strong>Tamaño</strong></th>
+<th align="center"><strong>Tiempo</strong></th>
+<th align="center"><strong>Dirección</strong></th>
+<th align="center"><strong>Banderas</strong></th>
+<th align="left"><strong>Contenido</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">76</td>
+<td align="center">0.000</td>
+<td align="center"><span class="math inline">\(C\rightarrow S\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">74</td>
+<td align="center"><strong>0.090</strong></td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">SELECT COUNT (COD CLIENTE) FROM (MG CLIENTES) WHERE (COD CLIENTE) = x</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">139</td>
+<td align="center"><strong>0.100</strong></td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">79</td>
+<td align="center">0.000</td>
+<td align="center"><span class="math inline">\(C\rightarrow S\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">140</td>
+<td align="center">0.050</td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">RA-01403 no data found</td>
+</tr>
+</tbody>
+</table>
+<p>  <br />
+   Se siguen generando seis paquetes en este intercambio, pero los
+intervalos entre los paquetes emitidos por el cliente y las respuestas
+del servidor son considerablemente mayores. Por supuesto, la diferencia
+se atribuye, sobre todo, al retardo de propagación en la red WAN. Toda
+la transacción toma ahora alrededor de <span class="math inline">\(250\,ms\)</span>.</p>
+</div>
+<div id="ambiente-wan-satelital-dedicado" class="section level4 unnumbered hasAnchor">
+<h4>Ambiente WAN satelital dedicado<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ambiente-wan-satelital-dedicado" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para este escenario, cliente y servidor se interconectan a través de un
+enlace satelital SCPC (<em>Single Channel Per Carrier</em>) dedicado únicamente
+a la comunicación entre los dos sitios. Las tramas observadas en este
+caso son:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>No.</strong></th>
+<th align="center"><strong>Tamaño</strong></th>
+<th align="center"><strong>Tiempo</strong></th>
+<th align="center"><strong>Dirección</strong></th>
+<th align="center"><strong>Banderas</strong></th>
+<th align="left"><strong>Contenido</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">76</td>
+<td align="center">0.000</td>
+<td align="center"><span class="math inline">\(C\rightarrow S\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">76</td>
+<td align="center"><strong>0.800</strong></td>
+<td align="center"><span class="math inline">\(C\rightarrow S\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">74</td>
+<td align="center"><strong>0.850</strong></td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">SELECT COUNT (COD CLIENTE) FROM (MG CLIENTES) WHERE (COD CLIENTE) = x</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">64</td>
+<td align="center"><strong>190</strong></td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.A...</td>
+<td align="left">Vacío</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">139</td>
+<td align="center">0.360</td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">79</td>
+<td align="center">0.000</td>
+<td align="center"><span class="math inline">\(C\rightarrow S\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">140</td>
+<td align="center">0.520</td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">RA-01403 no data found</td>
+</tr>
+</tbody>
+</table>
+<p>  <br />
+   La diferencia de tiempos ya es muy notoria. Una consulta que llevó
+solamente <span class="math inline">\(10\,ms\)</span> sobre una red de área local y <span class="math inline">\(250\,ms\)</span> sobre un
+enlace terrestre, ahora tarda <span class="math inline">\(2.730\,s\)</span> a través de este enlace. Estos
+tiempos ya son más que suficientes para que el usuario note una
+diferencia.</p>
+<p>Hay dos paquetes de más. El segundo paquete transmitido de la fuente al
+destino <span class="math inline">\(800\,ms\)</span> después del primero es muy probablemente una
+retransmisión del primero al terminar el tiempo de espera de la
+respuesta. El quinto paquete es un acuse de recibo del paquete así
+duplicado.</p>
+<p>El principal elemento de retardo en este escenario es el retardo de
+propagación a través del enlace satelital. Un aumento en el ancho de
+banda del enlace, no tendrá <em>ningún</em> impacto apreciable en el retardo
+percibido.</p>
+<p>Considere ahora el escenario “normal” en el que se realizan varias
+consultas para obtener la información con la que llena una sola
+pantalla. Suponiendo que se requieran únicamente tres consultas y que la
+respuesta a las mismas no sea muy grande, se requiere de casi 9 segundos
+¡para llenar una sola pantalla de información!</p>
+</div>
+<div id="ambiente-wan-satelital-compartido" class="section level4 unnumbered hasAnchor">
+<h4>Ambiente WAN satelital compartido<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#ambiente-wan-satelital-compartido" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En este escenario, la conexión cliente-servidor es TDMA (<em>Time Division
+Multiple Access</em>) compartido. Antes de poder enviar información, hay que
+solicitar y esperar la asignación de una ranura de tiempo, lo cual
+introduce retardos variables. Las tramas observadas en este escenario
+son:   <br />
+</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>No.</strong></th>
+<th align="center"><strong>Tamaño</strong></th>
+<th align="center"><strong>Tiempo</strong></th>
+<th align="center"><strong>Dirección</strong></th>
+<th align="center"><strong>Banderas</strong></th>
+<th align="left"><strong>Contenido</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">76</td>
+<td align="center">0.000</td>
+<td align="center"><span class="math inline">\(C\rightarrow S\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">74</td>
+<td align="center"><strong>0.608</strong></td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">SELECT COUNT (COD CLIENTE) FROM (MG CLIENTES) WHERE (COD CLIENTE) = x</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">58</td>
+<td align="center"><strong>1.887</strong></td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.A...</td>
+<td align="left">Vacío</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">139</td>
+<td align="center"><strong>0.011</strong></td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">79</td>
+<td align="center">0.000</td>
+<td align="center"><span class="math inline">\(C\rightarrow S\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">Binario</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">140</td>
+<td align="center"><strong>0.783</strong></td>
+<td align="center"><span class="math inline">\(S\rightarrow C\)</span></td>
+<td align="center">.AP...</td>
+<td align="left">RA-01403 no data found</td>
+</tr>
+</tbody>
+</table>
+<p>  <br />
+   Efectivamente, hay una variabilidad mayor en las diferencias de
+retardo observadas. El cuarto paquete, con un retardo diferencial de
+<span class="math inline">\(1.887\,s\)</span>, es muy probablemente una réplica del segundo paquete enviado
+por el servidor dado que el tercer paquete se ha retrasado demasiado
+esperando el acceso al canal. El retardo total observado es de
+<span class="math inline">\(3.29\,s\)</span>.</p>
+<p>También es interesante observar algunas gráficas sobre los retardos
+observados en los tres escenarios.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:delay3e"></span>
+<img src="figuras/c2/delayrdi.bmp" alt="Retardos observados en los enlaces (a) de fibra óptica; (b) satelital dedicado; (c) satelital compartido" width="48%" /><img src="figuras/c2/delayscpc.bmp" alt="Retardos observados en los enlaces (a) de fibra óptica; (b) satelital dedicado; (c) satelital compartido" width="48%" /><img src="figuras/c2/delaytdma.bmp" alt="Retardos observados en los enlaces (a) de fibra óptica; (b) satelital dedicado; (c) satelital compartido" width="48%" />
+<p class="caption">
+Figura 2.5: Retardos observados en los enlaces (a) de fibra óptica; (b) satelital dedicado; (c) satelital compartido
+</p>
+</div>
+<p>En la figura <a href="requerimientos-técnicos.-compromisos-y-restricciones.html#fig:delay3e">2.5</a> se muestra cómo los retardos en cualquiera de los tres enlaces pueden incrementarse considerablemente con respecto al retardo mínimo teórico, o incluso con respecto al retardo promedio, dependiendo del porcentaje de uso del ancho de banda en un instante cualquiera. Recuerde que el retardo mínimo teórico en el enlace
+terrestre es de <span class="math inline">\(144\,ms\)</span> y en la primer gráfica de la figura se observa cómo los picos
+de retardo pueden alcanzar los <span class="math inline">\(2\,s\)</span> con relativa facilidad, y en casos
+extremos pueden llegar a más de <span class="math inline">\(7\,s\)</span>.</p>
+<p>Se logra percibir una variabilidad en el retraso a lo largo del tiempo, que puede coincidir con las actividades durante la jornada laboral.</p>
+<p>En los datos obtenidos del canal satelital dedicado (segunda gráfica de la figura <a href="requerimientos-técnicos.-compromisos-y-restricciones.html#fig:delay3e">2.5</a>), se muestra un retardo medio mayor que en el enlace terrestre debido a la latencia. También se alcanza a distinguir
+una mayor variabilidad, pero se considera razonable.</p>
+<p>Los datos recabados para el enlace satelital compartido (tercer gráfica de la figura @ref[fig:delay3e)) muestran que el retardo medio es mucho mayor, pero lo que es más evidente es su enorme variabilidad a lo largo del periodo evaluado. En este tipo de enlaces es muy difícil ofrecer servicios interactivos y francamente improbable servicios de tiempo real.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="seguridad" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Seguridad<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#seguridad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La seguridad es uno de los aspectos más importantes en el diseño de la
+red, sobre todo si se contempla que ésta tenga acceso a Internet o a
+Extranets y debe ser tomada en consideración desde las primeras fases de
+diseño. El objetivo es buscar garantías de que el diseño ofrece alguna
+protección contra pérdida o daño de datos y recursos. Los incidentes de
+seguridad no deben afectar la capacidad de operación de las empresas.</p>
+<p>Los objetivos de seguridad pueden entrar en conflicto con otros
+requerimientos como costo, facilidad de uso, redundancia y
+escalabilidad. Considérese, por ejemplo, el caso en el que toda la
+información debe pasar por un único punto para ser cifrada/descifrada,
+lo que puede provocar cuellos de botella y representa un punto de falla.</p>
+<p>Cuando se desea aplicar una política eficaz de seguridad, se debe
+involucrar profundamente a los empleados. Estudios recientes indican que
+entre los principales problemas de seguridad en las empresas destacan
+los virus introducidos por empleados al instalar software indebido, los
+errores humanos, y los actos de vandalismo por empleados descontentos.
+El tema de seguridad se estudiará con mayor detalle en el
+capítulo <a href="#c:dislog" reference-type="ref" reference="c:dislog"><span class="math display">\[c:dislog\]</span></a>.</p>
+</div>
+<div id="administración" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Administración<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#administración" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Otro elemento que debe considerarse desde las primeras etapas de diseño
+es la administración de la red. Como se presenta en el capítulo  5, una
+red bien administrada trae grandes beneficios para la organización. Si
+el cliente ya cuenta con políticas de administración, puede conocer con
+precisión cuáles son sus requerimientos de administración. En caso
+contrario, la terminología propuesta por el modelo OSI puede servir como
+punto de entrada para tratar de identificar sus necesidades.</p>
+<p>El modelo de OSI divide el problema de gestión en cinco subsistemas, los
+cuales se presentan a continuación en el orden en el que típicamente son
+atendidos por las empresas:</p>
+<dl>
+<dt>Gestión de fallas.</dt>
+<dd>
+<p>Tiene por objetivo detectar, aislar y corregir problemas,
+reportarlos y darles seguimiento.</p>
+</dd>
+<dt>Gestión de configuración.</dt>
+<dd>
+<p>Orientada a controlar, identificar, colectar información y
+documentar los objetos administrados (hardware, software, cuentas de
+usuarios, etc.).</p>
+</dd>
+<dt>Gestión de desempeño.</dt>
+<dd>
+<p>Su función es satisfacer los acuerdos de nivel de servicio (<em>Service
+Level Agreement</em>, <code>SLA</code>) de manera eficiente, y prever planes de
+expansión.</p>
+</dd>
+<dt>Gestión de seguridad.</dt>
+<dd>
+<p>Busca monitorear y evaluar las políticas de seguridad, administrar
+llaves y contraseñas, etc.</p>
+</dd>
+<dt>Gestión de la contabilidad.</dt>
+<dd>
+<p>Este subsistema pretende identificar quién utiliza los recursos,
+cuánto y para qué. Útil también para planear cambios de capacidad.</p>
+</dd>
+</dl>
+</div>
+<div id="facilidad-de-uso" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Facilidad de uso<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#facilidad-de-uso" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Este requerimiento está muy relacionado con los requerimientos de
+administración y depende de la experiencia del personal responsable de
+la red y de los usuarios. Busca simplificar en lo posible que la red sea
+transparente al usuario final a través de mecanismos como servidores de
+configuración automática (por ejemplo, DHCP), políticas de asignación de
+nombres, sistemas de seguridad basados en biometría, etc.</p>
+</div>
+<div id="adaptabilidad" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Adaptabilidad<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#adaptabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Un buen diseño de red debe facilitar la adaptación a nuevas tecnologías
+y cambios en la operación. La red es una entidad inmersa en un ambiente
+de continuas transformaciones. Durante el análisis de la red, debe
+quedar claro si no se contemplan cambios en el corto y mediano plazo en
+aspectos como:</p>
+<ul>
+<li><p>Protocolos de red;</p></li>
+<li><p>topologías de interconexión;</p></li>
+<li><p>prácticas de negocio;</p></li>
+<li><p>flujo de datos, patrones de tráfico;</p></li>
+<li><p>requerimientos de calidad de servicio.</p></li>
+</ul>
+<p>La mejor recomendación es seguir un diseño modular y basado en
+estándares. Deben evitarse soluciones novedosas basadas en equipos
+propietarios que no han sido probados lo suficiente, o de proveedores
+cuya solvencia no esté garantizada.</p>
+</div>
+<div id="costo-beneficio" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Costo-beneficio<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#costo-beneficio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Es más un requerimiento de negocios que técnico, pero está muy
+relacionado con las decisiones tomadas para los requerimientos técnicos.
+Por ejemplo, si la disponibilidad es prioritaria, será necesario
+invertir en equipos altamente fiables y proporcionar cierto nivel de
+redundancia en la red. En el capítulo  5 se presentarán algunas de las
+métricas que se utilizan para evaluar la factibilidad de un proyecto de
+TI.</p>
+<p>El objetivo del diseño debe ser transportar la máxima cantidad de
+información satisfaciendo los requerimientos identificados, a un costo
+financiero dado. El costo financiero incluye tanto el costo de los
+equipos como los costos recurrentes de operación (pago de licencias,
+renta de enlaces, etc.).</p>
+<p>En muchas ocasiones, el mayor costo operativo de la red ha sido la renta
+de enlaces WAN con circuitos privados, por lo que los primeros esfuerzos
+para maximizar el costo/beneficio se concentrarán en esa dirección. Por
+ejemplo, es posible utilizar ingeniería de tráfico y enrutamiento con
+restricciones para minimizar el tráfico que circula por estos enlaces.
+También se pueden combinar servicios de voz y datos en un mismo enlace,
+implementando mecanismos de QoS si es necesario.</p>
+<p>Otro costo muy elevado en la operación de la red suele ser la
+capacitación, entrenamiento y nómina del personal involucrado en su
+gestión. Estos costos pueden reducirse proporcionando un diseño claro y
+modular de la red, y simplificando y automatizando las tareas de
+configuración y administración de los equipos.</p>
+</div>
+<div id="conflictos-entre-requerimientos" class="section level2 hasAnchor" number="2.10">
+<h2><span class="header-section-number">2.10</span> Conflictos entre requerimientos<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#conflictos-entre-requerimientos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Como se ha mencionado, algunos de los requerimientos técnicos entran en
+conflicto entre sí. Para resolver estos conflictos, es importante
+definir con el cliente cuál el requerimiento más relevante y hacerlo un
+elemento central del diseño. De manera similar, se deben asignar pesos a
+los otros requerimientos en función de los criterios del cliente.</p>
+<p>A veces la asignación de prioridades es mucho más compleja pues
+diferentes áreas dentro de la misma organización pueden tener distintas
+prioridades; en cualquier caso, es necesario documentarlas y tratar de
+establecer compromisos entre ellas.</p>
+</div>
+<div id="otras-métricas-relevantes" class="section level2 hasAnchor" number="2.11">
+<h2><span class="header-section-number">2.11</span> Otras métricas relevantes<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#otras-métricas-relevantes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Como se ha mencionado, las métricas anteriores permiten los objetivos de
+la red en requerimientos técnicos específicos y cuantificables. Una vez
+desplegada la red, algunos de estos requerimientos, en particular los de
+desempeño, se monitorean constantemente para asegurar que la red opera
+dentro de los parámetros deseables, o si es necesario hacer un nuevo
+rediseño de la red.</p>
+<p>Durante la operación de la red también existen otras métricas sumamente
+relevantes que están íntimamente relacionadas con una gestión de la red
+y que tienen un impacto directo en su disponibilidad. El IT Process
+Institute realizó un estudio junto con varias univresidades de Estados
+Unidos e identificó estas métricas como las que distinguen a las
+empresas con un gran desempeño, un desempeño mediocre y un desempeño
+deficiente en la provisión de servicios de TI. Estas métricas son:</p>
+<dl>
+<dt>Mean Time To Repair.</dt>
+<dd>
+<p>80% de las fallas en TI son debidas a algún cambio (en
+configuraciones, parámetros, actualización de software, protocolos,
+etc.) y <em>el 80% del MTTR en se invierte en detectar qué fue lo que
+se cambió</em>.</p>
+<p>Una organización bien administrada anticipa, documenta los cambios y
+analiza su impacto. Una organización mal administrada, no los
+documenta y cuando se presenta alguna falla en la red, en vez de
+analizar primero qué se ha modificado, empiezan por reinicializar
+servidores y equipos de red.</p>
+<p>En fallos menores los tres tipos de organización resuelven el
+problema en tiempos similares, pero cuando el fallo es mayor, las
+empresas bien administradas tardan minutos en corregir el problema,
+mientras que las de bajo desempeño, pueden tardar horas y hasta días
+en resolverlo<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.</p>
+</dd>
+<dt>First Fix Rate.</dt>
+<dd>
+<p>Esta métrica mide el porcentaje de incidentes que se resuelven
+correctamente en el primer intento. Las empresas de alto desempeño
+resuelven el 90% de los incidentes al primer intento, las de medio,
+el 80%, y las de bajo desempeño, tan sólo el 50%.</p>
+<p>El principal problema con estas últimas es que los fallos no se
+trabajan sistemáticamente y no se documentan en una base de datos
+que pudiera ser consultada cuando se presenta una falla. En cambio,
+en las empresas de alto desempeño se ha desarrollado una <em>cultura de
+causalidad</em> y pueden regresar a operaciones mucho más rápidamente,
+aumentando así la disponibilidad de la red.</p>
+</dd>
+<dt>Change Success Rate.</dt>
+<dd>
+<p>Relacionada con las dos anteriores, esta métrica indica el
+porcentaje de cambios que no generan incidencias ni requieren de
+intervenciones posteriores. En las empresas bien administradas se
+reporta una tasa de 95%; en las de medio desempeño, de 80% y en las
+de bajo desempeño, de 70%.</p>
+<p>Merece la pena resaltar que las empresas de alto desempeño son
+capaces de realizar diez veces más cambios sin que ésto afecte a la
+red, que las de medio y bajo desempeño.</p>
+</dd>
+<dt>Server to administrator rate</dt>
+<dd>
+<p>Todo lo anterior conlleva a que una empresa bien administrada, que
+documenta cambios y sigue las mejores prácticas para gestionar la
+red, requiere de mucho menos capital humano para administrar la red.
+En el estudio citado, se reporta que en las empresas de alto
+desempeño un administrador puede gestionar hasta 125 servidores (y
+equipos de red), mientras que en las de medio y bajo desempeño, esta
+cifra se reduce a 25.</p>
+</dd>
+</dl>
+</div>
+<div id="problemas-1" class="section level2 hasAnchor" number="2.12">
+<h2><span class="header-section-number">2.12</span> Problemas<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#problemas-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:c21" class="exercise"><strong>Problema 2.1  </strong></span>En el dimensionamiento de una red, tradicionalmente
+se consideraba el principio de localidad que sigue una distribución
+Pareto: 80% del tráfico generado en un determinado segmento (o subred), se mantiene en ese segmento y sólo el 20% restante debe ser encaminado a otros segmentos (o subredes). ¿Por qué hoy se cuestiona la validez de este principio?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c22" class="exercise"><strong>Problema 2.2  </strong></span>De acuerdo a la ley de Moore, la capacidad de procesamiento de los equipos electrónicos se duplica cada 18 meses. ¿De qué manera esta ley puede afectar el análisis de requerimientos para diseñar una red de comunicaciones?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c23" class="exercise"><strong>Problema 2.3  </strong></span>Defina disponibilidad y confiabilidad en términos de <code>MTBF</code>  y <code>MTTR</code>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c24" class="exercise"><strong>Problema 2.4  </strong></span>¿Cuáles son los principales elementos que influyen en determinar un valor de <code>MTTR</code>  para un sistema?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c25" class="exercise"><strong>Problema 2.5  </strong></span>¿Cuál es la disponibilidad de un equipo de red que anuncia un <code>MTBF</code>  de <span class="math inline">\(6,000\,hr\)</span> y se supone que el proveedor garantiza
+un <code>MTTR</code> de <span class="math inline">\(4\,hr\)</span>?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c26" class="exercise"><strong>Problema 2.6  </strong></span>En una red telefónica pública, el objetivo de disponibilidad (sin contar la red de acceso), es de <strong><span class="math inline">\(99.999\%\)</span></strong> (“<em>the five nines</em>”).</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿A cuántos minutos de fallos al año corresponde este valor?</p></li>
+<li><p>Para la red de acceso, el objetivo es de <span class="math inline">\(99.95\%\)</span> y el compromiso es de reparar un fallo en cuatro horas. ¿Cuántos fallos un <code>MTTR</code> de <span class="math inline">\(4\,hr\)</span>?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c27" class="exercise"><strong>Problema 2.7  </strong></span>Cierto sistema está compuesto por tres elementos <span class="math inline">\(A, B, C\)</span> dispuestos como se muestra en la parte izquierda de la figura. Sus <code>MTBF</code>son de <span class="math inline">\(5,000\)</span>, <span class="math inline">\(10,000\)</span> y <span class="math inline">\(15,000\)</span> horas. Por razones de logística, el <code>MTTR</code> de los tres es de 24 horas.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es la disponibilidad del sistema? Aproxime a seis cifras.</p></li>
+<li><p>¿Cuál es la disponibilidad si el sistema se modifica con la distribución mostrada en la parte derecha de la figura?</p></li>
+</ol>
+</div>
+<p><img src="figuras/c2/dispo3elem.jpg" width="60%" style="display: block; margin: auto;" /></p>
+<div class="exercise">
+<p><span id="exr:c28" class="exercise"><strong>Problema 2.8  </strong></span>Cierta empresa ha estimado que un minuto de caída en su red le representa una pérdida de <span class="math inline">\(\$500.00\)</span>. ¿Cuánto dinero pierde
+al año si:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>La disponibilidad es de <span class="math inline">\(99.9\%\)</span>?</p></li>
+<li><p>La disponibilidad es de <span class="math inline">\(99.99\%\)</span>?</p></li>
+<li><p>¿Cuál es la disponibilidad que debe tener si no puede perder más de <span class="math inline">\(\$30,000.00\)</span> al año?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c29" class="exercise"><strong>Problema 2.9  </strong></span>¿Qué es una aplicación de misión crítica? ¿Cuál
+es un requerimiento típico de disponibilidad para estas aplicaciones?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c210" class="exercise"><strong>Problema 2.10  </strong></span> <br />
+</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Qué tipo de fallos se toman en cuenta al estimar la confiabilidad de un
+PBX?</p></li>
+<li><p>¿La disponibilidad de 99.999%, se refiere a: <span class="math inline">\((i)~\)</span> El servicio
+residencial; <span class="math inline">\((ii)~\)</span> El servicio comercial; <span class="math inline">\((iii)~\)</span> El servicio de
+larga distancia; <span class="math inline">\((iv)~\)</span> Las líneas troncales; <span class="math inline">\((v)~\)</span> El conmutador en la central;<span class="math inline">\((vi)~\)</span> todo?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c211" class="exercise"><strong>Problema 2.11  </strong></span>Calcule la ocupación promedio del área de
+almacenamiento temporal de un multiplexor estadístico modelado como una cola <code>M/M/1</code> para los siguientes casos:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Diez terminales conectadas. Cada una genera, en promedio, paquetes con
+longitud de <span class="math inline">\(960\,bits\)</span> con distribución exponencial cada <span class="math inline">\(8\,s\)</span>. La
+línea de salida es de <span class="math inline">\(2,400\,b/s.\)</span></p></li>
+<li><p>La generación de paquetes cambia a un paquete cada <span class="math inline">\(5\,s\)</span> en promedio.</p></li>
+<li><p>Repita el punto <em>(a)</em> conectando 16 terminales.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c212" class="exercise"><strong>Problema 2.12  </strong></span>Si se aumenta la capacidad de almacenamiento de los
+equipos de enrutamiento y conmutación, puede aumentarse el throughput de
+la red. ¿Qué consecuencias tendría este razonamiento?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c213" class="exercise"><strong>Problema 2.13  </strong></span>Un sistema satelital geoestacionario con una tasa
+de transferencia de <span class="math inline">\(64\,kb/s\)</span> se usa para enviar mensajes de 512 bytes.
+Suponiendo que no hay errores e ignorando encabezados, ¿cuál es el
+máximo <em>throughput</em> si se utilizan ventas de control de flujo de:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>1 paquete</p></li>
+<li><p>15 paquetes</p></li>
+<li><p>127 paquetes</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c214" class="exercise"><strong>Problema 2.14  </strong></span>Para un enrutador que es capaz de conmutar paquetes
+a máxima velocidad (<em>wire-speed</em>) en sus 30 puertos <span class="math inline">\(10Base\,T\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es su velocidad de conmutación en paquetes/s si el tamaño de los paquetes es de <span class="math inline">\(64\)</span> bytes? (No olvide considerar el preámbulo –8 bytes– y la separación entre tramas –12 bytes)</p></li>
+<li><p>¿Si los paquetes son de <span class="math inline">\(1,500\)</span> bytes?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c215" class="exercise"><strong>Problema 2.15  </strong></span>Para un switch FastEthernet,</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es el <em>throughput</em> máximo en paquetes/s considerando un tamaño de
+paquete de <span class="math inline">\(1,518\)</span> bytes?</p></li>
+<li><p>¿Cuál es la eficiencia del enlace de salida si las tramas son enviadas a
+<em>wire-speed</em>?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c216" class="exercise"><strong>Problema 2.16  </strong></span>¿De qué manera el tamaño del paquete (MSS) afecta
+la eficiencia de la red?</p>
+<ul>
+<li>A menor tamaño, más paquetes circulan en la red, por lo que aumenta la eficiencia.</li>
+<li>A mayor tamaño, aumenta el ancho de banda utilizado, por lo que aumenta la eficiencia.</li>
+<li>A menor tamaño, menor es la carga útil, por lo que disminuye la eficiencia.</li>
+<li>A mayor tamaño, mayor inequidad, por lo que disminuye la eficiencia. |</li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:c217" class="exercise"><strong>Problema 2.17  </strong></span>Mencione dos razones por las que es deseable
+limitar el tamaño de las colas en los equipos de interconexión en redes
+<code>TCP/IP</code>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c218" class="exercise"><strong>Problema 2.18  </strong></span> <br />
+</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Considere una aplicación que transmite voz sobre IP. La frecuencia máxima de la señal se corta a <span class="math inline">\(4\,kHz\)</span> y es digitalizada utilizando PCM con 8 bits por muestra. Cada paquete contiene <span class="math inline">\(30\,ms\)</span> de audio y es transmitido con RTP/UDP/IP (= 40 bytes de encabezado).</p>
+<ol style="list-style-type: lower-roman">
+<li>¿Cuál es la carga útil de los paquetes?</li>
+<li>¿Cuál es la eficiencia de la transmisión?</li>
+<li>¿Cuál es el ancho de banda requerido? |</li>
+</ol></li>
+<li><p>Si la aplicación utiliza ahora un códec <span class="math inline">\(G.723.1\)</span> (<span class="math inline">\(6.4\,kb/s\)</span>),</p>
+<ol style="list-style-type: lower-roman">
+<li>¿Cuál es la carga útil de los paquetes?</li>
+<li>¿Cuál es la eficiencia de la transmisión?</li>
+<li>¿Cuál es el ancho de banda requerido?</li>
+</ol></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c219" class="exercise"><strong>Problema 2.19  </strong></span>Al medir en un analizador de protocolos el flujo
+de una conversación VoIP que utiliza RTP/UDP/IP (40 bytes de
+encabezado), se observa que consume un ancho de banda de <span class="math inline">\(40\,kb/s\)</span> y que genera 100 paquetes por segundo.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es la tasa del códec?</p></li>
+<li><p>¿Cuál es la eficiencia?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c220" class="exercise"><strong>Problema 2.20  </strong></span>Llene en la siguiente tabla el ancho de banda requerido en cada caso</p>
+<table style="width:64%;">
+<colgroup>
+<col width="13%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>IPv4</td>
+<td>IPv4</td>
+<td>IPv6</td>
+<td>IPv6</td>
+</tr>
+<tr class="even">
+<td rowspan="2"></td>
+<td rowspan="2">25ms</td>
+<td rowspan="2">40ms</td>
+<td rowspan="2">25ms</td>
+<td rowspan="2">40ms</td>
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+<td rowspan="3">G.726
+(32kb/s)</td>
+<td rowspan="3"></td>
+<td rowspan="3"></td>
+<td rowspan="3"></td>
+<td rowspan="3"></td>
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+<td rowspan="3">G.723
+(6.4kb/s)</td>
+<td rowspan="3"></td>
+<td rowspan="3"></td>
+<td rowspan="3"></td>
+<td rowspan="3"></td>
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
+</div>
+<div class="exercise">
+<p><span id="exr:c221" class="exercise"><strong>Problema 2.21  </strong></span> <br />
+</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Encuentre el retardo de ida y vuelta mínimo para la red que se muestra en la figura sabiendo que:</p>
+<ol style="list-style-type: lower-roman">
+<li>La tecnología de red local es FastEthernet en ambos extremos;</li>
+<li>el enlace WAN es de <span class="math inline">\(256\,kb/s\)</span> y cubre una distancia de
+<span class="math inline">\(1,000\,km\)</span>;</li>
+<li>el retardo de conmutación es de <span class="math inline">\(10\,\mu s\)</span>;</li>
+<li>no hay congestión en ninguno de los segmentos indicados, se envía una trama de <span class="math inline">\(2\,kB\)</span> al destino y éste responde con un acuse de recibo de 64 bytes.</li>
+</ol></li>
+<li><p>¿Esta red está limitada en ancho de banda o en latencia? Explique.</p></li>
+</ol>
+</div>
+<p><img src="figuras/c2/RedDelay.jpg" width="60%" style="display: block; margin: auto;" />
+```</p>
+<div class="exercise">
+<p><span id="exr:c222" class="exercise"><strong>Problema 2.22  </strong></span>¿Cuáles son los pasos a seguir para analizar la
+latencia de un enlace?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c223" class="exercise"><strong>Problema 2.23  </strong></span>Se desea transmitir un archivo de <span class="math inline">\(512\,kB\)</span> entre
+dos ciudades separadas <span class="math inline">\(1,000\,km\)</span> a través de i) un enlace E1
+(<span class="math inline">\(2.048\,Mb/s\)</span>) y ii) un enlace de <span class="math inline">\(1.12\,Gb/s\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es el retardo de propagación en cada caso?</p></li>
+<li><p>¿Cuál es el retardo de transmisión en cada caso?</p></li>
+<li><p>¿Cuál de las dos redes está limitada en latencia? Explique.</p></li>
+<li><p>Suponga que se tienen cuatro enlaces E1 entre las dos ciudades y que se
+transmite en paralelo una cuarta parte del archivo por cada enlace. ¿En
+cuánto tiempo se transmite todo el archivo en este caso?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c224" class="exercise"><strong>Problema 2.24  </strong></span>Una imagen con resolución de <span class="math inline">\(640\times 480\)</span> y 3
+bytes por píxel debe ser transmitida entre dos puntos separados a
+<span class="math inline">\(250\,km\)</span>. Antes de su transmisión, la imagen se procesa por un
+compresor que reduce su tamaño, en promedio, 10:1. Se utiliza UDP/IPv4
+(28 bytes) como medio de transporte, en paquetes de <span class="math inline">\(1\,500\)</span> bytes y se
+transmiten todos los paquetes uno tras otro (no hay problemas de control
+de flujo) ¿cuánto tiempo tarda en transmitirse la imagen en:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>POTS a 56 kb/s</p></li>
+<li><p>Cable a 512 kb/s</p></li>
+<li><p>Un enlace a 2 Mb/s?</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:c225" class="exercise"><strong>Problema 2.25  </strong></span>Derive y explique el factor <span class="math inline">\(a\)</span> que relaciona:
+<span class="math inline">\(V\)</span>, la capacidad del enlace; <span class="math inline">\(L\)</span>, la distancia recorrida; <span class="math inline">\(b\)</span>, el
+tamaño medio del paquete; y <span class="math inline">\(k\)</span>, una constante del tiempo de propagación
+en un kilómetro. ¿Cuál es el valor del factor en una LAN? ¿En un enlace
+de <span class="math inline">\(1\,Gb/s\)</span> de <span class="math inline">\(1,000\,km\)</span>?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:c226" class="exercise"><strong>Problema 2.26  </strong></span>Se envía información con un protocolo de ventanas
+deslizantes por un enlace de <span class="math inline">\(622\,Mb/s\)</span>. El tamaño de la ventana de
+transmisión es de <span class="math inline">\(24\,kB\)</span> y la distancia entre transmisor y receptor es
+de <span class="math inline">\(1,000\,km\)</span>. La velocidad de propagación en el medio es de
+<span class="math inline">\(200,000\,km/s\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es el retardo de propagación?</p></li>
+<li><p>¿Cuál es el retardo de transmisión?</p></li>
+<li><p>¿Cuál es el <em>throughput</em> maximo (en Mb/s)?</p></li>
+<li><p>¿Cuál es la eficiencia del enlace?</p></li>
+</ol>
+</div>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p>Este no es un buen modelo para representar tráfico de datos, pero sigue siendo popular dada su sencillez.<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>E0=64,000 bits/s<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>Más precisamente, <span class="math inline">\(299,792,458\,km/s.\)</span><a href="requerimientos-técnicos.-compromisos-y-restricciones.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Kim, G., <em>IT Service Management Metrics that Matter</em>, Tripwire White Paper, 2007<a href="requerimientos-técnicos.-compromisos-y-restricciones.html#fnref9" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="metodología-de-diseño-de-redes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="caracterización-de-la-red-y-del-tráfico-generado-por-las-aplicaciones.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-ReqTec.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown_DisArqRedes.pdf", "bookdown_DisArqRedes.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
