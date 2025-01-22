@@ -486,7 +486,7 @@ tamaño mínimo, la tasa máxima de conmutación de paquetes es:
 20 octetos en el denominador corresponden a 8 de preámbulo y 12 del
 intervalo entre tramas.</p>
 <p>Si se hace el mismo cálculo para un tamaño de trama de 1,500 bytes,
-entonces el rendimiento sería de <span class="math inline">\(822\,\text{p/s}\)</span>.</p>
+entonces el rendimiento sería de <span class="math inline">\(812\,\text{p/s}\)</span>.</p>
 </div>
 <hr />
 <p>Desde el punto de vista del usuario, la métrica de rendimiento de
@@ -567,7 +567,8 @@ encabezados, acuses de recibo, paso de estafetas (<em>token</em>); etc.</p>
 <div class="example">
 <p><span id="exm:unnamed-chunk-10" class="example"><strong>Ejemplo 2.6  </strong></span>Del ejemplo <a href="requerimientos-técnicos.-compromisos-y-restricciones.html#exm:thp">2.5</a> se obtuvo que en ethernet a <span class="math inline">\(10\,Mb/s\)</span> se pueden
 enviar <span class="math inline">\(14,480\)</span> tramas de <span class="math inline">\(64\)</span> bytes. Considerando únicamente la
-sobrecarga del encabezado MAC, en la trama sólo hay <span class="math inline">\(64 - 18 = 46\)</span> bytes de carga útil, por lo que la eficiencia es:</p>
+sobrecarga del encabezado MAC, en la trama sólo hay <span class="math inline">\(64
+- 18 = 46\)</span> bytes de carga útil, por lo que la eficiencia es:</p>
 <p><span class="math display">\[\mathcal{E} = \frac{46\times 14,480\times 8}{10\times 10^6}\times
 100\%=53.20\%.\]</span></p>
 <p>Si el tamaño de las tramas cambia a 1,500 bytes, la eficiencia aumenta
